@@ -17,10 +17,10 @@
                 <img src="{{ asset('images/human.png') }}" alt="">
             </div>
             <div class="form-group">
-                <input type="text" id="username" name="username" placeholder="Username" value="{{ old('username') }}" required>
+                <input type="text" id="user_name" name="user_name" placeholder="Username" value="{{ old('user_name') }}">
             </div>
             <div class="form__error">
-                @error('username')
+                @error('user_name')
                     {{ $message }}
                 @enderror
             </div>
@@ -28,7 +28,7 @@
                 <img src="{{ asset('images/mail.png') }}" alt="">
             </div>
             <div class="form-group">
-                <input type="email" id="email" placeholder="Email" value="{{ old('email') }}" required>
+                <input type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}">
             </div>
             <div class="form__error">
                 @error('email')
@@ -39,7 +39,7 @@
                 <img src="{{ asset('images/key.png') }}" alt="">
             </div>
             <div class="form-group">
-                <input type="password" id="password" name="password" placeholder="Password" value="{{ old('password') }}" required>
+                <input type="password" id="password" name="password" placeholder="Password" value="{{ old('password') }}">
             </div>
             <div class="form__error">
                 @error('password')

@@ -7,60 +7,85 @@ namespace App\Http\Controllers;
    use Illuminate\Support\Facades\Auth;
    use Illuminate\Support\Facades\Hash;
    use Illuminate\Foundation\Auth\EmailVerificationRequest;
+   use App\Http\Requests\RegisterRequest;
 
    class AuthController extends Controller
-   {
-         public function showRegistrationForm()
-         {   
-            return view('auth.register');
-         }
-
+{
+    //register表示
+    public function showRegistrationForm()
+    {
+        return view('auth.register');
+    }
        
-        public function register(Request $request)
-       {
+    // ユーザー登録処理
+    public function register(RegisterRequest $request)
+    {
            
-           $request->validate([
-               'name' => 'required|string|max:255',
-               'email' => 'required|string|email|max:255|unique:users',
-               'password' => 'required|string|min:8|confirmed',
-           ]);
+        $user = User::create([
+            'user_name' => $request->user_name,  
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
-           $user = User::create([
-               'name' => $request->name,
-               'email' => $request->email,
-               'password' => Hash::make($request->password),
-           ]);
+        event(new \Illuminate\Auth\Events\Registered($user));
 
-           event(new \Illuminate\Auth\Events\Registered($user));
+       return redirect()->route('verification.notice');
+    }
+    //login表示
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
 
-           return redirect()->route('verification.notice');
-       }
 
-       public function login(Request $request)
-       {
-           $request->validate([
-               'email' => 'required|string|email',
-               'password' => 'required|string',
-           ]);
+    // ログイン処理
+    public function login(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
 
-           if (Auth::attempt($request->only('email', 'password'))) {
-               return redirect()->route('login');
-           }
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
 
-           return back()->withErrors([
-               'email' => 'The provided credentials do not match our records.',
-           ]);
-    
-       }
+            if (!Auth::user()->hasVerifiedEmail()) {
+                Auth::logout();
+                return back()->withErrors([
+                    'email' => 'メールアドレスが認証されていません。',
+                ]);
+            }
 
-       public function verify(EmailVerificationRequest $request)
-        {
-            $request->fulfill();
-            return redirect()->route('thanks');
+            return redirect()->intended('/');
         }
 
-       public function showThanksPage()
-        {
-            return view('auth.thanks');
-        }
-   }
+        return back()->withErrors([
+            'email' => '指定された認証情報が記録と一致しません。',
+        ]);
+    }
+
+    // メール認証処理
+    public function verify(EmailVerificationRequest $request)
+    {
+        $request->fulfill();
+        // メール認証後に thanks ページへリダイレクト
+        return redirect()->route('thanks');
+    }
+
+    // Thanksページを表示
+    public function showThanksPage()
+    {
+        return view('auth.thanks');
+    }
+
+    // ログアウト処理
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
+    }
+}

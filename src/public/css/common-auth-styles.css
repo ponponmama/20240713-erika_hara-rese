@@ -36,6 +36,14 @@
         margin: 3%;
     }
 
+    .form__error {
+        height: 22px;
+        color: #ff0000;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
     .icon-container {
         display: inline-block;
         vertical-align: middle;
@@ -130,6 +138,10 @@
             width: 100%;
             box-sizing: border-box;
 
+        }
+
+        .form__error {
+            font-size: 0.8rem;
         }
 
         .form-title {
