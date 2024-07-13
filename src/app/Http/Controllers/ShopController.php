@@ -11,6 +11,6 @@ class ShopController extends Controller
     public function show($shop_id)
     {
         $shop = Shop::findOrFail($shop_id);
-        return view('reservation', compact('shop'));
+        return view('reservation', ['shop' => $shop]);
     }
 }
