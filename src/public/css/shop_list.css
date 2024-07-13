@@ -1,0 +1,41 @@
+body {
+    font-size: 2vw;
+}
+
+/* テーブル全体のスタイル設定 */
+
+.shop_table table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 5%;
+}
+
+/* ヘッダー行のスタイル設定 */
+.shop_table th {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+/* テーブルのセルのスタイル設定 */
+.shop_table td {
+    border: 1px solid black;
+    padding: 8px;
+    color: black;
+}
+
+/* レスポンシブデザインの設定 */
+@media (max-width: 768px) {
+
+    .shop_table th,
+    .shop_table td {
+        padding: 5px;
+    }
+
+}
+
+.shop_table img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
