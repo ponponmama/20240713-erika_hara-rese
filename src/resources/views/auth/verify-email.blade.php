@@ -1,4 +1,3 @@
-<!-- resources/views/auth/verify-email.blade.php -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>

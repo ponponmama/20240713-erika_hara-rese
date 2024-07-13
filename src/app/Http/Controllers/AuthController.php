@@ -1,6 +1,6 @@
-   <?php
+<?php
 
-   namespace App\Http\Controllers;
+namespace App\Http\Controllers;
 
    use App\Models\User;
    use Illuminate\Http\Request;
@@ -10,8 +10,15 @@
 
    class AuthController extends Controller
    {
-       public function register(Request $request)
+         public function showRegistrationForm()
+         {   
+            return view('auth.register');
+         }
+
+       
+        public function register(Request $request)
        {
+           
            $request->validate([
                'name' => 'required|string|max:255',
                'email' => 'required|string|email|max:255|unique:users',
@@ -24,9 +31,9 @@
                'password' => Hash::make($request->password),
            ]);
 
-           Auth::login($user);
+           event(new \Illuminate\Auth\Events\Registered($user));
 
-           return redirect()->route('index');
+           return redirect()->route('verification.notice');
        }
 
        public function login(Request $request)
@@ -37,7 +44,7 @@
            ]);
 
            if (Auth::attempt($request->only('email', 'password'))) {
-               return redirect()->route('index');
+               return redirect()->route('login');
            }
 
            return back()->withErrors([
