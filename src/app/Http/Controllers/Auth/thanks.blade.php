@@ -9,8 +9,9 @@
 <body>
     <div class="registration-form">
         <h1>会員登録ありがとうございます</h1>
-        <p>登録が完了しました。引き続きサービスをお楽しみください。</p>
-        <a href="{{ route('index') }}" class="btn">ホームに戻る</a>
+    </div>
+    <div class="button-container">
+        <a href="{{ route('login') }}" class="login-button">ログインする</a>
     </div>
 </body>
 </html>
