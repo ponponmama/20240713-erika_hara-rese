@@ -50,8 +50,8 @@ Route::get('/thanks', [AuthController::class, 'showThanksPage'])->name('thanks')
 // その他の認証済みルート
 Route::middleware('auth')->group(function () {
     Route::get('/', [ShopController::class, 'shop_list'])->name('index');
+    Route::get('/shop/{id}', [ShopController::class, 'show'])->name('shop.detail');
 });
 
 
-//breezeのデフォルトの認証ルートを無効化
 require __DIR__.'/auth.php';
