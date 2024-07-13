@@ -16,40 +16,36 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// 登録ページ
-Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [AuthController::class, 'register']);
+// 登録
+Route::get('register', [AuthController::class, 'showRegistrationForm'])->name('register.form');
+Route::post('register', [AuthController::class, 'register'])->name('register');
 
+// ログイン
+Route::get('login', [AuthController::class, 'showLoginForm'])->name('login.form');
+Route::post('login', [AuthController::class, 'login'])->name('login');
 
-// ログインページ
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
+// メール認証
+Route::get('email/verify/action', [AuthController::class, 'verify'])->name('verification.verify');
 
-// ログアウト
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
-// メール認証ルート
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
 
-// メール認証の確認
-Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verify'])
-    ->middleware(['auth', 'signed', 'throttle:6,1'])
-    ->name('verification.verify');
-
-    // メール認証リンクの再送信
 Route::post('/email/resend', function (Request $request) {
     $request->user()->sendEmailVerificationNotification();
     return back()->with('message', '認証リンクを再送信しました。');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
-// 登録完了後の感謝ページ
-Route::get('/thanks', [AuthController::class, 'showThanksPage'])->name('thanks');
+// Thanksページ
+Route::get('thanks', [AuthController::class, 'showThanksPage'])->name('thanks');
+
+// ログアウト
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 // その他の認証済みルート
 Route::middleware('auth')->group(function () {
     Route::get('/', [ShopController::class, 'shop_list'])->name('index');
+
     Route::get('/shop/{id}', [ShopController::class, 'show'])->name('shop.detail');
 });
 
