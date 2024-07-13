@@ -1,0 +1,158 @@
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .registration-form,
+    .login-form {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.61);
+        width: 40% !important;
+        position: absolute !important;
+    }
+
+    .title-box {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        background-color: #0056b3 !important;
+        color: white !important;
+        text-align: left !important;
+        padding: 1px 20px !important;
+        border-top-left-radius: 8px !important;
+        border-top-right-radius: 8px !important;
+    }
+
+    .form-title {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.5rem;
+        font-weight: normal;
+        margin: 3%;
+    }
+
+    .icon-container {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 6px;
+        margin-top: 10px;
+    }
+
+    .icon-container img {
+        width: 30px;
+        height: 30px;
+        padding: 8px 10px 0px 8px;
+        margin-left: 14px;
+    }
+
+    .form-group {
+        display: inline-block;
+        vertical-align: middle;
+        width: calc(100% - 120px);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 90%;
+        padding: 26px 4px 0px 4px;
+        border: none;
+        border-bottom: 1px solid black;
+        font-size: 16px;
+        line-height: 24px;
+        background-color: transparent;
+        margin: 0 5% 0 5%;
+        outline: none;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    input::placeholder {
+        font-size: 1rem;
+        color: #7a7a7a;
+        font-weight: bold;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: flex-end;
+        margin: 5%;
+    }
+
+    button {
+        width: 20%;
+        height: 6%;
+        padding: 8px 20px;
+        background-color: #0056b3;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.6rem;
+        text-align: center;
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .login-button {
+        width: 36%;
+        height: 6%;
+        padding: 8px 4px;
+        background-color: #0056b3;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.6rem;
+        text-align: center;
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    button:hover {
+        background-color: #003875;
+    }
+
+    @media (max-width: 768px) {
+
+        .registration-form,
+        .login-form {
+            width: 80% !important;
+            padding: 2px;
+        }
+
+        .title-box {
+            padding: 10px !important;
+            width: 100%;
+            box-sizing: border-box;
+
+        }
+
+        .form-title {
+            margin: 0;
+            line-height: 30px;
+            font-size: 1rem;
+        }
+
+        input::placeholder {
+            font-size: 0.8rem;
+        }
+
+        button {
+            width: 30%;
+            height: 6%;
+            padding: 8px 4px;
+            font-size: 0.6rem;
+            text-align: center;
+        }
+
+        .login-button {
+            width: 36%;
+            height: 6%;
+            font-size: 0.6rem;
+        }
+    }
