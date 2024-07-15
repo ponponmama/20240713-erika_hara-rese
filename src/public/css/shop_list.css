@@ -1,41 +1,41 @@
-body {
-    font-size: 2vw;
-}
-
 /* テーブル全体のスタイル設定 */
-
-.shop_table table {
-    width: 90%;
-    border-collapse: collapse;
-    margin: 5%;
+.shop_table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-/* ヘッダー行のスタイル設定 */
-.shop_table th {
-    background-color: black;
-    color: white;
+.shop_card {
+    flex: 0 1 30%;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.61);
+    /* カードに影を追加 */
     padding: 10px;
+    /* カード内の余白 */
+    background-color: white;
+    /* 背景色を白に設定 */
 }
 
-/* テーブルのセルのスタイル設定 */
-.shop_table td {
-    border: 1px solid black;
+/* カード内の画像スタイル */
+.shop_card img {
+    width: 100%;
+    /* カードの幅に合わせて画像を拡大/縮小 */
+    height: auto;
+    /* 画像の高さを自動調整 */
+    object-fit: cover;
+    /* 画像のアスペクト比を保持 */
+}
+
+/* カード内の情報スタイル */
+.shop_info {
     padding: 8px;
-    color: black;
+    /* 情報部分のパディング */
 }
 
 /* レスポンシブデザインの設定 */
 @media (max-width: 768px) {
-
-    .shop_table th,
-    .shop_table td {
-        padding: 5px;
+    .shop_card {
+        flex: 0 1 100%;
+        /* モバイル表示では1列に */
     }
-
-}
-
-.shop_table img {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
 }
