@@ -10,11 +10,11 @@
 </head>
 
 <body>
-    <header class="header">
-        <h1 class="top_logo">Rese</h1>
-    </header>
     <main>
-        @yield('content')
+        <div class="container">
+            <h1 class="top_logo">Rese</h1>
+            @yield('content')
+        </div>
     </main> 
 </body>
 </html>

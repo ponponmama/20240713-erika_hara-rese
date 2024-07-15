@@ -8,7 +8,7 @@
     <div class="shop_table">
         @foreach ($shops as $shop)
         <div class="shop_card">
-            <img src="{{ asset('storage/' . $shop->image) }}" alt="{{ $shop->shop_name }}">
+            <img src="{{ asset($shop->image) }}" alt="{{ $shop->shop_name }}">
             <div class="shop_info">
                 <h3>{{ $shop->shop_name }}</h3>
                 <p>{{ $shop->area }} | {{ $shop->genre }}</p>

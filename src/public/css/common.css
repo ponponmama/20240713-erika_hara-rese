@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    background-color: #f4f4f4;
+    margin: 0 auto;
+}
+
+.top_logo {
+    color: #0056b3;
+    padding: 10px 20px;
+    text-align: left;
+}
