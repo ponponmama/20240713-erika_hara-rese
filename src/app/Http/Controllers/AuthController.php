@@ -29,8 +29,26 @@ namespace App\Http\Controllers;
 
         event(new \Illuminate\Auth\Events\Registered($user));
 
+        Auth::login($user);
+
        return redirect()->route('verification.notice');
     }
+
+        // Thanksページを表示
+    public function showThanksPage()
+    {
+        return view('auth.thanks');
+    }
+
+    // メール認証処理
+    public function verify(EmailVerificationRequest $request)
+    {
+        $request->fulfill();
+        // メール認証後に thanks ページへリダイレクト
+        return redirect()->route('thanks');
+    }
+
+
     //login表示
     public function showLoginForm()
     {
@@ -52,7 +70,7 @@ namespace App\Http\Controllers;
             if (!Auth::user()->hasVerifiedEmail()) {
                 Auth::logout();
                 return back()->withErrors([
-                    'email' => 'メールアドレスが認証されていません。',
+                    'email' => 'メールアドレスが認証されていません。認証メールを確認してください。',
                 ]);
             }
 
@@ -62,20 +80,6 @@ namespace App\Http\Controllers;
         return back()->withErrors([
             'email' => '指定された認証情報が記録と一致しません。',
         ]);
-    }
-
-    // メール認証処理
-    public function verify(EmailVerificationRequest $request)
-    {
-        $request->fulfill();
-        // メール認証後に thanks ページへリダイレクト
-        return redirect()->route('thanks');
-    }
-
-    // Thanksページを表示
-    public function showThanksPage()
-    {
-        return view('auth.thanks');
     }
 
     // ログアウト処理

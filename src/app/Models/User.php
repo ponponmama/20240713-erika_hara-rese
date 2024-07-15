@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Auth\Notifications\VerifyEmail;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -30,7 +31,6 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $hidden = [
         'password',
-        'remember_token',
     ];
 
     /**
@@ -41,6 +41,15 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new \App\Notifications\CustomVerifyEmail);
+    }
+
+    /**
+     * Send the email verification notification.
+     */
 
     public function reservations()
     {

@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="{{ asset('css/common-auth-styles.css') }}">
 </head>
 <body>
-    <div class="registration-form">
-        <h1>会員登録ありがとうございます</h1>
-    </div>
-    <div class="button-container">
-        <a href="{{ route('login') }}" class="login-button">ログインする</a>
+    <div class="thanks-form">
+        <h2 class="form-thanks-title">会員登録ありがとうございます</h2>
+        <div class="button-thanks">
+            <a href="{{ route('login') }}" class="thanks-button">ログインする</a>
+        </div>
     </div>
 </body>
 </html>
