@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Http\Request; 
-
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,17 +24,22 @@ Route::post('register', [AuthController::class, 'register'])->name('register');
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login.form');
 Route::post('login', [AuthController::class, 'login'])->name('login');
 
-// メール認証
-Route::get('email/verify/action', [AuthController::class, 'verify'])->name('verification.verify');
+// メール認証ルート
+
+Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verify'])
+    ->middleware(['auth', 'signed'])
+    ->name('verification.verify');
 
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
-
-Route::post('/email/resend', function (Request $request) {
+// メール認証リンクの再送信
+Route::post('/email/verification-notification', function (Request $request) {
     $request->user()->sendEmailVerificationNotification();
-    return back()->with('message', '認証リンクを再送信しました。');
-})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+    return back()->with('message', '認証メールを再送信しました。');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
+
 
 // Thanksページ
 Route::get('thanks', [AuthController::class, 'showThanksPage'])->name('thanks');
