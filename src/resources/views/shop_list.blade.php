@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shop_list</title>
+@extends('layouts.app')
+
+@section('css')
     <link rel="stylesheet" href="{{ asset('css/shop_list.css') }}">
-</head>
-<body>
+@endsection
+
+@section('content')
     <div class="shop_table">
         @foreach ($shops as $shop)
         <div class="shop_card">
@@ -19,5 +17,4 @@
         </div>
         @endforeach
     </div>
-</body>
-</html>
+@endsection
