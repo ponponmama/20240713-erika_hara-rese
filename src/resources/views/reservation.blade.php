@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/reservation.css') }}">
-    <title>{{ $shop->shop_name }}</title>
-</head>
-    <body>
+@extends('layouts.app')
+
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/reservation.css') }}">
+@endsection
+
+@section('content')
         <div class="container">
-            <header>
-                <h1>Rese</h1>
-            </header>
             <div class="content">
                 <div class="shop_name">
                     <h1>{{ $shop->shop_name }}</h1>
@@ -35,5 +30,4 @@
                 </div>
             </div>
         </div>
-    </body>
-</html>
+@endsection
