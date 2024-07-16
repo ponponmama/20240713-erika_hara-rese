@@ -1,41 +1,101 @@
 /* テーブル全体のスタイル設定 */
 .shop_table {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
 .shop_card {
-    flex: 0 1 30%;
-    margin-bottom: 20px;
+    flex: 0 1 24%;
+    margin-bottom: 1%;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.61);
-    /* カードに影を追加 */
-    padding: 10px;
-    /* カード内の余白 */
+    padding: 0;
     background-color: white;
-    /* 背景色を白に設定 */
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 /* カード内の画像スタイル */
 .shop_card img {
     width: 100%;
-    /* カードの幅に合わせて画像を拡大/縮小 */
-    height: auto;
-    /* 画像の高さを自動調整 */
     object-fit: cover;
-    /* 画像のアスペクト比を保持 */
+    border-radius: 10px 10px 0 0;
 }
 
 /* カード内の情報スタイル */
 .shop_info {
-    padding: 8px;
-    /* 情報部分のパディング */
+    padding: 5px;
+}
+
+.shop-name {
+    margin: 0;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+.shop-guide {
+    margin: 0;
+    padding: 2px;
+    font-size: 0.6rem;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shop-detail {
+    width: 40%;
+    padding: 6px 10px;
+    background-color: #0056b3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 1% 2% 3% 2%;
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+.favorite-button {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: darkgray;
+    padding: 0;
+}
+
+.shop-detail {
+    margin: 5px;
 }
 
 /* レスポンシブデザインの設定 */
 @media (max-width: 768px) {
     .shop_card {
         flex: 0 1 100%;
+        justify-content: center;
         /* モバイル表示では1列に */
+    }
+
+    .shop_card {
+        margin-bottom: 3%;
+    }
+
+    .shop-name {
+        font-size: 1.3rem;
+    }
+
+    .shop-detail {
+        width: 44%;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .shop-guide {
+        font-size: 0.8rem;
     }
 }
