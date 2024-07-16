@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Http\Request; 
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Http\Controllers\FavoriteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [ShopController::class, 'shop_list'])->name('index');
 
     Route::get('/shop/{id}', [ShopController::class, 'show'])->name('shop.detail');
+//お気に入り
+    Route::post('/favorite/add/{id}', [FavoriteController::class, 'add'])->name('favorite.add');
 });
 
 
