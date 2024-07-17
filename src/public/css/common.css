@@ -25,12 +25,19 @@ body {
 .top_logo {
     color: #0056b3;
     margin: 0;
-    padding: 10px 30px;
+    padding: 10px 4px;
     text-align: left;
     font-size: 1.8rem;
 }
 
 /* ハンバーガーメニューのスタイル追加 */
+.menu-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: flex-start;
+}
+
 .menu-toggle {
     display: none;
 }
@@ -49,6 +56,7 @@ body {
     padding: 5px;
     position: relative;
     z-index: 1000;
+    margin-right: 10px;
 }
 
 .nav-menu {
@@ -57,13 +65,16 @@ body {
     top: 100%;
     left: 0;
     background-color: white;
-    width: 100%;
+    width: 300px;
     text-align: center;
     padding: 20px 0;
+    min-height: 300px;
+    font-size: 1rem;
+    z-index: 1001;
 }
 
 .bar {
-    height: 3px;
+    height: 1%;
     background-color: white;
     margin: 4px 0;
     transition: 0.4s;
@@ -80,6 +91,24 @@ body {
 
 @media (max-width: 768px) {
     .header {
-        flex-direction: column;
+        padding: 10px;
     }
+
+    .hamburger-menu {
+        position: absolute;
+        top: -12px;
+        right: 10px;
+    }
+
+    .nav-menu {
+        width: 200px;
+        text-align: center;
+        padding: 10px 0;
+        min-height: 50px;
+    }
+
+    .top_logo {
+        padding: 2px;
+    }
+
 }
