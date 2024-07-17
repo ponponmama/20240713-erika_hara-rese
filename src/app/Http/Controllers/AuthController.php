@@ -92,4 +92,9 @@ namespace App\Http\Controllers;
 
         return redirect('/login');
     }
+
+    public function mypage()
+    {
+        return view('mypage');
+    }
 }

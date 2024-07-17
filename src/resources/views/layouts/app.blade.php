@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +11,14 @@
 
 <body>
     <main>
-        
-            @yield('content')
+        <div class="container">
+            <div class="content">
+                <div class="header">
+                    @include('partials.navbar')
+                    <h1 class="top_logo">Rese</h1>
+                </div>
+                @yield('content')
+            </div>
         </div>
     </main> 
 </body>

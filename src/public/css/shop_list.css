@@ -57,6 +57,7 @@
     margin: 1% 2% 3% 2%;
     font-size: 0.7rem;
     text-align: center;
+    margin: 5px;
 }
 
 .favorite-button {
@@ -65,13 +66,10 @@
     background: none;
     cursor: pointer;
     font-size: 2rem;
-    color: darkgray;
-    padding: 0;
+    color: rgb(228, 225, 225);
+    padding: 1px 15px 1px 15px;
 }
 
-.shop-detail {
-    margin: 5px;
-}
 
 /* レスポンシブデザインの設定 */
 @media (max-width: 768px) {
