@@ -5,9 +5,6 @@
 @endsection
 
 @section('content')
-<div class="container">
-    <div class="content">
-        <h1 class="top_logo">Rese</h1>
         <div class="shop_table">
             @foreach ($shops as $shop)
             <div class="shop_card">
@@ -26,6 +23,4 @@
             </div>
             @endforeach
         </div>
-    </div>
-</div>
 @endsection

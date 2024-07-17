@@ -52,9 +52,12 @@ Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware('auth')->group(function () {
     Route::get('/', [ShopController::class, 'shop_list'])->name('index');
 
+    Route::get('/mypage', [AuthController::class, 'mypage'])->name('mypage');
+
     Route::get('/shop/{id}', [ShopController::class, 'show'])->name('shop.detail');
 //お気に入り
     Route::post('/favorite/add/{id}', [FavoriteController::class, 'add'])->name('favorite.add');
+    
 });
 
 
