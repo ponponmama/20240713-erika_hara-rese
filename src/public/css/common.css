@@ -1,12 +1,13 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .header {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 10px 30px;
+    padding: 0 20px;
     background-color: #f4f4f4;
 }
 
@@ -18,7 +19,7 @@ body {
 .content {
     background-color: #f4f4f4;
     width: 96%;
-    padding: 10px 70px;
+    padding: 10px 20px;
     margin: 2%;
 }
 
@@ -49,10 +50,11 @@ body {
 .hamburger-menu {
     cursor: pointer;
     display: block;
-    width: 30px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     background-color: #0056b3;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.61);
+    border-radius: 3px;
     padding: 5px;
     position: relative;
     z-index: 1000;
@@ -69,15 +71,45 @@ body {
     text-align: center;
     padding: 20px 0;
     min-height: 300px;
-    font-size: 1rem;
+    font-size: 1.5rem;
     z-index: 1001;
 }
 
-.bar {
+.bar-1 {
+    width: 50%;
     height: 1%;
     background-color: white;
-    margin: 4px 0;
+    margin: 5px 0;
     transition: 0.4s;
+    padding: 0 1px;
+}
+
+.bar-2 {
+    width: 100%;
+    height: 1%;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+    padding: 0 1px;
+}
+
+.bar-3 {
+    width: 25%;
+    height: 1%;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+    padding: 0 1px;
+}
+
+a.nav-link,
+button.logout-button {
+    font-size: 2rem;
+    color: blue;
+    font-weight: bold;
+    padding: 6px;
+    margin: 4px;
+    text-decoration: none !important;
 }
 
 .logout-button {
@@ -96,15 +128,14 @@ body {
 
     .hamburger-menu {
         position: absolute;
-        top: -12px;
         right: 10px;
     }
 
     .nav-menu {
-        width: 200px;
+        width: 250px;
         text-align: center;
-        padding: 10px 0;
-        min-height: 50px;
+        padding: 10px;
+        min-height: 60px;
     }
 
     .top_logo {
