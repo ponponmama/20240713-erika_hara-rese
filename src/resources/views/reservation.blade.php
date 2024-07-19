@@ -26,25 +26,46 @@
                         </div>
                         <div class="image-section">
                             <img src="{{ asset($shop->image) }}" alt="{{ $shop->shop_name }}">
-                            <p>{{ $shop->description }}</p>
+                            <p class="shop-guide">＃{{ $shop->area }}  ＃{{ $shop->genre }}</p>
+                            <p class="description">{{ $shop->description }}</p>
+                            
                         </div>
                     </div>
-                    <div class="reservation-form">
-                        <h2>予約</h2>
-                        <form action="/reserve" method="post">
-                            @csrf
-                            <input type="hidden" name="shop_id" value="{{ $shop->id }}">
-                            <label for="date">日付</label>
-                            <input type="date" id="date" name="date">
-                            <label for="time">時間</label>
-                            <input type="time" id="time" name="time">
-                            <label for="number">人数</label>
-                            <input type="number" id="number" name="number" min="1">
-                            <button type="submit">予約する</button>
-                        </form>
+                    <div class="reservation">
+                        <div class="form-section">
+                            <h2 class="reserve">予約</h2>
+                            <form action="/reserve" method="post">
+                                @csrf
+                                <input type="hidden" name="shop_id" value="{{ $shop->id }}">
+                                <label for="date" placeholder="日付"></label>
+                                <input type="date" id="date" name="date">
+                                <label for="time"></label>
+                                <input type="time" id="time" name="time" placeholder="予約時刻">
+                                <label for="number"></label>
+                                <input type="number" id="number" name="number" min="1" placeholder="人数">
+                            </form>
+                            <div class="reservation-summary">
+                                <div class="summary-item">
+                                    <label>Shop</label>
+                                    <div>{{ $shop->shop_name }}</div>
+                                </div>
+                                <div class="summary-item">
+                                    <label>Date</label>
+                                    <div>{{ $date }}</div>
+                                </div>
+                                <div class="summary-item">
+                                    <label>Time</label>
+                                    <div>{{ $time }}</div>
+                                </div>
+                                <div class="summary-item">
+                                    <label>Number</label>
+                                    <div>{{ $number }}</div>
+                                </div>
+                            </div>
+                            <button type="submit" form="reserve-form" class="reserve-button">予約する</button>
+                        </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </main> 

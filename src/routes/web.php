@@ -26,7 +26,6 @@ Route::get('login', [AuthController::class, 'showLoginForm'])->name('login.form'
 Route::post('login', [AuthController::class, 'login'])->name('login');
 
 // メール認証ルート
-
 Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verify'])
     ->middleware(['auth', 'signed'])
     ->name('verification.verify');
@@ -55,10 +54,30 @@ Route::middleware('auth')->group(function () {
     Route::get('/mypage', [AuthController::class, 'mypage'])->name('mypage');
 
     Route::get('/shop/{id}', [ShopController::class, 'show'])->name('shop.detail');
-//お気に入り
+
+    
+    //お気に入り
     Route::post('/favorite/add/{id}', [FavoriteController::class, 'add'])->name('favorite.add');
+
+    // 予約関連のルート
+    Route::resource('reservations', ReservationController::class);
+   //admin用のルート
+   
+
+   
     
 });
 
+// Admin用のルート
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin/manage-shop-managers', [AdminController::class, 'manageShopManagers'])->name('admin.manage.shop_managers');
+});
+
+// Shop Manager用のルート
+Route::middleware(['auth', 'role:shop_manager'])->group(function () {
+    Route::get('/shop-manager/dashboard', [ShopManagerController::class, 'index'])->name('shop_manager.dashboard');
+    Route::get('/shop-manager/manage-shop', [ShopManagerController::class, 'manageShop'])->name('shop_manager.manage.shop');
+});
 
 //require __DIR__.'/auth.php';

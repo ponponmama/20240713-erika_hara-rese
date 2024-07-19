@@ -22,6 +22,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'user_name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -42,14 +43,24 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * Send the email verification notification.
+     */
+
     public function sendEmailVerificationNotification()
     {
         $this->notify(new \App\Notifications\CustomVerifyEmail);
     }
 
-    /**
-     * Send the email verification notification.
-     */
+    public function isShopManager()
+    {
+        return $this->role === 'shop_manager';
+    }
+
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
 
     public function reservations()
     {
