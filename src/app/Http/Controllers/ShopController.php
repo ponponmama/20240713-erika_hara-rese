@@ -20,4 +20,6 @@ class ShopController extends Controller
         $shops = Shop::all();
         return view('shop_list', ['shops' => $shops]);
     }
+
+    
 }
