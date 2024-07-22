@@ -24,6 +24,26 @@ class UserFactory extends Factory
         ];
     }
 
+    public function shopManager()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'role' => 'shop_manager',
+                'password' => Hash::make('shop_password')  // テスト用の既知のパスワード
+            ];
+        });
+    }
+
+    public function admin()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'role' => 'admin',
+                'password' => Hash::make('admin_password')  // テスト用の既知のパスワード
+            ];
+        });
+    }
+
     /**
      * Indicate that the model's email address should be unverified.
      *

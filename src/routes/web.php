@@ -6,6 +6,8 @@ use App\Http\Controllers\ShopController;
 use Illuminate\Http\Request; 
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\ReservationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -61,7 +63,7 @@ Route::middleware('auth')->group(function () {
 
     // 予約関連のルート
     Route::resource('reservations', ReservationController::class);
-   //admin用のルート
+   
    
 
    
@@ -78,6 +80,12 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 Route::middleware(['auth', 'role:shop_manager'])->group(function () {
     Route::get('/shop-manager/dashboard', [ShopManagerController::class, 'index'])->name('shop_manager.dashboard');
     Route::get('/shop-manager/manage-shop', [ShopManagerController::class, 'manageShop'])->name('shop_manager.manage.shop');
+    
+    // 店舗情報の編集ページ
+    Route::get('/shop-manager/shop/{id}/edit', [ShopManagerController::class, 'edit'])->name('shop_manager.edit');
+
+    // 店舗情報の更新
+    Route::put('/shop-manager/shop/{id}', [ShopManagerController::class, 'update'])->name('shop_manager.update');
 });
 
 //require __DIR__.'/auth.php';

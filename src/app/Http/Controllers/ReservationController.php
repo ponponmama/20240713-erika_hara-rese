@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Reservation;
+use App\Http\Requests\StoreReservationRequest;
 
 class ReservationController extends Controller
 {
@@ -34,11 +35,16 @@ class ReservationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreReservationRequest $request)
     {
-        $reservation = new Reservation($request->all());
+        $reservation = new Reservation();
+        $reservation->shop_id = $request->shop_id;
+        $reservation->date = $request->date;
+        $reservation->time = $request->time;
+        $reservation->number = $request->number;
         $reservation->save();
-        return redirect()->route('reservations.index')->with('success', '予約が追加されました。');
+
+        return redirect()->route('reservation.show', $reservation->id)->with('success', '予約が追加されました。');
     }
 
     /**
@@ -77,4 +83,6 @@ class ReservationController extends Controller
         $reservation->update($request->all());
         return redirect()->route('reservations.index')->with('success', '予約が更新されました。');
     }
+
+    
 }
