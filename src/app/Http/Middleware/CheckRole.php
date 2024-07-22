@@ -18,9 +18,9 @@ class CheckRole
 　  */
     public function handle(Request $request, Closure $next, ...$roles)
     {
-        if (!Auth::check() || Auth::user()->role !== $role) {
-           // ユーザーがログインしていない、または必要な役割を持っていない場合
-             abort(403, 'Unauthorized action.');
+        if (!Auth::check() || !in_array(Auth::user()->role, $roles)) {
+            // ユーザーがログインしていない、または必要な役割を持っていない場合
+            abort(403, 'Unauthorized action.');
         }
 
         return $next($request);

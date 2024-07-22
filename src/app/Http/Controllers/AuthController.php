@@ -100,4 +100,15 @@ namespace App\Http\Controllers;
 
         return view('mypage', ['reservations' => $reservations]);
     }
+
+    protected function authenticated(Request $request, $user)
+    {
+        if ($user->role === 'admin') {
+            return redirect()->route('admin.dashboard'); // 管理者ダッシュボードへリダイレクト
+        } elseif ($user->role === 'shop_manager') {
+            return redirect()->route('shop_manager.dashboard'); // ショップマネージャーダッシュボードへリダイレクト
+        } else {
+            return redirect()->route('index'); // 一般ユーザーはホームページへリダイレクト
+        }
+    }
 }

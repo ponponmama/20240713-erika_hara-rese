@@ -34,35 +34,51 @@
                     <div class="reservation">
                         <div class="form-section">
                             <h2 class="reserve">予約</h2>
-                            <form action="/reserve" method="post">
+                            <form action="{{ route('reservations.store') }}" method="post" id="reserve-form">
                                 @csrf
                                 <input type="hidden" name="shop_id" value="{{ $shop->id }}">
                                 <label for="date" placeholder="日付"></label>
-                                <input type="date" id="date" name="date">
+                                <input type="date" id="date" name="date" class="date-label"  value="{{ date('Y-m-d') }}">
                                 <label for="time"></label>
-                                <input type="time" id="time" name="time" placeholder="予約時刻">
-                                <label for="number"></label>
-                                <input type="number" id="number" name="number" min="1" placeholder="人数">
+                                <div class="custom-select">
+                                    <select id="time" name="time">
+                                        @foreach ($times as $time)
+                                            <option value="{{ $time }}">{{ $time }}</option>
+                                        @endforeach
+                                    </select>
+                                    <span class="clip_path"></span>
+                                </div>
+                                <div class="custom-select">
+                                    <label for="number"></label>
+                                    <select id="number" name="number">
+                                        @for ($i = 1; $i <= 10; $i++)
+                                            <option value="{{ $i }}">{{ $i }}人</option>
+                                        @endfor
+                                    </select>
+                                    <span class="clip_path"></span>
+                                </div>
                             </form>
                             <div class="reservation-summary">
                                 <div class="summary-item">
                                     <label>Shop</label>
-                                    <div>{{ $shop->shop_name }}</div>
+                                    <span class="summary-date">{{ $shop->shop_name }}</span>
                                 </div>
                                 <div class="summary-item">
                                     <label>Date</label>
-                                    <div>{{ $date }}</div>
+                                    <span class="summary-date">{{ date('Y-m-d', strtotime($date ?? date('Y-m-d'))) }}</span>
                                 </div>
                                 <div class="summary-item">
                                     <label>Time</label>
-                                    <div>{{ $time }}</div>
+                                    <span class="summary-date">{{ $time ?? date('H:i') }}</span>
                                 </div>
                                 <div class="summary-item">
                                     <label>Number</label>
-                                    <div>{{ $number }}</div>
+                                    <span class="summary-date">{{ $number ?? '0' }}人</span>
                                 </div>
                             </div>
-                            <button type="submit" form="reserve-form" class="reserve-button">予約する</button>
+                            <div class="button-container">
+                                <button type="submit" class="reserve-button">予約する</button>
+                            </div>
                         </div>
                     </div>
                 </div>

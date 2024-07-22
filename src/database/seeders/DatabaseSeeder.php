@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\User;
 use Database\Seeders\ShopsTableSeeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,9 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        
+        User::factory()->admin()->count(2)->create();
 
-        $this->call(ShopsTableSeeder::class);
+        $this->call([
+            ShopsTableSeeder::class,
+        ]);
         //\App\Models\User::factory(20)->create();
     }
 }

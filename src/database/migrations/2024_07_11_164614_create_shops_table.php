@@ -21,6 +21,8 @@ class CreateShopsTable extends Migration
             $table->string('genre');
             $table->string('area');
             $table->string('image')->nullable();
+            $table->time('open_time')->nullable();
+            $table->time('close_time')->nullable();
             $table->timestamps();
         });
     }
