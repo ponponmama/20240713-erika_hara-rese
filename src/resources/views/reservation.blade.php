@@ -40,23 +40,23 @@
                                 <label for="date" placeholder="日付"></label>
                                 <input type="date" id="date" name="date" class="date-label"  value="{{ date('Y-m-d') }}">
                                 <label for="time"></label>
-                                <div class="custom-select">
+                                <div class="select-wrapper" style="position: relative;">
                                     <select id="time" name="time">
                                         @foreach ($times as $time)
                                             <option value="{{ $time }}">{{ $time }}</option>
                                         @endforeach
                                     </select>
-                                    <span class="clip_path"></span>
+                                    <span class="custom-select-icon"></span>
                                 </div>
-                                <div class="custom-select">
-                                    <label for="number"></label>
+                                <label for="number"></label>
+                                <div class="select-wrapper" style="position: relative;">
                                     <select id="number" name="number">
                                         @for ($i = 1; $i <= 10; $i++)
                                             <option value="{{ $i }}">{{ $i }}人</option>
                                         @endfor
                                     </select>
-                                    <span class="clip_path"></span>
-                                </div>
+                                    <span class="custom-select-icon"></span>
+                                </div>    
                             </form>
                             <div class="reservation-summary">
                                 <div class="summary-item">
