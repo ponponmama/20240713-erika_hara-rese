@@ -17,8 +17,9 @@ class CreateFavoritesTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('shop_id')->constrained()->onDelete('cascade');
-            $table->timestamps();
             $table->unique(['user_id', 'shop_id']);
+            $table->timestamps();
+            
         });
     }
 

@@ -1,4 +1,3 @@
-/* テーブル全体のスタイル設定 */
 .shop_table {
     width: 100%;
     display: flex;
@@ -70,13 +69,29 @@
     padding: 1px 15px 1px 15px;
 }
 
+/* お気に入りボタンのスタイル */
+.favorite-button {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: rgb(228, 225, 225);
+    /* デフォルトの色 */
+    padding: 1px 15px 1px 15px;
+}
+
+/* お気に入りに追加されたときのボタンのスタイル */
+.favorite-button.favorited {
+    color: red;
+    /* お気に入りの場合は赤色に */
+}
 
 /* レスポンシブデザインの設定 */
 @media (max-width: 768px) {
     .shop_card {
         flex: 0 1 100%;
         justify-content: center;
-        /* モバイル表示では1列に */
     }
 
     .shop_card {

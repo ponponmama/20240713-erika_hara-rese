@@ -4,16 +4,38 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Favorite;
+use App\Models\Shop;
+use Illuminate\Support\Facades\Auth;
 
 class FavoriteController extends Controller
 {
-    public function add(Request $request, $id)
-        {
-           $favorite = new Favorite();
-           $favorite->shop_id = $id;
-           $favorite->user_id = auth()->user()->id; // 認証されたユーザーのID
-           $favorite->save();
+    public function favorite(Shop $shop)
+    {
+        $user = Auth::user();
+        \Log::info('Adding to favorites', ['user_id' => $user->id, 'shop_id' => $shop->id]);
 
-           return redirect()->back()->with('success', 'お気に入りに追加しました！');
-        } 
+        // 既にお気に入りに追加されているか確認
+        $alreadyExists = $user->favorites()->where('shop_id', $shop->id)->exists();
+
+        // お気に入りに追加
+        $user->favorites()->syncWithoutDetaching([$shop->id]);
+
+        // 既に存在する場合はupdated_atのみ更新、そうでなければcreated_atとupdated_atを更新
+        if ($alreadyExists) {
+            $user->favorites()->updateExistingPivot($shop->id, ['updated_at' => now()]);
+        } else {
+            $user->favorites()->updateExistingPivot($shop->id, ['created_at' => now(), 'updated_at' => now()]);
+        }
+
+        \Log::info('Authenticated user:', ['user' => $user]);
+        return back()->with('success', 'お気に入りに追加しました！');
+    }
+
+    public function unfavorite(Shop $shop)
+    {
+        $user = Auth::user();
+        $user->favorites()->detach($shop->id);
+        \Log::info('Removing from favorites', ['user_id' => $user->id, 'shop_id' => $shop->id]);
+        return back()->with('success', 'お気に入りを解除しました！');
+    }
 }
