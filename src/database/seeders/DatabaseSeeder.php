@@ -15,7 +15,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->admin()->count(2)->create();
+        User::factory()->admin(2)->create();
+
+        User::factory()->count(30)->create();
 
         $this->call([
             ShopsTableSeeder::class,

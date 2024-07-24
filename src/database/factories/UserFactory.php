@@ -20,7 +20,7 @@ class UserFactory extends Factory
             'email' => $this->faker->unique()->safeEmail,
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
-            'role' => $this->faker->randomElement(['admin', 'shop_manager', 'user']),
+            'role' =>'user',
         ];
     }
 

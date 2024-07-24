@@ -59,7 +59,9 @@ Route::middleware('auth')->group(function () {
 
     
     //お気に入り
-    Route::post('/favorite/add/{id}', [FavoriteController::class, 'add'])->name('favorite.add');
+    
+    Route::post('/shops/{shop}/favorite', [FavoriteController::class, 'favorite'])->name('shops.favorite');
+    Route::delete('/shops/{shop}/unfavorite', [FavoriteController::class, 'unfavorite'])->name('shops.unfavorite');
 
     // 予約関連のルート
     Route::resource('reservations', ReservationController::class);
@@ -73,7 +75,10 @@ Route::middleware('auth')->group(function () {
 // Admin用のルート
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+
     Route::get('/admin/manage-shop-managers', [AdminController::class, 'manageShopManagers'])->name('admin.manage.shop_managers');
+
+    Route::delete('/admin/users/{user}', [AdminController::class, 'destroy'])->name('admin.users.destroy');
 });
 
 // Shop Manager用のルート

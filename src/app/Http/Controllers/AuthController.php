@@ -25,6 +25,7 @@ namespace App\Http\Controllers;
             'user_name' => $request->user_name,  
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => 'user',
         ]);
 
         event(new \Illuminate\Auth\Events\Registered($user));
