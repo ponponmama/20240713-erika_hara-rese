@@ -28,7 +28,6 @@
                             <img src="{{ asset($shop->image) }}" alt="{{ $shop->shop_name }}">
                             <p class="shop-guide">＃{{ $shop->area }}  ＃{{ $shop->genre }}</p>
                             <p class="description">{{ $shop->description }}</p>
-                            
                         </div>
                     </div>
                     <div class="reservation">
@@ -38,12 +37,12 @@
                                 @csrf
                                 <input type="hidden" name="shop_id" value="{{ $shop->id }}">
                                 <label for="date" placeholder="日付"></label>
-                                <input type="date" id="date" name="date" class="date-label"  value="{{ date('Y-m-d') }}">
+                                <input type="date" id="date" name="date" class="date-label"  value="{{ old('date', date('Y-m-d')) }}">
                                 <label for="time"></label>
                                 <div class="select-wrapper" style="position: relative;">
                                     <select id="time" name="time">
-                                        @foreach ($times as $time)
-                                            <option value="{{ $time }}">{{ $time }}</option>
+                                        @foreach ($times ?? [] as $time)
+                                            <option value="{{ $time }}" {{ old('time') == $time ? 'selected' : '' }}>{{ $time }}</option>
                                         @endforeach
                                     </select>
                                     <span class="custom-select-icon"></span>
@@ -51,33 +50,34 @@
                                 <label for="number"></label>
                                 <div class="select-wrapper" style="position: relative;">
                                     <select id="number" name="number">
-                                        @for ($i = 1; $i <= 10; $i++)
-                                            <option value="{{ $i }}">{{ $i }}人</option>
+                                        @for ($i = 1; $i <= 20; $i++)
+                                            <option value="{{ $i }}" {{ old('number') == $i ? 'selected' : '' }}>{{ $i }}人</option>
                                         @endfor
                                     </select>
                                     <span class="custom-select-icon"></span>
                                 </div>    
                             </form>
                             <div class="reservation-summary">
-                                <div class="summary-item">
-                                    <label>Shop</label>
-                                    <span class="summary-date">{{ $shop->shop_name }}</span>
-                                </div>
-                                <div class="summary-item">
-                                    <label>Date</label>
-                                    <span class="summary-date">{{ date('Y-m-d', strtotime($date ?? date('Y-m-d'))) }}</span>
-                                </div>
-                                <div class="summary-item">
-                                    <label>Time</label>
-                                    <span class="summary-date">{{ $time ?? date('H:i') }}</span>
-                                </div>
-                                <div class="summary-item">
-                                    <label>Number</label>
-                                    <span class="summary-date">{{ $number ?? '0' }}人</span>
-                                </div>
+                                @if(session('reservation'))
+                                    <div class="summary-item">
+                                        <label>Shop</label>
+                                        <span class="summary-date">{{ session('reservation')['shop_name'] }}</span>
+                                    </div>                                 <div class="summary-item">
+                                        <label>Date</label>
+                                        <span class="summary-date">{{ \Carbon\Carbon::parse(session('reservation')['date'])->format('Y-m-d') }}</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <label>Time</label>
+                                        <span class="summary-date">{{ \Carbon\Carbon::parse(session('reservation')['time'])->format('H:i') }}</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <label>Number</label>
+                                        <span class="summary-date">{{ session('reservation')['number'] }}人</span>
+                                    </div>
+                                @endif
                             </div>
                             <div class="button-container">
-                                <button type="submit" class="reserve-button">予約する</button>
+                                <button type="submit" form="reserve-form" class="reserve-button">予約する</button>
                             </div>
                         </div>
                     </div>

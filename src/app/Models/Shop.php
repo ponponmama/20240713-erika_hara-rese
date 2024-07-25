@@ -22,4 +22,6 @@ class Shop extends Model
     {
         return $this->belongsToMany(User::class, 'favorites', 'shop_id', 'user_id');
     }
+
+    
 }

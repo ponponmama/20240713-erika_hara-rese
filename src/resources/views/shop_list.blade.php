@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    @if (session('success'))  <!-- 成功メッセージが存在する場合に表示 -->
+    @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
