@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Reservation;
 use App\Http\Requests\StoreReservationRequest;
+use Illuminate\Support\Facades\Log;
+
 
 class ReservationController extends Controller
 {
@@ -37,14 +39,18 @@ class ReservationController extends Controller
      */
     public function store(StoreReservationRequest $request)
     {
+        Log::info('Store method called');
+
         $reservation = new Reservation();
         $reservation->shop_id = $request->shop_id;
-        $reservation->date = $request->date;
-        $reservation->time = $request->time;
+        $reservation->reservation_datetime = $request->date . ' ' . $request->time;
         $reservation->number = $request->number;
+        $reservation->user_id = auth()->id();
         $reservation->save();
 
-        return redirect()->route('reservation.show', $reservation->id)->with('success', '予約が追加されました。');
+        $reservation->load('shop');
+
+        return redirect()->route('reservations.show', ['id' => $reservation->id]);
     }
 
     /**
@@ -55,7 +61,9 @@ class ReservationController extends Controller
      */
     public function show($id)
     {
-        //
+        $reservation = Reservation::with(['shop'])->findOrFail($id);
+        
+        return view('reservation', compact('reservation'));
     }
 
     /**

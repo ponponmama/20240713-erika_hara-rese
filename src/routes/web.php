@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ReservationController;
-
+use App\Models\Shop;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,10 +65,11 @@ Route::middleware('auth')->group(function () {
 
     // 予約関連のルート
     Route::resource('reservations', ReservationController::class);
-   
-   
+    Route::get('/reservation/{shop}', function ($shop) {
+        return view('reservation', ['shop' => Shop::findOrFail($shop)]);
+    })->name('reservation.view');
+    Route::get('/reservations/{id}', [ReservationController::class, 'show'])->name('reservations.show');
 
-   
     
 });
 
