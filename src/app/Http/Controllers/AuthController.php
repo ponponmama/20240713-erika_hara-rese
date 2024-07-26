@@ -94,14 +94,6 @@ namespace App\Http\Controllers;
         return redirect('/login');
     }
 
-    public function mypage()
-    {
-        $user = auth()->user(); // 現在認証されているユーザーを取得
-        $reservations = $user->reservations; // ユーザーモデルに定義されたリレーションを使用して予約情報を取得
-
-        return view('mypage', ['reservations' => $reservations]);
-    }
-
     protected function authenticated(Request $request, $user)
     {
         if ($user->role === 'admin') {

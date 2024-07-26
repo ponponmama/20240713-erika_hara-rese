@@ -13,12 +13,10 @@
     <main>
         <div class="container">
             <div class="content">
-                @hasSection('show_header')
                 <div class="header">
                     @include('partials.navbar')
                     <h1 class="top_logo">Rese</h1>
                 </div>
-                @endif
                 @yield('content')
             </div>
         </div>

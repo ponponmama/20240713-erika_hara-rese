@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ReservationController;
-use App\Models\Shop;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,19 +19,19 @@ use App\Models\Shop;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 // 登録
 Route::get('register', [AuthController::class, 'showRegistrationForm'])->name('register.form');
 Route::post('register', [AuthController::class, 'register'])->name('register');
-
 // ログイン
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login.form');
 Route::post('login', [AuthController::class, 'login'])->name('login');
-
+// ログアウト
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 // メール認証ルート
 Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verify'])
     ->middleware(['auth', 'signed'])
     ->name('verification.verify');
-
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
@@ -43,32 +43,32 @@ Route::post('/email/verification-notification', function (Request $request) {
 })->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
 
 
-// Thanksページ
-Route::get('thanks', [AuthController::class, 'showThanksPage'])->name('thanks');
 
-// ログアウト
-Route::post('logout', [AuthController::class, 'logout'])->name('logout');
-
-// その他の認証済みルート
+// その他の一般user用認証済みルート
 Route::middleware('auth')->group(function () {
+    // Thanksページ
+    Route::get('thanks', [AuthController::class, 'showThanksPage'])->name('thanks');
+    //予約のページから元の/に戻る＜処理
     Route::get('/', [ShopController::class, 'shop_list'])->name('index');
-
-    Route::get('/mypage', [AuthController::class, 'mypage'])->name('mypage');
+    //MYページ表示
+    Route::get('/mypage', [UserController::class, 'mypage'])->name('mypage');
 
     Route::get('/shop/{id}', [ShopController::class, 'show'])->name('shop.detail');
-
+    //MYページに予約情報を取得表示
+    Route::get('/reservations/my', [ReservationController::class, 'myReservations'])->name('reservations.my');
     
-    //お気に入り
-    
+    //お気に入り追加と解除
     Route::post('/shops/{shop}/favorite', [FavoriteController::class, 'favorite'])->name('shops.favorite');
     Route::delete('/shops/{shop}/unfavorite', [FavoriteController::class, 'unfavorite'])->name('shops.unfavorite');
 
     // 予約関連のルート
     Route::resource('reservations', ReservationController::class);
-    Route::get('/reservation/{shop}', function ($shop) {
-        return view('reservation', ['shop' => Shop::findOrFail($shop)]);
-    })->name('reservation.view');
+    //左側店舗名、イメージ画像の取得
+    Route::get('/reservation/{shop}', [ShopController::class, 'showReservation'])->name('reservation.view');
+
     Route::get('/reservations/{id}', [ReservationController::class, 'show'])->name('reservations.show');
+    //予約情報のプレビュー
+    Route::post('/reservations/preview', [ReservationController::class,'preview'])->name('reservations.preview');
 
     
 });
