@@ -41,5 +41,10 @@ class ShopController extends Controller
         return view('shop_list', ['shops' => $shops]);
     }
 
+    public function showReservation($shop)
+    {
+        $shop = Shop::findOrFail($shop);
+        return view('reservation', ['shop' => $shop]);
+    }
     
 }
