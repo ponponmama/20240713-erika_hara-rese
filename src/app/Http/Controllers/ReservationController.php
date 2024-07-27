@@ -16,6 +16,7 @@ class ReservationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //予約一覧表示
     public function index()
     {
         $reservations = Reservation::all();
@@ -28,9 +29,11 @@ class ReservationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //予約作成ページ表示
     public function create()
     {
-        return view('reservations.create');
+       $shops = Shop::all();
+        return view('reservations.create', ['shops' => $shops]);
     }
 
     /**
@@ -51,40 +54,13 @@ class ReservationController extends Controller
         $reservation->save();
 
         $shop = Shop::find($request->shop_id);
-
-        session([
-            'reservation' => [
-                'shop_id' => $shop->id,
-                'shop_name' => $shop->name,
-                'date' => $request->date,
-                'time' => $request->time,
-                'number' => $request->number
-            ]
-        ]);
-
+        
         $reservation->load('shop');
 
         return redirect()->route('reservations.show', ['id' => $reservation->id]);
 
     }
 
-    public function preview(Request $request)
-    {
-        Log::info('Preview data:', $request->all());
-
-        // セッションから予約データを取得
-        $reservationData = session('reservation');
-
-        // 必要なデータを取得
-        $shop = Shop::find($reservationData['shop_id']);
-
-        // ビューにデータを渡して表示
-        return view('reservation', [
-            'reservation' => $reservationData,
-            'shop' => $shop
-        ]);
-
-    }
 
     /**
      * Display the specified resource.
@@ -94,9 +70,9 @@ class ReservationController extends Controller
      */
     public function show($id)
     {
-        $reservation = Reservation::with(['shop'])->findOrFail($id);
+        $reservation = Reservation::findOrFail($id);
         
-        return view('reservation', compact('reservation'));
+        return view('reservations.show', ['reservation' => $reservation]);
     }
 
     /**
