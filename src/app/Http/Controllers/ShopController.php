@@ -9,42 +9,45 @@ use Carbon\Carbon;
 
 class ShopController extends Controller
 {
-    public function show($shop_id)
+    // 店舗の詳細と予約ページを表示
+    public function showDetails($shop_id)
     {
         $shop = Shop::findOrFail($shop_id);
-        $date = Carbon::now();
-        $time = Carbon::now()->format('H:i:s');  // 現在の時刻を取得 
-
-        // 営業時間内の時間選択肢を生成
-        $times = [];
-        $openTime = new Carbon($shop->open_time);
-        $closeTime = (new Carbon($shop->close_time))->subHour();  // 閉店時間の1時間前
-
-        while ($openTime <= $closeTime) {
-            $times[] = $openTime->format('H:i');
-            $openTime->addMinutes(15);  // 15分間隔で時間を増やす
-        }
+        $date = Carbon::now()->format('Y-m-d');
+        $times = $this->getBusinessHours($shop->open_time, $shop->close_time);
 
         return view('reservation', [
             'shop' => $shop,
-            'date' => $date, 
+            'date' => $date,
             'times' => $times,
-            'number' => 0
-
         ]);
     }
 
-    // shop_list メソッドを追加
+    // 店舗一覧を表示
     public function shop_list()
     {
         $shops = Shop::all();
         return view('shop_list', ['shops' => $shops]);
     }
 
-    public function showReservation($shop)
-    {
-        $shop = Shop::findOrFail($shop);
-        return view('reservation', ['shop' => $shop]);
-    }
     
+    private function getBusinessHours($openTime, $closeTime)
+    {
+        $times = [];
+        $current = Carbon::now();
+        $start = new Carbon($openTime);
+        $end = new Carbon($closeTime);
+
+        // 営業時間が現在時刻より前なら、現在時刻を開始時間とする
+        if ($start < $current) {
+            $start = $current->copy()->minute(0)->second(0); // 分と秒を切り捨て
+            $start->addHour(); // 次の整時に設定
+        }
+
+        while ($start <= $end) {
+            $times[] = $start->format('H:i');
+            $start->addMinutes(30); // 30分間隔で増やす
+        }
+        return $times;
+    }
 }

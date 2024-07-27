@@ -60,6 +60,7 @@ body {
     width: calc(100% - 24px);
     margin: 2px 10px;
     padding: 4px 12px;
+    color: white;
 }
 
 .form-section input {
@@ -101,7 +102,6 @@ body {
     background-color: #b4b4b4;
     clip-path: polygon(0 0, 50% 24%, 100% 0, 50% 100%, 0 0);
     pointer-events: none;
-    /* クリックイベントを無視して、下の要素がクリックできるようにする */
     z-index: 2;
 }
 

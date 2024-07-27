@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ShopManagerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,14 +63,17 @@ Route::middleware('auth')->group(function () {
     Route::post('/shops/{shop}/favorite', [FavoriteController::class, 'favorite'])->name('shops.favorite');
     Route::delete('/shops/{shop}/unfavorite', [FavoriteController::class, 'unfavorite'])->name('shops.unfavorite');
 
-    // 予約関連のルート
-    Route::resource('reservations', ReservationController::class);
-    //左側店舗名、イメージ画像の取得
-    Route::get('/reservation/{shop}', [ShopController::class, 'showReservation'])->name('reservation.view');
+    // 店舗詳細表示用
+    Route::get('/shops/{shop_id}', [ShopController::class, 'showDetails'])->name('shop.details');
 
-    Route::get('/reservations/{id}', [ReservationController::class, 'show'])->name('reservations.show');
-    //予約情報のプレビュー
-    Route::post('/reservations/preview', [ReservationController::class,'preview'])->name('reservations.preview');
+    // 予約ページ表示用
+    Route::get('/shops/{shop_id}/reservation', [ShopController::class, 'showDetails'])->name('reservation.show');
+
+    // 店舗一覧ページ表示用
+    Route::get('/shops', [ShopController::class, 'shop_list'])->name('shops.list');
+
+   // 予約関連のルート
+    Route::resource('reservations', ReservationController::class);
 
     
 });
