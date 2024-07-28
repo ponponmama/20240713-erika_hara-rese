@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Shop;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 
 
 class ShopController extends Controller
@@ -13,8 +14,13 @@ class ShopController extends Controller
     public function showDetails($shop_id)
     {
         $shop = Shop::findOrFail($shop_id);
-        $date = Carbon::now()->format('Y-m-d');
-        $times = $this->getBusinessHours($shop->open_time, $shop->close_time);
+        $current = Carbon::now();  // 現在の日時を取得
+        $closingTime = Carbon::parse($current->format('Y-m-d') . ' ' . $shop->close_time);
+
+        // 営業時間外であれば翌日の日付をデフォルトとする
+        $date = $current->lt($closingTime) ? $current->format('Y-m-d') : $current->addDay()->format('Y-m-d');
+
+        $times = $this->getBusinessHours($shop->open_time, $shop->close_time, $date);
 
         return view('reservation', [
             'shop' => $shop,
@@ -31,23 +37,43 @@ class ShopController extends Controller
     }
 
     
-    private function getBusinessHours($openTime, $closeTime)
+    private function getBusinessHours($openTime, $closeTime, $date)
     {
         $times = [];
         $current = Carbon::now();
-        $start = new Carbon($openTime);
-        $end = new Carbon($closeTime);
+        $targetDate = Carbon::parse($date);
+        $start = new Carbon($date . ' ' . $openTime);
+        $end = new Carbon($date . ' ' . $closeTime);
 
-        // 営業時間が現在時刻より前なら、現在時刻を開始時間とする
-        if ($start < $current) {
-            $start = $current->copy()->minute(0)->second(0); // 分と秒を切り捨て
-            $start->addHour(); // 次の整時に設定
+        Log::info("Open time: " . $start->toDateTimeString());
+        Log::info("Close time: " . $end->toDateTimeString());
+
+        // 現在の時間が営業終了時間を過ぎているか確認
+        if ($current->gt($end)) {
+            // 翌日の営業時間を設定
+            $start->addDay();
+            $end->addDay();
+            Log::info("Adjusted to next day's start time: " . $start->toDateTimeString());
+            Log::info("Adjusted to next day's end time: " . $end->toDateTimeString());
+        } else if ($current->lt($start)) {
+            // 現在の時間が営業開始時間より前の場合、営業開始時間から計算
+            Log::info("Before opening hours, using regular start time.");
+        } else {
+            // 営業時間内であれば、現在の時間から次の整時まで待つ
+            $start = $current->copy()->minute(0)->second(0)->addHour();
+            Log::info("Adjusted start time for today: " . $start->toDateTimeString());
         }
 
         while ($start <= $end) {
             $times[] = $start->format('H:i');
-            $start->addMinutes(30); // 30分間隔で増やす
+            $start->addMinutes(30);
+            Log::info("Adding time slot: " . $start->format('H:i'));
         }
+
+        if (empty($times)) {
+            Log::info("No times available for date: " . $date);
+        }
+
         return $times;
     }
 }
