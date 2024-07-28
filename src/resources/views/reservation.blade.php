@@ -36,8 +36,8 @@
                             <form action="{{ route('reservations.store') }}" method="post" id="reserve-form">
                                 @csrf
                                 <input type="hidden" name="shop_id" value="{{ $shop->id }}">
-                                <label for="date" placeholder="日付"></label>
-                                <input type="date" id="date" name="date" class="date-label"  value="{{ old('date', date('Y-m-d')) }}">
+                                <label for="date"></label>
+                                <input type="date" id="date" name="date" class="date-label"  value="{{ $date }}">
                                 <label for="time"></label>
                                 <div class="select-wrapper" style="position: relative;">
                                     <select id="time" name="time">
@@ -57,26 +57,36 @@
                                     <span class="custom-select-icon"></span>
                                 </div>    
                             </form>
-                                <div class="reservation-summary">
-                                    @if(session('reservation'))
-                                        <div class="summary-item">
-                                            <label>Shop:</label>
-                                            <span class="summary-date">{{ session('reservation')->shop->shop_name }}</span>
-                                        </div>                                 
-                                        <div class="summary-item">
-                                            <label>Date:</label>
-                                            <span class="summary-date">{{ session('reservation')->date }}</span>
-                                        </div>
-                                        <div class="summary-item">
-                                            <label>Time:</label>
-                                            <span class="summary-date">{{ session('reservation')->time }}</span>
-                                        </div>
-                                        <div class="summary-item">
-                                            <label>Number:</label>
-                                            <span class="summary-date">{{ session('reservation')->number }}人</span>
-                                        </div>
-                                    @endif
+                            @if(session('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
                                 </div>
+                            @endif
+                            @if(session('error'))
+                                <div class="alert alert-danger">
+                                    {{ session('error') }}
+                                </div>
+                            @endif
+                            <div class="reservation-summary">
+                                @if(session('reservation'))
+                                    <div class="summary-item">
+                                        <label>Shop:</label>
+                                        <span class="summary-date">{{ session('reservation') ? session('reservation')->shop->shop_name : '' }}</span>
+                                    </div>                                 
+                                    <div class="summary-item">
+                                        <label>Date:</label>
+                                           <span class="summary-date">{{ session('reservation') ? \Carbon\Carbon::parse(session('reservation')->reservation_datetime)->format('Y-m-d') : '' }}</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <label>Time:</label>
+                                        <span class="summary-date">{{ session('reservation') ? \Carbon\Carbon::parse(session('reservation')->reservation_datetime)->format('H:i') : '' }}</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <label>Number:</label>
+                                        <span class="summary-date">{{ session('reservation') ? session('reservation')->number . '人' : '' }}</span>
+                                    </div>
+                                @endif
+                            </div>
                             <div class="button-container">
                                 <button type="submit" form="reserve-form" class="reserve-button">予約する</button>
                             </div>

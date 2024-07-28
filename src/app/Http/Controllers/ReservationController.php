@@ -42,6 +42,7 @@ class ReservationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    //予約フォームの保存とsessionの保存。
     public function store(StoreReservationRequest $request)
     {
         Log::info('Store method called');
@@ -52,13 +53,12 @@ class ReservationController extends Controller
         $reservation->number = $request->number;
         $reservation->user_id = auth()->id();
         $reservation->save();
-
-        $shop = Shop::find($request->shop_id);
         
-        $reservation->load('shop');
+        // 予約情報をフラッシュセッションに保存
+        session()->flash('reservation', $reservation);
 
-        return redirect()->route('reservations.show', ['id' => $reservation->id]);
-
+        // 同じビューにリダイレクト
+        return back()->with('success', '予約しました。');
     }
 
 
@@ -68,11 +68,11 @@ class ReservationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($shopId)
     {
-        $reservation = Reservation::findOrFail($id);
-        
-        return view('reservations.show', ['reservation' => $reservation]);
+        $shop = Shop::find($shopId);
+
+        return view('reservation', ['shop' => $shop]);
     }
 
     /**
