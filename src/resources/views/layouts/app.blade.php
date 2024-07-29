@@ -14,8 +14,11 @@
         <div class="container">
             <div class="content">
                 <div class="header">
-                    @include('partials.navbar')
-                    <h1 class="top_logo">Rese</h1>
+                    <div class="left-group">
+                        @include('partials.navbar')
+                        <h1 class="top_logo">Rese</h1>
+                    </div>
+                    @yield('search')
                 </div>
                 @yield('content')
             </div>

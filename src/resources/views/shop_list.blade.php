@@ -4,6 +4,30 @@
     <link rel="stylesheet" href="{{ asset('css/shop_list.css') }}">
 @endsection
 
+@section('search')
+    <form class="search-form" action="" method="get">
+        @csrf
+        <div class="search-form__item">
+            <div class="select-wrapper">
+                <select class="search-form__item-select" name="search-area">
+                    <option value="">{{ __('All area') }}</option>
+                </select>
+                <span class="custom-select-icon"></span>
+            </div>
+            <div class="select-wrapper">
+                <select class="search-form__item-select" name="search-genre">
+                    <option value="">{{ __('All genre') }}</option>
+                </select>
+                <span class="custom-select-icon"></span> 
+            </div>
+            <button type="submit" class="search-button">
+                <img src="{{ asset('images/search.png') }}" alt="Search">
+            </button>
+            <input class="search-form__item-input" type="text" name="search-shop__name" placeholder="{{ __('Search...') }}">
+        </div>
+    </form>
+@endsection
+
 @section('content')
     @if (session('success'))
         <div class="alert alert-success">
