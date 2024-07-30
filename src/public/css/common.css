@@ -128,13 +128,17 @@ button.logout-button {
 }
 
 @media (max-width: 768px) {
-    .header {
-        padding: 10px;
+
+
+    .left-group {
+        width: 100%;
+        align-items: center;
     }
 
     .hamburger-menu {
         position: absolute;
-        right: 10px;
+        top: -20px;
+
     }
 
     .nav-menu {
@@ -145,7 +149,8 @@ button.logout-button {
     }
 
     .top_logo {
-        padding: 2px;
-    }
+        width: 100%;
+        padding: 2px 45px;
 
+    }
 }

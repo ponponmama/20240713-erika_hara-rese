@@ -71,10 +71,15 @@ Route::middleware('auth')->group(function () {
 
     // 店舗一覧ページ表示用
     Route::get('/shops', [ShopController::class, 'shop_list'])->name('shops.list');
+    //検索用
+    Route::post('/shops/search', [ShopController::class, 'search'])->name('shops.search');
 
    // 予約関連のルート
     Route::resource('reservations', ReservationController::class);
-
+    //予約ありがとうございますのページへ
+    Route::get('/reservation/done', [ReservationController::class, 'done'])->name('reservation.done');
+    //予約ページへ戻る
+    Route::get('/reservations/create', [ReservationController::class, 'create'])->name('reservations.create');
     
 });
 
