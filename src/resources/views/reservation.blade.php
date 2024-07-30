@@ -57,33 +57,24 @@
                                     <span class="custom-select-icon"></span>
                                 </div>    
                             </form>
-                            @if(session('success'))
-                                <div class="alert alert-success">
-                                    {{ session('success') }}
-                                </div>
-                            @endif
-                            @if(session('error'))
-                                <div class="alert alert-danger">
-                                    {{ session('error') }}
-                                </div>
-                            @endif
                             <div class="reservation-summary">
-                                @if(session('reservation'))
+                                @if(session('reservation_details'))
                                     <div class="summary-item">
                                         <label>Shop:</label>
-                                        <span class="summary-date">{{ session('reservation') ? session('reservation')->shop->shop_name : '' }}</span>
+                                        <span class="summary-date">{{ session('reservation_details')->shop->shop_name }}</span>
                                     </div>                                 
                                     <div class="summary-item">
                                         <label>Date:</label>
-                                           <span class="summary-date">{{ session('reservation') ? \Carbon\Carbon::parse(session('reservation')->reservation_datetime)->format('Y-m-d') : '' }}</span>
+                                           <span class="summary-date">{{ \Carbon\Carbon::parse(session('reservation_details')->reservation_datetime)->format('Y-m-d') }}</span>
                                     </div>
                                     <div class="summary-item">
                                         <label>Time:</label>
-                                        <span class="summary-date">{{ session('reservation') ? \Carbon\Carbon::parse(session('reservation')->reservation_datetime)->format('H:i') : '' }}</span>
+                                        <span class="summary-date">{{ \Carbon\Carbon::parse(session('reservation_details')->reservation_datetime)->format('H:i') }}</span>
                                     </div>
                                     <div class="summary-item">
                                         <label>Number:</label>
-                                        <span class="summary-date">{{ session('reservation') ? session('reservation')->number . '人' : '' }}</span>
+                                        <span
+                                         class="summary-date">{{ session('reservation_details')->number . '人' }}</span>
                                     </div>
                                 @endif
                             </div>

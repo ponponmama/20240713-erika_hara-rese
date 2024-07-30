@@ -86,6 +86,8 @@ namespace App\Http\Controllers;
     // ログアウト処理
     public function logout(Request $request)
     {
+        $request->session()->forget('reservation_details');
+        
         Auth::logout();
 
         $request->session()->invalidate();

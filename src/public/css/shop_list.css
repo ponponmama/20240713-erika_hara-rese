@@ -1,28 +1,41 @@
-.search-form {
-    display: flex;
-    justify-content: flex-start;
+.search-content {
     width: 50%;
-    background-color: white;
+    height: 35px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.61);
-    border-radius: 4px;
+    border-radius: 6px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
 
+.search-form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-form__item-input:focus,
+.search-form__item-select:focus,
+.search-button:focus {
+    outline: none;
 }
 
 .search-form__item {
+    width: 100%;
     display: flex;
     align-items: center;
-    gap: 20px;
 }
 
 .select-wrapper {
+    width: 18%;
     display: flex;
     align-items: center;
     position: relative;
 }
 
 .search-form__item-input {
-    width: calc(50% - 40px);
-    padding: 4px 20px;
+    width: 50%;
+    padding: 4px 4px;
     border: none;
     background: none;
     border-radius: 4px;
@@ -33,9 +46,11 @@
     border: none;
     background: none;
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     color: #b4b4b4;
+    padding: 2px;
+    margin: 4px;
 }
 
 .search-button img {
@@ -45,11 +60,9 @@
 
 .search-form__item-select {
     flex-grow: 1;
-    width: calc(100% - 72px);
-    padding: 4px 30px 4px 10px;
-    border-right: 1px solid #cccaca;
-    border-radius: 4px;
+    padding: 4px 14px;
     border: none;
+    border-right: 1px solid #cccaca;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -60,7 +73,7 @@
 
 .custom-select-icon {
     position: absolute;
-    right: 6px;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     width: 10px;
@@ -162,6 +175,31 @@
 
 /* レスポンシブデザインの設定 */
 @media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-content {
+        order: 2;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .search-form__item {
+        width: 100%;
+        padding: 2px;
+    }
+
+    .select-wrapper {
+        width: 26%;
+    }
+
+    .custom-select-icon {
+        right: 3px;
+    }
+
+
     .shop_card {
         flex: 0 1 100%;
         justify-content: center;

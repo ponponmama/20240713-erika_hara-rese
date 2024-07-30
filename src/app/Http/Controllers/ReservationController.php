@@ -30,11 +30,14 @@ class ReservationController extends Controller
      * @return \Illuminate\Http\Response
      */
     //予約作成ページ表示
-    public function create()
+    public function create(Request $request)
     {
-       $shops = Shop::all();
-        return view('reservations.create', ['shops' => $shops]);
+        $reservationDetails = session()->get('reservation_details', null);
+        $shop = isset($reservationDetails) ? Shop::find($reservationDetails->shop_id) : null;
+
+        return view('reservation', ['shop' => $shop, 'reservationDetails' => $reservationDetails]);
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -55,12 +58,16 @@ class ReservationController extends Controller
         $reservation->save();
         
         // 予約情報をフラッシュセッションに保存
-        session()->flash('reservation', $reservation);
+        session()->put('reservation_details', $reservation);
 
-        // 同じビューにリダイレクト
-        return back()->with('success', '予約しました。');
+        // 予約完了ページにリダイレクト
+        return redirect()->route('reservation.done');
     }
 
+    public function done()
+    {
+        return view('done'); // 予約完了ページのビューを返す
+    }
 
     /**
      * Display the specified resource.

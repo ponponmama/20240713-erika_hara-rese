@@ -29,14 +29,6 @@ class ShopController extends Controller
         ]);
     }
 
-    // 店舗一覧を表示
-    public function shop_list()
-    {
-        $shops = Shop::all();
-        return view('shop_list', ['shops' => $shops]);
-    }
-
-    
     private function getBusinessHours($openTime, $closeTime, $date)
     {
         $times = [];
@@ -75,5 +67,66 @@ class ShopController extends Controller
         }
 
         return $times;
+    }
+
+    // 店舗一覧を表示,検索フォームに渡す。
+    public function shop_list(Request $request)
+    {
+        $query = Shop::query();
+
+        $filterApplied = false;
+
+        if ($request->has('search-area') && $request->input('search-area') != '') {
+            $query->where('area', $request->input('search-area'));
+            $filterApplied = true;
+        }
+
+        if ($request->has('search-genre') && $request->input('search-genre') != '') {
+            $query->where('genre', $request->input('search-genre'));
+            $filterApplied = true;
+        }
+
+        if ($request->has('search-shop__name') && $request->input('search-shop__name') != '') {
+            $query->where('shop_name', 'like', '%' . $request->input('search-shop__name') . '%');
+            $filterApplied = true;
+        }
+
+        if (!$filterApplied) {
+            $shops = Shop::all();
+        } else {
+            $shops = $query->get();
+        }
+
+        $areas = Shop::distinct()->pluck('area');
+        $genres = Shop::distinct()->pluck('genre');
+
+        return view('shop_list', ['shops' => $shops, 'areas' => $areas, 'genres' => $genres]);
+    }
+
+    
+    
+
+    public function search(Request $request)
+    {
+        $query = Shop::query();
+
+        if ($request->filled('search-area')) {
+            $query->where('area', $request->input('search-area'));
+        }
+
+        if ($request->filled('search-genre')) {
+            $query->where('genre', $request->input('search-genre'));
+        }
+
+        if ($request->filled('search-shop__name')) {
+            $query->where('shop_name', 'like', '%' . $request->input('search-shop__name') . '%');
+        }
+
+        $shops = $query->get();
+        $areas = Shop::distinct()->pluck('area');
+        $genres = Shop::distinct()->pluck('genre');
+        
+
+        return view('shop_list', compact('shops','areas', 'genres'));
     }
 }
