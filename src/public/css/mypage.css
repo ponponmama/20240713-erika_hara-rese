@@ -1,0 +1,184 @@
+/* コンテナを横に並べるためのスタイル */
+.sections-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+/* 各セクションのスタイル */
+.reservation-section,
+.favorite-shops-section {
+    flex: 1;
+    margin: 0 10px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+.clock-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.user__name {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.reservation_status {
+    margin: 10px;
+    font-size: 1.2rem;
+}
+
+.favorite_shops {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.reservation-summary {
+    width: calc(70% - 20px);
+    padding: 20px 10px;
+    border-radius: 6px;
+    margin: 20px;
+    background-color: #044c99;
+    color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.61);
+
+}
+
+.reservation-summary-date {
+    padding: 20px;
+}
+
+.summary-item {
+    width: calc(100% - 20px);
+    padding: 2px 10px;
+    text-align: left;
+}
+
+.summary-item label {
+    padding: 2px 10px;
+}
+
+.summary-item span {
+    padding: 2px 10px;
+}
+
+.favorite-shops {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.shop_card {
+    flex: 0 1 45%;
+    margin-bottom: 1%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.61);
+    padding: 0;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+/* カード内の画像スタイル */
+.shop_card img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+/* カード内の情報スタイル */
+.shop_info {
+    padding: 5px;
+}
+
+.shop-name {
+    margin: 0;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+.shop-guide {
+    margin: 0;
+    padding: 2px;
+    font-size: 0.6rem;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shop-detail {
+    width: 40%;
+    padding: 6px 10px;
+    background-color: #0056b3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 1% 2% 3% 2%;
+    font-size: 0.7rem;
+    text-align: center;
+    margin: 5px;
+}
+
+.favorite-button {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: rgb(228, 225, 225);
+    padding: 1px 15px 1px 15px;
+}
+
+/* お気に入りボタンのスタイル */
+.favorite-button {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: rgb(228, 225, 225);
+    /* デフォルトの色 */
+    padding: 1px 15px 1px 15px;
+}
+
+/* お気に入りに追加されたときのボタンのスタイル */
+.favorite-button.favorited {
+    color: red;
+    /* お気に入りの場合は赤色に */
+}
+
+/* レスポンシブデザインの設定 */
+@media (max-width: 768px) {
+
+
+    .shop_card {
+        flex: 0 1 100%;
+        justify-content: center;
+    }
+
+    .shop_card {
+        margin-bottom: 3%;
+    }
+
+    .shop-name {
+        font-size: 1.3rem;
+    }
+
+    .shop-detail {
+        width: 44%;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .shop-guide {
+        font-size: 0.8rem;
+    }
+}

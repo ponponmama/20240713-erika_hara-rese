@@ -6,11 +6,20 @@ use Illuminate\Http\Request;
 use App\Models\Reservation;
 use App\Models\Shop;
 use App\Http\Requests\StoreReservationRequest;
+use Carbon\Carbon;
+use App\Services\ShopService;
 use Illuminate\Support\Facades\Log;
 
 
 class ReservationController extends Controller
 {
+    protected $shopService;
+
+    public function __construct(ShopService $shopService)
+    {
+        $this->shopService = $shopService;
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -35,7 +44,22 @@ class ReservationController extends Controller
         $reservationDetails = session()->get('reservation_details', null);
         $shop = isset($reservationDetails) ? Shop::find($reservationDetails->shop_id) : null;
 
-        return view('reservation', ['shop' => $shop, 'reservationDetails' => $reservationDetails]);
+        if ($shop) {
+            $current = Carbon::now();
+            $closingTime = Carbon::parse($current->format('Y-m-d') . ' ' . $shop->close_time);
+            $date = $current->lt($closingTime) ? $current->format('Y-m-d') : $current->addDay()->format('Y-m-d');
+            $times = $this->shopService->getBusinessHours($shop->open_time, $shop->close_time, $date);
+        } else {
+            $date = null;
+            $times = [];
+        }
+
+        return view('reservation', [
+            'shop' => $shop,
+            'reservationDetails' => $reservationDetails,
+            'date' => $date,
+            'times' => $times
+        ]);
     }
 
 

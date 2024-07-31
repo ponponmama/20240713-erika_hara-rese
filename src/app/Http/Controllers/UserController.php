@@ -11,9 +11,11 @@ class UserController extends Controller
     {
         // 現在認証されているユーザーを取得
         $user = Auth::user(); 
-        // userモデル＆shopモデルに定義されたリレーションを使用して予約情報を取得
+        
         $reservations = $user->reservations()->with('shop')->get(); 
+        $favorites = $user->favorites;
 
-        return view('mypage', ['reservations' => $reservations]);
+        return view('mypage', ['reservations' => $reservations,
+        'favorites' => $favorites]);
     }
 }
