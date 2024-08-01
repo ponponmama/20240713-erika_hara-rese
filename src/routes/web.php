@@ -70,9 +70,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/shops/{shop_id}/reservation', [ShopController::class, 'showDetails'])->name('reservation.show');
 
     // 店舗一覧ページ表示用
-    Route::get('/shops', [ShopController::class, 'shop_list'])->name('shops.list');
+    Route::get('/', [ShopController::class, 'index'])->name('shops.index');
     //検索用
-    Route::post('/shops/search', [ShopController::class, 'search'])->name('shops.search');
+    Route::get('/shops/search', [ShopController::class, 'search'])->name('shops.search');
 
    // 予約関連のルート
     Route::resource('reservations', ReservationController::class);

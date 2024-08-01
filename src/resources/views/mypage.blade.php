@@ -7,33 +7,38 @@
 @section('content')
     <p class="user__name">{{ Auth::user()->user_name }}さん</p>
     <div class="sections-container">
-        <div class="reservation-section">
-            <h2 class="section-title">予約状況</h2>
-            @foreach ($reservations as $reservation)
-                <div class="reservation-summary">
-                    <div class="reservation-summary-item">
-                        <span class="reservation-summary-date">予約{{ $reservation->shop->id }}</span>
+        @if ($hideReservation == 0)
+            <div class="reservation-section">
+                <h2 class="section-title">予約状況</h2>
+                @foreach ($reservations as $reservation)
+                    <div class="reservation-summary">
+                        <a href="{{ route('mypage', ['hide_reservation' => 1]) }}" class="close-button">
+                            <img src="{{ asset('images/cross.png') }}" alt="Close">
+                        </a>
+                        <div class="reservation-summary-item">
                             <img src="{{ asset('images/clock.svg') }}" alt="Clock Icon" class="clock-icon">
+                            <span class="reservation-summary-date">予約{{ $reservation->shop->id }}</span>
+                        </div>
+                        <div class="summary-item">
+                            <label>Shop</label>
+                            <span class="summary-date">{{ $reservation->shop->shop_name }}</span>
+                        </div>
+                        <div class="summary-item">
+                            <label>Date</label>
+                            <span class="summary-date">{{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('Y-m-d') }}</span>
+                        </div>
+                        <div class="summary-item">
+                            <label>Time</label>
+                            <span class="summary-date">{{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('H:i') }}</span>
+                        </div>
+                        <div class="summary-item">
+                            <label>Number</label>
+                            <span class="summary-date">{{ $reservation->number . '人' }}</span>
+                        </div>
                     </div>
-                    <div class="summary-item">
-                        <label>Shop</label>
-                        <span class="summary-date">{{ $reservation->shop->shop_name }}</span>
-                    </div>
-                    <div class="summary-item">
-                        <label>Date</label>
-                        <span class="summary-date">{{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('Y-m-d') }}</span>
-                    </div>
-                    <div class="summary-item">
-                        <label>Time</label>
-                        <span class="summary-date">{{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('H:i') }}</span>
-                    </div>
-                    <div class="summary-item">
-                        <label>Number</label>
-                        <span class="summary-date">{{ $reservation->number . '人' }}</span>
-                    </div>
-                </div>
-            @endforeach
-        </div>
+                @endforeach
+            </div>
+        @endif
         <div class="favorite-shops-section">   
             <h2 class="section-title">お気に入り店舗</h2>
             <div class="favorite-shops">

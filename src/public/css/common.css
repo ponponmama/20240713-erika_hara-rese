@@ -24,6 +24,7 @@ body {
 .content {
     background-color: #f4f4f4;
     width: 96%;
+    height: 90vh;
     padding: 10px 20px;
     margin: 2%;
 }

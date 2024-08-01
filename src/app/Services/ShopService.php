@@ -15,21 +15,22 @@ class ShopService
         $start = new Carbon($date . ' ' . $openTime);
         $end = new Carbon($date . ' ' . $closeTime);
 
+        // 営業終了時間が翌日にまたがる場合の対応
+        if ($end->lt($start)) {
+            $end->addDay();
+        }
+
         Log::info("Open time: " . $start->toDateTimeString());
         Log::info("Close time: " . $end->toDateTimeString());
 
-        // 現在の時間が営業終了時間を過ぎているか確認
         if ($current->gt($end)) {
-            // 翌日の営業時間を設定
             $start->addDay();
             $end->addDay();
             Log::info("Adjusted to next day's start time: " . $start->toDateTimeString());
             Log::info("Adjusted to next day's end time: " . $end->toDateTimeString());
         } else if ($current->lt($start)) {
-            // 現在の時間が営業開始時間より前の場合、営業開始時間から計算
             Log::info("Before opening hours, using regular start time.");
         } else {
-            // 営業時間内であれば、現在の時間から次の整時まで待つ
             $start = $current->copy()->minute(0)->second(0)->addHour();
             Log::info("Adjusted start time for today: " . $start->toDateTimeString());
         }
