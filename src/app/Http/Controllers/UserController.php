@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function mypage()
+    public function mypage(Request $request)
     {
         // 現在認証されているユーザーを取得
         $user = Auth::user(); 
@@ -15,7 +15,12 @@ class UserController extends Controller
         $reservations = $user->reservations()->with('shop')->get(); 
         $favorites = $user->favorites;
 
-        return view('mypage', ['reservations' => $reservations,
-        'favorites' => $favorites]);
+        $hideReservation = $request->query('hide_reservation', 0);
+
+        return view('mypage', [
+            'reservations' => $reservations,
+            'favorites' => $favorites,
+            'hideReservation' => $hideReservation
+        ]);
     }
 }

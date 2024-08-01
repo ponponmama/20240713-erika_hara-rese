@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rese</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/reservation.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
                             </div>
                         </div>
                         <div class="navigation">
-                            <a href="{{ route('shops.list') }}" class="back-link">＜</a>
+                            <a href="{{ route('shops.index') }}" class="back-link">＜</a>
                             <h2 class="s-name">{{ $shop->shop_name }}</h2>
                         </div>
                         <div class="image-section">
@@ -62,7 +62,7 @@
                                     <div class="summary-item">
                                         <label>Shop:</label>
                                         <span class="summary-date">{{ session('reservation_details')->shop->shop_name }}</span>
-                                    </div>                                 
+                                    <div>
                                     <div class="summary-item">
                                         <label>Date:</label>
                                            <span class="summary-date">{{ \Carbon\Carbon::parse(session('reservation_details')->reservation_datetime)->format('Y-m-d') }}</span>

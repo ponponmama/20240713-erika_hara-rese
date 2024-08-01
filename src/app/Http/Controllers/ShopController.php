@@ -19,18 +19,17 @@ class ShopController extends Controller
     }
 
     // 店舗の詳細と予約ページを表示
-    public function showDetails($shop_id)
+    public function showDetails($id)
     {
-        $shop = Shop::findOrFail($shop_id);
+        $shop = Shop::findOrFail($id);
         $current = Carbon::now();  // 現在の日時を取得
         $closingTime = Carbon::parse($current->format('Y-m-d') . ' ' . $shop->close_time);
 
-        // 営業時間外であれば翌日の日付をデフォルトとする
         $date = $current->lt($closingTime) ? $current->format('Y-m-d') : $current->addDay()->format('Y-m-d');
 
         $times = $this->shopService->getBusinessHours($shop->open_time, $shop->close_time, $date);
 
-        return view('reservation', [
+        return view('shops.detail', [
             'shop' => $shop,
             'date' => $date,
             'times' => $times,
@@ -38,13 +37,13 @@ class ShopController extends Controller
     }
 
     // 店舗一覧を表示,検索フォームに渡す。
-    public function shop_list(Request $request)
+    public function index(Request $request)
     {
         $query = Shop::query();
 
         $filterApplied = false;
 
-        if ($request->has('search-area') && $request->input('search-area') != '') {
+            if ($request->has('search-area') && $request->input('search-area') != '') {
             $query->where('area', $request->input('search-area'));
             $filterApplied = true;
         }
@@ -68,7 +67,7 @@ class ShopController extends Controller
         $areas = Shop::distinct()->pluck('area');
         $genres = Shop::distinct()->pluck('genre');
 
-        return view('shop_list', ['shops' => $shops, 'areas' => $areas, 'genres' => $genres]);
+        return view('shops.index', ['shops' => $shops, 'areas' => $areas, 'genres' => $genres]);
     }
 
     
@@ -76,6 +75,7 @@ class ShopController extends Controller
 
     public function search(Request $request)
     {
+        Log::info('Search parameters:', $request->all());
         $query = Shop::query();
 
         if ($request->filled('search-area')) {
@@ -94,7 +94,11 @@ class ShopController extends Controller
         $areas = Shop::distinct()->pluck('area');
         $genres = Shop::distinct()->pluck('genre');
         
+        //dd($shops, $areas, $genres);
 
-        return view('shop_list', compact('shops','areas', 'genres'));
+        Log::info($shops);
+
+        return view('shops.index', compact('shops','areas', 'genres'));
     }
+
 }

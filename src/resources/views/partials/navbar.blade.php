@@ -7,7 +7,7 @@
     </label>
     <nav class="nav-menu">
         <ul>
-            <li><a href="{{ route('index') }}" class="nav-link">Home</a></li>
+            <li><a href="{{ route('shops.index') }}" class="nav-link">Home</a></li>
             @guest
                 <li><a href="{{ route('register') }}" class="nav-link">Registration</a></li>
                 <li><a href="{{ route('login') }}" class="nav-link">Login</a></li>
