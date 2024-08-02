@@ -10,6 +10,11 @@
         @if ($hideReservation == 0)
             <div class="reservation-section">
                 <h2 class="section-title">予約状況</h2>
+                @if (session('success'))
+                    <div class="reservation-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 @foreach ($reservations as $reservation)
                     <div class="reservation-summary">
                         <a href="{{ route('mypage', ['hide_reservation' => 1]) }}" class="close-button">
@@ -34,6 +39,9 @@
                         <div class="summary-item">
                             <label>Number</label>
                             <span class="summary-date">{{ $reservation->number . '人' }}</span>
+                        </div>
+                        <div class="edit-button-container">
+                            <a href="{{ route('reservations.edit', $reservation->id) }}" class="edit-reservation-button">変更</a>
                         </div>
                     </div>
                 @endforeach

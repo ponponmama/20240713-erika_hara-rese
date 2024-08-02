@@ -23,5 +23,13 @@ class Shop extends Model
         return $this->belongsToMany(User::class, 'favorites', 'shop_id', 'user_id');
     }
 
+    public static function getBusinessHoursForDate($date)
+    {
+        $shop = self::whereDate('created_at', '=', $date)->first();
+        if ($shop) {
+            return ['open_time' => $shop->open_time, 'close_time' => $shop->close_time];
+        }
+        return null;
+    }
     
 }

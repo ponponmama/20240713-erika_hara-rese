@@ -19,15 +19,30 @@ class ShopController extends Controller
     }
 
     // 店舗の詳細と予約ページを表示
-    public function showDetails($id)
+    public function shopDetails($id)
     {
         $shop = Shop::findOrFail($id);
-        $current = Carbon::now();  // 現在の日時を取得
-        $closingTime = Carbon::parse($current->format('Y-m-d') . ' ' . $shop->close_time);
+        $current = Carbon::now();
+        $startToday = Carbon::parse($current->format('Y-m-d') . ' ' . $shop->open_time);
+        $endToday = Carbon::parse($current->format('Y-m-d') . ' ' . $shop->close_time);
 
-        $date = $current->lt($closingTime) ? $current->format('Y-m-d') : $current->addDay()->format('Y-m-d');
+        // 営業終了時間が翌日にまたがる場合、終了時間に1日を加算
+        if ($shop->close_time < $shop->open_time) {
+            $endToday->addDay();
+        }
 
-        $times = $this->shopService->getBusinessHours($shop->open_time, $shop->close_time, $date);
+        // 現在時刻が0時から営業終了時間（翌日の2時など）の間である場合、前日の日付を使用
+        if ($current->hour < $endToday->hour && $current->hour < 6) {  // 6時までを深夜と仮定
+            $date = $current->copy()->subDay()->format('Y-m-d');
+        } else if ($current->gt($endToday)) {
+            // 現在時刻が営業終了時間を過ぎている場合、翌日の日付を使用
+            $date = $current->copy()->addDay()->format('Y-m-d');
+        } else {
+            // それ以外の場合は、同日の日付を使用
+            $date = $current->format('Y-m-d');
+        }
+
+        $times = $this->shopService->getBusinessHours($shop->open_time, $shop->close_time, $date, $current);
 
         return view('shops.detail', [
             'shop' => $shop,
@@ -58,47 +73,11 @@ class ShopController extends Controller
             $filterApplied = true;
         }
 
-        if (!$filterApplied) {
-            $shops = Shop::all();
-        } else {
-            $shops = $query->get();
-        }
+        $shops = $filterApplied ? $query->get() : Shop::all();
 
         $areas = Shop::distinct()->pluck('area');
         $genres = Shop::distinct()->pluck('genre');
 
         return view('shops.index', ['shops' => $shops, 'areas' => $areas, 'genres' => $genres]);
     }
-
-    
-    
-
-    public function search(Request $request)
-    {
-        Log::info('Search parameters:', $request->all());
-        $query = Shop::query();
-
-        if ($request->filled('search-area')) {
-            $query->where('area', $request->input('search-area'));
-        }
-
-        if ($request->filled('search-genre')) {
-            $query->where('genre', $request->input('search-genre'));
-        }
-
-        if ($request->filled('search-shop__name')) {
-            $query->where('shop_name', 'like', '%' . $request->input('search-shop__name') . '%');
-        }
-
-        $shops = $query->get();
-        $areas = Shop::distinct()->pluck('area');
-        $genres = Shop::distinct()->pluck('genre');
-        
-        //dd($shops, $areas, $genres);
-
-        Log::info($shops);
-
-        return view('shops.index', compact('shops','areas', 'genres'));
-    }
-
 }

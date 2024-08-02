@@ -50,8 +50,6 @@ Route::post('/email/verification-notification', function (Request $request) {
 Route::middleware('auth')->group(function () {
     // Thanksページ
     Route::get('thanks', [AuthController::class, 'showThanksPage'])->name('thanks');
-    //予約のページから元の/に戻る＜処理
-    Route::get('/', [ShopController::class, 'shop_list'])->name('index');
     //MYページ表示
     Route::get('/mypage', [UserController::class, 'mypage'])->name('mypage');
 
@@ -64,15 +62,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/shops/{shop}/unfavorite', [FavoriteController::class, 'unfavorite'])->name('shops.unfavorite');
 
     // 店舗詳細表示用
-    Route::get('/shops/{shop_id}', [ShopController::class, 'showDetails'])->name('shop.details');
+    Route::get('/shops/{id}', [ShopController::class, 'shopDetails'])->name('shop.details');
 
     // 予約ページ表示用
-    Route::get('/shops/{shop_id}/reservation', [ShopController::class, 'showDetails'])->name('reservation.show');
+    Route::get('/shops/{id}/reservation', [ShopController::class, 'shopDetails'])->name('reservation.show');
 
-    // 店舗一覧ページ表示用
+    // 店舗一覧ページ表示用,検索機能
     Route::get('/', [ShopController::class, 'index'])->name('shops.index');
-    //検索用
-    Route::get('/shops/search', [ShopController::class, 'search'])->name('shops.search');
 
    // 予約関連のルート
     Route::resource('reservations', ReservationController::class);
@@ -80,6 +76,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/reservation/done', [ReservationController::class, 'done'])->name('reservation.done');
     //予約ページへ戻る
     Route::get('/reservations/create', [ReservationController::class, 'create'])->name('reservations.create');
+    //edit,update,destroyアクションに対応route
+    Route::resource('reservations', ReservationController::class);
     
 });
 

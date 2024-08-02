@@ -62,7 +62,7 @@
                                     <div class="summary-item">
                                         <label>Shop:</label>
                                         <span class="summary-date">{{ session('reservation_details')->shop->shop_name }}</span>
-                                    <div>
+                                    </div>
                                     <div class="summary-item">
                                         <label>Date:</label>
                                            <span class="summary-date">{{ \Carbon\Carbon::parse(session('reservation_details')->reservation_datetime)->format('Y-m-d') }}</span>
