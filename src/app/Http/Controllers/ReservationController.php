@@ -46,8 +46,22 @@ class ReservationController extends Controller
 
         if ($shop) {
             $current = Carbon::now();
-            $closingTime = Carbon::parse($current->format('Y-m-d') . ' ' . $shop->close_time);
-            $date = $current->lt($closingTime) ? $current->format('Y-m-d') : $current->addDay()->format('Y-m-d');
+            $startToday = Carbon::parse($current->format('Y-m-d') . ' ' . $shop->open_time);
+            $endToday = Carbon::parse($current->format('Y-m-d') . ' ' . $shop->close_time);
+
+            // 営業終了時間が翌日にまたがる場合、終了時間に1日を加算
+            if ($shop->close_time < $shop->open_time) {
+                $endToday->addDay();
+            }
+
+            // 現在時刻が営業時間内または営業開始前の場合、同日の日付を使用
+            // 現在時刻が営業終了時間を過ぎている場合、翌日の日付を使用
+            if ($current->between($startToday, $endToday)) {
+                $date = $current->format('Y-m-d');
+            } else {
+                $date = $current->copy()->subDay()->format('Y-m-d');
+            }
+
             $times = $this->shopService->getBusinessHours($shop->open_time, $shop->close_time, $date);
         } else {
             $date = null;
@@ -73,21 +87,33 @@ class ReservationController extends Controller
     public function store(StoreReservationRequest $request)
     {
         Log::info('Store method called');
-        //予約データの処理
+        $shop = Shop::find($request->shop_id);
+        $reservationDateTime = Carbon::createFromFormat('Y-m-d H:i', $request->date . ' ' . $request->time);
+
+        // 営業時間が翌日にまたがる場合の日付調整
+        if ($shop->close_time < $shop->open_time) {
+            $closingTimeToday = Carbon::parse($request->date . ' ' . $shop->close_time)->addDay();
+            if ($reservationDateTime->gt($closingTimeToday)) {
+                // 予約日時が営業終了時間を超えている場合、日付を1日減らす
+                $reservationDateTime->subDay();
+            }
+        }
+
+        // 予約データの保存
         $reservation = new Reservation();
         $reservation->shop_id = $request->shop_id;
-        $reservation->reservation_datetime = $request->date . ' ' . $request->time;
+        $reservation->reservation_datetime = $reservationDateTime->format('Y-m-d H:i:s');
         $reservation->number = $request->number;
         $reservation->user_id = auth()->id();
         $reservation->save();
-        
-        // 予約情報をフラッシュセッションに保存
+    
         session()->put('reservation_details', $reservation);
+        session()->put('last_visited_shop_id', $reservation->shop_id);
 
         // 予約完了ページにリダイレクト
         return redirect()->route('reservation.done');
     }
-
+    
     public function done()
     {
         return view('done'); // 予約完了ページのビューを返す
@@ -144,4 +170,11 @@ class ReservationController extends Controller
 
         return view('reservations.my', ['reservations' => $reservations]); // ビューにデータを渡す
     } 
+
+    public function destroy($id)
+    {
+        $reservation = Reservation::findOrFail($id);
+        $reservation->delete();
+        return redirect()->route('mypage')->with('success', '予約が削除されました。');
+    }
 }

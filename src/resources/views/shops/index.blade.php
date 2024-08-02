@@ -6,7 +6,7 @@
 
 @section('search')
 <div class="search-content">
-    <form class="search-form" action="{{ route('shops.search') }}" method="get">
+    <form class="search-form" action="{{ route('shops.index') }}" method="get">
         <div class="search-form__item">
             <div class="select-wrapper">
                 <select class="search-form__item-select" name="search-area">
@@ -49,7 +49,7 @@
                     <h3 class="shop-name">{{ $shop->shop_name }}</h3>
                     <p class="shop-guide">＃{{ $shop->area }}  ＃{{ $shop->genre }}</p>
                     <div class="button-container">
-                        <a href="{{ route('shop.details', ['shop_id' => $shop->id]) }}" class="shop-detail">詳しくみる</a>
+                        <a href="{{ route('shop.details', ['id' => $shop->id]) }}" class="shop-detail">詳しくみる</a>
                         @auth
                             @if(auth()->user()->favorites->contains($shop))
                                 <form action="{{ route('shops.unfavorite', $shop) }}" method="POST">

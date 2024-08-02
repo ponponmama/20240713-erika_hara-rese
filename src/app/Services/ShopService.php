@@ -7,11 +7,9 @@ use Illuminate\Support\Facades\Log;
 
 class ShopService
 {
-    public function getBusinessHours($openTime, $closeTime, $date)
+    public function getBusinessHours($openTime, $closeTime, $date, $current)
     {
         $times = [];
-        $current = Carbon::now();
-        $targetDate = Carbon::parse($date);
         $start = new Carbon($date . ' ' . $openTime);
         $end = new Carbon($date . ' ' . $closeTime);
 
@@ -20,31 +18,31 @@ class ShopService
             $end->addDay();
         }
 
-        Log::info("Open time: " . $start->toDateTimeString());
-        Log::info("Close time: " . $end->toDateTimeString());
-
-        if ($current->gt($end)) {
-            $start->addDay();
-            $end->addDay();
-            Log::info("Adjusted to next day's start time: " . $start->toDateTimeString());
-            Log::info("Adjusted to next day's end time: " . $end->toDateTimeString());
-        } else if ($current->lt($start)) {
-            Log::info("Before opening hours, using regular start time.");
+        // 営業時間内であれば、現在時刻から営業終了時間までの時間を計算
+        if ($current->between($start, $end)) {
+            $currentStart = $current->copy()->minute(0)->second(0)->addMinutes(15);
+            while ($currentStart < $end) {
+                $times[] = $this->formatTime($currentStart, $start);
+                $currentStart->addMinutes(15);
+            }
         } else {
-            $start = $current->copy()->minute(0)->second(0)->addHour();
-            Log::info("Adjusted start time for today: " . $start->toDateTimeString());
-        }
-
-        while ($start <= $end) {
-            $times[] = $start->format('H:i');
-            $start->addMinutes(30);
-            Log::info("Adding time slot: " . $start->format('H:i'));
-        }
-
-        if (empty($times)) {
-            Log::info("No times available for date: " . $date);
+            // 営業時間外であれば、次の営業開始時間から終了時間までの全時間を表示
+            while ($start < $end) {
+                $times[] = $this->formatTime($start, $start);
+                $start->addMinutes(15);
+            }
         }
 
         return $times;
+    }
+
+    private function formatTime(Carbon $time, Carbon $start)
+    {
+        // 24時を超える時間を26時などと表示
+        if ($time->hour >= 24) {
+            $hour = $time->hour - 24;
+            return sprintf('%02d:%02d', $hour, $time->minute);
+        }
+        return $time->format('H:i');
     }
 }
