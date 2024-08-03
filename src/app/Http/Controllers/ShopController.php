@@ -23,24 +23,7 @@ class ShopController extends Controller
     {
         $shop = Shop::findOrFail($id);
         $current = Carbon::now();
-        $startToday = Carbon::parse($current->format('Y-m-d') . ' ' . $shop->open_time);
-        $endToday = Carbon::parse($current->format('Y-m-d') . ' ' . $shop->close_time);
-
-        // 営業終了時間が翌日にまたがる場合、終了時間に1日を加算
-        if ($shop->close_time < $shop->open_time) {
-            $endToday->addDay();
-        }
-
-        // 現在時刻が0時から営業終了時間（翌日の2時など）の間である場合、前日の日付を使用
-        if ($current->hour < $endToday->hour && $current->hour < 6) {  // 6時までを深夜と仮定
-            $date = $current->copy()->subDay()->format('Y-m-d');
-        } else if ($current->gt($endToday)) {
-            // 現在時刻が営業終了時間を過ぎている場合、翌日の日付を使用
-            $date = $current->copy()->addDay()->format('Y-m-d');
-        } else {
-            // それ以外の場合は、同日の日付を使用
-            $date = $current->format('Y-m-d');
-        }
+        $date = $current->format('Y-m-d'); // 現在の日付を使用
 
         $times = $this->shopService->getBusinessHours($shop->open_time, $shop->close_time, $date, $current);
 
