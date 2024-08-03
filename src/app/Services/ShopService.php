@@ -13,36 +13,34 @@ class ShopService
         $start = new Carbon($date . ' ' . $openTime);
         $end = new Carbon($date . ' ' . $closeTime);
 
-        // 営業終了時間が翌日にまたがる場合の対応
-        if ($end->lt($start)) {
-            $end->addDay();
-        }
-
-        // 営業時間内であれば、現在時刻から営業終了時間までの時間を計算
+        // 現在時刻が営業時間内かどうかをチェック
         if ($current->between($start, $end)) {
+            // 営業時間内であれば、現在時刻から営業終了時間までの時間を計算
             $currentStart = $current->copy()->minute(0)->second(0)->addMinutes(15);
             while ($currentStart < $end) {
-                $times[] = $this->formatTime($currentStart, $start);
+                $times[] = $currentStart->format('H:i');
                 $currentStart->addMinutes(15);
             }
         } else {
-            // 営業時間外であれば、次の営業開始時間から終了時間までの全時間を表示
-            while ($start < $end) {
-                $times[] = $this->formatTime($start, $start);
-                $start->addMinutes(15);
+            // 営業時間外であれば、次の営業開始時間を計算
+            if ($current->lt($start)) {
+                // まだ営業開始前ならその日の営業開始時間から終了時間までを表示
+                while ($start < $end) {
+                    $times[] = $start->format('H:i');
+                    $start->addMinutes(15);
+                }
+            } else {
+                // 営業終了後なら次の日の営業時間を表示
+                $date = $current->copy()->addDay()->format('Y-m-d');
+                $start = new Carbon($date . ' ' . $openTime);
+                $end = new Carbon($date . ' ' . $closeTime);
+                while ($start < $end) {
+                    $times[] = $start->format('H:i');
+                    $start->addMinutes(15);
+                }
             }
         }
 
         return $times;
-    }
-
-    private function formatTime(Carbon $time, Carbon $start)
-    {
-        // 24時を超える時間を26時などと表示
-        if ($time->hour >= 24) {
-            $hour = $time->hour - 24;
-            return sprintf('%02d:%02d', $hour, $time->minute);
-        }
-        return $time->format('H:i');
     }
 }

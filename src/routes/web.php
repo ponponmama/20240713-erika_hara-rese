@@ -56,6 +56,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/shop/{id}', [ShopController::class, 'show'])->name('shop.detail');
     //MYページに予約情報を取得表示
     Route::get('/reservations/my', [ReservationController::class, 'myReservations'])->name('reservations.my');
+    Route::put('/reservations/{id}', [ReservationController::class, 'update'])->name('reservations.update');
+    Route::delete('/reservations/{id}', [ReservationController::class, 'destroy'])->name('reservations.destroy');
+    Route::get('/reservations/{id}/edit', [ReservationController::class, 'edit'])->name('reservations.edit');
     
     //お気に入り追加と解除
     Route::post('/shops/{shop}/favorite', [FavoriteController::class, 'favorite'])->name('shops.favorite');

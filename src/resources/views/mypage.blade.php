@@ -17,65 +17,92 @@
                 @endif
                 @foreach ($reservations as $reservation)
                     <div class="reservation-summary">
-                        <a href="{{ route('mypage', ['hide_reservation' => 1]) }}" class="close-button">
+                        <form action="{{ route('reservations.update', $reservation->id) }}" method="POST" id="update-form">
+                            <a href="{{ route('mypage', ['hide_reservation' => 1]) }}" class="close-button">
                             <img src="{{ asset('images/cross.png') }}" alt="Close">
-                        </a>
-                        <div class="reservation-summary-item">
-                            <img src="{{ asset('images/clock.svg') }}" alt="Clock Icon" class="clock-icon">
-                            <span class="reservation-summary-date">予約{{ $reservation->shop->id }}</span>
-                        </div>
-                        <div class="summary-item">
-                            <label>Shop</label>
-                            <span class="summary-date">{{ $reservation->shop->shop_name }}</span>
-                        </div>
-                        <div class="summary-item">
-                            <label>Date</label>
-                            <span class="summary-date">{{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('Y-m-d') }}</span>
-                        </div>
-                        <div class="summary-item">
-                            <label>Time</label>
-                            <span class="summary-date">{{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('H:i') }}</span>
-                        </div>
-                        <div class="summary-item">
-                            <label>Number</label>
-                            <span class="summary-date">{{ $reservation->number . '人' }}</span>
-                        </div>
-                        <div class="edit-button-container">
-                            <a href="{{ route('reservations.edit', $reservation->id) }}" class="edit-reservation-button">変更</a>
+                            </a>
+                            <div class="reservation-summary-item">
+                                <img src="{{ asset('images/clock.svg') }}" alt="Clock Icon" class="clock-icon">
+                                <p class="reservation-summary-date">予約{{ $reservation->shop->id }}</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Shop</label>
+                                <div class="select-wrapper">
+                                    <span class="summary-name">{{ $reservation->shop->shop_name }}</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <div class="select-wrapper">
+                                    <input type="date" name="date" class="date-label" value="{{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('Y-m-d') }}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Time</label>
+                                <div class="select-wrapper">
+                                    <select id="time" name="time">
+                                       @foreach ($reservation->times as $time)
+                                            <option value="{{ $time }}"  {{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('H:i') == $time ? 'selected' : '' }}>{{ $time }}</option>
+                                        @endforeach
+                                    </select>
+                                    <span class="custom-select-icon"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Number</label>
+                                <div class="select-wrapper" >
+                                    <select id="number" name="number">
+                                        @for ($i = 1; $i <= 20; $i++)
+                                            <option value="{{ $i }}" {{ $reservation->number == $i ? 'selected' : '' }}>{{ $i }}人</option>
+                                        @endfor
+                                    </select>
+                                    <span class="custom-select-icon"></span>
+                                </div>  
+                            </div>  
+                        </form>
+                        <div class="reservation-button-container">
+                            <div class="edit-button-container">
+                                <button type="submit" class="edit-reservation-button" form="update-form">変更</button>
+                            </div>
+                            <form action="{{ route('reservations.destroy', $reservation->id) }}" method="POST" class="delete-form">
+                                @csrf
+                                @method('DELETE')
+                                    <button type="submit" class="delete-reservation-button">削除</button>
+                            </form>
                         </div>
                     </div>
                 @endforeach
             </div>
         @endif
-        <div class="favorite-shops-section">   
-            <h2 class="section-title">お気に入り店舗</h2>
-            <div class="favorite-shops">
-                @foreach ($favorites as $favorite)
-                <div class="shop_card">
-                    <img src="{{ asset($favorite->image) }}" alt="{{ $favorite->shop_name }}">
-                    <div class="shop_info">
-                        <h3 class="shop-name">{{ $favorite->shop_name }}</h3>
-                        <p class="shop-guide">＃{{ $favorite->area }}  ＃{{ $favorite->genre }}</p>
-                        <div class="button-container">
-                            <a href="{{ route('shop.details', ['shop_id' => $favorite->id]) }}" class="shop-detail">詳しくみる</a>
-                            @auth
-                                @if(auth()->user()->favorites->contains($favorite))
-                                    <form action="{{ route('shops.unfavorite', $favorite) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="favorite-button favorited">❤</button>
-                                    </form>
-                                @else
-                                    <form action="{{ route('shops.favorite', $favorite) }}" method="POST">
-                                        @csrf
-                                        <button type="submit" class="favorite-button">❤</button>
-                                    </form>
-                                @endif
-                            @endauth
+            <div class="favorite-shops-section">   
+                <h2 class="section-title">お気に入り店舗</h2>
+                <div class="favorite-shops">
+                    @foreach ($favorites as $favorite)
+                        <div class="shop_card">
+                            <img src="{{ asset($favorite->image) }}" alt="{{ $favorite->shop_name }}">
+                            <div class="shop_info">
+                                <h3 class="shop-name">{{ $favorite->shop_name }}</h3>
+                                <p class="shop-guide">＃{{ $favorite->area }}  ＃{{ $favorite->genre }}</p>
+                                <div class="button-container">
+                                    <a href="{{ route('shop.details', ['id' => $favorite->id]) }}" class="shop-detail">詳しくみる</a>
+                                    @auth
+                                        @if(auth()->user()->favorites->contains($favorite))
+                                            <form action="{{ route('shops.unfavorite', $favorite) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="favorite-button favorited">❤</button>
+                                            </form>
+                                        @else
+                                            <form action="{{ route('shops.favorite', $favorite) }}" method="POST">
+                                            @csrf
+                                                <button type="submit" class="favorite-button">❤</button>
+                                            </form>
+                                        @endif
+                                    @endauth
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
-            @endforeach
-        </div>
-    </div>
+            </div>
 @endsection
