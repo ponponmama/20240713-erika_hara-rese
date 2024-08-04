@@ -134,9 +134,17 @@ class ReservationController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validated = $request->validate([
+            'date' => 'required|date_format:Y-m-d',
+            'time' => 'required|date_format:H:i',
+            'number' => 'required|integer|min:1'
+        ]);
+
+        $shop = Shop::find($request->shop_id);
+        $reservationDateTime = Carbon::createFromFormat('Y-m-d H:i', $request->date . ' ' . $request->time);
+
         $reservation = Reservation::findOrFail($id);
-        $reservation->update($request->all());
-        $reservation->reservation_datetime = Carbon::parse($request->date . ' ' . $request->time);
+        $reservation->reservation_datetime = $reservationDateTime->format('Y-m-d H:i:s');
         $reservation->number = $request->number;
         $reservation->save();
 

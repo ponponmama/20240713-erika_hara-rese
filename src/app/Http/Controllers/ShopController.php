@@ -19,11 +19,13 @@ class ShopController extends Controller
     }
 
     // 店舗の詳細と予約ページを表示
-    public function shopDetails($id)
+    public function shopDetails(Request $request,$id)
     {
+        Log::info('Received date: ' . $request->input('date'));
+        
         $shop = Shop::findOrFail($id);
         $current = Carbon::now();
-        $date = $current->format('Y-m-d'); // 現在の日付を使用
+        $date = $request->input('date', $current->format('Y-m-d'));
 
         $times = $this->shopService->getBusinessHours($shop->open_time, $shop->close_time, $date, $current);
 
