@@ -17,7 +17,9 @@
                 @endif
                 @foreach ($reservations as $reservation)
                     <div class="reservation-summary">
-                        <form action="{{ route('reservations.update', $reservation->id) }}" method="POST" id="update-form">
+                        <form action="{{ route('reservations.update', $reservation->id) }}" method="POST" id="update-form-{{ $reservation->id }}">
+                            @csrf
+                            @method('PUT')
                             <a href="{{ route('mypage', ['hide_reservation' => 1]) }}" class="close-button">
                             <img src="{{ asset('images/cross.png') }}" alt="Close">
                             </a>
@@ -62,7 +64,7 @@
                         </form>
                         <div class="reservation-button-container">
                             <div class="edit-button-container">
-                                <button type="submit" class="edit-reservation-button" form="update-form">変更</button>
+                                <button type="submit" class="edit-reservation-button" form="update-form-{{ $reservation->id }}">変更</button>
                             </div>
                             <form action="{{ route('reservations.destroy', $reservation->id) }}" method="POST" class="delete-form">
                                 @csrf
