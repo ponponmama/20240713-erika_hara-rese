@@ -60,6 +60,24 @@ class ReservationController extends Controller
         ]);
     }
 
+    public function updateTimes(Request $request)
+    {
+        $date = $request->input('date', Carbon::now()->format('Y-m-d'));
+        $shopId = $request->input('shop_id');
+        $shop = Shop::find($shopId);
+
+        if ($shop) {
+            $times = $this->shopService->getBusinessHours($shop->open_time, $shop->close_time, $date, Carbon::now());
+        } else {
+            $times = [];
+        }
+
+        return redirect()->route('reservations.create')->with([
+            'times' => $times,
+            'date' => $date,
+            'shop_id' => $shopId
+        ]);
+    }
 
     /**
      * Store a newly created resource in storage.

@@ -22,16 +22,28 @@ class ShopController extends Controller
     public function shopDetails(Request $request,$id)
     {
         Log::info('Received date: ' . $request->input('date'));
-        
+
         $shop = Shop::findOrFail($id);
         $current = Carbon::now();
-        $date = $request->input('date', $current->format('Y-m-d'));
+        $inputDate = $request->input('date');
+        $date = $inputDate ? new Carbon($inputDate) : $current;
 
-        $times = $this->shopService->getBusinessHours($shop->open_time, $shop->close_time, $date, $current);
+        // ユーザーが選択した日付が現在の日付より前の場合、翌日の日付を使用
+        if ($date->lessThan($current)) {
+            $date = $current->copy()->addDay();
+        }
+
+        $openTime = $shop->open_time;
+        $closeTime = $shop->close_time;
+        $start = new Carbon($date->format('Y-m-d') . ' ' . $openTime);
+        $end = new Carbon($date->format('Y-m-d') . ' ' . $closeTime);
+
+        // 営業時間の取得
+        $times = $this->shopService->getBusinessHours($openTime, $closeTime, $date->format('Y-m-d'), $current);
 
         return view('shops.detail', [
             'shop' => $shop,
-            'date' => $date,
+            'date' => $date->format('Y-m-d'),
             'times' => $times,
         ]);
     }
