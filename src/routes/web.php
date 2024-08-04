@@ -22,6 +22,10 @@ use App\Http\Controllers\ShopManagerController;
 |
 */
 
+// 店舗一覧ページ表示用,検索機能
+Route::get('/', [ShopController::class, 'index'])->name('shops.index');
+
+
 // 登録
 Route::get('register', [AuthController::class, 'showRegistrationForm'])->name('register.form');
 Route::post('register', [AuthController::class, 'register'])->name('register');
@@ -70,8 +74,6 @@ Route::middleware('auth')->group(function () {
     // 予約ページ表示用
     Route::get('/shops/{id}/reservation', [ShopController::class, 'shopDetails'])->name('reservation.show');
 
-    // 店舗一覧ページ表示用,検索機能
-    Route::get('/', [ShopController::class, 'index'])->name('shops.index');
 
    // 予約関連のルート
     Route::resource('reservations', ReservationController::class);
