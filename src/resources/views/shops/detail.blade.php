@@ -37,7 +37,7 @@
                                 @csrf
                                 <input type="hidden" name="shop_id" value="{{ $shop->id }}">
                                 <label for="date"></label>
-                                <input type="date" id="date" name="date" class="date-label"  value="{{ $date }}">
+                                <input type="date" id="date" name="date" class="date-label" value="{{ $date }}">
                                 <label for="time"></label>
                                 <div class="select-wrapper" style="position: relative;">
                                     <select id="time" name="time">
