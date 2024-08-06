@@ -20,7 +20,7 @@ class UserFactory extends Factory
             'email' => $this->faker->unique()->safeEmail,
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
-            'role' =>'user',
+            'role' => 3,
         ];
     }
 
@@ -28,8 +28,8 @@ class UserFactory extends Factory
     {
         return $this->state(function (array $attributes) {
             return [
-                'role' => 'shop_manager',
-                'password' => Hash::make('shop_password')  // テスト用の既知のパスワード
+                'role' => 2,
+                'password' => Hash::make('shop_pass')  // テスト用の既知のパスワード
             ];
         });
     }
@@ -38,8 +38,8 @@ class UserFactory extends Factory
     {
         return $this->state(function (array $attributes) {
             return [
-                'role' => 'admin',
-                'password' => Hash::make('admin_password')  // テスト用の既知のパスワード
+                'role' => 1,
+                'password' => Hash::make('admin_pass')  // テスト用の既知のパスワード
             ];
         });
     }

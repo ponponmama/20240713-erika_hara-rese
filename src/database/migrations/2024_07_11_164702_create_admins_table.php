@@ -17,8 +17,6 @@ class CreateAdminsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('shop_id')->constrained()->onDelete('cascade');
-            $table->string('admin_name');
-            $table->string('admin_email_address')->unique();
             $table->timestamps();
         });
     }

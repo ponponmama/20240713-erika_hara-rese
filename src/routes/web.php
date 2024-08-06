@@ -87,16 +87,15 @@ Route::middleware('auth')->group(function () {
 });
 
 // Admin用のルート
-Route::middleware(['auth', 'role:admin'])->group(function () {
+Route::middleware(['auth', 'role:1'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-
     Route::get('/admin/manage-shop-managers', [AdminController::class, 'manageShopManagers'])->name('admin.manage.shop_managers');
-
+    Route::post('/admin/shop-managers', [AdminController::class, 'createShopManager'])->name('admin.create.shop_manager');
     Route::delete('/admin/users/{user}', [AdminController::class, 'destroy'])->name('admin.users.destroy');
 });
 
 // Shop Manager用のルート
-Route::middleware(['auth', 'role:shop_manager'])->group(function () {
+Route::middleware(['auth', 'role:2'])->group(function () {
     Route::get('/shop-manager/dashboard', [ShopManagerController::class, 'index'])->name('shop_manager.dashboard');
     Route::get('/shop-manager/manage-shop', [ShopManagerController::class, 'manageShop'])->name('shop_manager.manage.shop');
     
