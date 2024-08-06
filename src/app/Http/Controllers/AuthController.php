@@ -25,7 +25,7 @@ namespace App\Http\Controllers;
             'user_name' => $request->user_name,  
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'user',
+            'role' => 3,
         ]);
 
         event(new \Illuminate\Auth\Events\Registered($user));
@@ -75,7 +75,15 @@ namespace App\Http\Controllers;
                 ]);
             }
 
-            return redirect()->intended('/');
+            // ユーザーのロールに基づいてリダイレクト先を決定
+            switch (Auth::user()->role) {
+                case 1: // admin
+                    return redirect()->route('admin.dashboard');
+                case 2: // shop_manager
+                    return redirect()->route('shop_manager.dashboard');
+                default:
+                    return redirect()->route('shops.index'); // 一般ユーザーは店舗一覧ページへ
+            }
         }
 
         return back()->withErrors([
@@ -98,9 +106,9 @@ namespace App\Http\Controllers;
 
     protected function authenticated(Request $request, $user)
     {
-        if ($user->role === 'admin') {
+        if ($user->role === 1) {
             return redirect()->route('admin.dashboard'); // 管理者ダッシュボードへリダイレクト
-        } elseif ($user->role === 'shop_manager') {
+        } elseif ($user->role === 2) {
             return redirect()->route('shop_manager.dashboard'); // ショップマネージャーダッシュボードへリダイレクト
         } else {
             return redirect()->route('index'); // 一般ユーザーはホームページへリダイレクト

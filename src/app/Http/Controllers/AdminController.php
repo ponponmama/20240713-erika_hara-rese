@@ -17,7 +17,7 @@ class AdminController extends Controller
     {
         $this->middleware('auth');  // ログインしていることを確認
         $this->middleware(function ($request, $next) {
-            if (auth()->user()->role !== 'admin') {
+            if (auth()->user()->role !== 1) {
                 abort(403);  // admin でなければアクセス禁止
             }
             return $next($request);
@@ -27,11 +27,11 @@ class AdminController extends Controller
     // shop_manager の管理画面
     public function manageShopManagers()
     {
-        $managers = User::where('role', 'shop_manager')->get();
+        $managers = User::where('role', '2')->get();
         return view('admin.manage-shop-managers', ['managers' => $managers]);
     }
 
-    public function createAdmin(Request $request)
+    public function createShopManager(Request $request)
     {
         $validated = $request->validate([
             'user_name' => 'required',
@@ -43,10 +43,10 @@ class AdminController extends Controller
             'user_name' => $validated['user_name'],
             'email' => $validated['email'],
             'password' => Hash::make($validated['password']),
-            'role' => 'admin',
+            'role' => 2,
         ]);
 
-        return redirect()->route('admin.manage-admins')->with('success', 'New admin created successfully');
+        return redirect()->route('admin.dashboard')->with('success', 'ShopManagerが正常に作成されました');
     }
 
     public function destroy(User $user)
