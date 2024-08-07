@@ -31,5 +31,6 @@ class Shop extends Model
         }
         return null;
     }
+
     
 }

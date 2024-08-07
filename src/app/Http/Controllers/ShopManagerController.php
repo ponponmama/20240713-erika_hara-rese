@@ -4,13 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Shop;
+use App\Models\Reservation;
+use Illuminate\Support\Facades\Auth;
+
 
 class ShopManagerController extends Controller
 {
     // ショップ管理ダッシュボード表示
     public function index()
     {
-        return view('shop_manager.dashboard');
+        $shopId = Auth::user()->shop->id;  // ユーザーが管理する店舗ID
+        $reservations = Reservation::where('shop_id', $shopId)->get();
+
+        //dd($shopId, $reservations);
+
+        return view('shop_manager.dashboard', ['reservations' => $reservations]);
     }
 
     //店舗情報の取得して表示
@@ -55,4 +63,16 @@ class ShopManagerController extends Controller
 
         return view('shop_manager.manage-my-shop', compact('shop'));
     }
+
+    public function showReservations()
+    {
+        // ログインしているユーザーが管理する店舗のIDを取得
+        $shopId = Auth::user()->shop_id;  // この部分は適宜調整が必要です
+
+        // その店舗の予約情報を取得
+        $reservations = Reservation::where('shop_id', $shopId)->get();
+
+        return view('shop_manager.reservations', ['reservations' => $reservations]);
+    }
+
 }

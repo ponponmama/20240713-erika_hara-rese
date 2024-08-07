@@ -22,6 +22,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ShopsTableSeeder::class,
         ]);
+
+        $this->call([
+            ReservationSeeder::class,
+        ]);
         //\App\Models\User::factory(20)->create();
     }
 }
+

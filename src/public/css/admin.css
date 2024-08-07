@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    min-height: 80vh;
 }
 
 .user__name {
@@ -14,12 +13,20 @@
     color: black;
 }
 
-.registration-text,
+.registration-text {
+    margin: 6px auto;
+    padding: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #0056b3;
+}
+
 .form-title {
     margin: 4px;
     padding: 4px;
     font-size: 1.2rem;
     font-weight: bold;
+    color: #0056b3;
 }
 
 .registration-form {

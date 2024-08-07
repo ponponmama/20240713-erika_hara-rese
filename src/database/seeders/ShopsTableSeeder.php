@@ -45,8 +45,8 @@ class ShopsTableSeeder extends Seeder
             ['木船','大阪府','寿司','毎日店主自ら市場等に出向き、厳選した魚介類が、お鮨をはじめとした繊細な料理に仕立てられます。また、選りすぐりの種類豊富なドリンクもご用意しております。','images/sushi.jpg', '11:00', '22:00']
         ];
 
-        foreach ($shopNames as $shopName) {
-            $manager = User::factory()->shopManager()->create();  // ショップマネージャーを作成
+        foreach ($shopNames as $index => $shopName) {
+            $manager = User::factory()->shopManager($index + 1)->create();  // ショップマネージャーを作成
             Shop::create([
                 'user_id' => $manager->id,
                 'shop_name' => $shopName[0],
