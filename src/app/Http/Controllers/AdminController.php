@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -44,6 +45,7 @@ class AdminController extends Controller
             'email' => $validated['email'],
             'password' => Hash::make($validated['password']),
             'role' => 2,
+            'email_verified_at' => now(),
         ]);
 
         return redirect()->route('admin.dashboard')->with('success', 'ShopManagerが正常に作成されました');

@@ -7,12 +7,15 @@
     </label>
     <nav class="nav-menu">
         <ul>
-            <li><a href="{{ route('shops.index') }}" class="nav-link">Home</a></li>
             @guest
+                <li><a href="{{ route('shops.index') }}" class="nav-link">Home</a></li>
                 <li><a href="{{ route('register') }}" class="nav-link">Registration</a></li>
                 <li><a href="{{ route('login') }}" class="nav-link">Login</a></li>
             @endguest
             @auth
+                @if(auth()->user()->role == 1 || auth()->user()->role == 2)
+                    <li><a href="{{ route('shops.index') }}" class="nav-link">Home</a></li>
+                @endif
                 <li>
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
@@ -21,7 +24,15 @@
                             </button>
                     </form>
                 </li>
-                <li><a href="{{ url('/mypage') }}"class="nav-link">Mypage</a></li>
+                @if(auth()->user()->role === 3)
+                    <li><a href="{{ url('/mypage') }}" class="nav-link">Mypage</a></li>
+                @endif
+                @if(auth()->user()->role === 2)
+                    <li><a href="{{ url('/shop_manager/dashboard') }}" class="nav-link">Manager Dashboard</a></li>
+                @endif
+                @if(auth()->user()->role === 1)
+                    <li><a href="{{ url('/admin/dashboard') }}" class="nav-link">Admin Dashboard</a></li>
+                @endif
             @endauth
         </ul>
     </nav>

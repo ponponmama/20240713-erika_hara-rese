@@ -19,15 +19,17 @@ class UserFactory extends Factory
             'user_name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
             'email_verified_at' => now(),
-            'password' => Hash::make('password'),
+            'password' => Hash::make('user_pass'),
             'role' => 3,
         ];
     }
 
-    public function shopManager()
+    public function shopManager($shopId)
     {
-        return $this->state(function (array $attributes) {
+        return $this->state(function (array $attributes) use ($shopId)  {
             return [
+                'user_name' => "test{$shopId}",
+                'email' => "test{$shopId}@test.com",
                 'role' => 2,
                 'password' => Hash::make('shop_pass')  // テスト用の既知のパスワード
             ];

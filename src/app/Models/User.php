@@ -27,6 +27,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'email',
         'password',
         'role',
+        'email_verified_at',
     ];
 
     /**
@@ -58,12 +59,12 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function isShopManager()
     {
-        return $this->role === 'shop_manager';
+        return $this->role === 2;
     }
 
     public function isAdmin()
     {
-        return $this->role === 'admin';
+        return $this->role === 1;
     }
 
     public function reservations()
@@ -74,6 +75,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function favorites()
     {
         return $this->belongsToMany(Shop::class, 'favorites', 'user_id', 'shop_id');
+    }
+
+    public function shop()
+    {
+        return $this->hasOne(Shop::class);
     }
 
 }

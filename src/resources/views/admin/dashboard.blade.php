@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.app')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
@@ -8,10 +8,10 @@
 @section('content')
 <div class="admin_container">
     <p class="user__name">お疲れ様です！　{{ Auth::user()->user_name }}さん</p>
-    <span class="registration-text">店舗管理者登録はこちら</span>
     <div class="registration-form">
         <div class="title-box">
             <h2 class="form-title">Shop Manager Registration</h2>
+            <span class="registration-text">店舗管理者登録はこちら</span>
         </div>
         <form action="{{ route('admin.create.shop_manager') }}" method="POST" class="create-form">
             @csrf

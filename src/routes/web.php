@@ -98,12 +98,13 @@ Route::middleware(['auth', 'role:1'])->group(function () {
 Route::middleware(['auth', 'role:2'])->group(function () {
     Route::get('/shop-manager/dashboard', [ShopManagerController::class, 'index'])->name('shop_manager.dashboard');
     Route::get('/shop-manager/manage-shop', [ShopManagerController::class, 'manageShop'])->name('shop_manager.manage.shop');
-    
     // 店舗情報の編集ページ
     Route::get('/shop-manager/shop/{id}/edit', [ShopManagerController::class, 'edit'])->name('shop_manager.edit');
-
+    //予約情報
+    Route::get('/shop-manager/reservations', [ShopManagerController::class, 'showReservations'])->name('shop_manager.reservations');
     // 店舗情報の更新
     Route::put('/shop-manager/shop/{id}', [ShopManagerController::class, 'update'])->name('shop_manager.update');
+    // 予約情報表示（店舗IDに基づく）
 });
 
 //require __DIR__.'/auth.php';
