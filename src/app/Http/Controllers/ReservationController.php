@@ -8,6 +8,8 @@ use App\Models\Shop;
 use App\Http\Requests\StoreReservationRequest;
 use Carbon\Carbon;
 use App\Services\ShopService;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ReservationNotification;
 use Illuminate\Support\Facades\Log;
 
 
@@ -98,6 +100,15 @@ class ReservationController extends Controller
         $reservation->number = $request->number;
         $reservation->user_id = auth()->id();
         $reservation->save();
+
+        // メール送信
+        // メール送信
+        $user = auth()->user(); // ログインしているユーザー情報を取得
+        if ($user) {
+            Mail::to($user->email)->send(new ReservationNotification($user, $reservation));
+        } else {
+            Log::error('User not found for email sending.');
+        }
 
         session()->put('reservation_details', $reservation);
         session()->put('last_visited_shop_id', $reservation->shop_id);
