@@ -5,8 +5,15 @@
     padding: 10px;
 }
 
+.left-sections {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
 .reservation-section {
-    width: 40%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,8 +26,74 @@
     font-size: 0.8rem;
 }
 
+.reviews-form {
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+
+}
+
+.reviews-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+}
+
+
+.reviews-form textarea {
+    padding: 4px;
+    margin-bottom: 10px;
+}
+
+.rating-group {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    margin: 5%;
+}
+
+.rating-group label {
+    width: calc(40% - 8px);
+    padding: 4px;
+}
+
+.rating-group .rating {
+    flex-grow: 1;
+}
+
+
+
+.rating-group textarea {
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.rating-group select:focus,
+textarea:focus {
+    background-color: #f4f4f4;
+}
+
+.review-button {
+    width: 40%;
+    padding: 6px 10px;
+    background-color: #0056b3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 1% 2% 3% 2%;
+    font-size: 0.7rem;
+    text-align: center;
+    margin: 10px;
+    border: none;
+}
+
 .favorite-shops-section {
-    flex: 0 0 60%;
+    flex: 1;
     margin: 0 10px;
     padding: 0;
     background-color: #f4f4f4;

@@ -34,12 +34,35 @@ class ReservationSeeder extends Seeder
         foreach ($shops as $shop) {
             // 各ショップに対して5件の予約を作成
             for ($i = 0; $i < 5; $i++) {
+
+                $date = now()->addDays($i);
+                $usersForTheDay = User::where('role', 3)->inRandomOrder()->take(2)->get();
+
+                if ($usersForTheDay->count() < 2) {
+                    throw new \Exception("Not enough users available for reservations");
+                }
+                
+
+                // ランチタイムの予約
+                $user = User::where('role', 3)->inRandomOrder()->first();
+                $lunchDateTime = now()->addDays(rand(1, 30))->hour(12)->minute(0)->second(0);
                 Reservation::create([
                     'user_id' => $user->id,
                     'shop_id' => $shop->id,
-                    'reservation_datetime' => now()->addDays($i),
-                    'number' => rand(1, 6)  // 1から6までのランダムな人数
+                    'reservation_datetime' => $lunchDateTime,
+                    'number' => rand(1, 10), 
                 ]);
+
+                // ディナータイムの予約
+                $user = User::where('role', 3)->inRandomOrder()->first();
+                $dinnerDateTime = now()->addDays(rand(1, 30))->hour(18)->minute(0)->second(0);
+                Reservation::create([
+                    'user_id' => $user->id,
+                    'shop_id' => $shop->id,
+                    'reservation_datetime' => $dinnerDateTime,
+                    'number' => rand(1, 10),
+                ]);
+
             }
         }
     }

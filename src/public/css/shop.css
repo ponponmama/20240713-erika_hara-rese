@@ -1,0 +1,60 @@
+.shop_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.user__name {
+    margin: 6px auto;
+    padding: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: gray;
+}
+
+.shop__name {
+    margin: 6px auto;
+    padding: 4px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: black;
+}
+
+.reservations {
+    width: 100%;
+    padding: 4px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reservations-list {
+    width: 70%;
+    color: #0056b3;
+    font-size: 1.2rem;
+    padding: 2px;
+    margin: 4px;
+}
+
+table {
+    margin: 0 auto;
+    width: 70%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #0056b3;
+    border: 1px solid #7a7a7a;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    overflow: hidden;
+    box-shadow: 3px 3px 6px rgba(0, 0, 5, 0.712);
+}
+
+th,
+td {
+    border: 1px solid #7a7a7a;
+    padding: 4px;
+    text-align: left;
+}
