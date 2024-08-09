@@ -77,27 +77,29 @@
                     @endforeach
                 </div>
             @endif
-            <div class="reviews-form">
-                <form action="{{ route('reviews.store') }}" method="POST">
-                    @csrf
-                    <input type="hidden" name="shop_id" value="{{ $reservation->shop_id }}">
-                    <div class="rating-group">
-                        <label for="rating">評価</label>
-                        <div class="select-wrapper" >
-                            <select name="rating" id="rating" class="rating">
-                                @for ($i = 1; $i <= 5; $i++)
-                                    <option value="{{ $i }}">{{ $i }}</option>
-                                @endfor
-                            </select>
-                            <span class="custom-select-icon"></span>
+            <div class="review-section">
+                <div class="reviews-form">
+                    <form action="{{ route('reviews.store') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="shop_id" value="{{ $last_visited_shop_id }}">
+                        <div class="rating-group">
+                            <label for="rating">評価</label>
+                            <div class="select-wrapper">
+                                <select name="rating" id="rating" class="rating">
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        <option value="{{ $i }}">{{ $i }}</option>
+                                    @endfor
+                                </select>
+                                <span class="custom-select-icon"></span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="rating-group">
-                        <label for="comment">コメント</label>
-                        <textarea name="comment" id="comment" required></textarea>
-                    </div>
-                    <button type="submit" class="review-button">レビューを投稿</button>
-                </form>
+                        <div class="rating-group">
+                            <label for="comment">コメント</label>
+                            <textarea name="comment" id="comment" required></textarea>
+                        </div>
+                        <button type="submit" class="review-button">レビューを投稿</button>
+                    </form>
+                </div>
             </div>
         </div>
         <div class="favorite-shops-section">   

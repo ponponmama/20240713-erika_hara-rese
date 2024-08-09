@@ -133,6 +133,16 @@ select {
     background-color: #044c99;
 }
 
+.qr-code {
+    width: calc(100% - 20px);
+    padding: 10px;
+    text-align: center;
+}
+
+.qr-text {
+    padding: 10px;
+    font-size: 1rem;
+}
 
 .reservation-summary {
     width: calc(90% - 20px);

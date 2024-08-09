@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Shop;
+use App\Models\Reservation;
 use Carbon\Carbon;
 use App\Services\ShopService;
 use Illuminate\Support\Facades\Log;
@@ -41,10 +42,13 @@ class ShopController extends Controller
         // 営業時間の取得
         $times = $this->shopService->getBusinessHours($openTime, $closeTime, $date->format('Y-m-d'), $current);
 
+        $reservation = Reservation::where('shop_id', $id)->latest()->first(); 
+
         return view('shops.detail', [
             'shop' => $shop,
             'date' => $date->format('Y-m-d'),
             'times' => $times,
+            'reservation' => $reservation,
         ]);
     }
 

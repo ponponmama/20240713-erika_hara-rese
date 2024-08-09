@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use App\Services\ShopService;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ReservationNotification;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Support\Facades\Log;
 
 
@@ -99,9 +100,16 @@ class ReservationController extends Controller
         $reservation->reservation_datetime = $reservationDateTime->format('Y-m-d H:i:s');
         $reservation->number = $request->number;
         $reservation->user_id = auth()->id();
+
         $reservation->save();
 
-        // メール送信
+        // QRコードを生成し、ファイルに保存
+        $qrCodePath = 'qr_codes/' . $reservation->id . '.png'; // 保存パスを指定
+        QrCode::format('png')->size(100)->generate('Reservation ID: ' . $reservation->id, public_path($qrCodePath));
+
+        $reservation->qr_code = $qrCodePath; // データベースにファイルパスを保存
+        $reservation->save();
+
         // メール送信
         $user = auth()->user(); // ログインしているユーザー情報を取得
         if ($user) {
@@ -116,6 +124,7 @@ class ReservationController extends Controller
         // 予約完了ページにリダイレクト
         return redirect()->route('reservation.done');
     }
+
     
     public function done()
     {

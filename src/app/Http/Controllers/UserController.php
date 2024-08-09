@@ -24,6 +24,11 @@ class UserController extends Controller
         $favorites = $user->favorites;
         $hideReservation = $request->query('hide_reservation', 0);
 
+        $last_visited_shop_id = null;
+        if ($reservations->isNotEmpty()) {
+            $last_visited_shop_id = $reservations->last()->shop_id;
+        }
+
         foreach ($reservations as $reservation) {
             $shop = $reservation->shop;
             $current = Carbon::now();
@@ -35,7 +40,8 @@ class UserController extends Controller
         return view('mypage', [
             'reservations' => $reservations,
             'favorites' => $favorites,
-            'hideReservation' => $hideReservation
+            'hideReservation' => $hideReservation,
+            'last_visited_shop_id' => $last_visited_shop_id
         ]);
     }
 }

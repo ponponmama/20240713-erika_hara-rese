@@ -15,15 +15,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->admin(2)->create();
+        User::factory()->admin(1)->create();
 
-        User::factory()->count(30)->create();
+        User::factory()->count(25)->create();
 
         $this->call([
             ShopsTableSeeder::class,
-        ]);
-
-        $this->call([
             ReservationSeeder::class,
         ]);
         //\App\Models\User::factory(20)->create();

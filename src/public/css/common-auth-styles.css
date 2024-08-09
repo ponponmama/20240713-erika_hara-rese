@@ -157,9 +157,25 @@
         text-decoration: none;
     }
 
+    .back-link {
+        width: 30%;
+        height: 6%;
+        padding: 8px 2px;
+        background-color: #0056b3;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.6rem;
+        text-align: center;
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+    }
+
     .register-button,
     .login-button,
-    .thanks-button:hover {
+    .thanks-button,
+    .back-link:hover {
         background-color: #003875;
     }
 

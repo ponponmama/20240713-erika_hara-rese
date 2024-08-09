@@ -77,6 +77,12 @@
                                          class="summary-date">{{ session('reservation_details')->number . '人' }}</span>
                                     </div>
                                 @endif
+                                <div class="qr-code">
+                                    <h2 class="qr-text">来店時にこのQRコードを提示してください</h2>
+                                    @if(session('reservation_details'))
+                                        <img src="{{ asset(session('reservation_details')->qr_code) }}" alt="QR Code" class="qr_code_img">
+                                    @endif
+                                </div>
                             </div>
                             <div class="button-container">
                                 <button type="submit" form="reserve-form" class="reserve-button">予約する</button>
