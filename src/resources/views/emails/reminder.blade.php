@@ -22,13 +22,30 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+
+        .reminder,
+        .hello {
+            display: inline-block;
+            text-align: left; /* メッセージ内容を左寄せ */
+            max-width: 600px;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto; /* 画像を中央に配置 */
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>予約リマインダー</h1>
-        <p>こんにちは！ {{ $reservation->user->user_name }}様,</p>
+        <h1 class="reminder">予約リマインダー</h1>
+        <p class="hello">こんにちは！ {{ $reservation->user->user_name }}様,</p>
         <p>こちらは {{ $reservation->reservation_datetime }}にご予約いただいているリマインダーです。</p>
+        <p>QRコードをご来店時にご提示ください。</p>
+            <img src="{{ asset($reservation->qr_code) }}" alt="QR Code">
     </div>
 </body>
 </html>

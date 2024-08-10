@@ -32,10 +32,11 @@
 <body>
     <div class="container">
         <div class="message">
-            <p class="hello">こんにちは、{{ $reservation->user->user_name }}さん</p>
-            <p>以下の予約が確定しました。</p>
+            <p class="hello">こんにちは、{{ $user->user_name }}さん</p>
+            <p>以下の予約が変更されました。</p>
             <p>予約日時: {{ $reservation->reservation_datetime->format('Y-m-d H:i') }}</p>
             <p>人数: {{ $reservation->number }}</p>
+            <p>店舗: {{ $reservation->shop->shop_name }}</p>
             <p>QRコードをご来店時にご提示ください。</p>
             <img src="{{ asset($reservation->qr_code) }}" alt="QR Code">
         </div>

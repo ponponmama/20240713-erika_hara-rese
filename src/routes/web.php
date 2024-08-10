@@ -10,6 +10,8 @@ use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ShopManagerController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,12 @@ use App\Http\Controllers\ShopManagerController;
 
 // 店舗一覧ページ表示用,検索機能
 Route::get('/', [ShopController::class, 'index'])->name('shops.index');
+
+// 支払いフォーム表示
+Route::get('/payment', [PaymentController::class, 'showForm'])->name('payment.form');
+
+// 支払い処理
+Route::post('/payment', [PaymentController::class, 'processPayment'])->name('payment.process');
 
 
 // 登録
@@ -86,6 +94,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/reservations/create', [ReservationController::class, 'create'])->name('reservations.create');
     //edit,update,destroyアクションに対応route
     Route::resource('reservations', ReservationController::class);
+    
+
     
 });
 

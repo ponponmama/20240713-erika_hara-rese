@@ -73,34 +73,35 @@
                                         <button type="submit" class="delete-reservation-button">削除</button>
                                 </form>
                             </div>
+                            <div class="qr-code-container">
+                                <img src="{{ asset($reservation->qr_code) }}" alt="QR Code for Reservation {{ $reservation->id }}">
+                            </div>
+                        </div>
+                        <div class="reviews-form">
+                            <form action="{{ route('reviews.store') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="shop_id" value="{{ $last_visited_shop_id }}">
+                                <div class="rating-group">
+                                    <label for="rating">評価</label>
+                                    <div class="select-wrapper">
+                                        <select name="rating" id="rating" class="rating">
+                                            @for ($i = 1; $i <= 5; $i++)
+                                                <option value="{{ $i }}">{{ $i }}</option>
+                                            @endfor
+                                        </select>
+                                        <span class="custom-select-icon"></span>
+                                    </div>
+                                </div>
+                                <div class="rating-group">
+                                    <label for="comment">コメント</label>
+                                    <textarea name="comment" id="comment" required></textarea>
+                                </div>
+                                <button type="submit" class="review-button">レビューを投稿</button>
+                            </form>
                         </div>
                     @endforeach
                 </div>
             @endif
-            <div class="review-section">
-                <div class="reviews-form">
-                    <form action="{{ route('reviews.store') }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="shop_id" value="{{ $last_visited_shop_id }}">
-                        <div class="rating-group">
-                            <label for="rating">評価</label>
-                            <div class="select-wrapper">
-                                <select name="rating" id="rating" class="rating">
-                                    @for ($i = 1; $i <= 5; $i++)
-                                        <option value="{{ $i }}">{{ $i }}</option>
-                                    @endfor
-                                </select>
-                                <span class="custom-select-icon"></span>
-                            </div>
-                        </div>
-                        <div class="rating-group">
-                            <label for="comment">コメント</label>
-                            <textarea name="comment" id="comment" required></textarea>
-                        </div>
-                        <button type="submit" class="review-button">レビューを投稿</button>
-                    </form>
-                </div>
-            </div>
         </div>
         <div class="favorite-shops-section">   
             <h2 class="section-title">お気に入り店舗</h2>

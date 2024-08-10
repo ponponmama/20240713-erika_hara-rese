@@ -10,10 +10,10 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'shop_id' => 'required|integer',
-            'rating' => 'required|integer|min:max:5',
-            'comment' => 'required|string'
-        ]);
+    'shop_id' => 'required|integer',
+    'rating' => 'required|integer|min:1|max:5', 
+    'comment' => 'required|string'
+]);
 
         Review::create([
             'user_id' => auth()->id(),

@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\ReservationNotification;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Support\Facades\Log;
+use App\Mail\ReservationUpdated;
 
 
 class ReservationController extends Controller
@@ -185,6 +186,19 @@ class ReservationController extends Controller
         $reservation->reservation_datetime = $reservationDateTime->format('Y-m-d H:i:s');
         $reservation->number = $request->number;
         $reservation->save();
+
+        // QRコードを再生成（必要に応じて）
+        $qrCodePath = 'qr_codes/' . $reservation->id . '.png';
+        QrCode::format('png')->size(100)->generate('Reservation ID: ' . $reservation->id, public_path($qrCodePath));
+        $reservation->qr_code = $qrCodePath;
+        $reservation->save();
+
+        $user = auth()->user(); // ログインしているユーザー情報を取得
+        if ($user) {
+            Mail::to($user->email)->send(new ReservationUpdated ($user, $reservation));
+        } else {
+            Log::error('User not found for email sending.');
+        }
 
         return redirect()->route('mypage')->with('success', '予約が更新されました。');
     }
