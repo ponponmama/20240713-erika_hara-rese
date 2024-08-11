@@ -170,7 +170,6 @@
 /* お気に入りに追加されたときのボタンのスタイル */
 .favorite-button.favorited {
     color: red;
-    /* お気に入りの場合は赤色に */
 }
 
 /* レスポンシブデザインの設定 */
@@ -191,12 +190,24 @@
         padding: 2px;
     }
 
+    .search-form__item-select {
+        padding: 2px 2px 2px 6px;
+        font-size: 0.7rem;
+    }
+
+    .search-form__item-input {
+        width: 40%;
+        padding: 2px;
+        font-size: 0.7rem;
+    }
+
+
     .select-wrapper {
         width: 26%;
     }
 
     .custom-select-icon {
-        right: 3px;
+        right: 8px;
     }
 
 

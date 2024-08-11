@@ -8,7 +8,7 @@
 .user__name {
     margin: 6px auto;
     padding: 4px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: gray;
 }
@@ -16,7 +16,7 @@
 .shop__name {
     margin: 6px auto;
     padding: 4px;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: black;
 }
@@ -33,7 +33,7 @@
 .reservations-list {
     width: 70%;
     color: #0056b3;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     padding: 2px;
     margin: 4px;
 }
@@ -57,4 +57,12 @@ td {
     border: 1px solid #7a7a7a;
     padding: 4px;
     text-align: left;
+}
+
+@media (max-width: 768px) {
+
+    table {
+        width: 100%;
+        font-size: 0.8rem;
+    }
 }

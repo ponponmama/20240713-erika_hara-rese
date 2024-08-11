@@ -277,17 +277,29 @@ select {
 }
 
 .nav-menu {
+    width: 95vw;
+    height: 100vh;
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: -30px;
+    left: -90px;
+    right: 0;
+    bottom: 0;
     background-color: white;
-    width: 300px;
-    text-align: center;
-    padding: 20px 0;
-    min-height: 300px;
+    padding: 0;
     font-size: 1.5rem;
     z-index: 1001;
+}
+
+.n-menu {
+    width: 90vw;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 .bar-1 {
@@ -362,11 +374,25 @@ a.nav-link,
     }
 
     .nav-menu {
-        width: 250px;
-        text-align: center;
-        padding: 10px;
-        min-height: 60px;
+        top: -30px;
+        left: -40px;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        padding: 0;
     }
+
+    .n-menu {
+        width: 90vw;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
 
     .top_logo {
         padding: 2px;
@@ -381,7 +407,7 @@ a.nav-link,
     }
 
     .form-section .date-label {
-        width: calc(50% - 24px);
+        width: calc(64% - 24px);
     }
 
     .reservation-summary {

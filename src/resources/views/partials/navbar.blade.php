@@ -6,7 +6,7 @@
         <div class="bar-3"></div>
     </label>
     <nav class="nav-menu">
-        <ul>
+        <ul class="n-menu">
             @guest
                 <li><a href="{{ route('shops.index') }}" class="nav-link">Home</a></li>
                 <li><a href="{{ route('register') }}" class="nav-link">Registration</a></li>
@@ -29,6 +29,7 @@
                 @endif
                 @if(auth()->user()->role === 2)
                     <li><a href="{{ url('/shop-manager/dashboard') }}" class="nav-link">Shop Dashboard</a></li>
+                    <li><a href="{{ route('manage.shop') }}" class="nav-link">ShopPage</a></li>
                 @endif
                 @if(auth()->user()->role === 1)
                     <li><a href="{{ url('/admin/dashboard') }}" class="nav-link">Admin Dashboard</a></li>

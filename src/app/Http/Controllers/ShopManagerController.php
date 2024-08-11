@@ -13,7 +13,7 @@ class ShopManagerController extends Controller
     // ショップ管理ダッシュボード表示
     public function index()
     {
-        $shopId = Auth::user()->shop->id;  // ユーザーが管理する店舗ID
+        $shopId = Auth::user()->shop->id;
         $reservations = Reservation::where('shop_id', $shopId)->get();
 
         //dd($shopId, $reservations);
@@ -59,9 +59,11 @@ class ShopManagerController extends Controller
     // 管理店舗
     public function manageShop()
     {
-        $shop = Shop::where('manager_id', auth()->id())->first();
+        // auth()->id() で現在認証されているユーザーのIDを取得し、そのIDを持つ店舗を検索
+        $shop = Shop::where('user_id', auth()->id())->firstOrFail();
+        
+        return view('shop_manager.manage-shop', compact('shop'));
 
-        return view('shop_manager.manage-my-shop', compact('shop'));
     }
 
     public function showReservations()

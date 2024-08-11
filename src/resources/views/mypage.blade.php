@@ -89,7 +89,7 @@
                                                 <option value="{{ $i }}">{{ $i }}</option>
                                             @endfor
                                         </select>
-                                        <span class="custom-select-icon"></span>
+                                        <span class="rating-select-icon"></span>
                                     </div>
                                 </div>
                                 <div class="rating-group">

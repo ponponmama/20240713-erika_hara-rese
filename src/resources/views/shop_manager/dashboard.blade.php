@@ -25,6 +25,7 @@
                     <th>予約ID</th>
                     <th>顧客名</th>
                     <th>メールアドレス</th>
+                    <th>QRコード</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,6 +37,7 @@
                     <td>{{ $reservation->id }}</td>
                     <td>{{ $reservation->user->user_name }}</td>
                     <td>{{ $reservation->user->email}}</td>
+                    <td><img src="{{ asset($reservation->qr_code) }}" alt="QR Code for Reservation {{ $reservation->id }}"></td>
                 </tr>
                 @endforeach
             </tbody>
