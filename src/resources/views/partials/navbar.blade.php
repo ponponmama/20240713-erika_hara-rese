@@ -26,10 +26,12 @@
                 </li>
                 @if(auth()->user()->role === 3)
                     <li><a href="{{ url('/mypage') }}" class="nav-link">Mypage</a></li>
+                    <li><a href="{{ route('payment.form') }}">支払い</a></li>
                 @endif
                 @if(auth()->user()->role === 2)
                     <li><a href="{{ url('/shop-manager/dashboard') }}" class="nav-link">Shop Dashboard</a></li>
                     <li><a href="{{ route('manage.shop') }}" class="nav-link">ShopPage</a></li>
+                    <li><a href="{{ route('shop_manager.reservations') }}" class="nav-link">Reservations</a></li>
                 @endif
                 @if(auth()->user()->role === 1)
                     <li><a href="{{ url('/admin/dashboard') }}" class="nav-link">Admin Dashboard</a></li>

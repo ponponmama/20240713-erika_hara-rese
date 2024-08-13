@@ -17,7 +17,7 @@ class CreateShopsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('shop_name');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->string('genre');
             $table->string('area');
             $table->string('image')->nullable();

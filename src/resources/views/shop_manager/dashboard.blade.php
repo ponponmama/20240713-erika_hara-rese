@@ -10,9 +10,13 @@
         <h1 class="shop__name"> {{ Auth::user()->shop->shop_name }}　　お疲れ様です！{{ Auth::user()->user_name }}さん</h1>
     </div>
     @if (session('success'))
-        <div class="alert alert-success">
+        <div class="alert-success">
             {{ session('success') }}
         </div>
+    @endif
+    @if (session('result'))
+        <h1>QRコードの内容</h1>
+        <p>{{ session('result') }}</p>
     @endif
     <div class="reservations">
         <h2 class="reservations-list">予約情報</h2>
@@ -25,7 +29,6 @@
                     <th>予約ID</th>
                     <th>顧客名</th>
                     <th>メールアドレス</th>
-                    <th>QRコード</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,7 +40,12 @@
                     <td>{{ $reservation->id }}</td>
                     <td>{{ $reservation->user->user_name }}</td>
                     <td>{{ $reservation->user->email}}</td>
-                    <td><img src="{{ asset($reservation->qr_code) }}" alt="QR Code for Reservation {{ $reservation->id }}"></td>
+                    <td>
+                        <form action="{{ route('qr.decode.from.id', ['id' => $reservation->id]) }}" method="POST">
+                            @csrf
+                            <button type="submit">QRコードを照会</button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

@@ -12,6 +12,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ShopManagerController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\QRController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +65,11 @@ Route::middleware('auth')->group(function () {
     Route::get('thanks', [AuthController::class, 'showThanksPage'])->name('thanks');
     //MYページ表示
     Route::get('/mypage', [UserController::class, 'mypage'])->name('mypage');
+    //支払いページ表示
+    Route::get('/payment', [PaymentController::class, 'showForm'])->name('payment.form');
+    //支払い
+    Route::post('/payment', [PaymentController::class, 'processPayment'])->name('payment.process');
+
     //レビュー
     Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
 
@@ -116,6 +122,9 @@ Route::middleware(['auth', 'role:2'])->group(function () {
     Route::put('/shop-manager/shop/{id}', [ShopManagerController::class, 'update'])->name('shop_manager.update');
     // 店舗情報の編集ページ
     Route::get('/shop-manager/shop/{id}/edit', [ShopManagerController::class, 'edit'])->name('shop_manager.edit');
+
+    Route::post('/qr-decode', [QRController::class, 'decodeQR'])->name('qr.decode');
+    Route::post('/qr-decode-from-id/{id}', [QRController::class, 'decodeQRFromId'])->name('qr.decode.from.id');
 });
 
 //require __DIR__.'/auth.php';

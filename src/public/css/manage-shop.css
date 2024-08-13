@@ -14,7 +14,7 @@
 }
 
 form {
-    width: 80%;
+    width: 70%;
 }
 
 label {
@@ -61,7 +61,7 @@ label {
     height: 150px;
     border: 2px solid #0056b3;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     outline: none;
 }
 
@@ -114,7 +114,7 @@ label {
     text-align: center;
     padding: 2px;
     color: black;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     border: 1px solid #0056b3;
     border-radius: 4px;
@@ -136,7 +136,8 @@ label {
 }
 
 .business_hours_group input {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
+    text-align: left;
     font-weight: bold;
     margin: 10px 0;
 }
@@ -151,10 +152,89 @@ label {
     border-radius: 5px;
     display: inline-block;
     margin: 1% 2% 3% 2%;
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-align: center;
     margin: 10px;
     border: none;
 }
 
-@media (max-width: 768px) {}
+.confirm_text {
+    width: 80%;
+    font-size: 1.2rem;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+
+.image-section {
+    width: 70%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.61);
+}
+
+.image-section img {
+    width: 100%;
+    height: 300px;
+    display: block;
+}
+
+.description {
+    width: 100%;
+    padding: 8px;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.shop-guide {
+    width: 100%;
+    padding: 8px;
+    text-align: start;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.business_hours_up {
+    width: 80%;
+    padding: 8px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 18px 2px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.61);
+}
+
+@media (max-width: 768px) {
+    .image-section {
+        width: 100%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .business_hours_group {
+        width: 100%;
+    }
+
+    .business_hours_group input {
+        font-size: 1rem;
+    }
+
+    .up_date_button {
+        width: 60%;
+        padding: 8px 10px;
+        margin: 10px 0;
+    }
+
+    .confirm_text {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .business_hours_up {
+        width: 100%;
+        margin: 18px 0;
+    }
+
+}
