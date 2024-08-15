@@ -122,9 +122,11 @@ Route::middleware(['auth', 'role:2'])->group(function () {
     Route::put('/shop-manager/shop/{id}', [ShopManagerController::class, 'update'])->name('shop_manager.update');
     // 店舗情報の編集ページ
     Route::get('/shop-manager/shop/{id}/edit', [ShopManagerController::class, 'edit'])->name('shop_manager.edit');
+    //予約照合
+    Route::get('/shop-manager/verify-reservation/{reservationId}', [ShopManagerController::class, 'verifyReservation'])->name('shop_manager.verify_reservation');
 
-    Route::post('/qr-decode', [QRController::class, 'decodeQR'])->name('qr.decode');
-    Route::post('/qr-decode-from-id/{id}', [QRController::class, 'decodeQRFromId'])->name('qr.decode.from.id');
+   // QRコードの予約情報取得関連
+    Route::post('/reservation/details', [ReservationController::class, 'getReservationDetails'])->name('reservation.details');
 });
 
 //require __DIR__.'/auth.php';

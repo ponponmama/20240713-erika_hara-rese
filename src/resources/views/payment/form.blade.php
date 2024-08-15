@@ -1,70 +1,55 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>支払いフォーム</title>
+@extends('layouts.app')
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
     <script src="https://js.stripe.com/v3/"></script>
-    <style>
-        .form-row {
-            width: 30%;
-            margin-bottom: 20px;
-            background-color: #f4f4f4;
-        }
+@endsection
 
-        /* ボタンのスタイルをカスタマイズ */
-        button {
-            background-color: #32325d;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
 
-        button:hover {
-            background-color: #5c67f2;
-        }
-    </style>
-</head>
-<body>
-    <form action="{{ route('payment.process') }}" method="post" id="payment-form">
-        @csrf
-        <div class="form-row">
-            <label for="card-number-element">
-                カード番号
-            </label>
-            <div id="card-number-element">
-                <!-- Stripeのカード番号要素がここに挿入されます -->
+@section('content')
+    <div class="payment-form">
+        <form action="{{ route('payment.process') }}" method="post" id="payment-form">
+            @csrf
+            <div class="form-row">
+                <label for="card-number-element">
+                    カード番号
+                </label>
+                <div id="card-number-element" class="card-content">
+                    <!-- Stripeのカード番号要素がここに挿入されます -->
+                </div>
             </div>
-        </div>
-        <div class="form-row">
-            <label for="card-expiry-element">
-                有効期限
-            </label>
-            <div id="card-expiry-element">
-                <!-- Stripeの有効期限要素がここに挿入されます -->
+            <div class="form-row">
+                <label for="card-expiry-element">
+                    有効期限
+                </label>
+                <div id="card-expiry-element" class="card-content">
+                    <!-- Stripeの有効期限要素がここに挿入されます -->
+                </div>
             </div>
-        </div>
-        <div class="form-row">
-            <label for="card-cvc-element">
-                CVC
-            </label>
-            <div id="card-cvc-element">
-                <!-- StripeのCVC要素がここに挿入されます -->
+            <div class="form-row">
+                <label for="card-cvc-element">
+                    CVC
+                </label>
+                <div id="card-cvc-element" class="card-content">
+                    <!-- StripeのCVC要素がここに挿入されます -->
+                </div>
             </div>
-        </div>
-        <div id="card-errors" role="alert"></div>
-        <button type="submit">支払う</button>
-    </form>
-
+            <div id="card-errors" role="alert"></div>
+            <button type="submit" class="payment-button">支払う</button>
+        </form>
+    </div>
     <script>
         var stripe = Stripe('pk_test_51PmGJ2HFRbtTxjfgZZo9KG9kYXwmjCAAUn1cJRqV7apN8uhrU1RuOXlNGadgH0n16kTGJKPDtsKERO6N5l3QXSnm00FRhEumuA');
         var elements = stripe.elements();
         var style = {
             base: {
-                color: "#32325d",
-                fontSize: "16px",
+                color: "#000000",
+                fontSize: "1rem",
+                lineHeight: "30px",
+                textAlign: "center",
+                '::placeholder': {
+                color: '#808080' 
+            }
             }
         };
 
@@ -110,5 +95,4 @@
             });
         });
     </script>
-</body>
-</html>
+@endsection

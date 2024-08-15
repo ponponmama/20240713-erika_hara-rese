@@ -37,30 +37,48 @@ class ReservationSeeder extends Seeder
             for ($i = 0; $i < 3; $i++) {
 
                 $user = User::where('role', 3)->inRandomOrder()->first();
+                if (!$user) {
+                    throw new \Exception("No general user found");
+                }
+
                 $lunchDateTime = now()->addDays(rand(1, 30))->hour(12)->minute(0)->second(0);
                 $lunchQrCodePath = 'qr_codes/lunch_' . $user->id . '_' . $shop->id . '_' . $lunchDateTime->format('YmdHis') . '.png';
                 QrCode::format('png')->size(100)->generate('Reservation ID: ' . $user->id, public_path($lunchQrCodePath));
 
-                Reservation::create([
+                // ランチ予約を作成
+                $lunchReservation = Reservation::create([
                     'user_id' => $user->id,
                     'shop_id' => $shop->id,
                     'reservation_datetime' => $lunchDateTime,
-                    'number' => rand(1, 10),
-                    'qr_code' => $lunchQrCodePath
+                    'number' => rand(1, 10)
                 ]);
 
-                $dinnerDateTime = now()->addDays(rand(1, 30))->hour(18)->minute(0)->second(0);
-                $dinnerQrCodePath = 'qr_codes/dinner_' . $user->id . '_' . $shop->id . '_' . $dinnerDateTime->format('YmdHis') . '.png';
-                QrCode::format('png')->size(100)->generate('Reservation ID: ' . $user->id, public_path($dinnerQrCodePath));
+                // 予約IDを使用してQRコードを生成
+                $lunchQrCodePath = 'qr_codes/lunch_' . $lunchReservation->id . '.png';
+                $qrCodeContent = 'Reservation ID: ' . $lunchReservation->id;
+                QrCode::format('png')->size(150)->generate($qrCodeContent, public_path($lunchQrCodePath));
+                $lunchReservation->qr_code = $lunchQrCodePath;
+                $lunchReservation->save();
 
-                Reservation::create([
+                $user = User::where('role', 3)->inRandomOrder()->first();
+                if (!$user) {
+                    throw new \Exception("No general user found");
+                }
+
+                // デイナー予約を作成
+                $dinnerDateTime = now()->addDays(rand(1, 30))->hour(18)->minute(0)->second(0);
+                $dinnerReservation = Reservation::create([
                     'user_id' => $user->id,
                     'shop_id' => $shop->id,
                     'reservation_datetime' => $dinnerDateTime,
-                    'number' => rand(1, 10),
-                    'qr_code' => $dinnerQrCodePath
+                    'number' => rand(1, 10)
                 ]);
-
+                // 予約IDを使用してQRコードを生成
+                $dinnerQrCodePath = 'qr_codes/dinner_' . $dinnerReservation->id . '.png';
+                $qrCodeContent = 'Reservation ID: ' . $dinnerReservation->id;
+                QrCode::format('png')->size(100)->generate($qrCodeContent, public_path($dinnerQrCodePath));
+                $dinnerReservation->qr_code = $dinnerQrCodePath;
+                $dinnerReservation->save();
             }
         }
     }

@@ -80,4 +80,19 @@ class ShopManagerController extends Controller
         return view('shop_manager.reservations', ['reservations' => $reservations]);
     }
 
+    // 予約照合
+    public function verifyReservation($reservationId)
+    {
+        $shopId = Auth::user()->shop->id;
+        $reservation = Reservation::where('id', $reservationId)
+                                ->where('shop_id', $shopId)
+                                ->first();
+
+        if (!$reservation) {
+            return back()->with('error', '予約が見つかりません。');
+        }
+
+        return view('shop_manager.reservation_details', compact('reservation'));
+    }
+
 }
