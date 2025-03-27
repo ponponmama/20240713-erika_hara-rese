@@ -99,6 +99,9 @@
 
 ```bash
 git clone https://github.com/ponponmama/20240713-erika_hara-rese.git
+```
+
+```bash
 cd 20240713-erika_hara-rese
 ```
 
@@ -106,6 +109,9 @@ cd 20240713-erika_hara-rese
 
 ```bash　
 sudo apt-get update
+```
+
+```bash
 sudo apt-get install php-curl
 ```
 
@@ -133,6 +139,9 @@ php -m | grep curl
 
 ```bash
 docker-compose exec php bash
+```
+
+```bash
 composer install
 ```
 
@@ -148,6 +157,9 @@ cp .env.example .env
 
 ```bash
 docker-compose exec php bash
+```
+
+```bash
 php artisan config:clear
 ```
 
@@ -222,6 +234,9 @@ ssl_certificate_key /path/to/your/ssl/nginx.key;::　 # 秘密鍵へのパスを
 
 ```bash
 docker-compose down
+```
+
+```bash
 docker-compose up -d
 ```
 
@@ -232,7 +247,13 @@ docker-compose up -d
 
 ```bash
 mkdir -p /path/to/your/project/storage/app/public/images
+```
+
+```bash
 mkdir -p /path/to/your/project/storage/app/public/qr_codes
+```
+
+```bash
 php artisan storage:link
 ```
 
@@ -240,7 +261,13 @@ php artisan storage:link
 
 ```bash
 chmod -R 775 /var/www/storage/app/public/images
+```
+
+```bash
 chmod -R 775 /var/www/storage/app/public/qr_codes
+```
+
+```bash
 chown -R www-data:www-data /var/www/storage/app/public
 ```
 - シーダー用の画像を配置する

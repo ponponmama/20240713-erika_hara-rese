@@ -15,7 +15,7 @@
         <form action="{{ route('login') }}" method="POST" class="login_form">
             @csrf
             <div class="input-group">
-                <img src="{{ asset('images/mail.png') }}" alt="" class="icon-img">
+                <img src="{{ asset('images/mail.png') }}" alt="email_icon" class="icon-img">
                 <input type="email" id="email" name="email" placeholder="Email" class="input_email" value="{{ old('email') }}">
             </div>
             <div class="form__error">
