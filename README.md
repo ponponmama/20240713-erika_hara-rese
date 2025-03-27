@@ -111,9 +111,6 @@ cd 20240713-erika_hara-rese
 sudo apt-get update
 ```
 
-```bash
-sudo apt-get install php-curl
-```
 
 Docker コンテナのビルドと起動
 
@@ -121,10 +118,58 @@ Docker コンテナのビルドと起動
 docker-compose up -d --build
 ```
 
-- php.ini ファイルで curl 拡張機能を有効にする
 
-```ini
-extension=curl
+3. Composer を使用した依存関係のインストール
+
+- github からクローンを作成するといくつかのフォルダが足りません。src に setup.sh を作成してあります。プロジェクトはフレームワーク内にインストールするので、先にフォルダ作成お願いします。
+
+- Docker 環境で PHP コンテナに入り、依存関係をインストールします。
+
+- 3-1. コンテナに入ります。
+
+```bash
+docker-compose exec php bash
+```
+
+- 3-2. スクリプトに実行権限を付与します。
+
+```bash
+chmod +x setup.sh
+```
+
+```bash
+./setup.sh
+```
+
+- 以下のフォルダが作成されます
+
+```
+      storage/app/public/qr_codes \
+```
+
+<br>
+
+#### "ディレクトリが正常に作成されました。" ← このメッセージが出ます。<br>
+
+<br>
+
+- 3-3. curl拡張機能をインストールするためにPHPのバージョンを確認します。
+
+```bash
+php -v
+```
+
+- 確認したバージョンに合わせてcurl拡張機能をインストール
+（例：PHP 8.1の場合）
+
+```bash
+apt-get install php8.1-curl
+```
+
+- または、利用可能なパッケージを確認してからインストール
+
+```bash
+apt-cache search php-curl
 ```
 
 - curl 拡張機能が正しくロードされているか確認
@@ -136,12 +181,10 @@ php -m | grep curl
 正しくcurl拡張機能がロードされている場合、
 "curl"の文字がでます。
 
-3. Composer を使用した依存関係のインストール
+※ もし"curl"が表示されない場合は、php.iniファイルで以下の設定を確認してください：
 
-- Docker 環境で PHP コンテナに入り、依存関係をインストールします。
-
-```bash
-docker-compose exec php bash
+```ini
+extension=curl
 ```
 
 ```bash
