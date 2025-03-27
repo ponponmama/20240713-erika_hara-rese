@@ -245,8 +245,11 @@ docker-compose up -d
 
 ####ディレクトリの作成とストレージ設定
 
+**重要：このアプリでは、シンボリックリンクはすでに設定されており、リポジトリに含まれています。新しい環境でプロジェクトをセットアップする際は、リンクが正しく機能しているかを確認してください。機能していない場合は下記の通り設定しなおしてください。**
+
 - プロジェクトを始める前に、以下のディレクトリを作成してください。これにより、ファイルの保存場所が正しく設定されます。
 - 店舗画像の保存と QR コードを保存するために以下のディレクトリを作成してください。PHP コンテナ内で実行します。
+
 
 ```bash
 mkdir -p /path/to/your/project/storage/app/public/images
@@ -257,8 +260,13 @@ mkdir -p /path/to/your/project/storage/app/public/qr_codes
 ```
 
 ```bash
+docker-compose exec php bash
+```
+
+```bash
 php artisan storage:link
 ```
+
 
 次に、これらのディレクトリに適切なパーミッションを設定してください。これにより、アプリケーションがファイルを適切に読み書きできるようになります。
 
@@ -273,9 +281,6 @@ chmod -R 775 /var/www/storage/app/public/qr_codes
 ```bash
 chown -R www-data:www-data /var/www/storage/app/public
 ```
-- シーダー用の画像を配置する
-  - シーダーで使用する画像は `src/public/shops_img` にあります。これらの画像を `src/storage/app/public/images` にコピーしてください。これにより、アプリケーションがこれらの画像を正しく参照できるようになります。
-
 
 これらのコマンドは、アプリケーションが画像や QR コードを保存するためのディレクトリに適切なアクセス権を設定するために必要です。`www-data` はウェブサーバーのユーザーですが、使用しているサーバーによっては異なるユーザー名になる場合があるため、環境に合わせて適宜変更してください。
 
