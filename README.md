@@ -133,6 +133,9 @@ extension=curl
 php -m | grep curl
 ```
 
+正しくcurl拡張機能がロードされている場合、
+"curl"の文字がでます。
+
 3. Composer を使用した依存関係のインストール
 
 - Docker 環境で PHP コンテナに入り、依存関係をインストールします。
