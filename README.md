@@ -189,6 +189,7 @@ php -m | grep curl
 ```ini
 extension=curl
 ```
+- 3-4. composerインストール
 
 ```bash
 composer install
@@ -226,6 +227,10 @@ HTTPS 通信を行うためには SSL 証明書が必要です。以下のコマ
 GitHub クローンには下記の証明書は含まれていないため、作成してください。
 
 プロジェクトのルートディレクトリ（コンテナ内）で以下のコマンドを実行してください。
+
+```bash
+docker-compose exec php bash
+```
 
 ```bash
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout nginx.key -out nginx.crt
@@ -329,6 +334,10 @@ chown -R www-data:www-data /var/www/storage/app/public
 これらのコマンドは、アプリケーションが画像や QR コードを保存するためのディレクトリに適切なアクセス権を設定するために必要です。`www-data` はウェブサーバーのユーザーですが、使用しているサーバーによっては異なるユーザー名になる場合があるため、環境に合わせて適宜変更してください。
 
 6. アプリケーションキーの生成
+
+```bash
+docker-compose exec php bash
+```
 
 ```bash
 php artisan key:generate
