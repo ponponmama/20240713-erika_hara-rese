@@ -40,8 +40,11 @@ class UserFactory extends Factory
     {
         return $this->state(function (array $attributes) {
             return [
+                'user_name' => 'admin',
+                'email' => 'admin@test.com',
                 'role' => 1,
-                'password' => Hash::make('admin_pass')  // テスト用の既知のパスワード
+                'password' => Hash::make('admin_pass'),  // テスト用の既知のパスワード
+                'email_verified_at' => now(),
             ];
         });
     }
