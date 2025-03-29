@@ -15,15 +15,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->admin(1)->create();
+        // エリアとジャンルを先にシード
+        $this->call([
+            AreasTableSeeder::class,
+            GenresTableSeeder::class,
+        ]);
 
+        // ユーザーを作成
+        User::factory()->admin(1)->create();
         User::factory()->count(25)->create();
 
+        // ショップと予約をシード
         $this->call([
             ShopsTableSeeder::class,
             ReservationSeeder::class,
         ]);
-        //\App\Models\User::factory(20)->create();
     }
 }
-

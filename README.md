@@ -351,15 +351,6 @@ php artisan migrate
 
 7.データベースシーダーの実行
 
-- 全てのシーダーを実行する前に、`Areas` テーブルと `Genres` テーブルのシーダーを先に実行する必要があります。これにより、依存関係が正しく処理されます。
-
-```bash
-php artisan db:seed --class=AreasTableSeeder
-php artisan db:seed --class=GenresTableSeeder
-```
-
-- 上記のシーダーが完了した後、残りのシーダーを実行します。
-
 ```bash
 php artisan db:seed
 ```
