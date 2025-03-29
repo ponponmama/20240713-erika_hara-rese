@@ -1,5 +1,5 @@
 /docker/mysql/data/
 /vendor
 .env
-/src/nginx.crt
-/src/nginx.key
+../../ssl/nginx.crt
+../../ssl/nginx.key
