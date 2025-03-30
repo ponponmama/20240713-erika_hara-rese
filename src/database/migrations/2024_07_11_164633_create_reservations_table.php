@@ -19,7 +19,9 @@ class CreateReservationsTable extends Migration
             $table->foreignId('shop_id')->constrained()->onDelete('cascade');
             $table->timestamp('reservation_datetime')->nullable();
             $table->integer('number')->nullable();
-            $table->text('qr_code')->nullable(); 
+            $table->text('qr_code')->nullable();
+            $table->enum('payment_status', ['pending', 'completed', 'failed'])->default('pending');
+            $table->integer('total_amount');
             $table->timestamps();
         });
     }

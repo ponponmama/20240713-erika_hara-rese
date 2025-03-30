@@ -15,6 +15,8 @@ class Reservation extends Model
         'shop_id',
         'reservation_datetime',
         'number',
+        'payment_status',
+        'total_amount',
     ];
 
     protected $dates = ['reservation_datetime'];

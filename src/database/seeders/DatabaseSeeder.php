@@ -10,6 +10,7 @@ use App\Models\Payment;
 use App\Models\Shop;
 use App\Models\Admin;
 use Database\Seeders\ShopsTableSeeder;
+use Database\Seeders\PaymentSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -65,6 +66,8 @@ class DatabaseSeeder extends Seeder
         Review::factory()->count(100)->create();
 
         // 支払い情報をシード
-        Payment::factory()->count(30)->create();
+        $this->call([
+            PaymentSeeder::class,
+        ]);
     }
 }

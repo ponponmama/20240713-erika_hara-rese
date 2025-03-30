@@ -5,11 +5,18 @@
     <script src="https://js.stripe.com/v3/"></script>
 @endsection
 
-
 @section('content')
     <div class="payment-group">
+        <h2>支払い情報</h2>
+        <div class="reservation-info">
+            <p>予約番号: {{ $reservation->id }}</p>
+            <p>支払い金額: ¥{{ number_format($reservation->total_amount) }}</p>
+        </div>
+
         <form action="{{ route('payment.process') }}" method="post" id="payment-form" class="payment_form">
             @csrf
+            <input type="hidden" name="reservation_id" value="{{ $reservation->id }}">
+
             <div class="form-row">
                 <label for="card-number-element" class="label_card_content">
                     カード番号
@@ -35,11 +42,12 @@
                 </div>
             </div>
             <div id="card-errors" role="alert"></div>
-                <button type="submit" class="payment-button">支払う</button>
+            <button type="submit" class="payment-button">支払う</button>
         </form>
     </div>
+
     <script>
-        var stripe = Stripe('pk_test_51PmGJ2HFRbtTxjfgZZo9KG9kYXwmjCAAUn1cJRqV7apN8uhrU1RuOXlNGadgH0n16kTGJKPDtsKERO6N5l3QXSnm00FRhEumuA');
+        var stripe = Stripe('{{ env('STRIPE_KEY') }}');
         var elements = stripe.elements();
         var style = {
             base: {
@@ -48,8 +56,8 @@
                 lineHeight: "30px",
                 textAlign: "center",
                 '::placeholder': {
-                color: '#808080'
-            }
+                    color: '#808080'
+                }
             }
         };
 
