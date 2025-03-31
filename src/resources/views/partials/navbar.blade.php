@@ -34,6 +34,7 @@
                     @endif
                     @if(auth()->user()->role === 1)
                         <li><a href="{{ url('/admin/dashboard') }}" class="nav-link">Admin Dashboard</a></li>
+                        <li><a href="{{ route('admin.reviews.index') }}" class="nav-link">レビュー管理</a></li>
                     @endif
                 @endauth
             </ul>

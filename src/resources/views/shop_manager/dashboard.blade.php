@@ -50,7 +50,7 @@
         QRコード照会内容
     </h2>
     <div class="reservation-details">
-        <p class="qr_data_content"><strong>予約日:</strong> <span id="reservation-date"></span></p> 
+        <p class="qr_data_content"><strong>予約日:</strong> <span id="reservation-date"></span></p>
         <p class="qr_data_content"><strong>時間:</strong> <span id="reservation-time"></span></p>
         <p class="qr_data_content"><strong>人数:</strong> <span id="reservation-number"></span></p>
         <p class="qr_data_content"><strong>予約ID:</strong> <span id="reservation-id"></span></p>

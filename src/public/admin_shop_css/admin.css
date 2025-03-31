@@ -5,25 +5,7 @@
     text-align: center;
 }
 
-.form-title {
-    margin: 6px auto;
-    padding: 4px;
-    font-size: 1.5rem;
-    color: black;
-    font-weight: bold;
-
-}
-
-.user__name {
-    margin: 6px auto;
-    padding: 4px;
-    font-size: 1.3rem;
-    color: black;
-    font-weight: bold;
-}
-
-.manage_admin,
-.shop_manage {
+.admin-heading {
     width: 100%;
     margin: 6px auto;
     padding: 4px;
@@ -32,8 +14,7 @@
     font-weight: bold;
 }
 
-.shop_manager_form,
-.shop_registration_form {
+.management_form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,12 +27,16 @@
     padding: 4px;
 }
 
+.review_form {
+    width: 100%;
+    margin: 5% 0;
+}
+
 .shop_registration_form {
     margin-top: 5%;
 }
 
-.create-form,
-.create-shop-form {
+.admin-form {
     width: 90%;
 }
 
@@ -65,15 +50,14 @@
 }
 
 .input-group {
-    width: 100%;
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
     justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
-.alert-success,
-.alert-danger {
+.admin-alert {
     text-align: center;
     font-size: 1rem;
 }
@@ -106,38 +90,55 @@
     z-index: 2;
 }
 
-.select_shop_id {
-    width: 100%;
-    padding: 10px;
+.admin-border {
     border: 1px solid #7a7a7a;
     border-radius: 4px;
+}
+
+.select_shop_id,
+.admin-input,
+.admin-time-input,
+.description_text {
+    width: 100%;
+    padding: 10px;
     font-size: 1rem;
-    line-height: 1.4rem;
+    outline: none;
+}
+
+.select_shop_id {
     text-align: center;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     position: relative;
     z-index: 1;
-    color: rgba(0, 0, 0, 0.7);
-    font-weight: bold;
 }
 
-.input_email,
-.input_password,
-.input_shop_name,
-.input_genre,
-.input_area,
-.input_user_name {
-    width: 100%;
-    padding: 2px 10px;
+.admin-input {
     border: none;
     border-bottom: 1px solid #7a7a7a;
-    color: black;
-    font-size: 1.2rem;
     line-height: 40px;
     height: 40px;
-    outline: none;
+}
+
+.admin-time-input {
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.description_text {
+    height: 100px;
+}
+
+/* プレースホルダー */
+.admin-input::placeholder,
+.description_text::placeholder {
+    font-size: 1.2rem;
+    color: black;
+    opacity: 0.7;
+    font-family: sans-serif;
 }
 
 .input-group-time {
@@ -147,8 +148,7 @@
     width: 100%;
 }
 
-.label_open_time,
-.label_close_time {
+.admin-time-label {
     width: 50%;
     font-size: 1rem;
     font-weight: bold;
@@ -156,35 +156,9 @@
     color: rgba(0, 0, 0, 0.7);
 }
 
-.input_open_time,
-.input_close_time {
-    width: 100%;
-    text-align: center;
-    padding: 2px;
-    font-size: 1.2rem;
-    border: 1px solid #7a7a7a;
-    border-radius: 4px;
-    outline: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    color: rgba(0, 0, 0, 0.7);
-}
-
 .input_open_time::-webkit-calendar-picker-indicator,
 .input_close_time::-webkit-calendar-picker-indicator {
     display: none;
-}
-
-.input_email::placeholder,
-.input_password::placeholder,
-.input_shop_name::placeholder,
-.input_genre::placeholder,
-.input_area::placeholder,
-.input_user_name::placeholder {
-    font-size: 1.2rem;
-    color: black;
-    opacity: 0.7;
 }
 
 /* ファイル名を表示するスタイル */
@@ -194,12 +168,10 @@
 }
 
 .custom-file-upload {
-    border: 1px solid #7a7a7a;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 6px 12px;
-    border-radius: 4px;
     cursor: pointer;
     width: 100%;
     text-align: center;
@@ -212,33 +184,7 @@
     display: none;
 }
 
-.description_text {
-    width: 100%;
-    height: 100px;
-    padding: 2px 10px;
-    border: 1px solid #7a7a7a;
-    border-radius: 4px;
-    color: black;
-    font-size: 1rem;
-    outline: none;
-}
-
-.description_text::placeholder {
-    font-size: 1.2rem;
-    color: black;
-    opacity: 0.7;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10%;
-}
-
-.register-button,
-.new-register-button {
+.admin-button {
     width: 50%;
     height: 6%;
     padding: 8px 20px;
@@ -250,80 +196,96 @@
     font-size: 1rem;
     text-align: center;
     display: block;
+    margin: 0 auto 10%;
 }
 
-.register-button:hover {
+.admin-button:hover {
     background-color: #003875;
 }
 
+/* メディアクエリ */
 @media (max-width: 768px) {
-
     .shop_manager_form,
     .shop_registration_form {
         width: 100%;
-    }
-
-    .form-title {
-        font-size: 1.3rem;
     }
 
     .user__name {
         font-size: 1.1rem;
     }
 
-
     .custom-select-icon {
         right: 10px;
     }
 
-    .select_shop_id {
+    .select_shop_id,
+    .admin-input,
+    .admin-time-input,
+    .description_text {
         line-height: 1.2rem;
     }
 
-    .input_email,
-    .input_password,
-    .input_shop_name,
-    .input_genre,
-    .input_area,
-    .input_user_name {
+    .admin-input {
         line-height: 38px;
         height: 38px;
     }
 
-    .input_open_time,
-    .input_close_time,
-    .input_email::placeholder,
-    .input_password::placeholder,
-    .input_shop_name::placeholder,
-    .input_genre::placeholder,
-    .input_area::placeholder,
-    .input_user_name::placeholder,
-    .description_text::placeholder,
-    .file-name-display {
-        font-weight: bold;
-    }
-
-    .register-button,
-    .new-register-button {
+    .admin-button {
         width: 60%;
         padding: 8px 10px;
     }
 }
 
 @media only screen and (width: 768px) {
-
-    .form-title {
-        font-size: 1.3rem;
-    }
-
-    .user__name {
-        font-size: 1.1rem;
-    }
-
-    .register-button,
-    .new-register-button {
+    .admin-button {
         width: 50%;
         padding: 8px 20px;
     }
+}
 
+/* レビュー管理用のボタンスタイル */
+.review-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.review_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.8rem;
+    background: none;
+}
+
+.review-detail-button {
+    color: #b4b4b4;
+}
+
+.review-delete-button {
+    color: #b4b4b4;
+}
+
+.review-detail-button:hover {
+    color: #5c5b5b;
+}
+
+.review-delete-button:hover {
+    color: #ff0000;
+    opacity: 0.8;
+}
+
+.review-delete-button i {
+    font-size: 1.2rem;
+}
+
+.review-star {
+    color: #fd9103;
+}
+
+.review-star-empty {
+    color: #fd9103;  /* アウトライン星も同じ青色に設定 */
 }

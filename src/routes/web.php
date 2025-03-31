@@ -97,7 +97,9 @@ Route::middleware(['auth', 'role:1'])->group(function () {
     // 画像保存機能
     Route::get('/admin/save-image', [AdminController::class, 'saveImage'])->name('admin.save.image');
     // 管理者用レビュールート
-    Route::resource('reviews', AdminReviewController::class);
+    Route::get('/admin/reviews', [AdminReviewController::class, 'index'])->name('admin.reviews.index');
+    Route::get('/admin/reviews/{review}', [AdminReviewController::class, 'show'])->name('admin.reviews.show');
+    Route::delete('/admin/reviews/{review}', [AdminReviewController::class, 'destroy'])->name('admin.reviews.destroy');
 });
 
 // Shop Manager用のルート

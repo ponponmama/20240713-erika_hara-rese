@@ -6,6 +6,7 @@
     <title>Rese</title>
     <link rel="stylesheet" href="{{ asset('admin_shop_css/common_admin.css') }}">
     <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     @yield('css')
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
 </head>

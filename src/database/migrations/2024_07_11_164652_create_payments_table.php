@@ -19,8 +19,8 @@ class CreatePaymentsTable extends Migration
             $table->foreignId('reservation_id')->constrained()->onDelete('cascade');
             $table->integer('total_payment_amount');
             $table->enum('payment_status', ['pending', 'completed', 'failed']);
-            $table->enum('payment_method', ['stripe', 'cash', 'bank_transfer'])->nullable();
-            $table->string('payment_provider_id')->nullable();
+            $table->string('stripe_payment_id')->nullable();
+            $table->string('stripe_customer_id')->nullable();
             $table->timestamps();
         });
     }
