@@ -65,7 +65,7 @@ class UserPolicy
     public function delete(User $user, User $model)
     {
         // 現在のユーザーがadminであり、自分自身を削除しようとしていない場合に削除を許可
-        return $currentUser->role === 'admin' && $currentUser->id !== $model->id;
+        return $user->role === 'admin' && $user->id !== $model->id;
     }
 
     /**

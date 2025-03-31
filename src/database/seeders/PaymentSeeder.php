@@ -15,8 +15,28 @@ class PaymentSeeder extends Seeder
             Payment::factory()->create([
                 'reservation_id' => $reservation->id,
                 'user_id' => $reservation->user_id,
-                'total_payment_amount' => 5000, // 固定値で設定
+                'total_payment_amount' => $reservation->total_amount,
                 'payment_status' => 'pending',
+            ]);
+        });
+
+        // 支払い済みの予約に対して支払いデータを作成
+        Reservation::where('payment_status', 'completed')->each(function ($reservation) {
+            Payment::factory()->create([
+                'reservation_id' => $reservation->id,
+                'user_id' => $reservation->user_id,
+                'total_payment_amount' => $reservation->total_amount,
+                'payment_status' => 'completed',
+            ]);
+        });
+
+        // 支払い失敗の予約に対して支払いデータを作成
+        Reservation::where('payment_status', 'failed')->each(function ($reservation) {
+            Payment::factory()->create([
+                'reservation_id' => $reservation->id,
+                'user_id' => $reservation->user_id,
+                'total_payment_amount' => $reservation->total_amount,
+                'payment_status' => 'failed',
             ]);
         });
 

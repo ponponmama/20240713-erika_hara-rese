@@ -7,9 +7,17 @@ use App\Models\Reservation;
 use App\Models\User;
 use App\Models\Shop;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Faker\Factory as Faker;
 
 class ReservationSeeder extends Seeder
 {
+    protected $faker;
+
+    public function __construct()
+    {
+        $this->faker = Faker::create('ja_JP');
+    }
+
     /**
      * Run the database seeds.
      *
@@ -50,7 +58,9 @@ class ReservationSeeder extends Seeder
                     'user_id' => $user->id,
                     'shop_id' => $shop->id,
                     'reservation_datetime' => $lunchDateTime,
-                    'number' => rand(1, 10)
+                    'number' => rand(1, 10),
+                    'total_amount' => rand(3000, 8000),
+                    'payment_status' => $this->faker->randomElement(['pending', 'completed', 'failed'])
                 ]);
 
                 // 予約IDを使用してQRコードを生成
@@ -71,7 +81,9 @@ class ReservationSeeder extends Seeder
                     'user_id' => $user->id,
                     'shop_id' => $shop->id,
                     'reservation_datetime' => $dinnerDateTime,
-                    'number' => rand(1, 10)
+                    'number' => rand(1, 10),
+                    'total_amount' => rand(5000, 15000),
+                    'payment_status' => $this->faker->randomElement(['pending', 'completed', 'failed'])
                 ]);
                 // 予約IDを使用してQRコードを生成
                 $dinnerQrCodePath = 'qr_codes/dinner_' . $dinnerReservation->id . '.svg';

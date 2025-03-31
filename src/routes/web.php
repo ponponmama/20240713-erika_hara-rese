@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ShopController;
-use Illuminate\Http\Request; 
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ReservationController;
@@ -13,6 +13,8 @@ use App\Http\Controllers\ShopManagerController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\QRController;
+use App\Http\Controllers\Admin\ReviewController as AdminReviewController;
+use App\Http\Controllers\Shop\ReviewController as ShopReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,6 +96,8 @@ Route::middleware(['auth', 'role:1'])->group(function () {
     Route::post('/admin/shop-manager', [AdminController::class, 'createShopManager'])->name('admin.create.shop_manager');
     // 画像保存機能
     Route::get('/admin/save-image', [AdminController::class, 'saveImage'])->name('admin.save.image');
+    // 管理者用レビュールート
+    Route::resource('reviews', AdminReviewController::class);
 });
 
 // Shop Manager用のルート
@@ -110,6 +114,8 @@ Route::middleware(['auth', 'role:2'])->group(function () {
     Route::get('/shop-manager/verify-reservation/{reservationId}', [ShopManagerController::class, 'verifyReservation'])->name('shop_manager.verify_reservation');
    // QRコードスキャン結果から予約情報取得、JSON形式で返すためのroute(APIにコード)
     Route::post('/reservation/details', [ReservationController::class, 'getReservationDetails'])->name('reservation.details');
+    // ショップ用レビュールート
+    Route::resource('reviews', ShopReviewController::class)->only(['index', 'show']);
 });
 
 //require __DIR__.'/auth.php';
