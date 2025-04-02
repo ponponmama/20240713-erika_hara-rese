@@ -1,7 +1,7 @@
 .search-content {
     width: 50%;
     height: 35px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.61);
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 61%);
     border-radius: 6px;
     background-color: white;
     display: flex;
@@ -35,7 +35,7 @@
 
 .search-form__item-input {
     width: 50%;
-    padding: 4px 4px;
+    padding: 4px;
     border: none;
     background: none;
     border-radius: 4px;
@@ -63,8 +63,6 @@
     padding: 4px 14px;
     border: none;
     border-right: 1px solid #cccaca;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     position: relative;
     background-color: white;
@@ -94,7 +92,7 @@
 .shop_card {
     flex: 0 1 24%;
     margin-bottom: 1%;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.61);
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 61%);
     padding: 0;
     background-color: white;
     border-radius: 10px;
@@ -116,7 +114,7 @@
 .shop-name {
     margin: 0;
     padding: 5px;
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 
 .shop-guide {
@@ -139,7 +137,6 @@
     text-decoration: none;
     border-radius: 5px;
     display: inline-block;
-    margin: 1% 2% 3% 2%;
     font-size: 0.7rem;
     text-align: center;
     margin: 5px;
@@ -151,24 +148,12 @@
     background: none;
     cursor: pointer;
     font-size: 2rem;
-    color: rgb(228, 225, 225);
-    padding: 1px 15px 1px 15px;
-}
-
-/* お気に入りボタンのスタイル */
-.favorite-button {
-    border: none;
-    outline: none;
-    background: none;
-    cursor: pointer;
-    font-size: 2rem;
-    color: rgb(228, 225, 225);
-    /* デフォルトの色 */
-    padding: 1px 15px 1px 15px;
+    color: rgb(228 225 225);
+    padding: 1px 15px;
 }
 
 /* お気に入りに追加されたときのボタンのスタイル */
-.favorite-button.favorited {
+.favorite-button.favorite {
     color: red;
 }
 
@@ -212,9 +197,6 @@
     .shop_card {
         flex: 0 1 100%;
         justify-content: center;
-    }
-
-    .shop_card {
         margin-bottom: 3%;
     }
 

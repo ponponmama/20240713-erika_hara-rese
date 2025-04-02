@@ -14,7 +14,7 @@
 .login_container {
     background-color: white;
     border-radius: 8px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.61);
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 61%);
     width: 40%;
     position: absolute;
     margin: auto;
@@ -24,7 +24,7 @@
     display: flex;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.61);
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 61%);
     padding: 20px;
     width: 40%;
     text-align: center;
@@ -51,7 +51,7 @@
     padding: 2px 30px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    margin: 0 0 10px 0;
+    margin: 0 0 10px;
 }
 
 .form-title {
@@ -66,7 +66,7 @@
 
 .form__error {
     height: 16px;
-    color: #ff0000;
+    color: #f00;
     text-align: center;
     font-size: 0.8rem;
     font-weight: bold;
@@ -107,13 +107,13 @@
 .input_password::placeholder,
 .input_text::placeholder {
     font-size: 1.2rem;
-    color: rgb(10, 10, 10);
+    color: rgb(10 10 10);
 }
 
 .button-container {
     display: flex;
     justify-content: flex-end;
-    margin: 2% 2% 5% 2%;
+    margin: 2% 2% 5%;
 }
 
 .thanks-button-container {
@@ -121,7 +121,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2% 2% 5% 2%;
+    margin: 2% 2% 5%;
 }
 
 .register-button,
@@ -149,7 +149,6 @@
 }
 
 @media (max-width: 768px) {
-
     .registration_container,
     .login_container {
         width: 80%;
@@ -173,7 +172,6 @@
 }
 
 @media only screen and (width: 768px) {
-
     .registration_container,
     .login_container {
         width: 60%;

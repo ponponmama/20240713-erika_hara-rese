@@ -19,8 +19,10 @@
 ::before,
 ::after {
     vertical-align: inherit;
+
     /* 2 */
     text-decoration: inherit;
+
     /* 1 */
 }
 
@@ -35,23 +37,22 @@
 */
 
 html {
-    word-break: break-word;
+    word-break: break-all;
+
     /* 6 */
-    -moz-tab-size: 4;
-    /* 3 */
     tab-size: 4;
+
     /* 3 */
     line-height: 1.5;
+
     /* 2 */
     cursor: default;
+
     /* 1 */
 
-    -webkit-tap-highlight-color: transparent
-        /* 4 */
-    ;
-    -ms-text-size-adjust: 100%;
-    /* 5 */
-    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+
     /* 5 */
 }
 
@@ -109,8 +110,10 @@ ul ul {
 
 hr {
     overflow: visible;
+
     /* 2 */
     height: 0;
+
     /* 1 */
 }
 
@@ -139,8 +142,10 @@ nav ul {
 
 pre {
     font-size: 1em;
+
     /* 2 */
-    font-family: monospace, monospace;
+    font-family: monospace;
+
     /* 1 */
 }
 
@@ -182,8 +187,10 @@ code,
 kbd,
 samp {
     font-size: 1em;
+
     /* 2 */
-    font-family: monospace, monospace;
+    font-family: monospace;
+
     /* 1 */
 }
 
@@ -250,7 +257,7 @@ img {
 */
 
 svg:not([fill]) {
-    fill: currentColor;
+    fill: currentcolor;
 }
 
 /**
@@ -292,8 +299,10 @@ select {
 
 button {
     overflow: visible;
+
     /* 1 */
     text-transform: none;
+
     /* 2 */
 }
 
@@ -305,7 +314,7 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-    -webkit-appearance: button;
+    appearance: auto;
 }
 
 /**
@@ -315,8 +324,10 @@ button,
 
 fieldset {
     padding: 0.35em 0.75em 0.625em;
+
     /* 2 */
     border: 1px solid #a0a0a0;
+
     /* 1 */
 }
 
@@ -335,12 +346,16 @@ input {
 
 legend {
     display: table;
+
     /* 1 */
     max-width: 100%;
+
     /* 1 */
     color: inherit;
+
     /* 2 */
     white-space: normal;
+
     /* 1 */
 }
 
@@ -351,8 +366,10 @@ legend {
 
 progress {
     display: inline-block;
+
     /* 1 */
     vertical-align: baseline;
+
     /* 2 */
 }
 
@@ -372,10 +389,13 @@ select {
 
 textarea {
     overflow: auto;
+
     /* 2 */
     margin: 0;
+
     /* 1 */
     resize: vertical;
+
     /* 3 */
 }
 
@@ -395,9 +415,10 @@ textarea {
 
 [type="search"] {
     outline-offset: -2px;
-    /* 2 */
 
-    -webkit-appearance: textfield;
+    /* 2 */
+    appearance: textfield;
+
     /* 1 */
 }
 
@@ -414,7 +435,7 @@ textarea {
 * Correct the text style of placeholders in Chrome, Edge, and Safari.
 */
 
-::-webkit-input-placeholder {
+::placeholder {
     color: inherit;
     opacity: 0.54;
 }
@@ -423,8 +444,8 @@ textarea {
 * Remove the inner padding in Chrome, Edge, and Safari on macOS.
 */
 
-::-webkit-search-decoration {
-    -webkit-appearance: none;
+[type="search"]::-webkit-search-decoration {
+    appearance: none;
 }
 
 /**
@@ -434,9 +455,10 @@ textarea {
 
 ::-webkit-file-upload-button {
     font: inherit;
-    /* 2 */
 
-    -webkit-appearance: button;
+    /* 2 */
+    appearance: auto;
+
     /* 1 */
 }
 
@@ -487,11 +509,7 @@ dialog {
     display: block;
     margin: auto;
     padding: 1em;
-    width: -moz-fit-content;
-    width: -webkit-fit-content;
     width: fit-content;
-    height: -moz-fit-content;
-    height: -webkit-fit-content;
     height: fit-content;
     border: solid;
     background-color: white;
@@ -547,10 +565,9 @@ select,
 summary,
 textarea,
 [tabindex] {
-    -ms-touch-action: manipulation;
-    /* 1 */
     touch-action: manipulation;
-    /* 2 */
+
+    /* 1, 2 */
 }
 
 /**
