@@ -97,4 +97,19 @@ class ShopManagerController extends Controller
 
         return view('shop_manager.reservation_details', compact('reservation'));
     }
+
+    public function updatePrice(Request $request)
+    {
+        try {
+            $shop = Auth::user()->shop;
+            $shop->price = $request->price;
+            $shop->save();
+
+            return redirect()->route('shop.dashboard')
+                ->with('success', '予約金額を更新しました');
+        } catch (\Exception $e) {
+            return redirect()->route('shop.dashboard')
+                ->with('error', '予約金額の更新に失敗しました');
+        }
+    }
 }

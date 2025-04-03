@@ -46,6 +46,23 @@
             </tbody>
         </table>
     </div>
+
+    <div class="price-setting-section">
+        <h2 class="price-title">予約金額設定</h2>
+        <form action="{{ route('shop.update.price') }}" method="POST" class="price-form">
+            @csrf
+            @method('PATCH')
+            <div class="price-input-group">
+                <label for="price" class="price-label">予約金額</label>
+                <div class="price-wrapper">
+                    <input type="number" id="price" name="price" class="price-input" value="{{ Auth::user()->shop->price }}" min="0" step="10" required>
+                    <span class="price-unit">円</span>
+                </div>
+            </div>
+            <button type="submit" class="price-update-btn">更新</button>
+        </form>
+    </div>
+
     <h2 id="qr-data-display" class="qr-data-display">
         QRコード照会内容
     </h2>

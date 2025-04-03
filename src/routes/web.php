@@ -118,6 +118,9 @@ Route::middleware(['auth', 'role:2'])->group(function () {
     Route::post('/reservation/details', [ReservationController::class, 'getReservationDetails'])->name('reservation.details');
     // ショップ用レビュールート
     Route::resource('reviews', ShopReviewController::class)->only(['index', 'show']);
+    // 価格設定用のルート
+    Route::patch('/shop-manager/update-price', [ShopManagerController::class, 'updatePrice'])->name('shop.update.price');
 });
+
 
 //require __DIR__.'/auth.php';

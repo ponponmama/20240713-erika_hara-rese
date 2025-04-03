@@ -51,7 +51,7 @@ class ShopController extends Controller
 
         // ユーザーが他のページに遷移する際にセッションデータをクリアするためのフラグを設定
         $request->session()->put('clear_session_on_leave', true);
-        \Log::info('Session clear flag set');
+        Log::info('Session clear flag set');
 
         return view('shops.detail', [
             'shop' => $shop,
