@@ -97,5 +97,4 @@ class ShopManagerController extends Controller
 
         return view('shop_manager.reservation_details', compact('reservation'));
     }
-
 }
