@@ -12,7 +12,7 @@ class Shop extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'shop_name','description', 'image', 'open_time', 'close_time'
+        'user_id', 'shop_name','description', 'image', 'open_time', 'close_time', 'price'
     ];
     // ユーザーモデルとのリレーション
     public function user()

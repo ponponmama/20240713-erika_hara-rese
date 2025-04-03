@@ -61,7 +61,7 @@
                                 <form action="{{ route('shops.unfavorite', $shop) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="favorite-button favorited">❤</button>
+                                    <button type="submit" class="favorite-button favorite">❤</button>
                                 </form>
                             @else
                                 <form action="{{ route('shops.favorite', $shop) }}" method="POST">

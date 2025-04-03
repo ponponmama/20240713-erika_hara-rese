@@ -40,6 +40,11 @@
             <input type="time" id="close_time" name="close_time" value="{{ \Carbon\Carbon::parse($shop->close_time)->format('H:i') }}" class="input_close_time">
         </div>
         <div class="input-group">
+            <img src="{{ asset('images/price.png') }}" alt="" class="icon-img">
+            <label for="price" class="label_price">金額</label>
+            <input type="number" id="price" name="price" value="{{ $shop->price }}" class="input_price" min="0">
+        </div>
+        <div class="input-group">
             <img src="{{ asset('images/img.png') }}" alt="" class="icon-img">
             <label for="image" class="label_image">写真</label>
             <input type="file" id="image" name="image" class="input_image" >

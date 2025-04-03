@@ -75,6 +75,11 @@
                             <button type="submit" class="delete-reservation-button" form="delete-form-{{ $reservation->id }}">
                                 削除
                             </button>
+                            @if($reservation->payment_status !== 'completed')
+                                <a href="{{ route('payment.form', ['reservation_id' => $reservation->id]) }}" class="edit-reservation-button">
+                                    支払う
+                                </a>
+                            @endif
                             <form action="{{ route('reservations.destroy', $reservation->id) }}" method="POST"  id="delete-form-{{ $reservation->id }}" method="POST" class="delete-form">
                                 @csrf
                                 @method('DELETE')
@@ -136,7 +141,7 @@
                                         <form action="{{ route('shops.unfavorite', $favorite) }}" method="POST" class="favorite_form">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="favorite-button favorited">❤</button>
+                                            <button type="submit" class="favorite-button favorite">❤</button>
                                         </form>
                                         @else
                                         <form action="{{ route('shops.favorite', $favorite) }}" method="POST">

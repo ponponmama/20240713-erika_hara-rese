@@ -26,7 +26,6 @@
                     </li>
                     @if(auth()->user()->role === 3)
                         <li><a href="{{ url('/mypage') }}" class="nav-link">Mypage</a></li>
-                        <li><a href="{{ route('payment.form') }}" class="nav-link">Payment</a></li>
                     @endif
                     @if(auth()->user()->role === 2)
                         <li><a href="{{ url('/shop-manager/dashboard') }}" class="nav-link">Shop Dashboard</a></li>

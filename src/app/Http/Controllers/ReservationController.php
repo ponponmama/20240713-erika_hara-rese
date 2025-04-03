@@ -89,7 +89,7 @@ class ReservationController extends Controller
      * @return \Illuminate\Http\Response
      */
     //detailページからのデータを使用して予約保存し予約完了ページへリダイレクト
-     public function store(StoreReservationRequest $request)
+    public function store(StoreReservationRequest $request)
     {
         Log::info('Store method called');// メソッドの呼び出しをログに記録
         $current = Carbon::now(); // 現在の日時を取得して $current に代入
@@ -105,6 +105,8 @@ class ReservationController extends Controller
         $reservation->reservation_datetime = $reservationDateTime->format('Y-m-d H:i:s');
         $reservation->number = $request->number;
         $reservation->user_id = auth()->id();
+        $reservation->total_amount = $shop->price;
+        $reservation->payment_status = 'pending';
 
         $reservation->save();
 
@@ -135,7 +137,7 @@ class ReservationController extends Controller
     // 予約完了ページ
     public function done()
     {
-        return view('done'); 
+        return view('done');
     }
 
     /**
