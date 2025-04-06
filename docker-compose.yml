@@ -21,24 +21,26 @@ services:
       - ./src:/var/www/
 
   mysql:
-    image: mysql:8.0
-    env_file:
-      - ./src/.env
+    image: mysql:8.0.26
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel_db
+      MYSQL_USER: laravel_user
+      MYSQL_PASSWORD: laravel_pass
     command: mysqld --default-authentication-plugin=mysql_native_password
     volumes:
       - ./docker/mysql/data:/var/lib/mysql
       - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
-      - ./docker/mysql/sql:/docker-entrypoint-initdb.d
     ports:
-      - 3306:3306
+      - "3306:3306"
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    env_file:
-      - ./src/.env
     environment:
       - PMA_ARBITRARY=1
       - PMA_HOST=mysql
+      - PMA_USER=laravel_user
+      - PMA_PASSWORD=laravel_pass
     depends_on:
       - mysql
     ports:

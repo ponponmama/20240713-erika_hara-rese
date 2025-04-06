@@ -84,6 +84,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('reservations', ReservationController::class);
     //予約作成ページ
     Route::get('/reservations/create', [ReservationController::class, 'create'])->name('reservations.create');
+    // 営業時間の更新
+    Route::post('/reservations/update-times', [ReservationController::class, 'updateTimes'])->name('reservations.updateTimes');
 });
 
 // Admin用のルート

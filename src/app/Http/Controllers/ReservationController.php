@@ -49,8 +49,11 @@ class ReservationController extends Controller
         $shop = isset($reservationDetails) ? Shop::find($reservationDetails->shop_id) : null;
 
         if ($shop) {
+            // 本日の日付を使用
+            $date = Carbon::now()->format('Y-m-d');
             $current = Carbon::now();
-            $date = $current->format('Y-m-d');
+
+            // 営業時間を取得
             $times = $this->shopService->getBusinessHours($shop->open_time, $shop->close_time, $date, $current);
         } else {
             $times = [];
@@ -59,26 +62,53 @@ class ReservationController extends Controller
         return view('reservation', [
             'shop' => $shop,
             'reservationDetails' => $reservationDetails,
-            'times' => $times
+            'times' => $times,
+            'selectedDate' => $date ?? Carbon::now()->format('Y-m-d')
         ]);
     }
 
     public function updateTimes(Request $request)
     {
-        $date = $request->input('date', Carbon::now()->format('Y-m-d'));
-        $shopId = $request->input('shop_id');
-        $shop = Shop::find($shopId);
+        Log::info('updateTimesメソッドが呼び出されました');
+        Log::info('リクエストパラメータ:', $request->all());
+
+        $reservationDetails = session()->get('reservation_details', null);
+        $shop = isset($reservationDetails) ? Shop::find($reservationDetails->shop_id) : null;
 
         if ($shop) {
-            $times = $this->shopService->getBusinessHours($shop->open_time, $shop->close_time, $date, Carbon::now());
+            // リクエストから日付パラメータを取得
+            $date = $request->input('date', Carbon::now()->format('Y-m-d'));
+            $current = Carbon::now();
+
+            // 日付が今日より前かどうかを判断
+            $selectedDate = Carbon::parse($date);
+            $today = Carbon::now()->startOfDay();
+
+            // 前日の日付が指定された場合は今日の日付にリダイレクト
+            if ($selectedDate->lt($today)) {
+                return redirect()->route('reservations.create', ['date' => $today->format('Y-m-d')]);
+            }
+
+            // 日付が今日かどうかを判断
+            $isToday = $selectedDate->isToday();
+
+            // 日付が今日の場合は現在時刻を渡し、翌日以降の場合はnullを渡す
+            $currentTime = $isToday ? $current : null;
+
+            // 営業時間を取得
+            $times = $this->shopService->getBusinessHours($shop->open_time, $shop->close_time, $date, $currentTime);
+
+            Log::info('営業時間:', $times);
         } else {
             $times = [];
+            Log::info('店舗情報が見つかりませんでした');
         }
 
-        return redirect()->route('reservations.create')->with([
+        return view('reservation', [
+            'shop' => $shop,
+            'reservationDetails' => $reservationDetails,
             'times' => $times,
-            'date' => $date,
-            'shop_id' => $shopId
+            'selectedDate' => $date
         ]);
     }
 

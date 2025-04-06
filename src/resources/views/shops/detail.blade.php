@@ -35,7 +35,7 @@
             @csrf
             <input type="hidden" name="shop_id" value="{{ $shop->id }}">
             <label for="date" class="label_date"></label>
-            <input type="date" id="date" name="date" class="input_date">
+            <input type="date" id="date" name="date" class="input_date" value="{{ date('Y-m-d') }}" min="{{ date('Y-m-d') }}">
             @error('date')
                 <div class="form__error">{{ $message }}</div>
             @enderror
@@ -110,4 +110,87 @@
             </button>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+<script>
+    // 日付入力フィールドの要素を取得
+    const dateInput = document.getElementById('date');
+
+    // 今日の日付を取得（時間部分は0に設定）
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    // 日付が変更されたときに実行される関数
+    dateInput.addEventListener('change', function() {
+        console.log('日付が変更されました');
+
+        // 選択された日付を取得
+        const selectedDate = new Date(this.value);
+        selectedDate.setHours(0, 0, 0, 0);
+
+        // 日付の比較（年月日を文字列に変換して比較）
+        const todayStr = today.toISOString().split('T')[0]; // YYYY-MM-DD形式
+        const selectedStr = selectedDate.toISOString().split('T')[0]; // YYYY-MM-DD形式
+
+        console.log('選択された日付:', selectedStr);
+        console.log('今日の日付:', todayStr);
+
+        // 前日の日付が選択された場合
+        if (selectedStr < todayStr) {
+            // エラーメッセージを表示
+            alert('過去の日付は選択できません。今日以降の日付を選択してください。');
+
+            // 今日の日付に戻す
+            this.value = todayStr;
+
+            // フォームを作成して送信
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '{{ route('reservations.updateTimes') }}';
+
+            // CSRFトークンを追加
+            const csrfToken = document.createElement('input');
+            csrfToken.type = 'hidden';
+            csrfToken.name = '_token';
+            csrfToken.value = '{{ csrf_token() }}';
+            form.appendChild(csrfToken);
+
+            // 日付パラメータを追加
+            const dateInput = document.createElement('input');
+            dateInput.type = 'hidden';
+            dateInput.name = 'date';
+            dateInput.value = this.value;
+            form.appendChild(dateInput);
+
+            // フォームを送信
+            document.body.appendChild(form);
+            form.submit();
+            return;
+        }
+
+        // フォームを作成して送信
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '{{ route('reservations.updateTimes') }}';
+
+        // CSRFトークンを追加
+        const csrfToken = document.createElement('input');
+        csrfToken.type = 'hidden';
+        csrfToken.name = '_token';
+        csrfToken.value = '{{ csrf_token() }}';
+        form.appendChild(csrfToken);
+
+        // 日付パラメータを追加
+        const dateInput = document.createElement('input');
+        dateInput.type = 'hidden';
+        dateInput.name = 'date';
+        dateInput.value = this.value;
+        form.appendChild(dateInput);
+
+        // フォームを送信
+        document.body.appendChild(form);
+        form.submit();
+    });
+</script>
 @endsection
