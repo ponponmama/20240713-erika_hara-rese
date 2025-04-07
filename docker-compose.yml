@@ -8,9 +8,9 @@ services:
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./src:/var/www/
 
-      - ../ssl/nginx.crt:/etc/nginx/ssl/nginx.crt
+      - /home/ponponamama/coachtech/ssl/nginx.crt:/etc/nginx/ssl/nginx.crt
 
-      - ../ssl/nginx.key:/etc/nginx/ssl/nginx.key
+      - /home/ponponamama/coachtech/ssl/nginx.key:/etc/nginx/ssl/nginx.key
       # 秘密鍵をマウント
     depends_on:
       - php
@@ -21,7 +21,7 @@ services:
       - ./src:/var/www/
 
   mysql:
-    image: mysql:8.0.26
+    image: mysql:8.0.41
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: laravel_db
