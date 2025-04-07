@@ -79,10 +79,10 @@
 
 #### 環境構築
 
-- **PHP**: 8.1.29
-- **MySQL**: 10.11.6-MariaDB
-- **Composer**: 2.7.7
-- **Docker**: 26.1.4
+- **PHP**: 8.1.32
+- **MySQL**: 8.0.26
+- **Composer**: 2.8.6
+- **Docker**: 28.0.4
 - **Laravel Framework**: 8.83.27
 
 - ＊ご使用の PC に合わせて各種必要なファイル(.env や docker-compose.yml 等)は作成、編集してください。
