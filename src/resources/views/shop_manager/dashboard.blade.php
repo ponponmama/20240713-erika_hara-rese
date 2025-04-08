@@ -108,7 +108,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     startButton.addEventListener('click', function() {
         if (!stream) {
-            navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
+            navigator.mediaDevices.getUserMedia({
+                video: {
+                    facingMode: "environment",
+                    width: { ideal: 640 },
+                    height: { ideal: 480 }
+                }
+            })
                 .then(function(s) {
                     stream = s;
                     videoElement.srcObject = stream;
@@ -118,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     startButton.style.display = 'none';
                 }).catch(function(error) {
                     console.error('Error accessing the camera: ', error);
+                    alert('カメラへのアクセスに失敗しました。カメラの権限を確認してください。');
                 });
         }
     });
@@ -155,17 +162,52 @@ document.addEventListener('DOMContentLoaded', function () {
             canvasElement.width = videoElement.videoWidth;
             canvas.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
             var imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
-            var code = jsQR(imageData.data, imageData.width, imageData.height);
+
+            // QRコードの読み取り精度を向上させるための処理
+            var code = jsQR(imageData.data, imageData.width, imageData.height, {
+                inversionAttempts: "attemptBoth"
+            });
 
             if (code) {
+                // 赤枠を描画
                 drawBox(code.location);
+
+                // QRコードの内容を表示
                 qrDataDisplay.textContent = 'QRコードの内容: ' + code.data;
+
+                // 予約詳細を取得
                 fetchReservationDetails(code.data);
+
+                // スキャンを停止
+                if (stream) {
+                    stream.getTracks().forEach(track => track.stop());
+                    stream = null;
+                    videoElement.srcObject = null;
+                    stopButton.style.display = 'none';
+                    startButton.style.display = 'block';
+                }
             }
         }
         requestAnimationFrame(scanQRCode);
     }
 
+    function drawBox(location) {
+        // キャンバスをクリア
+        canvas.clearRect(0, 0, canvasElement.width, canvasElement.height);
+
+        // 赤枠を描画
+        canvas.beginPath();
+        canvas.moveTo(location.topLeftCorner.x, location.topLeftCorner.y);
+        canvas.lineTo(location.topRightCorner.x, location.topRightCorner.y);
+        canvas.lineTo(location.bottomRightCorner.x, location.bottomRightCorner.y);
+        canvas.lineTo(location.bottomLeftCorner.x, location.bottomLeftCorner.y);
+        canvas.lineTo(location.topLeftCorner.x, location.topLeftCorner.y);
+        canvas.strokeStyle = "#FF3B58";
+        canvas.lineWidth = 4;
+        canvas.stroke();
+    }
+
+    // 予約詳細を取得する関数
     function fetchReservationDetails(qrData) {
         const match = qrData.match(/(\d+)$/);
         if (match) {
@@ -183,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         document.getElementById('reservation-date').textContent = reservationDate.toLocaleDateString('ja-JP');
                         document.getElementById('reservation-time').textContent = reservationDate.toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit', hour12: false });
                         document.getElementById('reservation-number').textContent = data.number;
-                        document.getElementById('reservation-id').textContent = data.id; // 予約IDを表示
+                        document.getElementById('reservation-id').textContent = data.id;
                         document.getElementById('reservation-user-name').textContent = data.user_name;
                         document.getElementById('reservation-email').textContent = data.email;
                     } else {
@@ -198,18 +240,6 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Invalid QR data format:', qrData);
             alert('QRコードの形式が正しくありません。');
         }
-    }
-
-    function drawBox(location) {
-        canvas.beginPath();
-        canvas.moveTo(location.topLeftCorner.x, location.topLeftCorner.y);
-        canvas.lineTo(location.topRightCorner.x, location.topRightCorner.y);
-        canvas.lineTo(location.bottomRightCorner.x, location.bottomRightCorner.y);
-        canvas.lineTo(location.bottomLeftCorner.x, location.bottomLeftCorner.y);
-        canvas.lineTo(location.topLeftCorner.x, location.topLeftCorner.y);
-        canvas.strokeStyle = "#FF3B58";
-        canvas.lineWidth = 4;
-        canvas.stroke();
     }
 });
 </script>

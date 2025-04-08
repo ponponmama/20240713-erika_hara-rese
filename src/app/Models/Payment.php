@@ -9,6 +9,21 @@ class Payment extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'user_id',
+        'reservation_id',
+        'amount',
+        'payment_status',
+        'payment_method',
+        'transaction_id',
+        'total_payment_amount'
+    ];
+
     // ユーザーリレーション
     public function user()
     {

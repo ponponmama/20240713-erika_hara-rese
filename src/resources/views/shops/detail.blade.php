@@ -27,6 +27,7 @@
     </div>
 @endsection
 @section('reservation_form')
+    @if(isset($date) && isset($times))
     <div class="form-section">
         <h2 class="reserve">
             予約
@@ -35,7 +36,7 @@
             @csrf
             <input type="hidden" name="shop_id" value="{{ $shop->id }}">
             <label for="date" class="label_date"></label>
-            <input type="date" id="date" name="date" class="input_date" value="{{ date('Y-m-d') }}" min="{{ date('Y-m-d') }}">
+            <input type="date" id="date" name="date" class="input_date" value="{{ $date }}" min="{{ date('Y-m-d') }}" onchange="window.location.href='{{ route('shops.updateDate', ['id' => $shop->id]) }}?date=' + this.value">
             @error('date')
                 <div class="form__error">{{ $message }}</div>
             @enderror
@@ -44,7 +45,7 @@
                 <select id="time" name="time" class="select_time">
                     <option value="">選択してください</option>
                     @foreach ($times ?? [] as $time)
-                        <option value="{{ $time }}"  {{ old('time') == $time ? 'selected' : '' }}>
+                        <option value="{{ $time }}"  {{ session('reservation_details') && \Carbon\Carbon::parse(session('reservation_details')->reservation_datetime)->format('H:i') == $time ? 'selected' : '' }}>
                             {{ $time }}
                         </option>
                     @endforeach
@@ -59,7 +60,7 @@
                 <select id="number" name="number" class="select_number">
                     <option value="">選択してください</option>
                     @for ($i = 1; $i <= 20; $i++)
-                        <option value="{{ $i }}" {{ old('number') == $i ? 'selected' : '' }}>
+                        <option value="{{ $i }}" {{ session('reservation_details') && session('reservation_details')->number == $i ? 'selected' : '' }}>
                             {{ $i }}人
                         </option>
                     @endfor
@@ -98,10 +99,10 @@
                 </div>
             @endif
             <div class="qr-code">
-                <h2 class="qr-text">来店時にこのQRコードを提示してください</h2>
-                    @if(session('reservation_details'))
-                        <img src="{{ asset(session('reservation_details')->qr_code) }}" alt="QR Code" class="qr_code_img">
-                    @endif
+                @if(session('reservation_details'))
+                    <img src="{{ asset(session('reservation_details')->qr_code) }}" alt="QR Code" class="qr_code_img">
+                    <h2 class="qr-text">来店時にこのQRコードを提示してください</h2>
+                @endif
             </div>
         </div>
         <div class="button-container">
@@ -110,87 +111,5 @@
             </button>
         </div>
     </div>
-@endsection
-
-@section('scripts')
-<script>
-    // 日付入力フィールドの要素を取得
-    const dateInput = document.getElementById('date');
-
-    // 今日の日付を取得（時間部分は0に設定）
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-
-    // 日付が変更されたときに実行される関数
-    dateInput.addEventListener('change', function() {
-        console.log('日付が変更されました');
-
-        // 選択された日付を取得
-        const selectedDate = new Date(this.value);
-        selectedDate.setHours(0, 0, 0, 0);
-
-        // 日付の比較（年月日を文字列に変換して比較）
-        const todayStr = today.toISOString().split('T')[0]; // YYYY-MM-DD形式
-        const selectedStr = selectedDate.toISOString().split('T')[0]; // YYYY-MM-DD形式
-
-        console.log('選択された日付:', selectedStr);
-        console.log('今日の日付:', todayStr);
-
-        // 前日の日付が選択された場合
-        if (selectedStr < todayStr) {
-            // エラーメッセージを表示
-            alert('過去の日付は選択できません。今日以降の日付を選択してください。');
-
-            // 今日の日付に戻す
-            this.value = todayStr;
-
-            // フォームを作成して送信
-            const form = document.createElement('form');
-            form.method = 'POST';
-            form.action = '{{ route('reservations.updateTimes') }}';
-
-            // CSRFトークンを追加
-            const csrfToken = document.createElement('input');
-            csrfToken.type = 'hidden';
-            csrfToken.name = '_token';
-            csrfToken.value = '{{ csrf_token() }}';
-            form.appendChild(csrfToken);
-
-            // 日付パラメータを追加
-            const dateInput = document.createElement('input');
-            dateInput.type = 'hidden';
-            dateInput.name = 'date';
-            dateInput.value = this.value;
-            form.appendChild(dateInput);
-
-            // フォームを送信
-            document.body.appendChild(form);
-            form.submit();
-            return;
-        }
-
-        // フォームを作成して送信
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = '{{ route('reservations.updateTimes') }}';
-
-        // CSRFトークンを追加
-        const csrfToken = document.createElement('input');
-        csrfToken.type = 'hidden';
-        csrfToken.name = '_token';
-        csrfToken.value = '{{ csrf_token() }}';
-        form.appendChild(csrfToken);
-
-        // 日付パラメータを追加
-        const dateInput = document.createElement('input');
-        dateInput.type = 'hidden';
-        dateInput.name = 'date';
-        dateInput.value = this.value;
-        form.appendChild(dateInput);
-
-        // フォームを送信
-        document.body.appendChild(form);
-        form.submit();
-    });
-</script>
+    @endif
 @endsection

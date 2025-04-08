@@ -15,6 +15,11 @@
                         {{ session('success') }}
                     </div>
                 @endif
+                @if (session('success_message'))
+                    <div class="payment-success">
+                        {{ session('success_message') }}
+                    </div>
+                @endif
                 @foreach ($reservations as $reservation)
                     <div class="reservation-summary">
                         <form action="{{ route('reservations.update', $reservation->id) }}" method="POST" id="update-form-{{ $reservation->id }}" class="update_form">
@@ -85,7 +90,7 @@
                                 @method('DELETE')
                             </form>
                         </div>
-                        <img src="{{ asset($reservation->qr_code) }}" alt="QR Code for Reservation {{ $reservation->id }}" class="qr_code_image">
+                        <img src="{{ asset($reservation->qr_code) }}" alt="QR Code for Reservation {{ $reservation->id }}" class="qr_code_image" style="width: 300px; height: 300px; margin: 20px auto; display: block;">
                     </div>
                     <form action="{{ route('reviews.store') }}" method="POST" class="store_form">
                         @csrf

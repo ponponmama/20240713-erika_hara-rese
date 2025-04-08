@@ -52,8 +52,7 @@
         var style = {
             base: {
                 color: "#000000",
-                fontSize: "1rem",
-                lineHeight: "30px",
+                fontSize: "16px",
                 textAlign: "center",
                 '::placeholder': {
                     color: '#808080'

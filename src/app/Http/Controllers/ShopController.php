@@ -21,46 +21,6 @@ class ShopController extends Controller
         $this->shopService = $shopService;
     }
 
-    // done.blade.phpから戻った時の店舗詳細表示用
-    public function shopDetails(Request $request,$id)
-    {
-        Log::info('Received date: ' . $request->input('date'));
-
-        $shop = Shop::findOrFail($id);
-        $current = Carbon::now();
-        $inputDate = $request->input('date');
-        $date = $inputDate ? new Carbon($inputDate) : $current;
-
-        $openTime = $shop->open_time;
-        $closeTime = $shop->close_time;
-        $start = new Carbon($date->format('Y-m-d') . ' ' . $openTime);
-        $end = new Carbon($date->format('Y-m-d') . ' ' . $closeTime);
-
-        // 現在の時間が営業終了時間と同じかそれを過ぎているかチェック
-        if ($current->greaterThanOrEqualTo($end)) {
-            // 営業時間を過ぎている場合、日付を次の日に設定
-            $date = $current->copy()->addDay();
-        }
-
-        Log::info('Received date: ' . $date->toDateString()); // 日付をログに記録
-
-        // 営業時間の取得
-        $times = $this->shopService->getBusinessHours($openTime, $closeTime, $date->format('Y-m-d'), $current);
-
-        $reservation = Reservation::where('shop_id', $id)->latest()->first();
-
-        // ユーザーが他のページに遷移する際にセッションデータをクリアするためのフラグを設定
-        $request->session()->put('clear_session_on_leave', true);
-        Log::info('Session clear flag set');
-
-        return view('shops.detail', [
-            'shop' => $shop,
-            'date' => $date->format('Y-m-d'),
-            'times' => $times,
-            'reservation' => $reservation,
-        ]);
-    }
-
     // 店舗一覧を表示,検索フォームに渡す。
     public function index(Request $request)
     {
@@ -89,12 +49,35 @@ class ShopController extends Controller
         return view('shops.index', ['shops' => $shops, 'areas' => $areas, 'genres' => $genres]);
     }
 
-    public function shopDetailsOrChoose($id)
+    // 店舗詳細ページで予約時の日付の更新
+    public function updateDate(Request $request, $id)
     {
-        if (auth()->check()) {
-            return $this->shopDetails(request(), $id);
-        } else {
-            return redirect()->route('choose');
-        }
+        $shop = Shop::findOrFail($id);
+        $date = $request->input('date');
+        $current = Carbon::now();
+
+        // 選択された日付をセッションに保存
+        session(['selected_date' => $date]);
+
+        // 日付に基づいて営業時間を計算
+        $selectedDate = new Carbon($date);
+        $isToday = $selectedDate->isToday();
+        $currentForBusinessHours = $isToday ? $current : null;
+
+        // 営業時間の取得
+        $times = $this->shopService->getBusinessHours($shop->open_time, $shop->close_time, $date, $currentForBusinessHours);
+
+        // セッションから予約情報を取得
+        $reservationDetails = session('reservation_details');
+
+        $reservation = Reservation::where('shop_id', $id)->latest()->first();
+
+        return view('shops.detail', [
+            'shop' => $shop,
+            'date' => $date,
+            'times' => $times,
+            'reservation' => $reservation,
+            'reservationDetails' => $reservationDetails,
+        ]);
     }
 }

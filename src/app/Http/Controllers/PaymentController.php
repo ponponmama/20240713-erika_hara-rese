@@ -43,7 +43,7 @@ class PaymentController extends Controller
         try {
             // 支払いの実行
             $charge = Charge::create([
-                'amount' => $reservation->total_amount * 100, // 金額をセント単位に変換
+                'amount' => $reservation->total_amount, // 日本円の場合はセント単位への変換は不要
                 'currency' => 'jpy',
                 'description' => '予約番号: ' . $reservation->id,
                 'source' => $request->stripeToken,
@@ -60,7 +60,7 @@ class PaymentController extends Controller
             // 予約状態の更新
             $reservation->update(['payment_status' => 'completed']);
 
-            return redirect()->route('reservations.show', $reservation->id)
+            return redirect()->route('mypage')
                 ->with('success_message', '支払いが完了しました。');
         } catch (\Exception $e) {
             // 支払い失敗時の処理

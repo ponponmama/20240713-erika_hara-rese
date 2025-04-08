@@ -1,0 +1,288 @@
+[2025-04-08 18:38:11] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:38:11] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-08","current":"2025-04-08 18:38:11"} 
+[2025-04-08 18:38:11] local.INFO: 返却する営業時間: ["18:45","19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"] 
+[2025-04-08 18:38:11] local.INFO: Times for reservation 127: ["18:45","19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"]  
+[2025-04-08 18:38:11] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:38:11] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"21:00","date":"2025-04-08","current":"2025-04-08 18:38:11"} 
+[2025-04-08 18:38:11] local.INFO: 返却する営業時間: ["18:45","19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45"] 
+[2025-04-08 18:38:11] local.INFO: Times for reservation 128: ["18:45","19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45"]  
+[2025-04-08 18:38:11] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:38:11] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:38:11] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/payment?reservation_id=127"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-08 18:38:14] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:38:14] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:38:14] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/mypage"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-08 18:38:31] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:38:31] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:38:31] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/payment?reservation_id=127"},"_flash":{"old":[],"new":["success_message"]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"success_message":"\u652f\u6255\u3044\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002"}  
+[2025-04-08 18:38:31] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:38:31] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:38:31] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/payment?reservation_id=127"},"_flash":{"old":["success_message"],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"success_message":"\u652f\u6255\u3044\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002"}  
+[2025-04-08 18:43:59] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:43:59] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:43:59] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/reservations\/127"},"_flash":{"old":[],"new":["error_message"]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"error_message":"\u3053\u306e\u4e88\u7d04\u306f\u65e2\u306b\u652f\u6255\u3044\u6e08\u307f\u3067\u3059\u3002"}  
+[2025-04-08 18:43:59] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:43:59] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:43:59] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/payment?reservation_id=127"},"_flash":{"old":["error_message"],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"error_message":"\u3053\u306e\u4e88\u7d04\u306f\u65e2\u306b\u652f\u6255\u3044\u6e08\u307f\u3067\u3059\u3002"}  
+[2025-04-08 18:44:03] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:44:03] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-08","current":"2025-04-08 18:44:03"} 
+[2025-04-08 18:44:03] local.INFO: 返却する営業時間: ["18:45","19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"] 
+[2025-04-08 18:44:03] local.INFO: Times for reservation 127: ["18:45","19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"]  
+[2025-04-08 18:44:03] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:44:03] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"21:00","date":"2025-04-08","current":"2025-04-08 18:44:03"} 
+[2025-04-08 18:44:03] local.INFO: 返却する営業時間: ["18:45","19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45"] 
+[2025-04-08 18:44:03] local.INFO: Times for reservation 128: ["18:45","19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45"]  
+[2025-04-08 18:44:03] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:44:03] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:44:03] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/reservations\/127"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-08 18:44:07] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:44:07] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:44:07] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/mypage"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-08 18:44:25] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:44:25] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:44:25] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/payment?reservation_id=128"},"_flash":{"old":[],"new":["success_message"]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"success_message":"\u652f\u6255\u3044\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002"}  
+[2025-04-08 18:44:25] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:44:25] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:44:25] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/payment?reservation_id=128"},"_flash":{"old":["success_message"],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"success_message":"\u652f\u6255\u3044\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002"}  
+[2025-04-08 18:47:01] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:47:01] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:47:01] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/reservations\/128"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-08 18:47:07] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:47:07] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-08","current":"2025-04-08 18:47:07"} 
+[2025-04-08 18:47:07] local.INFO: 返却する営業時間: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"] 
+[2025-04-08 18:47:07] local.INFO: Times for reservation 127: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"]  
+[2025-04-08 18:47:07] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:47:07] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"21:00","date":"2025-04-08","current":"2025-04-08 18:47:07"} 
+[2025-04-08 18:47:07] local.INFO: 返却する営業時間: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45"] 
+[2025-04-08 18:47:07] local.INFO: Times for reservation 128: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45"]  
+[2025-04-08 18:47:07] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:47:07] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:47:07] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/reservations\/128"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-08 18:47:13] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:47:13] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:47:13] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/mypage"},"_flash":{"old":[],"new":["success"]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"success":"\u4e88\u7d04\u304c\u524a\u9664\u3055\u308c\u307e\u3057\u305f\u3002"}  
+[2025-04-08 18:47:13] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:47:13] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"21:00","date":"2025-04-08","current":"2025-04-08 18:47:13"} 
+[2025-04-08 18:47:13] local.INFO: 返却する営業時間: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45"] 
+[2025-04-08 18:47:13] local.INFO: Times for reservation 128: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45"]  
+[2025-04-08 18:47:13] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:47:13] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:47:13] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/mypage"},"_flash":{"old":["success"],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"success":"\u4e88\u7d04\u304c\u524a\u9664\u3055\u308c\u307e\u3057\u305f\u3002"}  
+[2025-04-08 18:47:17] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:47:17] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:47:17] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/mypage"},"_flash":{"old":[],"new":["success"]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"success":"\u4e88\u7d04\u304c\u524a\u9664\u3055\u308c\u307e\u3057\u305f\u3002"}  
+[2025-04-08 18:47:17] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:47:17] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:47:17] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/mypage"},"_flash":{"old":["success"],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"success":"\u4e88\u7d04\u304c\u524a\u9664\u3055\u308c\u307e\u3057\u305f\u3002"}  
+[2025-04-08 18:47:19] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:47:19] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-08","current":"2025-04-08 18:47:19"} 
+[2025-04-08 18:47:19] local.INFO: 返却する営業時間: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"] 
+[2025-04-08 18:47:19] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:47:19] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:47:19] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/mypage"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-08 18:47:25] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:47:25] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-12","current":null} 
+[2025-04-08 18:47:25] local.INFO: 返却する営業時間: ["10:00","10:15","10:30","10:45","11:00","11:15","11:30","11:45","12:00","12:15","12:30","12:45","13:00","13:15","13:30","13:45","14:00","14:15","14:30","14:45","15:00","15:15","15:30","15:45","16:00","16:15","16:30","16:45","17:00","17:15","17:30","17:45","18:00","18:15","18:30","18:45","19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45","22:00"] 
+[2025-04-08 18:47:25] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:47:25] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:47:25] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/shops\/1"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"selected_date":"2025-04-12"}  
+[2025-04-08 18:47:31] local.INFO: Store method called  
+[2025-04-08 18:47:34] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:47:34] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:47:34] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/shops\/1\/update-date?date=2025-04-12"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"selected_date":"2025-04-12","reservation_details":{"shop_id":"1","reservation_datetime":"2025-04-12T03:00:00.000000Z","number":"3","user_id":72,"total_amount":15000,"payment_status":"pending","updated_at":"2025-04-08T09:47:31.000000Z","created_at":"2025-04-08T09:47:31.000000Z","id":129,"qr_code":"storage\/qr_codes\/129.svg","user":{"id":72,"user_name":"\u307d\u3093","email":"pon@test.com","email_verified_at":"2025-04-07T14:24:07.000000Z","created_at":"2025-04-07T14:23:58.000000Z","updated_at":"2025-04-07T14:24:07.000000Z","role":3}},"last_visited_shop_id":"1"}  
+[2025-04-08 18:47:34] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:47:34] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:47:34] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/shops\/1\/update-date?date=2025-04-12"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"selected_date":"2025-04-12","reservation_details":{"shop_id":"1","reservation_datetime":"2025-04-12T03:00:00.000000Z","number":"3","user_id":72,"total_amount":15000,"payment_status":"pending","updated_at":"2025-04-08T09:47:31.000000Z","created_at":"2025-04-08T09:47:31.000000Z","id":129,"qr_code":"storage\/qr_codes\/129.svg","user":{"id":72,"user_name":"\u307d\u3093","email":"pon@test.com","email_verified_at":"2025-04-07T14:24:07.000000Z","created_at":"2025-04-07T14:23:58.000000Z","updated_at":"2025-04-07T14:24:07.000000Z","role":3}},"last_visited_shop_id":"1"}  
+[2025-04-08 18:47:37] local.INFO: Current time: 2025-04-08 18:47:37  
+[2025-04-08 18:47:37] local.INFO: End time: 2025-04-12 22:00:00  
+[2025-04-08 18:47:37] local.INFO: New date: 2025-04-12  
+[2025-04-08 18:47:37] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:47:37] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-12","current":"2025-04-08 18:47:37"} 
+[2025-04-08 18:47:37] local.INFO: 返却する営業時間: ["10:00","10:15","10:30","10:45","11:00","11:15","11:30","11:45","12:00","12:15","12:30","12:45","13:00","13:15","13:30","13:45","14:00","14:15","14:30","14:45","15:00","15:15","15:30","15:45","16:00","16:15","16:30","16:45","17:00","17:15","17:30","17:45","18:00","18:15","18:30","18:45","19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45","22:00"] 
+[2025-04-08 18:47:37] local.INFO: Session clear flag set in returnFromDone  
+[2025-04-08 18:47:37] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:47:37] local.INFO: clear_session_on_leave flag: true  
+[2025-04-08 18:47:37] local.INFO: Reservation session data cleared  
+[2025-04-08 18:47:37] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/reservation\/done"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-08 18:47:43] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:47:43] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-08","current":"2025-04-08 18:47:43"} 
+[2025-04-08 18:47:43] local.INFO: 返却する営業時間: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"] 
+[2025-04-08 18:47:43] local.INFO: Times for reservation 129: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"]  
+[2025-04-08 18:47:43] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:47:43] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:47:43] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/shops\/1\/return-from-done"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-08 18:47:47] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:47:47] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:47:47] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/mypage"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-08 18:48:08] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:48:08] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:48:08] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/payment?reservation_id=129"},"_flash":{"old":[],"new":["success_message"]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"success_message":"\u652f\u6255\u3044\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002"}  
+[2025-04-08 18:48:08] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:48:08] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-08","current":"2025-04-08 18:48:08"} 
+[2025-04-08 18:48:08] local.INFO: 返却する営業時間: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"] 
+[2025-04-08 18:48:08] local.INFO: Times for reservation 129: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"]  
+[2025-04-08 18:48:08] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:48:08] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:48:08] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/payment?reservation_id=129"},"_flash":{"old":["success_message"],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"success_message":"\u652f\u6255\u3044\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002"}  
+[2025-04-08 18:51:33] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:51:33] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-08","current":"2025-04-08 18:51:33"} 
+[2025-04-08 18:51:33] local.INFO: 返却する営業時間: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"] 
+[2025-04-08 18:51:33] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:51:33] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:51:33] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/mypage"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-08 18:51:38] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:51:38] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:51:38] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/shops\/1"},"_flash":{"old":[],"new":["_old_input","errors"]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"_old_input":{"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","shop_id":"1","date":"2025-04-08","time":"20:30","number":null},"errors":{}}  
+[2025-04-08 18:51:38] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:51:38] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-08","current":"2025-04-08 18:51:38"} 
+[2025-04-08 18:51:38] local.INFO: 返却する営業時間: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"] 
+[2025-04-08 18:51:38] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:51:38] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:51:38] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/shops\/1"},"_flash":{"old":["_old_input","errors"],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"_old_input":{"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","shop_id":"1","date":"2025-04-08","time":"20:30","number":null},"errors":{}}  
+[2025-04-08 18:51:45] local.INFO: Store method called  
+[2025-04-08 18:51:48] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:51:48] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:51:48] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/shops\/1"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"reservation_details":{"shop_id":"1","reservation_datetime":"2025-04-08T11:15:00.000000Z","number":"3","user_id":72,"total_amount":15000,"payment_status":"pending","updated_at":"2025-04-08T09:51:45.000000Z","created_at":"2025-04-08T09:51:45.000000Z","id":130,"qr_code":"storage\/qr_codes\/130.svg","user":{"id":72,"user_name":"\u307d\u3093","email":"pon@test.com","email_verified_at":"2025-04-07T14:24:07.000000Z","created_at":"2025-04-07T14:23:58.000000Z","updated_at":"2025-04-07T14:24:07.000000Z","role":3}},"last_visited_shop_id":"1"}  
+[2025-04-08 18:51:48] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:51:48] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:51:48] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/shops\/1"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"reservation_details":{"shop_id":"1","reservation_datetime":"2025-04-08T11:15:00.000000Z","number":"3","user_id":72,"total_amount":15000,"payment_status":"pending","updated_at":"2025-04-08T09:51:45.000000Z","created_at":"2025-04-08T09:51:45.000000Z","id":130,"qr_code":"storage\/qr_codes\/130.svg","user":{"id":72,"user_name":"\u307d\u3093","email":"pon@test.com","email_verified_at":"2025-04-07T14:24:07.000000Z","created_at":"2025-04-07T14:23:58.000000Z","updated_at":"2025-04-07T14:24:07.000000Z","role":3}},"last_visited_shop_id":"1"}  
+[2025-04-08 18:51:49] local.INFO: Current time: 2025-04-08 18:51:49  
+[2025-04-08 18:51:49] local.INFO: End time: 2025-04-08 22:00:00  
+[2025-04-08 18:51:49] local.INFO: New date: 2025-04-08  
+[2025-04-08 18:51:49] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:51:49] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-08","current":"2025-04-08 18:51:49"} 
+[2025-04-08 18:51:49] local.INFO: 返却する営業時間: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"] 
+[2025-04-08 18:51:49] local.INFO: Session clear flag set in returnFromDone  
+[2025-04-08 18:51:49] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:51:49] local.INFO: clear_session_on_leave flag: true  
+[2025-04-08 18:51:49] local.INFO: Reservation session data cleared  
+[2025-04-08 18:51:49] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/reservation\/done"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-08 18:52:02] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:52:02] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-08","current":"2025-04-08 18:52:02"} 
+[2025-04-08 18:52:02] local.INFO: 返却する営業時間: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"] 
+[2025-04-08 18:52:02] local.INFO: Times for reservation 129: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"]  
+[2025-04-08 18:52:02] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:52:02] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-08","current":"2025-04-08 18:52:02"} 
+[2025-04-08 18:52:02] local.INFO: 返却する営業時間: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"] 
+[2025-04-08 18:52:02] local.INFO: Times for reservation 130: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"]  
+[2025-04-08 18:52:02] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:52:02] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:52:02] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/shops\/1\/return-from-done"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-08 18:52:05] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:52:05] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:52:05] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/mypage"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-08 18:52:23] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:52:23] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:52:23] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/payment?reservation_id=130"},"_flash":{"old":[],"new":["success_message"]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"success_message":"\u652f\u6255\u3044\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002"}  
+[2025-04-08 18:52:23] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:52:23] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-08","current":"2025-04-08 18:52:23"} 
+[2025-04-08 18:52:23] local.INFO: 返却する営業時間: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"] 
+[2025-04-08 18:52:23] local.INFO: Times for reservation 129: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"]  
+[2025-04-08 18:52:23] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:52:23] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-08","current":"2025-04-08 18:52:23"} 
+[2025-04-08 18:52:23] local.INFO: 返却する営業時間: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"] 
+[2025-04-08 18:52:23] local.INFO: Times for reservation 130: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"]  
+[2025-04-08 18:52:23] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:52:23] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:52:23] local.INFO: After clearing session: {"_token":"uLgsN1QdFYZFjWzwvJ7rAf7e0J9YmIzYu1lhLhYm","_previous":{"url":"https:\/\/localhost\/payment?reservation_id=130"},"_flash":{"old":["success_message"],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72,"success_message":"\u652f\u6255\u3044\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002"}  
+[2025-04-08 18:54:43] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:54:43] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:54:43] local.INFO: After clearing session: {"_token":"cVGnAKSdTLnvdZWCUJhBzW3vnDzyIfxdvjIRJyyq"}  
+[2025-04-08 18:54:43] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:54:43] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:54:43] local.INFO: After clearing session: {"_token":"cVGnAKSdTLnvdZWCUJhBzW3vnDzyIfxdvjIRJyyq","_flash":{"old":[],"new":[]}}  
+[2025-04-08 18:55:34] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:55:34] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:55:34] local.INFO: After clearing session: {"_token":"zBEUTJQSXgqZTRhYKU1QcT0hWv2Tu8vQLUHv4q53","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/login"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 18:55:34] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:55:34] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:55:34] local.INFO: After clearing session: {"_token":"zBEUTJQSXgqZTRhYKU1QcT0hWv2Tu8vQLUHv4q53","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/login"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 18:56:57] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:56:57] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:56:57] local.INFO: After clearing session: {"_token":"m6vUea6lGshz8bnClcrkC7XpWsUUmneopKTkzCvm"}  
+[2025-04-08 18:56:57] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:56:57] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:56:57] local.INFO: After clearing session: {"_token":"m6vUea6lGshz8bnClcrkC7XpWsUUmneopKTkzCvm","_flash":{"old":[],"new":[]}}  
+[2025-04-08 18:57:08] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:57:08] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:57:08] local.INFO: After clearing session: {"_token":"bSQiep1m2XhaRpsbUTHZyjIJiInlWsYPhOjzVjQT","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/login"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-08 18:57:09] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:57:09] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:57:09] local.INFO: After clearing session: {"_token":"bSQiep1m2XhaRpsbUTHZyjIJiInlWsYPhOjzVjQT","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/login"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-08 18:57:14] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:57:14] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-08","current":"2025-04-08 18:57:14"} 
+[2025-04-08 18:57:14] local.INFO: 返却する営業時間: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"] 
+[2025-04-08 18:57:14] local.INFO: Times for reservation 129: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"]  
+[2025-04-08 18:57:14] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-08 18:57:14] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-08","current":"2025-04-08 18:57:14"} 
+[2025-04-08 18:57:14] local.INFO: 返却する営業時間: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"] 
+[2025-04-08 18:57:14] local.INFO: Times for reservation 130: ["19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45"]  
+[2025-04-08 18:57:14] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:57:14] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:57:14] local.INFO: After clearing session: {"_token":"bSQiep1m2XhaRpsbUTHZyjIJiInlWsYPhOjzVjQT","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-08 18:57:56] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:57:56] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:57:56] local.INFO: After clearing session: {"_token":"JgLVmapX3wLU3Ir5t6hkC950cR6IgKWT2zO2jV3Q"}  
+[2025-04-08 18:57:56] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:57:56] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:57:56] local.INFO: After clearing session: {"_token":"JgLVmapX3wLU3Ir5t6hkC950cR6IgKWT2zO2jV3Q","_flash":{"old":[],"new":[]}}  
+[2025-04-08 18:58:09] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:58:09] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:58:09] local.INFO: After clearing session: {"_token":"HFLyC4y4nGYqWj0JVrofq39gFv0FLDsZMuDBlXCC","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/login"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 18:58:09] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:58:09] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:58:09] local.INFO: After clearing session: {"_token":"HFLyC4y4nGYqWj0JVrofq39gFv0FLDsZMuDBlXCC","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/login"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 18:58:45] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:58:45] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:58:45] local.INFO: After clearing session: {"_token":"HFLyC4y4nGYqWj0JVrofq39gFv0FLDsZMuDBlXCC","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shop-manager\/dashboard"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 18:59:27] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 18:59:27] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 18:59:27] local.INFO: After clearing session: {"_token":"HFLyC4y4nGYqWj0JVrofq39gFv0FLDsZMuDBlXCC","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shop-manager\/dashboard"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 19:01:40] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 19:01:40] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 19:01:40] local.INFO: After clearing session: {"_token":"HFLyC4y4nGYqWj0JVrofq39gFv0FLDsZMuDBlXCC","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shop-manager\/dashboard"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 19:04:28] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 19:04:28] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 19:04:28] local.INFO: After clearing session: {"_token":"HFLyC4y4nGYqWj0JVrofq39gFv0FLDsZMuDBlXCC","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shop-manager\/dashboard"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 19:05:30] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 19:05:30] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 19:05:30] local.INFO: After clearing session: {"_token":"HFLyC4y4nGYqWj0JVrofq39gFv0FLDsZMuDBlXCC","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shop-manager\/dashboard"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 19:08:05] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 19:08:05] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 19:08:05] local.INFO: After clearing session: {"_token":"HFLyC4y4nGYqWj0JVrofq39gFv0FLDsZMuDBlXCC","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shop-manager\/dashboard"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 19:09:13] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 19:09:13] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 19:09:13] local.INFO: After clearing session: {"_token":"HFLyC4y4nGYqWj0JVrofq39gFv0FLDsZMuDBlXCC","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shop-manager\/dashboard"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 19:10:11] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 19:10:11] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 19:10:11] local.INFO: After clearing session: {"_token":"HFLyC4y4nGYqWj0JVrofq39gFv0FLDsZMuDBlXCC","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shop-manager\/dashboard"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 19:11:04] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 19:11:04] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 19:11:04] local.INFO: After clearing session: {"_token":"HFLyC4y4nGYqWj0JVrofq39gFv0FLDsZMuDBlXCC","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shop-manager\/dashboard"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 19:11:10] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 19:11:10] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 19:11:10] local.INFO: After clearing session: {"_token":"HFLyC4y4nGYqWj0JVrofq39gFv0FLDsZMuDBlXCC","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shop-manager\/dashboard"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 19:13:14] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 19:13:14] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 19:13:14] local.INFO: After clearing session: {"_token":"HFLyC4y4nGYqWj0JVrofq39gFv0FLDsZMuDBlXCC","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shop-manager\/dashboard"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 19:14:36] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 19:14:36] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 19:14:36] local.INFO: After clearing session: {"_token":"HFLyC4y4nGYqWj0JVrofq39gFv0FLDsZMuDBlXCC","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shop-manager\/dashboard"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 19:15:08] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 19:15:08] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 19:15:08] local.INFO: After clearing session: {"_token":"HFLyC4y4nGYqWj0JVrofq39gFv0FLDsZMuDBlXCC","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shop-manager\/dashboard"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 19:15:45] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 19:15:45] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 19:15:45] local.INFO: After clearing session: {"_token":"HFLyC4y4nGYqWj0JVrofq39gFv0FLDsZMuDBlXCC","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shop-manager\/dashboard"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 19:16:09] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 19:16:09] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 19:16:09] local.INFO: After clearing session: {"_token":"HFLyC4y4nGYqWj0JVrofq39gFv0FLDsZMuDBlXCC","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shop-manager\/dashboard"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 19:17:02] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 19:17:02] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 19:17:02] local.INFO: After clearing session: {"_token":"HFLyC4y4nGYqWj0JVrofq39gFv0FLDsZMuDBlXCC","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shop-manager\/manage-shop"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":52}  
+[2025-04-08 19:17:20] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 19:17:20] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 19:17:20] local.INFO: After clearing session: {"_token":"LkM7euLrvIXPIrjcMxbCKeDXUr1ePsu3Q0VceYeo"}  
+[2025-04-08 19:17:20] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-08 19:17:20] local.INFO: clear_session_on_leave flag: false  
+[2025-04-08 19:17:20] local.INFO: After clearing session: {"_token":"LkM7euLrvIXPIrjcMxbCKeDXUr1ePsu3Q0VceYeo","_flash":{"old":[],"new":[]}}  

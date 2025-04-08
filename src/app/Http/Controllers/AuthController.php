@@ -21,7 +21,7 @@ namespace App\Http\Controllers;
     public function register(RegisterRequest $request)
     {
         $user = User::create([
-            'user_name' => $request->user_name,  
+            'user_name' => $request->user_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => 3,
@@ -31,7 +31,7 @@ namespace App\Http\Controllers;
 
         Auth::login($user);
 
-       return redirect()->route('verification.notice');
+        return redirect()->route('verification.notice');
     }
 
     // Thanksページを表示

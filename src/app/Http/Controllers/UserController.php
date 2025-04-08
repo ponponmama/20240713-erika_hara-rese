@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Services\ShopService;
+use Illuminate\Support\Facades\Log;
+
 
 
 class UserController extends Controller
@@ -19,8 +21,8 @@ class UserController extends Controller
 
     public function mypage(Request $request)
     {
-        $user = Auth::user(); 
-        $reservations = $user->reservations()->with('shop')->get(); 
+        $user = Auth::user();
+        $reservations = $user->reservations()->with('shop')->get();
         $favorites = $user->favorites;
         $hideReservation = $request->query('hide_reservation', 0);
 
@@ -34,7 +36,7 @@ class UserController extends Controller
             $current = Carbon::now();
             $date = $current->format('Y-m-d');
             $reservation->times = $this->shopService->getBusinessHours($shop->open_time, $shop->close_time, $date,$current);
-            \Log::info('Times for reservation ' . $reservation->id . ': ' . json_encode($reservation->times));
+            Log::info('Times for reservation ' . $reservation->id . ': ' . json_encode($reservation->times));
         }
 
         return view('mypage', [

@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Http\Request;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\UserController;
@@ -12,7 +11,6 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ShopManagerController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\QRController;
 use App\Http\Controllers\Admin\ReviewController as AdminReviewController;
 use App\Http\Controllers\Shop\ReviewController as ShopReviewController;
 
@@ -28,8 +26,8 @@ use App\Http\Controllers\Shop\ReviewController as ShopReviewController;
 */
 // 店舗一覧ページ表示用,検索機能
 Route::get('/', [ShopController::class, 'index'])->name('shops.index');
-//guestが詳しく見るボタンクリックした時の選択route
-Route::get('/shops/{id}/details', [ShopController::class, 'shopDetailsOrChoose'])->name('shop.details.guest');
+//guestが詳しく見るボタンクリックした時の誘導route
+Route::get('/shops/{id}/details', [ReservationController::class, 'shopDetailsOrChoose'])->name('shop.details.guest');
 Route::get('/choose', function () {
     return view('auth.choose');
 })->name('choose');
@@ -56,7 +54,7 @@ Route::post('/email/verification-notification', function (Request $request) {
 
 // その他の一般user用認証済みルート
 Route::middleware('auth')->group(function () {
-    // Thanksページ
+    //登録後のThanksメール
     Route::get('thanks', [AuthController::class, 'showThanksPage'])->name('thanks');
     //予約ありがとうございますのページ
     Route::get('/reservation/done', [ReservationController::class, 'done'])->name('reservation.done');
@@ -74,18 +72,26 @@ Route::middleware('auth')->group(function () {
     //お気に入り追加と解除
     Route::post('/shops/{shop}/favorite', [FavoriteController::class, 'favorite'])->name('shops.favorite');
     Route::delete('/shops/{shop}/unfavorite', [FavoriteController::class, 'unfavorite'])->name('shops.unfavorite');
-    // done.blade.phpから戻った時の店舗詳細表示用
-    Route::get('/shops/{id}', [ShopController::class, 'shopDetails'])
-    ->name('shop.details')
-    ->middleware('clear.session');
+    //詳しく見るclickし店舗詳細表示＆入力フォーム表示用
+    Route::get('/shops/{id}', [ReservationController::class, 'show'])
+        ->name('shop.details');
+
+    // done.blade.phpからの戻り用
+    Route::get('/shops/{id}/return', [ReservationController::class, 'returnFromDone'])
+        ->name('shop.return');
+
     //詳しく見るボタンクリック 店舗の詳細と予約ページを表示
-    Route::get('/shops/{id}/reservation', [ShopController::class, 'shopDetails'])->name('reservation.show');
-   // 予約関連のルート index,store,show,edit,update,destroy
+    Route::get('/shops/{id}/reservation', [ReservationController::class, 'show'])
+        ->name('reservation.show');
+
+    // 予約関連のルート index,store,show,edit,update,destroy
     Route::resource('reservations', ReservationController::class);
-    //予約作成ページ
-    Route::get('/reservations/create', [ReservationController::class, 'create'])->name('reservations.create');
-    // 営業時間の更新
-    Route::post('/reservations/update-times', [ReservationController::class, 'updateTimes'])->name('reservations.updateTimes');
+    // 店舗詳細ページで予約時の日付の更新
+    Route::get('/shops/{id}/update-date', [ShopController::class, 'updateDate'])->name('shops.updateDate');
+    Route::post('/reservations', [ReservationController::class, 'store'])->name('reservations.store');
+
+    // 予約完了ページから店舗詳細ページに戻る
+    Route::get('/shops/{id}/return-from-done', [ReservationController::class, 'returnFromDone'])->name('shop.returnFromDone');
 });
 
 // Admin用のルート

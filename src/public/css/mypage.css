@@ -39,7 +39,21 @@
 }
 
 .reservation-success {
-    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.payment-success {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
 }
 
 /* 予約データ */
