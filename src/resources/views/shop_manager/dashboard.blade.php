@@ -31,7 +31,7 @@
                     <th class="reservation_th">予約ID</th>
                     <th class="reservation_th">顧客名</th>
                     <th class="reservation_th">メールアドレス</th>
-                    <th class="reservation_th">予約詳細</th>
+                    <th class="reservation_th">詳細</th>
                 </tr>
             </thead>
             <tbody>

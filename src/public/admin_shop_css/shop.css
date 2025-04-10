@@ -305,12 +305,14 @@
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
     max-width: 600px;
     border-radius: 5px;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .close {
@@ -331,7 +333,6 @@
 .detail-row {
     margin: 10px 0;
     padding: 10px;
-    border-bottom: 1px solid #eee;
 }
 
 .detail-label {
@@ -341,7 +342,7 @@
 
 .detail-button {
     padding: 5px 10px;
-    background-color: #4CAF50;
+    background-color: #0056b3;
     color: white;
     border: none;
     border-radius: 3px;
@@ -349,5 +350,5 @@
 }
 
 .detail-button:hover {
-    background-color: #45a049;
+    background-color: #003875;
 }
