@@ -1,4 +1,4 @@
-@extends('admin.app_admin')
+@extends('layouts.app')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('admin_shop_css/admin.css') }}">
@@ -22,7 +22,8 @@
                     <th>ユーザー名</th>
                     <th>評価</th>
                     <th>コメント</th>
-                    <th>操作</th>
+                    <th>詳細</th>
+                    <th>削除</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,16 +43,16 @@
                         </td>
                         <td>{{ Str::limit($review->comment, 50) }}</td>
                         <td>
-                            <div class="review-button-container">
-                                <a href="{{ route('admin.reviews.show', $review) }}" class="review_button review-detail-button">詳細</a>
-                                <form action="{{ route('admin.reviews.destroy', $review) }}" method="POST" class="d-inline">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="review_button review-delete-button" onclick="return confirm('このレビューを削除してもよろしいですか？')">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </form>
-                            </div>
+                            <a href="{{ route('admin.reviews.show', $review) }}" class="review_button review-detail-button">詳細</a>
+                        </td>
+                        <td>
+                            <form action="{{ route('admin.reviews.destroy', $review) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="review_button review-delete-button" onclick="return confirm('このレビューを削除してもよろしいですか？')">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

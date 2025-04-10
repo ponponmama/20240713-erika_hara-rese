@@ -1,4 +1,4 @@
-<table width="100%" cellspacing="0" cellpadding="0" style="max-width: 768px; margin: auto;">
+<table width="100%" style="max-width: 768px; margin: auto; border-spacing: 0; border-collapse: collapse;">
     <tr>
         <td style="text-align: center; padding: 20px;">
             <h1 style="font-size: 24px; color: #333;">メールアドレスの確認</h1>

@@ -104,9 +104,11 @@ Route::middleware(['auth', 'role:1'])->group(function () {
     Route::post('/admin/shop-manager', [AdminController::class, 'createShopManager'])->name('admin.create.shop_manager');
     // 画像保存機能
     Route::get('/admin/save-image', [AdminController::class, 'saveImage'])->name('admin.save.image');
-    // 管理者用レビュールート
+    // 管理者用レビュールート(adminのrouteでreviewの一覧表示用)
     Route::get('/admin/reviews', [AdminReviewController::class, 'index'])->name('admin.reviews.index');
+    //一覧表示から詳細画面へ
     Route::get('/admin/reviews/{review}', [AdminReviewController::class, 'show'])->name('admin.reviews.show');
+    //選択したreviewの削除
     Route::delete('/admin/reviews/{review}', [AdminReviewController::class, 'destroy'])->name('admin.reviews.destroy');
 });
 
@@ -124,10 +126,14 @@ Route::middleware(['auth', 'role:2'])->group(function () {
     Route::get('/shop-manager/verify-reservation/{reservationId}', [ShopManagerController::class, 'verifyReservation'])->name('shop_manager.verify_reservation');
    // QRコードスキャン結果から予約情報取得、JSON形式で返すためのroute(APIにコード)
     Route::post('/reservation/details', [ReservationController::class, 'getReservationDetails'])->name('reservation.details');
-    // ショップ用レビュールート
+    //店舗の予約一覧表示
     Route::resource('reviews', ShopReviewController::class)->only(['index', 'show']);
     // 価格設定用のルート
     Route::patch('/shop-manager/update-price', [ShopManagerController::class, 'updatePrice'])->name('shop.update.price');
+    // 予約詳細を取得するためのルート
+    Route::get('/shop-manager/reservations', [ShopManagerController::class, 'showReservations'])->name('shop_manager.reservations');
+    //選択した予約をモーダル表示
+    Route::get('/shop-manager/reservations/{id}/details', [ShopManagerController::class, 'getReservationDetails'])->name('shop_manager.reservation_details');
 });
 
 

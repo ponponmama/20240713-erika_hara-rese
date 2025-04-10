@@ -157,7 +157,7 @@ class ReservationController extends Controller
     }
 
     /**
-    * ユーザーの予約一覧を表示するメソッド。
+    * myページにユーザーの予約一覧を表示するメソッド。
     *
     * @return \Illuminate\Http\Response
     */

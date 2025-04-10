@@ -49,7 +49,7 @@ class ShopController extends Controller
         return view('shops.index', ['shops' => $shops, 'areas' => $areas, 'genres' => $genres]);
     }
 
-    // 店舗詳細ページで予約時の日付の更新
+    // 店舗詳細ページで予約時の日付の日付選択の入力フィールドのonchangeイベント用
     public function updateDate(Request $request, $id)
     {
         $shop = Shop::findOrFail($id);

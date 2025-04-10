@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
+    //adminのrouteでreviewの一覧表示
     public function index()
     {
         $reviews = Review::with(['user', 'shop'])
@@ -16,13 +17,13 @@ class ReviewController extends Controller
 
         return view('admin.reviews.index', compact('reviews'));
     }
-
+    //adminのrouteでのreview評価一覧から詳細で表示
     public function show(Review $review)
     {
         $review->load(['user', 'shop']);
-        return view('admin.reviews.show', compact('review'));
+        return view('admin.reviews.review', compact('review'));
     }
-
+    //adminのrouteでreviewの削除
     public function destroy(Review $review)
     {
         $review->delete();

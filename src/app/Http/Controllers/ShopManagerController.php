@@ -82,6 +82,50 @@ class ShopManagerController extends Controller
         return view('shop_manager.reservations', ['reservations' => $reservations]);
     }
 
+    // 予約詳細を取得するためのメソッド（モーダル表示用）
+    public function getReservationDetails($id)
+    {
+        $shopId = Auth::user()->shop->id;
+        $reservation = Reservation::where('id', $id)
+                                ->where('shop_id', $shopId)
+                                ->with('user')
+                                ->first();
+
+        if (!$reservation) {
+            return response()->json(['error' => '予約が見つかりませんでした。'], 404);
+        }
+
+        // 支払い状態を日本語に変換
+        $paymentStatus = $reservation->payment_status;
+        $paymentStatusJa = '';
+        switch ($paymentStatus) {
+            case 'pending':
+                $paymentStatusJa = '決済手続き中';
+                break;
+            case 'completed':
+                $paymentStatusJa = '決済完了';
+                break;
+            case 'failed':
+                $paymentStatusJa = '決済失敗';
+                break;
+            default:
+                $paymentStatusJa = $paymentStatus;
+        }
+
+        $data = [
+            'id' => $reservation->id,
+            'reservation_datetime' => $reservation->reservation_datetime->format('Y-m-d'),
+            'time' => $reservation->reservation_datetime->format('H:i'),
+            'number' => $reservation->number,
+            'user_name' => $reservation->user->user_name,
+            'email' => $reservation->user->email,
+            'payment_status' => $paymentStatusJa,
+            'total_amount' => $reservation->total_amount,
+        ];
+
+        return response()->json($data);
+    }
+
     // サーバーサイドで動作し、予約情報を照合、該当する予約詳細を表示
     //ログイン済み店舗管理者の店舗idと照合した予約idを元に予約情報を検索、予約詳細表示。存在しない場合はエラーメッセージを表示。
     public function verifyReservation($reservationId)

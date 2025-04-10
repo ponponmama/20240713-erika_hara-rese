@@ -9,8 +9,8 @@
     <form class="search-form" action="{{ route('shops.index') }}" method="get">
         <div class="search-form__item">
             <div class="select-wrapper">
-                <select class="search-form__item-select" name="search-area">
-                    <option value="">{{ __('All area') }}</option>
+                <select class="search-form__item-select" name="search-area" title="エリアで絞り込み">
+                    <option value="">All area</option>
                     @foreach ($areas as $area)
                         <option value="{{ $area->id }}">{{ $area->area_name }}</option>
                     @endforeach
@@ -18,15 +18,15 @@
                 <span class="custom-select-icon"></span>
             </div>
             <div class="select-wrapper">
-                <select class="search-form__item-select" name="search-genre">
-                    <option value="">{{ __('All genre') }}</option>
+                <select class="search-form__item-select" name="search-genre" title="ジャンルで絞り込み">
+                    <option value="">All genre</option>
                     @foreach ($genres as $genre)
                         <option value="{{ $genre->id }}">{{ $genre->genre_name }}</option>
                     @endforeach
                 </select>
                 <span class="custom-select-icon"></span>
             </div>
-            <button type="submit" class="search-button">
+            <button type="submit" class="search-button" title="店舗を検索">
                 <img src="{{ asset('images/search.png') }}" alt="Search" class="search_img">
             </button>
             <input class="search-form__item-input" type="text" name="search-shop__name" placeholder="{{ __('Search...') }}">
@@ -54,23 +54,7 @@
                             ＃{{ $genre->genre_name }}
                         @endforeach
                     </p>
-                    <div class="button-container">
-                        <a href="{{ route('shop.details.guest', ['id' => $shop->id]) }}" class="shop-detail">詳しくみる</a>
-                        @auth
-                            @if(auth()->user()->favorites->contains($shop))
-                                <form action="{{ route('shops.unfavorite', $shop) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="favorite-button favorite">❤</button>
-                                </form>
-                            @else
-                                <form action="{{ route('shops.favorite', $shop) }}" method="POST">
-                                    @csrf
-                                    <button type="submit" class="favorite-button">❤</button>
-                                </form>
-                            @endif
-                        @endauth
-                    </div>
+                    @include('custom_components.shop-buttons', ['shop' => $shop])
                 </div>
             </div>
         @endforeach

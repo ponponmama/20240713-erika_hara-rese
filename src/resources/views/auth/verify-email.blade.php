@@ -15,11 +15,11 @@
             height: 100vh;
         }
         .container {
-            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.61);
+            box-shadow: 2px 2px 4px #00000099;
             width: 40%;
             padding: 50px 20px !important;
             background-color: #f0f0f0;
-            text-align: center; 
+            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;

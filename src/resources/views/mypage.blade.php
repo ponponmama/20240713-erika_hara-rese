@@ -6,7 +6,7 @@
 
 @section('content')
     <h1 class="user__name">{{ Auth::user()->user_name }}さん</h1>
-    <div class="sections-container">
+    <div class="container sections-container">
         @if ($hideReservation == 0)
             <div class="reservation-section">
                 <h2 class="section-title">予約状況</h2>
@@ -90,7 +90,7 @@
                                 @method('DELETE')
                             </form>
                         </div>
-                        <img src="{{ asset($reservation->qr_code) }}" alt="QR Code for Reservation {{ $reservation->id }}" class="qr_code_image" style="width: 300px; height: 300px; margin: 20px auto; display: block;">
+                        <img src="{{ asset($reservation->qr_code) }}" alt="QR Code for Reservation {{ $reservation->id }}" class="qr_code_image">
                     </div>
                     <form action="{{ route('reviews.store') }}" method="POST" class="store_form">
                         @csrf
@@ -138,23 +138,11 @@
                                 @endforeach
                             </p>
                             <div class="button-container">
-                                <a href="{{ route('shop.details', ['id' => $favorite->id]) }}" class="shop-detail">
-                                    詳しくみる
-                                </a>
-                                @auth
-                                    @if(auth()->user()->favorites->contains($favorite))
-                                        <form action="{{ route('shops.unfavorite', $favorite) }}" method="POST" class="favorite_form">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="favorite-button favorite">❤</button>
-                                        </form>
-                                        @else
-                                        <form action="{{ route('shops.favorite', $favorite) }}" method="POST">
-                                            @csrf
-                                                <button type="submit" class="favorite-button">❤</button>
-                                        </form>
-                                    @endif
-                                @endauth
+                                @include('custom_components.shop-buttons', [
+                                    'shop' => $favorite,
+                                    'routeName' => 'shop.details',
+                                    'showFavoriteForm' => true
+                                ])
                             </div>
                         </div>
                     </div>

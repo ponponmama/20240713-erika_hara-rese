@@ -1,11 +1,11 @@
-@extends('admin.app_admin')
+@extends('layouts.app')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('admin_shop_css/admin.css') }}">
 @endsection
 
 @section('content')
-<div class="admin_container">
+<div class="container admin_container">
     <h1 class="form-title">Shop Manager Registration</h1>
     <p class="user__name">お疲れ様です！　{{ Auth::user()->user_name }}さん</p>
     <div class="management_form shop_manager_form">

@@ -96,7 +96,7 @@ class AdminController extends Controller
             return redirect()->route('admin.dashboard')->with('success', '新規店舗が正常に登録されました。');
         } catch (\Exception $e) {
             DB::rollback();
-            \Log::error('Error in createShop', [
+            Log::error('Error in createShop', [
                 'message' => $e->getMessage(),
                 'file' => $e->getFile(),
                 'line' => $e->getLine()

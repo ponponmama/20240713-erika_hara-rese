@@ -1,11 +1,11 @@
-@extends('admin.app_admin')
+@extends('layouts.app')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('admin_shop_css/manage-shop.css') }}">
 @endsection
 
 @section('content')
-<div class="manage_content">
+<div class="container manage_container">
     @if (session('success'))
         <div class="alert-success">
             {{ session('success') }}

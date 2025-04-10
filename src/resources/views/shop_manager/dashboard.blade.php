@@ -1,14 +1,15 @@
-@extends('admin.app_admin')
+@extends('layouts.app')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('admin_shop_css/shop.css') }}">
 @endsection
 
 @section('content')
-<div class="shop_container">
-    <h1 class="shop_manager_name">
-        {{ Auth::user()->shop->shop_name }}　お疲れ様です！{{ Auth::user()->user_name }}さん
-    </h1>
+<div class="container shop_container">
+    <h1 class="form-title">{{ Auth::user()->shop->shop_name }}</h1>
+    <p class="user__name shop_manager_name">
+        お疲れ様です！{{ Auth::user()->user_name }}さん
+    </p>
     @if (session('success'))
         <div class="alert-success">
             {{ session('success') }}
@@ -30,6 +31,7 @@
                     <th class="reservation_th">予約ID</th>
                     <th class="reservation_th">顧客名</th>
                     <th class="reservation_th">メールアドレス</th>
+                    <th class="reservation_th">予約詳細</th>
                 </tr>
             </thead>
             <tbody>
@@ -41,28 +43,87 @@
                     <td class="reservation_td">{{ $reservation->id }}</td>
                     <td class="reservation_td">{{ $reservation->user->user_name }}</td>
                     <td class="reservation_td">{{ $reservation->user->email}}</td>
+                    <td class="reservation_td">
+                        <button onclick="openReservationModal({{ $reservation->id }})" class="detail-button">詳細</button>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
-    </div>
 
-    <div class="price-setting-section">
-        <h2 class="price-title">予約金額設定</h2>
-        <form action="{{ route('shop.update.price') }}" method="POST" class="price-form">
-            @csrf
-            @method('PATCH')
-            <div class="price-input-group">
-                <label for="price" class="price-label">予約金額</label>
-                <div class="price-wrapper">
-                    <input type="number" id="price" name="price" class="price-input" value="{{ Auth::user()->shop->price }}" min="0" step="10" required>
-                    <span class="price-unit">円</span>
+        <!-- 予約詳細モーダル -->
+        <div id="reservationModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>予約詳細</h2>
+                <div id="reservationDetails">
+                    <!-- ここに予約詳細が動的に表示されます -->
                 </div>
             </div>
-            <button type="submit" class="price-update-btn">更新</button>
-        </form>
-    </div>
+        </div>
 
+        <script>
+            // モーダルを開く関数
+            function openReservationModal(reservationId) {
+                const modal = document.getElementById('reservationModal');
+                const detailsContainer = document.getElementById('reservationDetails');
+
+                // 予約詳細を取得して表示
+                fetch(`/shop-manager/reservations/${reservationId}/details`)
+                    .then(response => response.json())
+                    .then(data => {
+                        detailsContainer.innerHTML = `
+                            <div class="detail-row">
+                                <span class="detail-label">予約日:</span>
+                                <span>${data.reservation_datetime}</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">時間:</span>
+                                <span>${data.time}</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">人数:</span>
+                                <span>${data.number}人</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">予約ID:</span>
+                                <span>${data.id}</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">顧客名:</span>
+                                <span>${data.user_name}</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">メールアドレス:</span>
+                                <span>${data.email}</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">支払い状態:</span>
+                                <span>${data.payment_status}</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">合計金額:</span>
+                                <span>${data.total_amount}円</span>
+                            </div>
+                        `;
+                        modal.classList.add('modal-show');
+                    });
+            }
+
+            // モーダルを閉じる
+            document.querySelector('.close').onclick = function() {
+                document.getElementById('reservationModal').classList.remove('modal-show');
+            }
+
+            // モーダルの外をクリックしても閉じる
+            window.onclick = function(event) {
+                const modal = document.getElementById('reservationModal');
+                if (event.target == modal) {
+                    modal.classList.remove('modal-show');
+                }
+            }
+        </script>
+    </div>
     <h2 id="qr-data-display" class="qr-data-display">
         QRコード照会内容
     </h2>
@@ -244,3 +305,4 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 @endsection
+

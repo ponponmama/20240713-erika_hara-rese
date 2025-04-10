@@ -1,4 +1,4 @@
-@extends('admin.app_admin')
+@extends('layouts.app')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('admin_shop_css/admin.css') }}">
@@ -6,8 +6,7 @@
 
 @section('content')
 <div class="container review-management">
-    <h2 class="mb-4">レビュー詳細</h2>
-
+    <h1 class="form-title">レビュー詳細</h1>
     <div class="card">
         <div class="card-body">
             <div class="row">
