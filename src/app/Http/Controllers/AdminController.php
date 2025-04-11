@@ -184,6 +184,15 @@ class AdminController extends Controller
     public function destroyShop(Shop $shop)
     {
         try {
+            // 画像ファイルの削除
+            if ($shop->image) {
+                $imagePath = storage_path('app/public/images/' . $shop->image);
+                if (file_exists($imagePath)) {
+                    unlink($imagePath);
+                }
+            }
+
+            // 店舗の削除
             $shop->delete();
             return redirect()->route('admin.shops.list')->with('success', '店舗を削除しました');
         } catch (\Exception $e) {
