@@ -14,12 +14,6 @@
     color: rgb(0 0 0 / 70%);
 }
 
-.alert-success,
-.alert-danger {
-    text-align: center;
-    font-size: 1rem;
-}
-
 .reservations {
     width: 100%;
     padding: 4px;
@@ -191,11 +185,6 @@
         font-size: 1.2rem;
     }
 
-    .alert-success,
-    .alert-danger {
-        font-size: 0.8rem;
-    }
-
     .shop_reservation {
         width: 100%;
     }
@@ -253,11 +242,6 @@
         font-size: 1.3rem;
     }
 
-    .alert-success,
-    .alert-danger {
-        font-size: 1rem;
-    }
-
     .qr-data-display {
         margin: 8px 0;
         font-size: 1.3rem;
@@ -313,6 +297,7 @@
     border-radius: 5px;
     max-height: 80vh;
     overflow-y: auto;
+    box-shadow: 10px 10px 20px rgb(9 1 55 / 70%);
 }
 
 .close {
@@ -331,24 +316,28 @@
 }
 
 .detail-row {
-    margin: 10px 0;
-    padding: 10px;
+    margin: 5px 0;
+    padding: 5px 10px;
+    text-align: left;
+    display: flex;
+    align-items: center;
 }
 
 .detail-label {
     font-weight: bold;
     margin-right: 10px;
+    min-width: 120px;
 }
 
 .detail-button {
     padding: 5px 10px;
-    background-color: #0056b3;
-    color: white;
+    color: #b4b4b4;
     border: none;
-    border-radius: 3px;
     cursor: pointer;
+    font-size: 0.8rem;
+    text-align: center;
 }
 
 .detail-button:hover {
-    background-color: #003875;
+    color: #5c5b5b;
 }

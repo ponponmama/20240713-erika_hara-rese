@@ -6,12 +6,6 @@
     align-items: center;
 }
 
-.alert-success,
-.alert-danger {
-    text-align: center;
-    font-size: 1rem;
-}
-
 .Edit_Shop_Information {
     width: 100%;
     text-align: center;

@@ -56,4 +56,9 @@ class Shop extends Model
     {
         return Carbon::createFromFormat('H:i:s', $value)->format('H:i');
     }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }

@@ -6,20 +6,13 @@
 
 @section('content')
 <div class="container shop_container">
-    <h1 class="form-title">{{ Auth::user()->shop->shop_name }}</h1>
-    <p class="user__name shop_manager_name">
-        お疲れ様です！{{ Auth::user()->user_name }}さん
-    </p>
-    @if (session('success'))
-        <div class="alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
-    @if (session('error'))
-        <div class="alert-danger">
-            {{ session('error') }}
-        </div>
-    @endif
+    @include('custom_components.header', [
+        'title' => Auth::user()->shop->shop_name,
+        'additionalClass' => 'shop_manager_name'
+    ])
+
+    @include('custom_components.session-messages')
+
     <div class="reservations">
         <h2 class="reservations-list">予約情報</h2>
         <table class="shop_reservation">

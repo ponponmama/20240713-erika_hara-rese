@@ -109,7 +109,15 @@ Route::middleware(['auth', 'role:1'])->group(function () {
     //一覧表示から詳細画面へ
     Route::get('/admin/reviews/{review}', [AdminReviewController::class, 'show'])->name('admin.reviews.show');
     //選択したreviewの削除
-    Route::delete('/admin/reviews/{review}', [AdminReviewController::class, 'destroy'])->name('admin.reviews.destroy');
+    Route::delete('/admin/reviews/{review}', [AdminController::class, 'destroyReview'])->name('admin.reviews.destroy');
+    //選択した詳細クリックでモーダル表示
+    Route::get('/admin/reviews/{id}/details', [AdminController::class, 'getReviewDetails'])->name('admin.reviews.details');
+    //選択した既存店舗詳細を表示
+    Route::get('/admin/shops/{id}/details', [AdminController::class, 'getShopDetails'])->name('admin.shops.details');
+    //選択した店舗の表示
+    Route::get('/admin/shops/list', [AdminController::class, 'shopsList'])->name('admin.shops.list');
+    //店舗の削除
+    Route::delete('/admin/shops/{shop}', [AdminController::class, 'destroyShop'])->name('admin.shops.destroy');
 });
 
 // Shop Manager用のルート

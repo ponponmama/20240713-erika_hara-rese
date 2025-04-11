@@ -6,16 +6,7 @@
 
 @section('content')
 <div class="container manage_container">
-    @if (session('success'))
-        <div class="alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
-    @if (session('error'))
-        <div class="alert-danger">
-            {{ session('error') }}
-        </div>
-    @endif
+    @include('custom_components.session-messages')
     <h1 class="Edit_Shop_Information">店舗情報</h1>
     <form action="{{ route('shop_manager.update', $shop->id) }}" method="POST" enctype="multipart/form-data" class="manage_form">
         @csrf

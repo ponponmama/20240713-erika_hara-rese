@@ -1,11 +1,3 @@
-.user__name {
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.4rem;
-    margin: 2px;
-    padding: 2px;
-}
-
 /* ページ全体 */
 .sections-container {
     width: 100%;
@@ -31,29 +23,11 @@
 
 .section-title,
 .favorite-title {
-    text-align: start;
     font-size: 1.2rem;
-    padding: 10px;
-    margin: 2px;
     font-weight: bold;
-}
-
-.reservation-success {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
+    margin: 10px 0;
     text-align: center;
-}
-
-.payment-success {
-    background-color: #2196F3;
-    color: white;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    text-align: center;
+    color: rgb(0 0 0 / 70%);
 }
 
 /* 予約データ */
@@ -412,10 +386,6 @@
 
 /* レスポンシブデザインの設定 */
 @media (max-width: 768px) {
-    .user__name {
-        font-size: 1.2rem;
-    }
-
     /* ページ全体 */
     .sections-container {
         width: 100%;
@@ -524,10 +494,6 @@
 }
 
 @media only screen and (width: 768px) {
-    .user__name {
-        font-size: 1.4rem;
-    }
-
     /* 現在の予約一覧 */
     .reservation-section {
         width: 70%;

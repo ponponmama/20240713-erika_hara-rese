@@ -6,8 +6,12 @@
 
 @section('content')
 <div class="container admin_container">
-    <h1 class="form-title">Shop Manager Registration</h1>
-    <p class="user__name">お疲れ様です！　{{ Auth::user()->user_name }}さん</p>
+    @include('custom_components.header', [
+        'title' => 'Shop Manager Registration',
+        'userName' => Auth::user()->user_name,
+        'message' => 'お疲れ様です！',
+        'showMessage' => true
+    ])
     <div class="management_form shop_manager_form">
         <h2 class="admin-heading manage_admin">店舗代表者登録</h2>
         <form action="{{ route('admin.create.shop_manager') }}" method="POST" class="admin-form create-form">

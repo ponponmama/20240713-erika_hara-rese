@@ -49,11 +49,19 @@
 }
 
 .form-title {
-    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin: 2px;
+    padding: 2px;
 }
 
 .user__name {
-    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin: 2px;
+    padding: 2px;
 }
 
 /* ページネーションの共通スタイル */
@@ -110,6 +118,18 @@
     background-color: #8cbff5;
 }
 
+/* セッションメッセージスタイル */
+.alert-success,
+.alert-danger,
+.payment-success,
+.reservation-success {
+    text-align: center;
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #004085;
+}
+
+/* レスポンシブ対応 */
 @media (max-width: 768px) {
     .content {
         background-color: #f4f4f4;
@@ -123,13 +143,24 @@
     }
 
     .form-title {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .top_logo {
         width: 100%;
         padding: 2px 30px;
         margin-left: 20px;
+    }
+
+    .user__name {
+        font-size: 1.2rem;
+    }
+
+    .alert-success,
+    .alert-danger,
+    .payment-success,
+    .reservation-success {
+        font-size: 0.9rem;
     }
 }
 
@@ -139,6 +170,6 @@
     }
 
     .user__name {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 }

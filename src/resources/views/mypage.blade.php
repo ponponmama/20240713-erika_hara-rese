@@ -5,21 +5,15 @@
 @endsection
 
 @section('content')
-    <h1 class="user__name">{{ Auth::user()->user_name }}さん</h1>
+<div class="container">
+    @include('custom_components.header', [
+        'showMessage' => false
+    ])
     <div class="container sections-container">
         @if ($hideReservation == 0)
             <div class="reservation-section">
                 <h2 class="section-title">予約状況</h2>
-                @if (session('success'))
-                    <div class="reservation-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
-                @if (session('success_message'))
-                    <div class="payment-success">
-                        {{ session('success_message') }}
-                    </div>
-                @endif
+                @include('custom_components.session-messages')
                 @foreach ($reservations as $reservation)
                     <div class="reservation-summary">
                         <form action="{{ route('reservations.update', $reservation->id) }}" method="POST" id="update-form-{{ $reservation->id }}" class="update_form">
@@ -149,4 +143,6 @@
                 @endforeach
             </div>
         </div>
+    </div>
+</div>
 @endsection

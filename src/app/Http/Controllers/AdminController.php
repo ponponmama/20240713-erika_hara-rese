@@ -105,14 +105,90 @@ class AdminController extends Controller
         }
     }
 
+    // 管理者権限を確認してshop管理者を削除するメソッド
     public function destroy(User $user)
     {
-        if (!auth()->user()->can('delete', $user)) {
-           abort(403);
+        if (auth()->user()->role !== 1) {
+            abort(403);
         }
 
         $user->delete();
 
-        return redirect()->route('admin.users.index')->with('success', 'User deleted successfully.');
+        return redirect()->route('admin.dashboard')->with('success', 'ユーザーを正常に削除しました。');
+    }
+
+    // レビュー詳細を取得するメソッド
+    public function getReviewDetails($id)
+    {
+        try {
+            $review = \App\Models\Review::with(['shop', 'user'])->findOrFail($id);
+
+            return response()->json([
+                'created_at' => $review->created_at->format('Y/m/d H:i'),
+                'shop_name' => $review->shop->shop_name,
+                'user_name' => $review->user->user_name,
+                'rating' => $review->rating,
+                'comment' => $review->comment
+            ]);
+        } catch (\Exception $e) {
+            Log::error('Review details error: ' . $e->getMessage());
+            return response()->json(['error' => 'レビュー詳細の取得に失敗しました'], 500);
+        }
+    }
+
+    // レビューを削除するメソッド
+    public function destroyReview(\App\Models\Review $review)
+    {
+        try {
+            $review->delete();
+            return redirect()->route('admin.reviews.index')->with('success', 'レビューを削除しました');
+        } catch (\Exception $e) {
+            Log::error('Review delete error: ' . $e->getMessage());
+            return redirect()->route('admin.reviews.index')->with('error', 'レビューの削除に失敗しました');
+        }
+    }
+
+    // 店舗一覧を表示するメソッド
+    public function shopsList()
+    {
+        $shops = Shop::with(['areas', 'genres'])->get();
+        return view('admin.shops_list', compact('shops'));
+    }
+
+    // 店舗詳細を取得するメソッド
+    public function getShopDetails($id)
+    {
+        try {
+            $shop = Shop::with(['areas', 'genres'])->findOrFail($id);
+
+            return response()->json([
+                'shop_name' => $shop->shop_name,
+                'description' => $shop->description,
+                'open_time' => $shop->open_time,
+                'close_time' => $shop->close_time,
+                'image' => $shop->image,
+                'areas' => $shop->areas->map(function($area) {
+                    return ['area_name' => $area->area_name];
+                }),
+                'genres' => $shop->genres->map(function($genre) {
+                    return ['genre_name' => $genre->genre_name];
+                })
+            ]);
+        } catch (\Exception $e) {
+            Log::error('Shop details error: ' . $e->getMessage());
+            return response()->json(['error' => '店舗詳細の取得に失敗しました'], 500);
+        }
+    }
+
+    // 店舗を削除するメソッド
+    public function destroyShop(Shop $shop)
+    {
+        try {
+            $shop->delete();
+            return redirect()->route('admin.shops.list')->with('success', '店舗を削除しました');
+        } catch (\Exception $e) {
+            Log::error('Shop delete error: ' . $e->getMessage());
+            return redirect()->route('admin.shops.list')->with('error', '店舗の削除に失敗しました');
+        }
     }
 }
