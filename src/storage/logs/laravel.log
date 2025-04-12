@@ -283,3 +283,15 @@
 [2025-04-13 00:33:48] local.INFO: ClearSessionAfterReturn middleware executed  
 [2025-04-13 00:33:48] local.INFO: clear_session_on_leave flag: false  
 [2025-04-13 00:33:48] local.INFO: After clearing session: {"_token":"d3Xgwj4wiFKaS3tIlcvGtwFGHz09Y6eMkb43YBzr","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shops\/1"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-13 00:36:10] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-13 00:36:10] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-13","current":"2025-04-13 00:36:10"} 
+[2025-04-13 00:36:10] local.INFO: 返却する営業時間: ["10:00","10:15","10:30","10:45","11:00","11:15","11:30","11:45","12:00","12:15","12:30","12:45","13:00","13:15","13:30","13:45","14:00","14:15","14:30","14:45","15:00","15:15","15:30","15:45","16:00","16:15","16:30","16:45","17:00","17:15","17:30","17:45","18:00","18:15","18:30","18:45","19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45","22:00"] 
+[2025-04-13 00:36:10] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-13 00:36:10] local.INFO: clear_session_on_leave flag: false  
+[2025-04-13 00:36:10] local.INFO: After clearing session: {"_token":"d3Xgwj4wiFKaS3tIlcvGtwFGHz09Y6eMkb43YBzr","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shops\/1"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-04-13 00:37:12] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-04-13 00:37:12] local.INFO: パラメータ: {"openTime":"10:00","closeTime":"22:00","date":"2025-04-13","current":"2025-04-13 00:37:12"} 
+[2025-04-13 00:37:12] local.INFO: 返却する営業時間: ["10:00","10:15","10:30","10:45","11:00","11:15","11:30","11:45","12:00","12:15","12:30","12:45","13:00","13:15","13:30","13:45","14:00","14:15","14:30","14:45","15:00","15:15","15:30","15:45","16:00","16:15","16:30","16:45","17:00","17:15","17:30","17:45","18:00","18:15","18:30","18:45","19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45","22:00"] 
+[2025-04-13 00:37:12] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-13 00:37:12] local.INFO: clear_session_on_leave flag: false  
+[2025-04-13 00:37:12] local.INFO: After clearing session: {"_token":"d3Xgwj4wiFKaS3tIlcvGtwFGHz09Y6eMkb43YBzr","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/shops\/1"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
