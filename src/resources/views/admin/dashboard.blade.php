@@ -14,6 +14,7 @@
     ])
     <div class="management_form shop_manager_form">
         <h2 class="admin-heading manage_admin">店舗代表者登録</h2>
+        @include('custom_components.session-messages', ['showGeneral' => false, 'showShopManager' => true, 'showShop' => false])
         <form action="{{ route('admin.create.shop_manager') }}" method="POST" class="admin-form create-form">
             @csrf
             <div class="input-group">
@@ -66,17 +67,8 @@
         </form>
     </div>
     <div class="management_form shop_registration_form">
-        @if (session('success'))
-            <div class="admin-alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
-        @if (session('error'))
-            <div class="admin-alert alert-danger">
-                {{ session('error') }}
-            </div>
-        @endif
         <h2 class="admin-heading shop_manage">新規店舗登録</h2>
+        @include('custom_components.session-messages', ['showGeneral' => false, 'showShopManager' => false, 'showShop' => true])
         <form action="{{ route('admin.create.shop') }}" method="POST" class="admin-form create-shop-form" enctype="multipart/form-data">
             @csrf
             <div class="input-group">

@@ -5,60 +5,49 @@
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container review_container">
     @include('custom_components.header', [
         'title' => 'レビュー管理'
-    ])
-    <div class="admin_container">
-        @include('custom_components.session-messages')
-        <div class="management_form review_form">
-            <table class="admin-table">
-                <thead>
-                    <tr>
-                        <th>投稿日時</th>
-                        <th>店舗名</th>
-                        <th>ユーザー名</th>
-                        <th>評価</th>
-                        <th>コメント</th>
-                        <th>詳細</th>
-                        <th>削除</th>
+        ])
+    @include('custom_components.session-messages')
+    <div class="management_form review_form">
+        <h2 class="admin-heading manage_review">レビュー　一覧</h2>
+        <table class="admin-table reviews-table">
+            <thead>
+                <tr>
+                    <th>投稿日時</th>
+                    <th>店舗名</th>
+                    <th>ユーザー名</th>
+                    <th>評価</th>
+                    <th>コメント</th>
+                    <th>詳細</th>
                     </tr>
-                </thead>
-                <tbody>
-                    @foreach($reviews as $review)
-                        <tr>
-                            <td>{{ $review->created_at->format('Y/m/d H:i') }}</td>
-                            <td>{{ $review->shop->shop_name }}</td>
-                            <td>{{ $review->user->user_name }}</td>
-                            <td>
-                                @for($i = 1; $i <= 5; $i++)
-                                    @if($i <= $review->rating)
-                                        <i class="fas fa-star review-star"></i>
-                                    @else
-                                        <i class="far fa-star review-star-empty"></i>
-                                    @endif
-                                @endfor
-                            </td>
-                            <td>{{ Str::limit($review->comment, 50) }}</td>
-                            <td>
-                                <button onclick="openReviewModal({{ $review->id }})" class="review_button review-detail-button">詳細</button>
-                            </td>
-                            <td>
-                                <form action="{{ route('admin.reviews.destroy', $review) }}" method="POST" class="d-inline">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="review_button review-delete-button" onclick="return confirm('このレビューを削除してもよろしいですか？')">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            <div class="custom-count-pagination">
-                {{ $reviews->links() }}
-            </div>
+            </thead>
+            <tbody>
+                @foreach($reviews as $review)
+                    <tr>
+                        <td>{{ $review->created_at->format('Y/m/d H:i') }}</td>
+                        <td>{{ $review->shop->shop_name }}</td>
+                        <td>{{ $review->user->user_name }}</td>
+                        <td>
+                            @for($i = 1; $i <= 5; $i++)
+                                @if($i <= $review->rating)
+                                    <i class="fas fa-star review-star"></i>
+                                @else
+                                    <i class="far fa-star review-star-empty"></i>
+                                @endif
+                            @endfor
+                        </td>
+                        <td>{{ Str::limit($review->comment, 50) }}</td>
+                        <td>
+                            <button onclick="openReviewModal({{ $review->id }})" class="review_button review-detail-button">詳細</button>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+        <div class="custom-count-pagination">
+            {{ $reviews->links() }}
         </div>
     </div>
 </div>
@@ -71,6 +60,13 @@
         <div id="reviewDetails">
             <!-- ここにレビュー詳細が動的に表示されます -->
         </div>
+        <div class="detail-item">
+            <form id="delete-form" action="" method="POST" class="delete-form">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="admin-button delete-button" onclick="return confirm('このレビューを削除してもよろしいですか？')">削除</button>
+            </form>
+        </div>
     </div>
 </div>
 
@@ -80,6 +76,7 @@
         console.log('openReviewModal called with ID:', reviewId);
         const modal = document.getElementById('reviewModal');
         const detailsContainer = document.getElementById('reviewDetails');
+        const deleteForm = document.getElementById('delete-form');
 
         console.log('Modal element:', modal);
         console.log('Details container:', detailsContainer);
@@ -123,6 +120,11 @@
                         <span>${data.comment}</span>
                     </div>
                 `;
+
+                // 削除フォームのアクションを設定
+                deleteForm.action = `/admin/reviews/${reviewId}`;
+                deleteForm.setAttribute('data-review-id', reviewId);
+
                 console.log('Adding modal-show class');
                 modal.classList.add('modal-show');
                 console.log('Modal classes after adding:', modal.classList);

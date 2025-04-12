@@ -20,12 +20,17 @@
                 <h1 class="top_logo">
                     Rese
                 </h1>
-                <div class="detail_shop">
-                    @yield('detail_shop')
-                </div>
-                @yield('reservation_form')
                 @yield('search')
             </div>
+            @if(Request::is('shops/*'))
+            <div class="container detail-container">
+                @yield('detail_shop')
+                @yield('reservation_form')
+            </div>
+            @else
+                @yield('detail_shop')
+                @yield('reservation_form')
+            @endif
             @yield('content')
         </div>
     </main>

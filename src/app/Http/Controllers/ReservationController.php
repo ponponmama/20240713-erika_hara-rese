@@ -157,10 +157,10 @@ class ReservationController extends Controller
     }
 
     /**
-    * myページにユーザーの予約一覧を表示するメソッド。
-    *
-    * @return \Illuminate\Http\Response
-    */
+     * myページにユーザーの予約一覧を表示するメソッド。
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function myReservations()
     {
         $user_id = auth()->id(); // ログインユーザーのIDを取得

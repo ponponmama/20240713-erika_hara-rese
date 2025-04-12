@@ -47,20 +47,24 @@ class AdminController extends Controller
     {
         $validated = $request->validated();
 
-        $user = User::create([
-            'user_name' => $validated['user_name'],
-            'email' => $validated['email'],
-            'password' => Hash::make($validated['password']),
-            'role' => 2,
-            'email_verified_at' => now(),
-            'shop_id' => $validated['shop_id'],
-        ]);
+        try {
+            $user = User::create([
+                'user_name' => $validated['user_name'],
+                'email' => $validated['email'],
+                'password' => Hash::make($validated['password']),
+                'role' => 2,
+                'email_verified_at' => now(),
+            ]);
 
-        $shop = Shop::find($validated['shop_id']);
-        $shop->user_id = $user->id;
-        $shop->save();
+            $shop = Shop::find($validated['shop_id']);
+            $shop->user_id = $user->id;
+            $shop->save();
 
-        return redirect()->route('admin.dashboard')->with('success', '新しいShopManagerが正常に登録されました');
+            return redirect()->route('admin.dashboard')->with('shop_manager_success', '新しいShopManagerが正常に登録されました');
+        } catch (\Exception $e) {
+            Log::error('Shop manager creation error: ' . $e->getMessage());
+            return redirect()->route('admin.dashboard')->with('shop_manager_error', '店舗代表者の登録に失敗しました');
+        }
     }
 
     //新しい店舗作成
@@ -84,7 +88,7 @@ class AdminController extends Controller
 
             if ($request->hasFile('image')) {
                 $shop->image = $request->file('image')->store('images', 'public');
-                }
+            }
 
             $shop->save();
 
@@ -93,7 +97,7 @@ class AdminController extends Controller
             $shop->genres()->attach($genre->id);
 
             DB::commit();
-            return redirect()->route('admin.dashboard')->with('success', '新規店舗が正常に登録されました。');
+            return redirect()->route('admin.dashboard')->with('shop_success', '新規店舗が正常に登録されました。');
         } catch (\Exception $e) {
             DB::rollback();
             Log::error('Error in createShop', [
@@ -101,7 +105,7 @@ class AdminController extends Controller
                 'file' => $e->getFile(),
                 'line' => $e->getLine()
             ]);
-            return back()->withErrors('登録に失敗しました。' . $e->getMessage());
+            return redirect()->route('admin.dashboard')->with('shop_error', '店舗の登録に失敗しました');
         }
     }
 
@@ -184,6 +188,8 @@ class AdminController extends Controller
     public function destroyShop(Shop $shop)
     {
         try {
+            DB::beginTransaction();
+
             // 画像ファイルの削除
             if ($shop->image) {
                 $imagePath = storage_path('app/public/images/' . $shop->image);
@@ -192,10 +198,21 @@ class AdminController extends Controller
                 }
             }
 
-            // 店舗の削除
+            // 店舗に関連付けられている店舗代表者（ユーザー）を取得
+            $shopManager = User::where('id', $shop->user_id)->where('role', 2)->first();
+
+            // 店舗の削除（中間テーブルの関連付けも自動的に削除される）
             $shop->delete();
-            return redirect()->route('admin.shops.list')->with('success', '店舗を削除しました');
+
+            // 店舗代表者が存在する場合は削除
+            if ($shopManager) {
+                $shopManager->delete();
+            }
+
+            DB::commit();
+            return redirect()->route('admin.shops.list')->with('success', '店舗と店舗代表者を削除しました');
         } catch (\Exception $e) {
+            DB::rollback();
             Log::error('Shop delete error: ' . $e->getMessage());
             return redirect()->route('admin.shops.list')->with('error', '店舗の削除に失敗しました');
         }

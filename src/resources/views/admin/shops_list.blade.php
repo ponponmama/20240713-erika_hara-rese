@@ -7,69 +7,57 @@
 @section('content')
 <div class="container shops_list_container">
     @include('custom_components.header', [
-    'title' => '店舗一覧',
+    'title' => 'admin登録店舗一覧',
     'userName' => Auth::user()->user_name,
     'message' => 'お疲れ様です！',
     'showMessage' => true
     ])
 
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
-
-    @if (session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
-    @endif
+    @include('custom_components.session-messages')
 
     <div class="management_form shop_list_form">
-        <h2 class="admin-heading">店舗一覧</h2>
+        <h2 class="admin-heading shop_list">登録店舗</h2>
 
-        <div class="table-responsive">
-            <table class="admin-table">
-                <thead>
-                    <tr>
-                        <th>店舗名</th>
-                        <th>エリア</th>
-                        <th>ジャンル</th>
-                        <th>営業時間</th>
-                        <th>詳細</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if(count($shops) > 0)
-                        @foreach($shops as $shop)
-                            <tr>
-                                <td>{{ $shop->shop_name }}</td>
-                                <td>
-                                    @foreach($shop->areas as $area)
-                                        {{ $area->area_name }}
-                                        @if(!$loop->last), @endif
-                                    @endforeach
-                                </td>
-                                <td>
-                                    @foreach($shop->genres as $genre)
-                                        {{ $genre->genre_name }}
-                                        @if(!$loop->last), @endif
-                                    @endforeach
-                                </td>
-                                <td>{{ $shop->open_time }} - {{ $shop->close_time }}</td>
-                                <td>
-                                    <button class="admin-button detail-button" data-shop-id="{{ $shop->id }}">詳細</button>
-                                </td>
-                            </tr>
-                        @endforeach
-                    @else
+        <table class="admin-table shop_list_table">
+            <thead>
+                <tr>
+                    <th>店舗名</th>
+                    <th>エリア</th>
+                    <th>ジャンル</th>
+                    <th>営業時間</th>
+                    <th>詳細</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if(count($shops) > 0)
+                    @foreach($shops as $shop)
                         <tr>
-                            <td colspan="5" class="text-center">店舗が登録されていません</td>
+                            <td>{{ $shop->shop_name }}</td>
+                            <td>
+                                @foreach($shop->areas as $area)
+                                    {{ $area->area_name }}
+                                    @if(!$loop->last), @endif
+                                @endforeach
+                            </td>
+                            <td>
+                                @foreach($shop->genres as $genre)
+                                    {{ $genre->genre_name }}
+                                    @if(!$loop->last), @endif
+                                @endforeach
+                            </td>
+                            <td>{{ $shop->open_time }} - {{ $shop->close_time }}</td>
+                            <td>
+                                <button class="admin-button detail-button" data-shop-id="{{ $shop->id }}">詳細</button>
+                            </td>
                         </tr>
-                    @endif
-                </tbody>
-            </table>
-        </div>
+                    @endforeach
+                @else
+                    <tr>
+                        <td colspan="5" class="text-center">店舗が登録されていません</td>
+                    </tr>
+                @endif
+            </tbody>
+        </table>
     </div>
 </div>
 

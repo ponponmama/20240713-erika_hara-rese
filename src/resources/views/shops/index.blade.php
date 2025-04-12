@@ -35,11 +35,7 @@
 </div>
 @endsection
 @section('content')
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
+    @include('custom_components.session-messages')
     <div class="shop_table">
         @foreach ($shops as $shop)
             <div class="shop_card">

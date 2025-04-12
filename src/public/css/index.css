@@ -6,6 +6,7 @@
     background-color: white;
     display: flex;
     align-items: center;
+    margin: auto;
 }
 
 .search-form {

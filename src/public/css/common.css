@@ -1,6 +1,13 @@
 .common_body {
     font-family: sans-serif;
-    overflow: auto;
+    overflow-x: auto;
+}
+
+.content {
+    background-color: #f4f4f4;
+    width: 96%;
+    padding: 10px 20px;
+    margin: 2%;
 }
 
 .header {
@@ -22,14 +29,9 @@
 
 .container {
     width: 100%;
-
-}
-
-.content {
-    background-color: #f4f4f4;
-    width: 96%;
-    padding: 10px 20px;
-    margin: 2%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .top_logo {
@@ -41,27 +43,14 @@
     font-size: 1.8rem;
 }
 
-.user__name .form-title {
-    margin: 6px auto;
-    padding: 4px;
+.user__name,
+.form-title {
+    font-size: 1.4rem;
+    margin: 4px auto;
+    padding: 2px;
     color: black;
     font-weight: bold;
-}
-
-.form-title {
     text-align: center;
-    font-weight: bold;
-    font-size: 1.4rem;
-    margin: 2px;
-    padding: 2px;
-}
-
-.user__name {
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.4rem;
-    margin: 2px;
-    padding: 2px;
 }
 
 /* ページネーションの共通スタイル */
@@ -140,6 +129,7 @@
 
     .container {
         width: 100%;
+        flex-direction: column;
     }
 
     .form-title {
@@ -165,6 +155,11 @@
 }
 
 @media only screen and (width: 768px) {
+    .container {
+        width: 100%;
+        flex-direction: column;
+    }
+
     .form-title {
         font-size: 1.3rem;
     }

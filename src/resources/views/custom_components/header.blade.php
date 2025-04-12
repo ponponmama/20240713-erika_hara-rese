@@ -4,9 +4,16 @@
     $additionalClass = $additionalClass ?? '';
     $message = $message ?? 'お疲れ様です！';
     $showMessage = $showMessage ?? true;
+    $useFormTitle = $useFormTitle ?? true;
 @endphp
 
-<h1 class="form-title">{{ $title }}</h1>
+@if($title)
+    @if($useFormTitle)
+        <h1 class="form-title">{{ $title }}</h1>
+    @else
+        <h1>{{ $title }}</h1>
+    @endif
+@endif
 <p class="user__name {{ $additionalClass }}">
     @if($showMessage){{ $message }}@endif{{ $userName }}さん
 </p>
