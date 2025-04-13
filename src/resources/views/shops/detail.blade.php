@@ -4,11 +4,10 @@
     <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
 @endsection
 
-<div class="container detail-container">
     @section('detail_shop')
         <div class="detail-section">
             <div class="navigation">
-                <a href="{{ route('shops.index') }}" class="back-link">＜</a>
+                <a href="{{ route('shops.index') }}" class="button back-link">＜</a>
                 <h2 class="navigation_shop_name">
                     {{ $shop->shop_name }}
                 </h2>
@@ -110,7 +109,7 @@
                         </div>
                     </div>
                     <div class="button-container">
-                        <button type="submit" form="reserve-form" class="reserve-button">
+                        <button type="submit" form="reserve-form" class="button reserve-button">
                             予約する
                         </button>
                     </div>
@@ -118,4 +117,3 @@
             @endif
         </div>
     @endsection
-</div>

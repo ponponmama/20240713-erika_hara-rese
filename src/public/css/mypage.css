@@ -1,7 +1,5 @@
 /* ページ全体 */
 .sections-container {
-    width: 100%;
-    display: flex;
     justify-content: space-between;
     padding: 10px;
 }
@@ -21,12 +19,8 @@
     font-size: 0.8rem;
 }
 
-.section-title,
-.favorite-title {
+.title-name {
     font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
-    color: rgb(0 0 0 / 70%);
 }
 
 .section-title {
@@ -34,11 +28,11 @@
 }
 
 .favorite-title {
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
-/* 予約データ */
-.reservation-summary {
+.reservation-summary,
+.store_form {
     position: relative;
     width: calc(100% - 20px);
     display: flex;
@@ -48,10 +42,19 @@
     padding: 10px;
     border-radius: 6px;
     margin: 6px 0;
-    background-color: #044c99;
-    color: white;
     font-size: 0.8rem;
     box-shadow: 2px 2px 6px rgb(0 0 0 / 72.6%);
+}
+
+.reservation-summary {
+    background-color: #044c99;
+    color: white;
+}
+
+/* 5段階評価＆レビューコメント */
+.store_form {
+    align-items: center;
+    background-color: white;
 }
 
 /* 予約変更form */
@@ -105,42 +108,50 @@
     text-align: left;
 }
 
-.form-group {
+.form-group,
+.rating-group {
     display: flex;
     width: 100%;
     align-items: center;
     text-align: left;
 }
 
-.label_shop_name,
-.label_date,
-.label_time,
-.label_number {
+.rating-group {
+    justify-content: flex-start;
+}
+
+.form-label {
     width: calc(44% - 10px);
     margin: 2px 10px;
     padding: 5px;
     color: white;
 }
 
-.summary-name,
-.input_date {
-    padding: 5px;
+.data-entry {
     width: calc(80% - 10px);
-    border-radius: 4px;
+    padding: 5px;
+    border-radius: 6px;
     border: none;
     text-align: left;
 }
 
 .select_time,
-.select_number {
-    padding: 5px;
-    width: calc(100% - 10px);
-    border-radius: 4px;
-    text-align: left;
-    border: none;
+.select_number,
+.select_rating {
+    width: 100%;
     appearance: none;
     position: relative;
     background-color: white;
+    z-index: 1;
+}
+
+.select_rating {
+    padding: 4px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border: 1px solid #0056b3;
+    text-align: center;
+    outline: none;
     z-index: 1;
 }
 
@@ -150,7 +161,8 @@
 }
 
 /* カスタムアイコンのスタイル */
-.custom-select-icon {
+.custom-select-icon,
+.rating-select-icon {
     position: absolute;
     right: 20px;
     top: 50%;
@@ -163,6 +175,12 @@
     z-index: 2;
 }
 
+.rating-select-icon {
+    right: 15px;
+    top: 34%;
+    z-index: 3;
+}
+
 .reservation-button-container {
     width: 100%;
     display: flex;
@@ -172,23 +190,28 @@
     margin: 5px auto;
 }
 
-.edit-reservation-button,
-.delete-reservation-button {
-    width: 46%;
-    padding: 6px 14px;
+.reservation-button,
+.review-button {
+    width: 50%;
+    padding: 6px 10px;
     background-color: #f4f4f4;
     color: #0056b3;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
     display: inline-block;
-    margin: 10px;
-    font-size: 0.8rem;
+    margin: 6px;
+    font-size: 0.7rem;
     text-align: center;
     border: none;
+    cursor: pointer;
 }
 
-.edit-reservation-button:hover,
-.delete-reservation-button:hover {
+.review-button {
+    background-color: #0056b3;
+    color: white;
+}
+
+.reservation-button:hover {
     background-color: #0676ee;
     color: #f4f4f4;
 }
@@ -201,92 +224,22 @@
     margin: 5px auto;
 }
 
-/* 5段階評価＆レビューコメント */
-.store_form {
-    position: relative;
-    width: calc(100% - 24px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 12px;
-    border-radius: 6px;
-    margin: 6px 0;
-    font-size: 0.8rem;
-    background-color: white;
-    box-shadow: 2px 2px 6px rgb(0 0 0 / 72.6%);
-}
-
-.rating-group {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.label_rating {
-    width: calc(44.5% - 10px);
-    padding: 5px;
-    text-align: left;
-    font-weight: bold;
-    margin-bottom: 10px;
+.label_rating,
+.label_comment {
+    color: black;
 }
 
 .label_comment {
     width: calc(40% - 10px);
-    padding: 5px;
-    text-align: left;
-    font-weight: bold;
     margin-bottom: 10px;
 }
 
-.select_rating {
-    position: relative;
-    width: 100%;
-    padding: 4px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    border: 1px solid #0056b3;
-    border-radius: 4px;
-    text-align: center;
-    outline: none;
-    appearance: none;
-    z-index: 1;
-}
 
 .text_comment {
     width: calc(90% - 8px);
     height: 100px;
-    padding: 4px;
     border: 1px solid #0056b3;
-    border-radius: 4px;
     outline: none;
-}
-
-.review-button {
-    width: 40%;
-    padding: 6px 10px;
-    background-color: #0056b3;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    font-size: 0.8rem;
-    text-align: center;
-    margin: 10px;
-    border: none;
-}
-
-.rating-select-icon {
-    position: absolute;
-    right: 15px;
-    top: 34%;
-    transform: translateY(-45%);
-    width: 16px;
-    height: 8px;
-    background-color: #b4b4b4;
-    clip-path: polygon(0 0, 50% 24%, 100% 0, 50% 100%, 0 0);
-    pointer-events: none;
-    z-index: 3;
 }
 
 /* お気に入り店舗 */
@@ -298,7 +251,7 @@
     border-radius: 6px;
 }
 
-.favorite_shops {
+.favorite-shops {
     margin: 0 10px;
     padding: 0;
     background-color: #f4f4f4;
@@ -307,20 +260,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    font-size: 1.2rem;
     font-weight: bold;
-}
-
-.favorite-shops {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
 }
 
 .shop_card {
     flex: 0 1 43%;
-    height: 36vh;
+    height: 280px;
     margin-bottom: 1%;
     box-shadow: 2px 2px 4px rgb(0 0 0 / 61%);
     padding: 0;
@@ -343,14 +288,18 @@
 }
 
 .shop-name {
-    margin: 0;
-    padding: 6px;
     font-size: 1rem;
 }
 
+.shop-name,
 .shop-guide {
     margin: 0;
-    padding: 2px;
+    padding: 6px;
+    text-align: left;
+
+}
+
+.shop-guide {
     font-size: 0.8rem;
 }
 
@@ -359,20 +308,21 @@
     align-items: center;
     justify-content: space-between;
     flex-grow: 1;
-    margin-top: -6px;
+    margin-top: 2px;
 }
 
 .shop-detail {
-    width: 40%;
+    width: 60%;
     padding: 6px 10px;
     background-color: #0056b3;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     display: inline-block;
-    margin: 10px;
+    margin: 8px;
     font-size: 0.8rem;
     text-align: center;
+    cursor: pointer;
 }
 
 /* お気に入りボタンのスタイル */
@@ -381,9 +331,10 @@
     outline: none;
     background: none;
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 1.4rem;
     color: rgb(228 225 225);
-    padding: 1px 15px;
+    padding: 1px 10px;
+    margin-right: 10px;
 }
 
 /* お気に入りに追加されたときのボタンのスタイル */
@@ -402,14 +353,11 @@
     /* 現在の予約一覧 */
     .reservation-section {
         width: 100%;
-        align-items: center;
         margin: 0;
     }
 
-    .section-title,
-    .favorite-title {
+    .title-name {
         text-align: center;
-        font-size: 1.2rem;
         padding: 2px;
         margin: 2px;
     }
@@ -419,10 +367,7 @@
         right: 10px;
     }
 
-    .cross_image {
-        margin: 10px;
-    }
-
+    .cross_image,
     .clock-icon {
         margin: 10px;
     }
@@ -431,10 +376,7 @@
         width: calc(50% - 8px);
     }
 
-    .label_shop_name,
-    .label_date,
-    .label_time,
-    .label_number {
+    .form-label {
         margin: 2px;
     }
 
@@ -447,32 +389,18 @@
         padding: 4px;
     }
 
-    .edit-reservation-button,
-    .delete-reservation-button {
+    .reservation-button,
+    .review-button,
+    .shop-detail {
         width: 60%;
         padding: 2px;
-        margin: 4px;
+        margin: 8px;
         font-size: 1rem;
     }
 
-    .edit-reservation-button:hover,
-    .delete-reservation-button:hover {
-        background-color: #0676ee;
-        color: #f4f4f4;
-    }
-
-    /* 5段階評価＆レビューコメント */
     .store_form {
-        padding: 10px;
         margin: 10px;
         font-size: 1rem;
-    }
-
-    .review-button {
-        width: 50%;
-        padding: 4px;
-        margin: 10px;
-        border: none;
     }
 
     .rating-select-icon {
@@ -480,54 +408,39 @@
     }
 
     /* お気に入り店舗 */
-    .favorite-shops-section {
-        flex: 1;
-        margin: 0 10px;
-        padding: 0;
-        background-color: #f4f4f4;
-        border-radius: 6px;
-    }
-
     .shop_card {
         flex: 0 1 100%;
         justify-content: center;
     }
 
     .shop-detail {
-        width: 50%;
         padding: 4px;
-        font-size: 1rem;
     }
 }
 
 @media only screen and (width: 768px) {
-    /* 現在の予約一覧 */
-    .reservation-section {
+    .reservation-section,
+    .favorite-shops {
         width: 70%;
+    }
+
+    .reservation-section {
         margin: 0 auto;
         font-size: 1.2rem;
     }
 
-    /* 予約データ */
-    .reservation-summary {
-        font-size: 1rem;
+    .favorite-shops {
+        margin: 5% auto;
+        flex-direction: column;
     }
 
-    /* 5段階評価＆レビューコメント */
-    .store_form {
+    /* 予約データ,5段階評価＆レビューコメント */
+    .reservation-summary,
+    .review-button {
         font-size: 1rem;
     }
 
     .review-button {
         width: 40%;
-        font-size: 1rem;
-    }
-
-
-    .favorite-shops {
-        width: 70%;
-        margin: 5% auto;
-        display: flex;
-        flex-direction: column;
     }
 }

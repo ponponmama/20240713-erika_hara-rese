@@ -1,3 +1,7 @@
+.button {
+    cursor: pointer;
+}
+
 .common_body {
     font-family: sans-serif;
     overflow-x: auto;
@@ -10,7 +14,8 @@
     margin: 2%;
 }
 
-.header {
+.header,
+.header_content {
     width: 100%;
     display: flex;
     align-items: flex-start;
@@ -19,12 +24,7 @@
 }
 
 .header_content {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
     justify-content: left;
-    padding: 0 5px;
-    background-color: #f4f4f4;
 }
 
 .container {
@@ -44,11 +44,11 @@
 }
 
 .user__name,
-.form-title {
+.title-name {
     font-size: 1.4rem;
     margin: 4px auto;
     padding: 2px;
-    color: black;
+    color: rgb(0 0 0 / 70%);
     font-weight: bold;
     text-align: center;
 }
@@ -70,6 +70,7 @@
     font-size: 0.7rem;
     background-color: white;
     margin: 0 1px;
+    cursor: pointer;
 }
 
 .custom-date-pagination a:hover {
@@ -132,7 +133,8 @@
         flex-direction: column;
     }
 
-    .form-title {
+    .form-title,
+    .user__name{
         font-size: 1.2rem;
     }
 
@@ -140,10 +142,6 @@
         width: 100%;
         padding: 2px 30px;
         margin-left: 20px;
-    }
-
-    .user__name {
-        font-size: 1.2rem;
     }
 
     .alert-success,
@@ -160,10 +158,7 @@
         flex-direction: column;
     }
 
-    .form-title {
-        font-size: 1.3rem;
-    }
-
+    .form-title,
     .user__name {
         font-size: 1.3rem;
     }

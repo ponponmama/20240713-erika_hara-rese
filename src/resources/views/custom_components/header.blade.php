@@ -9,7 +9,7 @@
 
 @if($title)
     @if($useFormTitle)
-        <h1 class="form-title">{{ $title }}</h1>
+        <h1 class="title-name">{{ $title }}</h1>
     @else
         <h1>{{ $title }}</h1>
     @endif

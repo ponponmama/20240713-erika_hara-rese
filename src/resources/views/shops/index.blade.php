@@ -7,7 +7,7 @@
 @section('search')
 <div class="search-content">
     <form class="search-form" action="{{ route('shops.index') }}" method="get">
-        <div class="search-form__item">
+        <div class="search-form__section">
             <div class="select-wrapper">
                 <select class="search-form__item-select" name="search-area" title="エリアで絞り込み">
                     <option value="">All area</option>

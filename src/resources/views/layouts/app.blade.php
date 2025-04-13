@@ -23,11 +23,6 @@
                 @yield('search')
             </div>
             @if(Request::is('shops/*'))
-            <div class="container detail-container">
-                @yield('detail_shop')
-                @yield('reservation_form')
-            </div>
-            @else
                 @yield('detail_shop')
                 @yield('reservation_form')
             @endif
