@@ -10,6 +10,7 @@
 .content {
     background-color: #f4f4f4;
     width: 96%;
+    height: 100vh;
     padding: 10px 20px;
     margin: 2%;
 }
@@ -35,7 +36,7 @@
 }
 
 .top_logo {
-    width: 50%;
+    width: 40%;
     color: #0056b3;
     margin: 0;
     padding: 10px 4px;
@@ -144,6 +145,15 @@
         margin-left: 20px;
     }
 
+    .header,
+    .header_content {
+        width: 94%;
+        flex-direction: column;
+        margin: 2%;
+        padding: 0;
+    }
+
+
     .alert-success,
     .alert-danger,
     .payment-success,
@@ -154,9 +164,18 @@
 
 @media only screen and (width: 768px) {
     .container {
-        width: 100%;
+        width: 80%;
+        margin: 2% 10%;
         flex-direction: column;
     }
+
+    .header,
+    .header_content {
+        width: 96%;
+        flex-direction: column;
+        margin: 2%;
+    }
+
 
     .form-title,
     .user__name {
