@@ -1,9 +1,5 @@
 .shop_container {
-    width: 100%;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
 }
 
 .shop_manager_name {
@@ -179,7 +175,7 @@
     background-color: #003875;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .shop_manager_name {
         margin: 4px auto;
         font-size: 1.2rem;
@@ -236,7 +232,7 @@
     }
 }
 
-@media only screen and (width: 768px) {
+@media only screen and (width = 768px) {
     .shop_manager_name {
         margin: 10px auto;
         font-size: 1.3rem;

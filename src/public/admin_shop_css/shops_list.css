@@ -52,12 +52,12 @@
     color: #b4b4b4;
     border: none;
     cursor: pointer;
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-align: center;
 }
 
 .delete-button:hover {
-    color: #5c5b5b;
+    color: red;
 }
 
 /* モーダルスタイル */
@@ -79,7 +79,7 @@
     border: 1px solid #888;
     width: 80%;
     max-width: 600px;
-    border-radius: 5px;
+    border-radius: 6px;
     max-height: 80vh;
     overflow-y: auto;
     box-shadow: 10px 10px 20px rgb(9 1 55 / 70%);
@@ -112,14 +112,21 @@
     align-items: center;
 }
 
-.detail-item h3 {
+.delete-form {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+
+.shop-title {
     font-weight: bold;
     margin-right: 10px;
     min-width: 120px;
     color: rgb(0 0 0 / 70%);
 }
 
-.detail-item p {
+.modal-title-section {
     margin: 0;
     color: rgb(0 0 0 / 70%);
 }

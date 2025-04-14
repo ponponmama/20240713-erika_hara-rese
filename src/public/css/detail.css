@@ -240,7 +240,7 @@
     margin-top: 2px;
 }
 
-@media screen and (min-height: 1000px) {
+@media screen and (height >= 1000px) {
     .content {
         height: auto;
     }
@@ -251,7 +251,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .content {
         height: auto;
     }
@@ -307,7 +307,7 @@
     }
 }
 
-@media only screen and (width: 768px) {
+@media only screen and (width = 768px) {
     .detail-section,
     .reservation-section {
         width: 90%;

@@ -25,5 +25,4 @@ RUN curl -sS https://getcomposer.org/installer | php \
 RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash - \
     && apt-get install -y nodejs
 
-
 WORKDIR /var/www

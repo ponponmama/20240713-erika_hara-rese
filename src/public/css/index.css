@@ -165,7 +165,7 @@
 }
 
 /* レスポンシブデザインの設定 */
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .header {
         flex-direction: column;
         align-items: flex-start;
@@ -229,7 +229,7 @@
     }
 }
 
-@media only screen and (width: 768px) {
+@media only screen and (width = 768px) {
     .search-content {
         width: 100%;
     }

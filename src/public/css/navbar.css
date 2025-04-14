@@ -51,7 +51,6 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
-
 }
 
 .top-bar {
@@ -100,7 +99,7 @@
     text-decoration: none;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .hamburger-menu {
         position: absolute;
         top: 4px;

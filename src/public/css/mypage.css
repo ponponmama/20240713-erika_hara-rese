@@ -343,9 +343,9 @@
 }
 
 /* レスポンシブデザインの設定 */
-@media (max-width: 768px) {
+@media (width <= 768px) {
     /* ページ全体 */
-    .sections-container {
+    .container {
         width: 100%;
         flex-direction: column;
     }
@@ -418,10 +418,18 @@
     }
 }
 
-@media only screen and (width: 768px) {
+@media only screen and (width = 768px) {
+    /* ページ全体 */
+    .container {
+        width: 98%;
+        flex-direction: column;
+        margin: 1%;
+    }
+
     .reservation-section,
     .favorite-shops {
-        width: 70%;
+        width: 80%;
+        margin: auto 10%;
     }
 
     .reservation-section {

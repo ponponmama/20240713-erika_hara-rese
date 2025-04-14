@@ -238,7 +238,7 @@
     text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .manage_content {
         width: 90%;
         margin: 2% 5%;
@@ -311,7 +311,7 @@
     }
 }
 
-@media only screen and (width: 768px) {
+@media only screen and (width = 768px) {
     .manage_content {
         width: 70%;
         margin: 0 15%;

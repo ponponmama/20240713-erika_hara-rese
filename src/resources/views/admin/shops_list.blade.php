@@ -7,7 +7,7 @@
 @section('content')
 <div class="container shops_list_container">
     @include('custom_components.header', [
-    'title' => 'admin登録店舗一覧',
+    'title' => '登録店舗一覧',
     'userName' => Auth::user()->user_name,
     'message' => 'お疲れ様です！',
     'showMessage' => true
@@ -68,31 +68,31 @@
         <h2 id="modal-shop-name"></h2>
         <div class="shop-details">
             <div class="detail-item">
-                <h3>店舗詳細</h3>
-                <p id="modal-shop-description"></p>
+                <h3 class="shop-title">店舗詳細</h3>
+                <p class="modal-title-section" id="modal-shop-description"></p>
             </div>
 
             <div class="detail-item">
-                <h3>エリア</h3>
-                <p id="modal-shop-area"></p>
+                <h3 class="shop-image-title">エリア</h3>
+                <p class="modal-title-section" id="modal-shop-area"></p>
             </div>
 
             <div class="detail-item">
-                <h3>ジャンル</h3>
-                <p id="modal-shop-genre"></p>
+                <h3 class="shop-image-title">ジャンル</h3>
+                <p class="modal-title-section" id="modal-shop-genre"></p>
             </div>
 
             <div class="detail-item">
-                <h3>営業時間</h3>
-                <p id="modal-shop-hours"></p>
+                <h3 class="shop-image-title">営業時間</h3>
+                <p class="modal-title-section" id="modal-shop-hours"></p>
             </div>
 
             <div class="detail-item" id="modal-shop-image-container" style="display: none;">
-                <h3>店舗画像</h3>
+                <h3 class="shop-image-title">店舗画像</h3>
                 <img id="modal-shop-image" src="" alt="" class="shop-image">
             </div>
 
-            <div class="detail-item">
+            <div class="detail-item delete-item">
                 <form id="delete-form" action="" method="POST" class="delete-form">
                     @csrf
                     @method('DELETE')
