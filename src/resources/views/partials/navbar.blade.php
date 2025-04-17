@@ -17,7 +17,7 @@
                         <li><a href="{{ route('shops.index') }}" class="nav-link">Home</a></li>
                     @endif
                     <li>
-                        <form action="{{ route('logout') }}" method="POST">
+                        <form action="{{ route('logout') }}" method="POST" class="logout-button-form">
                             @csrf
                                 <button type="submit" class="logout-button">
                                     Logout

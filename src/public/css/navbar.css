@@ -82,6 +82,7 @@
 
 .nav-link,
 .logout-button {
+    width: auto;
     font-size: 2rem;
     color: blue;
     font-weight: bold;

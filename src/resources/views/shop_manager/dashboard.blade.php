@@ -37,7 +37,7 @@
                     <td class="reservation_td">{{ $reservation->user->user_name }}</td>
                     <td class="reservation_td">{{ $reservation->user->email}}</td>
                     <td class="reservation_td">
-                        <button onclick="openReservationModal({{ $reservation->id }})" class="detail-button">詳細</button>
+                        <button onclick="openReservationModal({{ $reservation->id }})" class="button detail-button">詳細</button>
                     </td>
                 </tr>
                 @endforeach
@@ -129,9 +129,9 @@
         <p class="qr_data_content"><strong>メールアドレス:</strong> <span id="reservation-email"></span></p>
     </div>
     <div class="qr-section-button">
-        <button id="start-scanner-btn" class="start-scanner-btn">スキャン</button>
-        <button id="stop-scanner-btn" class="stop-scanner-btn">停止</button>
-        <button id="reset-btn" class="reset-btn">リセット</button>
+        <button id="start-scanner-btn" class="button start-scanner-btn">スキャン</button>
+        <button id="stop-scanner-btn" class="button stop-scanner-btn">停止</button>
+        <button id="reset-btn" class="button reset-btn">リセット</button>
     </div>
 </div>
 <div class="camera-reader" id="reader">

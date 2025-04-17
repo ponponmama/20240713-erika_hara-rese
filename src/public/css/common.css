@@ -120,6 +120,16 @@
     color: #004085;
 }
 
+.form__error {
+    height: 22px;
+    line-height: 22px;
+    color: #f00;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
 /* レスポンシブ対応 */
 @media (width <= 768px) {
     .content {

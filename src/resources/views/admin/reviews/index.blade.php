@@ -1,35 +1,34 @@
 @extends('layouts.app')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('admin_shop_css/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin_shop_css/admin_index_shop_list.css') }}">
 @endsection
 
 @section('content')
 <div class="container review_container">
     @include('custom_components.header', [
-        'title' => 'レビュー管理'
+        'title' => 'レビュー　一覧'
         ])
     @include('custom_components.session-messages')
     <div class="management_form review_form">
-        <h2 class="admin-heading manage_review">レビュー　一覧</h2>
-        <table class="admin-table reviews-table">
+        <table class="table-section reviews-table">
             <thead>
                 <tr>
-                    <th>投稿日時</th>
-                    <th>店舗名</th>
-                    <th>ユーザー名</th>
-                    <th>評価</th>
-                    <th>コメント</th>
-                    <th>詳細</th>
+                    <th class="admin-th">投稿日時</th>
+                    <th class="admin-th">店舗名</th>
+                    <th class="admin-th">ユーザー名</th>
+                    <th class="admin-th">評価</th>
+                    <th class="admin-th">コメント</th>
+                    <th class="admin-info">詳細</th>
                     </tr>
             </thead>
             <tbody>
                 @foreach($reviews as $review)
                     <tr>
-                        <td>{{ $review->created_at->format('Y/m/d H:i') }}</td>
-                        <td>{{ $review->shop->shop_name }}</td>
-                        <td>{{ $review->user->user_name }}</td>
-                        <td>
+                        <td class="admin-td">{{ $review->created_at->format('Y/m/d H:i') }}</td>
+                        <td class="admin-td">{{ $review->shop->shop_name }}</td>
+                        <td class="admin-td">{{ $review->user->user_name }}</td>
+                        <td class="admin-td">
                             @for($i = 1; $i <= 5; $i++)
                                 @if($i <= $review->rating)
                                     <i class="fas fa-star review-star"></i>
@@ -38,9 +37,9 @@
                                 @endif
                             @endfor
                         </td>
-                        <td>{{ Str::limit($review->comment, 50) }}</td>
-                        <td>
-                            <button onclick="openReviewModal({{ $review->id }})" class="review_button review-detail-button">詳細</button>
+                        <td class="comment-column">{{ Str::limit($review->comment, 50) }}</td>
+                        <td class="admin-button-section">
+                            <button onclick="openReviewModal({{ $review->id }})" class="admin-button detail-button">詳細</button>
                         </td>
                     </tr>
                 @endforeach

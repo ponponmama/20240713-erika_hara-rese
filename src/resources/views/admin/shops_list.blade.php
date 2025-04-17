@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('admin_shop_css/shops_list.css') }}">
+<link rel="stylesheet" href="{{ asset('admin_shop_css/admin_index_shop_list.css') }}">
 @endsection
 
 @section('content')
@@ -18,7 +18,7 @@
     <div class="management_form shop_list_form">
         <h2 class="admin-heading shop_list">登録店舗</h2>
 
-        <table class="admin-table shop_list_table">
+        <table class="table-section shop_list_table">
             <thead>
                 <tr>
                     <th>店舗名</th>
@@ -96,7 +96,7 @@
                 <form id="delete-form" action="" method="POST" class="delete-form">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="admin-button delete-button" onclick="return confirm('本当にこの店舗を削除しますか？')">削除</button>
+                    <button type="submit" class="button delete-button" onclick="return confirm('本当にこの店舗を削除しますか？')">削除</button>
                 </form>
             </div>
         </div>

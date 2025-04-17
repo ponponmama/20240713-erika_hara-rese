@@ -7,7 +7,7 @@
 @section('content')
 <div class="container manage_container">
     @include('custom_components.session-messages')
-    <h1 class="Edit_Shop_Information">店舗情報</h1>
+    <h2 class="title-name section-title">店舗情報</h2>
     <form action="{{ route('shop_manager.update', $shop->id) }}" method="POST" enctype="multipart/form-data" class="manage_form">
         @csrf
         @method('PUT')
@@ -41,7 +41,7 @@
             </label>
         </div>
         <div class="up_date_button_container">
-            <button type="submit" class="up_date_button">更新する</button>
+            <button type="submit" class="button up_date_button">更新する</button>
         </div>
     </form>
     <h2 class="confirm_text">更新された情報はこちらで確認できます</h2>

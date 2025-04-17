@@ -4710,3 +4710,570 @@
 [2025-04-14 23:40:13] local.INFO: ClearSessionAfterReturn middleware executed  
 [2025-04-14 23:40:13] local.INFO: clear_session_on_leave flag: false  
 [2025-04-14 23:40:13] local.INFO: After clearing session: {"_token":"yRWRzWXf96Jl9ihxFrLEk4jf0e61Y4JLNAfAnoQw","_flash":{"old":[],"new":[]},"_previous":{"url":"https:\/\/localhost\/admin\/reviews\/44\/details"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 16:24:51] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 16:24:51] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 16:24:51] local.INFO: After clearing session: {"_token":"FwimC0gcTDsxE31INTGymsr8FRvTBLpo6XbI5Hnw"}  
+[2025-04-15 16:24:52] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 16:24:52] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 16:24:52] local.INFO: After clearing session: {"_token":"Q62izEiwi1kc3KUGzfIE9IOBA0RuNFRyGJXzdhKd"}  
+[2025-04-15 16:25:11] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 16:25:11] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 16:25:11] local.INFO: After clearing session: {"_token":"1uvPT7CIfjb84d7YgjUuR52F4w4wrZCXPQrG36LO"}  
+[2025-04-15 16:36:03] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 16:36:03] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 16:36:03] local.INFO: After clearing session: {"_token":"Vj3N22SMoRD7gPYQNSIbEjV7oiJmKlAUCfUcRtWX"}  
+[2025-04-15 16:36:06] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 16:36:06] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 16:36:06] local.INFO: After clearing session: {"_token":"Vj3N22SMoRD7gPYQNSIbEjV7oiJmKlAUCfUcRtWX","_previous":{"url":"https:\/\/localhost"},"_flash":{"old":[],"new":[]}}  
+[2025-04-15 16:36:20] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 16:36:20] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 16:36:20] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/login"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 16:36:20] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 16:36:20] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 16:36:20] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/login"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 16:39:22] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 16:39:22] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 16:39:22] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 16:44:52] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 16:44:52] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 16:44:52] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 16:48:38] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 16:48:38] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 16:48:38] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/admin\/shops\/list"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 17:03:48] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 17:03:48] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 17:03:48] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 17:04:27] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 17:04:27] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 17:04:27] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 17:04:32] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 17:04:32] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 17:04:32] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 17:47:46] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 17:47:46] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 17:47:46] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 17:48:16] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 17:48:16] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 17:48:16] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 17:48:39] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 17:48:39] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 17:48:39] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 17:49:50] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 17:49:50] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 17:49:50] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 17:52:15] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 17:52:15] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 17:52:15] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 17:53:43] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 17:53:43] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 17:53:43] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 17:54:01] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 17:54:01] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 17:54:01] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 17:54:06] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 17:54:06] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 17:54:06] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 17:54:10] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 17:54:10] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 17:54:10] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 17:54:15] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 17:54:15] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 17:54:15] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 17:57:16] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 17:57:16] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 17:57:16] local.INFO: After clearing session: {"_token":"8wBwfLHMl32mXV4o8rbEtRecZlZdtdq24nBsI8KC","_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 21:44:32] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 21:44:32] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 21:44:32] local.INFO: After clearing session: {"_token":"99EJByyxC8HeeydSvRNl5PtBpjZsyWaoiJOpNmX0","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]}}  
+[2025-04-15 21:44:46] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 21:44:46] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 21:44:46] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/login"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 21:44:46] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 21:44:46] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 21:44:46] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/login"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 21:45:07] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 21:45:07] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 21:45:07] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 21:45:13] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 21:45:13] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 21:45:13] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 21:45:44] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 21:45:44] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 21:45:44] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 21:46:02] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 21:46:02] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 21:46:02] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 21:47:01] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 21:47:01] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 21:47:01] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 21:50:26] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 21:50:26] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 21:50:26] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 21:51:18] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 21:51:18] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 21:51:18] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 21:51:47] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 21:51:47] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 21:51:47] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 21:52:03] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 21:52:03] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 21:52:03] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 21:53:11] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 21:53:11] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 21:53:11] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 21:54:07] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 21:54:07] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 21:54:07] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 21:55:30] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 21:55:30] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 21:55:30] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 22:00:11] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 22:00:11] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 22:00:11] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 22:02:22] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 22:02:22] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 22:02:22] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 22:05:01] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 22:05:01] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 22:05:01] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 22:05:53] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 22:05:53] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 22:05:53] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 22:07:17] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 22:07:17] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 22:07:17] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 22:36:44] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 22:36:44] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 22:36:44] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 22:37:56] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 22:37:56] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 22:37:56] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 22:38:06] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 22:38:06] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 22:38:06] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 22:38:11] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 22:38:11] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 22:38:11] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 22:51:40] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 22:51:40] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 22:51:40] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:03:11] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:03:11] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:03:11] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:03:16] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:03:16] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:03:16] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:05:35] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:05:35] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:05:35] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:06:42] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:06:42] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:06:42] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:08:50] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:08:50] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:08:50] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:11:10] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:11:10] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:11:10] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:21:11] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:21:11] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:21:11] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:23:12] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:23:12] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:23:12] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:23:43] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:23:43] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:23:43] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:23:47] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:23:47] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:23:47] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:27:48] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:27:48] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:27:48] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:32:34] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:32:34] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:32:34] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:34:20] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:34:20] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:34:20] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:49:36] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:49:36] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:49:36] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:51:49] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:51:49] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:51:49] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:53:26] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:53:26] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:53:26] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:53:43] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:53:43] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:53:43] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:54:00] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:54:00] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:54:00] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-15 23:57:09] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-15 23:57:09] local.INFO: clear_session_on_leave flag: false  
+[2025-04-15 23:57:09] local.INFO: After clearing session: {"_token":"Lxha6AhG274v7ysE1dtB4ei5C8LTi82WCs5wVUlC","url":{"intended":"https:\/\/localhost\/admin\/dashboard"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 14:06:20] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 14:06:20] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 14:06:20] local.INFO: After clearing session: {"_token":"nUZgHGpgSiGM0JBKOJ42Omypr9HIItlfRKo6kUgX"}  
+[2025-04-17 14:06:20] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 14:06:20] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 14:06:20] local.INFO: After clearing session: {"_token":"X8RuDTfIH2h3gn8z78loF1PyEX3e0RFekqmJvOXE"}  
+[2025-04-17 14:06:40] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 14:06:40] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 14:06:40] local.INFO: After clearing session: {"_token":"piNkHZf5dMSBCexIjsske01DIGo5sGQP4AkH4kGf"}  
+[2025-04-17 14:26:56] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 14:26:56] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 14:26:56] local.INFO: After clearing session: {"_token":"jACeONcBedhK9esdZIdTirWt6uKPBEv1eng5XnEm"}  
+[2025-04-17 14:27:03] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 14:27:03] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 14:27:03] local.INFO: After clearing session: {"_token":"jACeONcBedhK9esdZIdTirWt6uKPBEv1eng5XnEm","_previous":{"url":"https:\/\/localhost"},"_flash":{"old":[],"new":[]}}  
+[2025-04-17 14:30:14] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 14:30:14] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 14:30:14] local.INFO: After clearing session: {"_token":"jACeONcBedhK9esdZIdTirWt6uKPBEv1eng5XnEm","_previous":{"url":"https:\/\/localhost"},"_flash":{"old":[],"new":[]}}  
+[2025-04-17 14:30:50] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 14:30:50] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 14:30:50] local.INFO: After clearing session: {"_token":"jACeONcBedhK9esdZIdTirWt6uKPBEv1eng5XnEm","_previous":{"url":"https:\/\/localhost"},"_flash":{"old":[],"new":[]}}  
+[2025-04-17 14:31:05] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 14:31:05] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 14:31:05] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/login"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 14:31:05] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 14:31:05] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 14:31:05] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/login"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 14:31:18] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 14:31:18] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 14:31:18] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 14:32:35] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 14:32:35] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 14:32:35] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 14:34:51] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 14:34:51] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 14:34:51] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 14:39:13] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 14:39:13] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 14:39:13] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 14:39:30] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 14:39:30] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 14:39:30] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 14:40:25] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 14:40:25] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 14:40:25] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 14:42:44] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 14:42:44] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 14:42:44] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 14:48:18] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 14:48:18] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 14:48:18] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 14:48:49] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 14:48:49] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 14:48:49] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 15:04:55] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 15:04:55] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 15:04:55] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 15:05:50] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 15:05:50] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 15:05:50] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 15:05:53] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 15:05:53] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 15:05:53] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 15:06:38] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 15:06:38] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 15:06:38] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 15:06:44] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 15:06:44] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 15:06:44] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/shops\/list"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 15:06:47] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 15:06:47] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 15:06:47] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 15:06:55] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 15:06:55] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 15:06:55] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 15:08:17] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 15:08:17] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 15:08:17] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 15:08:55] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 15:08:55] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 15:08:55] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 15:09:02] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 15:09:02] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 15:09:02] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 15:09:11] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 15:09:11] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 15:09:11] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/shops\/list"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 15:09:41] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 15:09:41] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 15:09:41] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 15:11:39] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 15:11:39] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 15:11:39] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 15:11:45] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 15:11:45] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 15:11:45] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 15:12:19] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 15:12:19] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 15:12:19] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 15:13:37] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 15:13:37] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 15:13:37] local.INFO: After clearing session: {"_token":"stgUvKRmNpRkR2On0tpBPYi6fTSgZfylQVTPHdap","_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 20:26:31] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 20:26:31] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 20:26:31] local.INFO: After clearing session: {"_token":"d4z1ouvC3kJzTrJOsFwZMtMIebJ60ho8IarWRjtH","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]}}  
+[2025-04-17 20:26:47] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 20:26:47] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 20:26:47] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/login"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 20:26:47] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 20:26:47] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 20:26:47] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/login"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 20:26:52] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 20:26:52] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 20:26:52] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/dashboard"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 20:28:38] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 20:28:38] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 20:28:38] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 20:36:22] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 20:36:22] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 20:36:22] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 20:36:25] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 20:36:25] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 20:36:25] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 20:37:13] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 20:37:13] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 20:37:13] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 20:37:25] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 20:37:25] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 20:37:25] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 20:39:06] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 20:39:06] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 20:39:06] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 20:42:29] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 20:42:29] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 20:42:29] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 20:44:28] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 20:44:28] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 20:44:28] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 20:45:40] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 20:45:40] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 20:45:40] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 20:47:32] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 20:47:32] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 20:47:32] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 20:47:51] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 20:47:51] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 20:47:51] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 21:23:40] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 21:23:40] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 21:23:40] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 21:24:05] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 21:24:05] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 21:24:05] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 21:38:46] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 21:38:46] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 21:38:46] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 21:40:34] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 21:40:34] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 21:40:34] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 21:40:49] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 21:40:49] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 21:40:49] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews\/59\/details"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 21:41:39] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 21:41:39] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 21:41:39] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews\/44\/details"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 21:45:25] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 21:45:25] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 21:45:25] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 21:45:44] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 21:45:44] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 21:45:44] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 21:46:05] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 21:46:05] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 21:46:05] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 21:49:30] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 21:49:30] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 21:49:30] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 21:49:32] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 21:49:32] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 21:49:32] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 21:56:45] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 21:56:45] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 21:56:45] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews\/59\/details"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 21:57:09] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 21:57:09] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 21:57:09] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 21:57:37] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 21:57:37] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 21:57:37] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 21:57:42] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 21:57:42] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 21:57:42] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 21:58:38] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 21:58:38] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 21:58:38] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews\/59\/details"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 21:59:43] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 21:59:43] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 21:59:43] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 21:59:59] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 21:59:59] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 21:59:59] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:00:13] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:00:13] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:00:13] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:01:21] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:01:21] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:01:21] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews\/59\/details"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:02:52] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:02:52] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:02:52] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:05:04] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:05:04] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:05:04] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:06:09] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:06:09] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:06:09] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:06:30] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:06:30] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:06:30] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:08:59] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:08:59] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:08:59] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews\/59\/details"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:14:39] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:14:39] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:14:39] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews\/59\/details"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:15:05] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:15:05] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:15:05] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:15:31] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:15:31] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:15:31] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:20:29] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:20:29] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:20:29] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:21:22] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:21:22] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:21:22] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:21:24] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:21:24] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:21:24] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:21:51] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:21:51] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:21:51] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:24:12] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:24:12] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:24:12] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:26:21] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:26:21] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:26:21] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/shops\/list"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:26:26] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:26:26] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:26:26] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/shops\/list"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:27:04] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:27:04] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:27:04] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/shops\/list"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:28:37] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:28:37] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:28:37] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/shops\/list"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:30:10] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:30:10] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:30:10] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/shops\/list"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:31:35] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:31:35] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:31:35] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/shops\/list"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:34:33] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:34:33] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:34:33] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/shops\/list"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:36:58] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:36:58] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:36:58] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/shops\/list"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:37:03] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:37:03] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:37:03] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/shops\/list"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:39:38] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:39:38] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:39:38] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/shops\/list"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:39:49] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:39:49] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:39:49] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/shops\/list"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:43:14] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:43:14] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:43:14] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:45:26] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:45:26] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:45:26] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:45:29] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:45:29] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:45:29] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:46:44] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:46:44] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:46:44] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:46:50] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:46:50] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:46:50] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:48:30] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:48:30] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:48:30] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:48:36] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:48:36] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:48:36] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:49:00] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:49:00] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:49:00] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:49:29] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:49:29] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:49:29] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:50:09] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:50:09] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:50:09] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:50:27] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:50:27] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:50:27] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:50:49] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:50:49] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:50:49] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:51:09] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:51:09] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:51:09] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:52:32] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:52:32] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:52:32] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:53:02] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:53:02] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:53:02] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:53:09] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:53:09] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:53:09] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:53:58] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:53:58] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:53:58] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:54:26] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:54:26] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:54:26] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:54:29] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:54:29] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:54:29] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:54:49] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:54:49] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:54:49] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:57:13] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:57:13] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:57:13] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 22:57:51] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 22:57:51] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 22:57:51] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 23:00:19] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 23:00:19] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 23:00:19] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 23:01:28] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 23:01:28] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 23:01:28] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 23:01:32] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 23:01:32] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 23:01:32] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 23:04:48] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 23:04:48] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 23:04:48] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 23:05:02] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 23:05:02] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 23:05:02] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  
+[2025-04-17 23:05:14] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-04-17 23:05:14] local.INFO: clear_session_on_leave flag: false  
+[2025-04-17 23:05:14] local.INFO: After clearing session: {"_token":"djEEmvcwvvo6wRQBpb9lmBybsijE7HBJmsGm7bzb","url":{"intended":"https:\/\/localhost\/admin\/reviews"},"_previous":{"url":"https:\/\/localhost\/admin\/reviews"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":1}  

@@ -9,9 +9,9 @@
 
 @if($title)
     @if($useFormTitle)
-        <h1 class="title-name">{{ $title }}</h1>
+        <h2 class="title-name">{{ $title }}</h2>
     @else
-        <h1>{{ $title }}</h1>
+        <h2>{{ $title }}</h2>
     @endif
 @endif
 <p class="user__name {{ $additionalClass }}">
