@@ -36,12 +36,12 @@
 }
 
 .top_logo {
-    width: 40%;
+    width: auto;
     color: #0056b3;
-    margin: 0;
     padding: 10px 4px;
     text-align: left;
     font-size: 1.8rem;
+    margin: 0 10px;
 }
 
 .user__name,
@@ -55,48 +55,29 @@
 }
 
 /* ページネーションの共通スタイル */
-.custom-date-pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.custom-date-pagination a {
-    text-decoration: none;
-    color: blue;
-    font-weight: bold;
-    padding: 5px 8px;
-    border: 1px solid rgb(119 118 118);
-    font-size: 0.7rem;
-    background-color: white;
-    margin: 0 1px;
-    cursor: pointer;
-}
-
-.custom-date-pagination a:hover {
-    background-color: #8cbff5;
-}
-
 .custom-count-pagination {
+    width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 1%;
+    flex-wrap: wrap;
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
 }
 
 .custom-count-pagination .page-item {
     display: inline-block;
-    margin: 0 1px;
+    margin: 0 4px;
 }
 
 .custom-count-pagination .page-link {
-    padding: 5px 8px;
     color: blue;
     font-weight: bold;
     text-decoration: none;
     border: 1px solid rgb(119 118 118);
-    font-size: 0.7rem;
     background-color: white;
+    padding: 6px 8px;
+    font-size: 0.8rem;
 }
 
 .custom-count-pagination .page-item.active .page-link {
@@ -131,7 +112,7 @@
 }
 
 /* レスポンシブ対応 */
-@media (width <= 768px) {
+@media (width <= 767px) {
     .content {
         background-color: #f4f4f4;
         width: 96%;
@@ -163,6 +144,10 @@
         padding: 0;
     }
 
+    .custom-count-pagination .page-item {
+        margin: 0 1px;
+    }
+
 
     .alert-success,
     .alert-danger,
@@ -172,20 +157,21 @@
     }
 }
 
-@media only screen and (width = 768px) {
+@media (width: 768px) {
     .container {
         width: 80%;
         margin: 2% 10%;
         flex-direction: column;
     }
 
-    .header,
-    .header_content {
-        width: 96%;
-        flex-direction: column;
-        margin: 2%;
-    }
-
+    .top_logo {
+    width: auto;
+    color: #0056b3;
+    padding: 10px 4px;
+    text-align: left;
+    font-size: 1.8rem;
+    margin: 0 10px 0 50px ;
+}
 
     .form-title,
     .user__name {

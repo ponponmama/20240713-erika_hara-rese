@@ -13,7 +13,8 @@ class ReviewController extends Controller
     {
         $reviews = Review::with(['user', 'shop'])
             ->orderBy('created_at', 'desc')
-            ->paginate(10);
+            ->paginate(10)
+            ->onEachSide(0);
 
         return view('admin.reviews.index', compact('reviews'));
     }

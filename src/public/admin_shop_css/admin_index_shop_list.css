@@ -168,8 +168,8 @@
 /* メディアクエリ */
 @media (width <=767px) {
     .container {
-        width: 90%;
-        margin: 5%;
+        width: 98%;
+        margin: 1%;
     }
 
     .table-section {
