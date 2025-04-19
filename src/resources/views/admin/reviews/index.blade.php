@@ -7,8 +7,11 @@
 @section('content')
 <div class="container review_container">
     @include('custom_components.header', [
-        'title' => 'レビュー　一覧'
-        ])
+        'title' => 'レビュー　一覧',
+        'userName' => Auth::user()->user_name,
+        'message' => 'お疲れ様です！',
+        'showMessage' => true
+    ])
     @include('custom_components.session-messages')
     <div class="management_form review_form">
         <table class="table-section reviews-table">

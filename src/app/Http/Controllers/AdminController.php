@@ -155,7 +155,9 @@ class AdminController extends Controller
     // 店舗一覧を表示するメソッド
     public function shopsList()
     {
-        $shops = Shop::with(['areas', 'genres'])->get();
+        // 画面幅に応じて表示行数を変更
+        $perPage = 15; // 768px以上の画面では15行表示
+        $shops = Shop::with(['areas', 'genres'])->paginate($perPage);
         return view('admin.shops_list', compact('shops'));
     }
 

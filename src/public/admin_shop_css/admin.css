@@ -16,16 +16,6 @@
     padding: 4px;
 }
 
-/* form内のstyle */
-.section-title {
-    width: 100%;
-    margin: 6px auto;
-    padding: 4px;
-    font-size: 1.2rem;
-    color: black;
-    font-weight: bold;
-}
-
 .input-group {
     display: flex;
     align-items: center;
@@ -51,7 +41,7 @@
 .data-entry {
     width: 100%;
     padding: 10px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     border: 1px solid #7a7a7a;
     border-radius: 6px;
     outline: none;
@@ -84,9 +74,10 @@
     appearance: none;
     position: relative;
     z-index: 1;
+    color: rgb(0 0 0 / 70%);
 }
 
-.admin-input {
+.date-entry {
     border-bottom: 1px solid #7a7a7a;
     line-height: 40px;
     height: 40px;
@@ -102,12 +93,11 @@
 }
 
 /* プレースホルダー */
-.admin-input::placeholder,
+.date-entry::placeholder,
 .description_text::placeholder {
     font-size: 1.2rem;
-    color: black;
+    color: rgb(0 0 0 / 70%);
     opacity: 0.7;
-    font-family: sans-serif;
 }
 
 .input-group-time {
@@ -173,9 +163,6 @@
     background-color: #003875;
 }
 
-
-
-
 /* メディアクエリ */
 @media (width <= 768px) {
     .shop_manager_form,
@@ -200,7 +187,12 @@
     }
 }
 
-@media only screen and (width = 768px) {
+@media (min-width: 768px) and (max-width: 912px) {
+    .management_form,
+    .shop_registration_form {
+        width: 100%;
+    }
+
     .new-register-button {
         padding: 8px 40px;
     }

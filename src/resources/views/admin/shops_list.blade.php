@@ -16,37 +16,35 @@
     @include('custom_components.session-messages')
 
     <div class="management_form shop_list_form">
-        <h2 class="admin-heading shop_list">登録店舗</h2>
-
         <table class="table-section shop_list_table">
             <thead>
                 <tr>
-                    <th>店舗名</th>
-                    <th>エリア</th>
-                    <th>ジャンル</th>
-                    <th>営業時間</th>
-                    <th>詳細</th>
+                    <th class="admin-th">店舗名</th>
+                    <th class="admin-th">エリア</th>
+                    <th class="admin-th">ジャンル</th>
+                    <th class="admin-th">営業時間</th>
+                    <th class="admin-info">詳細</th>
                 </tr>
             </thead>
             <tbody>
                 @if(count($shops) > 0)
                     @foreach($shops as $shop)
                         <tr>
-                            <td>{{ $shop->shop_name }}</td>
-                            <td>
+                            <td class="admin-td">{{ $shop->shop_name }}</td>
+                            <td class="admin-td">
                                 @foreach($shop->areas as $area)
                                     {{ $area->area_name }}
                                     @if(!$loop->last), @endif
                                 @endforeach
                             </td>
-                            <td>
+                            <td class="admin-td">
                                 @foreach($shop->genres as $genre)
                                     {{ $genre->genre_name }}
                                     @if(!$loop->last), @endif
                                 @endforeach
                             </td>
-                            <td>{{ $shop->open_time }} - {{ $shop->close_time }}</td>
-                            <td>
+                            <td class="admin-td">{{ $shop->open_time }} - {{ $shop->close_time }}</td>
+                            <td class="admin-button-section">
                                 <button class="admin-button detail-button" data-shop-id="{{ $shop->id }}">詳細</button>
                             </td>
                         </tr>
@@ -58,6 +56,9 @@
                 @endif
             </tbody>
         </table>
+        <div class="custom-count-pagination">
+            {{ $shops->links() }}
+        </div>
     </div>
 </div>
 
@@ -65,30 +66,30 @@
 <div id="shop-modal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        <h2 id="modal-shop-name"></h2>
+        <h3 id="modal-shop-name"></h3>
         <div class="shop-details">
             <div class="detail-item">
-                <h3 class="shop-title">店舗詳細</h3>
+                <h4 class="shop-title">店舗詳細</h4>
                 <p class="modal-title-section" id="modal-shop-description"></p>
             </div>
 
             <div class="detail-item">
-                <h3 class="shop-image-title">エリア</h3>
+                <h4 class="shop-title shop-image-title">エリア</h4>
                 <p class="modal-title-section" id="modal-shop-area"></p>
             </div>
 
             <div class="detail-item">
-                <h3 class="shop-image-title">ジャンル</h3>
+                <h4 class="shop-title shop-image-title">ジャンル</h4>
                 <p class="modal-title-section" id="modal-shop-genre"></p>
             </div>
 
             <div class="detail-item">
-                <h3 class="shop-image-title">営業時間</h3>
+                <h4 class="shop-title shop-image-title">営業時間</h4>
                 <p class="modal-title-section" id="modal-shop-hours"></p>
             </div>
 
             <div class="detail-item" id="modal-shop-image-container" style="display: none;">
-                <h3 class="shop-image-title">店舗画像</h3>
+                <h4 class="shop-title shop-image-title">店舗画像</h4>
                 <img id="modal-shop-image" src="" alt="" class="shop-image">
             </div>
 
@@ -96,7 +97,7 @@
                 <form id="delete-form" action="" method="POST" class="delete-form">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="button delete-button" onclick="return confirm('本当にこの店舗を削除しますか？')">削除</button>
+                    <button type="submit" class="admin-button delete-button" onclick="return confirm('本当にこの店舗を削除しますか？')">削除</button>
                 </form>
             </div>
         </div>

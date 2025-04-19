@@ -232,7 +232,7 @@
     }
 }
 
-@media only screen and (width = 768px) {
+@media (min-width: 768px) and (max-width: 912px) {
     .shop_manager_name {
         margin: 10px auto;
         font-size: 1.3rem;

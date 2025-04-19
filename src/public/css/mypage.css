@@ -418,7 +418,7 @@
     }
 }
 
-@media only screen and (width = 768px) {
+@media (min-width: 768px) and (max-width: 912px) {
     /* ページ全体 */
     .container {
         width: 98%;

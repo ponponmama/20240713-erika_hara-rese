@@ -157,11 +157,10 @@
     }
 }
 
-@media (width: 768px) {
+@media (min-width: 768px) and (max-width: 912px){
     .container {
         width: 80%;
         margin: 2% 10%;
-        flex-direction: column;
     }
 
     .top_logo {
@@ -171,7 +170,7 @@
     text-align: left;
     font-size: 1.8rem;
     margin: 0 10px 0 50px ;
-}
+    }
 
     .form-title,
     .user__name {

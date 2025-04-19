@@ -1,8 +1,14 @@
+/* index,shops_list共通 */
 .container {
     flex-direction: column;
 }
 
-/* テーブルスタイル index,shops_list共通 */
+.management_form {
+    width: 90%;
+    margin: auto 5%;
+}
+
+/* テーブルスタイル */
 .table-section {
     width: 100%;
     border-collapse: separate;
@@ -23,13 +29,37 @@
 }
 
 .admin-info {
-    text-align: center;
+    text-align: right;
 }
 
 .admin-td {
     text-align: left;
 }
 
+.admin-button-section {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    border: none;
+    text-align: center;
+}
+
+.admin-button {
+    padding: 6px 0 6px 6px;
+    color: #b4b4b4;
+    border: none;
+    font-size: 0.8rem;
+    text-align: right;
+    background: none;
+    text-decoration: none;
+}
+
+.admin-button:hover {
+    color: #5c5b5b;
+}
+
+/* admin/index用 */
 .review-star {
     color: #fd9103;
 }
@@ -45,32 +75,6 @@
     text-overflow: ellipsis;
 }
 
-.admin-button-section {
-    width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    text-align: center;
-}
-
-.admin-button {
-    padding: 5px 10px;
-    color: #b4b4b4;
-    border: none;
-    font-size: 0.8rem;
-    text-align: center;
-    background: none;
-    text-decoration: none;
-}
-
-.admin-button:hover {
-    color: #5c5b5b;
-}
-
-.delete-button:hover {
-    color: red;
-}
 
 /* モーダルスタイル */
 .modal {
@@ -116,7 +120,6 @@
     cursor: pointer;
 }
 
-
 .detail-item {
     margin: 5px 0;
     padding: 5px 10px;
@@ -130,7 +133,6 @@
     margin: auto;
     text-align: center;
 }
-
 
 .shop-title {
     font-weight: bold;
@@ -150,7 +152,6 @@
     margin-top: 10px;
 }
 
-
 .detail-row {
     margin: 5px 0;
     padding: 5px 10px;
@@ -163,6 +164,22 @@
     font-weight: bold;
     margin-right: 10px;
     min-width: 120px;
+}
+
+.delete-button {
+    width: auto;
+    max-width: 40%;
+    padding: 6px;
+    color: #b4b4b4;
+    border: none;
+    font-size: 1.2rem;
+    text-align: center;
+    background: none;
+    text-decoration: none;
+}
+
+.delete-button:hover {
+    color: red;
 }
 
 /* メディアクエリ */
@@ -189,7 +206,7 @@
     }
 }
 
-@media (width: 768px) {
+@media (min-width: 768px) and (max-width: 912px) {
     .container {
         width: 90%;
         margin: 5%;

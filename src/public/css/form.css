@@ -68,7 +68,7 @@
     }
 }
 
-@media only screen and (width = 768px) {
+@media (min-width: 768px) and (max-width: 912px) {
     .payment-group {
         width: 40%;
         margin: 5% auto;

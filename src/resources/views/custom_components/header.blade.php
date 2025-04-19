@@ -5,15 +5,19 @@
     $message = $message ?? 'お疲れ様です！';
     $showMessage = $showMessage ?? true;
     $useFormTitle = $useFormTitle ?? true;
+    $showUserName = $showUserName ?? true;
+    $headingLevel = $headingLevel ?? 2;
 @endphp
 
 @if($title)
     @if($useFormTitle)
-        <h2 class="title-name">{{ $title }}</h2>
+        <h{{ $headingLevel }} class="title-name">{{ $title }}</h{{ $headingLevel }}>
     @else
-        <h2>{{ $title }}</h2>
+        <h{{ $headingLevel }}>{{ $title }}</h{{ $headingLevel }}>
     @endif
 @endif
+@if($showUserName)
 <p class="user__name {{ $additionalClass }}">
     @if($showMessage){{ $message }}@endif{{ $userName }}さん
 </p>
+@endif
