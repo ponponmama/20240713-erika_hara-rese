@@ -1,6 +1,10 @@
-### Rese（リーズ）飲食店予約サービスアプリ
+<p align="center"><img src="https://img.shields.io/badge/-Laravel-black.svg?logo=laravel&style=plastic"> <img src="https://img.shields.io/badge/-Html5-pink.svg?logo=html5&style=plastic"> <img src="https://img.shields.io/badge/-CSS3-blue.svg?logo=css3&style=plastic"> <img src="https://img.shields.io/badge/-Php-orange.svg?logo=php&style=plastic"> <img src="https://img.shields.io/badge/-Mysql-green.svg?logo=mysql&style=plastic"> <img src="https://img.shields.io/badge/-Windows-0078D6.svg?logo=windows&style=plastic"> <img src="https://img.shields.io/badge/-Docker-1488C6.svg?logo=docker&style=plastic"> <img src="https://img.shields.io/badge/-Nginx-red.svg?logo=nginx&style=plastic"> <img src="https://img.shields.io/badge/-Github-181717.svg?logo=github&style=plastic"></p>
 
-![Reseアプリの画面](rese.png)
+<h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ </h3>
+
+<p align="center">
+    <img src="rese.png" alt="Reseアプリの画面">
+</p>
 
 #### サービス概要
 
@@ -94,7 +98,7 @@
 - **5.php artisan migrate**
 - **6.php artisan db:seed**
 
-####クローン作製手順
+#### クローン作製手順
 
 1. GitHub リポジトリのクローン
 
@@ -275,7 +279,7 @@ volumes:
 - ./path/to/your/nginx.key:/path/to/your/nginx.key # 秘密鍵をマウント
 ```
 
-####default.conf を編集
+#### default.conf を編集
 
 ```plaintext
 listen 443 ssl;
@@ -293,7 +297,7 @@ docker-compose down
 docker-compose up -d
 ```
 
-####ディレクトリの作成とストレージ設定
+#### ディレクトリの作成とストレージ設定
 
 **重要：このアプリでは、シンボリックリンクはすでに設定されており、リポジトリに含まれています。新しい環境でプロジェクトをセットアップする際は、リンクが正しく機能しているかを確認してください。機能していない場合は下記の通り設定しなおしてください。**
 
@@ -351,9 +355,9 @@ php artisan migrate
 php artisan db:seed
 ```
 
-####リマインダーメールを送るために必要な Cron ジョブの設定手順
+#### リマインダーメールを送るために必要な Cron ジョブの設定手順
 
-#####Laravel スケジューラを利用するためには、Cron ジョブの設定だけでなく、Laravel のスケジューラを適切に設定する必要があります。以下に、Laravel のスケジューラ設定の完全な手順を示します。
+##### Laravel スケジューラを利用するためには、Cron ジョブの設定だけでなく、Laravel のスケジューラを適切に設定する必要があります。以下に、Laravel のスケジューラ設定の完全な手順を示します。
 
 - Laravel スケジューラの設定
 
