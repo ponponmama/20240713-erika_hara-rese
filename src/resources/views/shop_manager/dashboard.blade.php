@@ -10,8 +10,9 @@
         'title' => Auth::user()->shop->shop_name,
         'additionalClass' => 'shop_manager_name'
     ])
-
-    @include('custom_components.session-messages')
+    <p class="session-messages">
+        @include('custom_components.session-messages')
+    </p>
 
     <div class="reservations">
         <h2 class="reservations-list">予約情報</h2>

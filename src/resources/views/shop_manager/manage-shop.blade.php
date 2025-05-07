@@ -6,7 +6,9 @@
 
 @section('content')
 <div class="container manage_container">
-    @include('custom_components.session-messages')
+    <p class="session-messages">
+        @include('custom_components.session-messages')
+    </p>
     <h2 class="title-name section-title">店舗情報</h2>
     <form action="{{ route('shop_manager.update', $shop->id) }}" method="POST" enctype="multipart/form-data" class="manage_form">
         @csrf

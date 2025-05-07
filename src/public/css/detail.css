@@ -13,16 +13,15 @@
 
 .detail-section {
     width: 45%;
-    margin: 1% 2%;
+    margin: 1% 2% 2% 3%;
     text-align: left;
-    height: auto;
 }
 
 .reservation-section {
     width: 40%;
     position: absolute;
     top: 5%;
-    height: 94%;
+    height: 68vh;
     right: 4%;
     margin: 1%;
     overflow-y: auto;
@@ -34,6 +33,7 @@
     align-items: center;
     text-align: left;
     padding: 2px 0;
+    margin-bottom: 1%;
 }
 
 .back-link {
@@ -62,6 +62,7 @@
 .image_section {
     width: 100%;
     padding: 4px 0;
+    margin-bottom: 1%;
 }
 
 .shop_image {
@@ -71,7 +72,7 @@
 .description {
     width: 100%;
     padding: 2px;
-    margin: 2px 0;
+    margin: 2% 0;
     font-size: 1rem;
 }
 
@@ -240,17 +241,6 @@
     margin-top: 2px;
 }
 
-@media screen and (height >= 1000px) {
-    .content {
-        height: auto;
-    }
-
-    .detail-section,
-    .reservation-section {
-        height: 50vh;
-    }
-}
-
 @media (width <= 768px) {
     .content {
         height: auto;
@@ -307,13 +297,11 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 912px) {
+@media screen and (min-height: 1181px) and (max-width: 1024px) {
     .detail-section,
     .reservation-section {
-        width: 90%;
-        height: auto;
+        height: 48vh;
         margin: 2% 5%;
-        position: static;
     }
 
     .label_date {

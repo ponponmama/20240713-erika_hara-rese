@@ -12,9 +12,9 @@
     'message' => 'お疲れ様です！',
     'showMessage' => true
     ])
-
-    @include('custom_components.session-messages')
-
+    <p class="session-messages">
+        @include('custom_components.session-messages')
+    </p>
     <div class="management_form shop_list_form">
         <table class="table-section shop_list_table">
             <thead>

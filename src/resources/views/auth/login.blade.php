@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="{{ asset('css/common-auth-styles.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
-</head>
-<body class="login_body">
+@extends('layouts.auth_app')
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/auth-common-styles.css') }}">
+@endsection
+
+@section('content')
     <div class="login_container">
         <div class="title-box">
             <h2 class="form-title">Login</h2>
@@ -39,5 +36,4 @@
             </div>
         </form>
     </div>
-</body>
-</html>
+@endsection

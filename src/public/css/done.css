@@ -1,0 +1,63 @@
+.done_body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.thanks-form {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 61%);
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+
+.form-thanks-title {
+    font-size: 1.4rem;
+    margin: 5%;
+}
+
+.thanks-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2% 2% 5%;
+}
+
+.back-link {
+    width: 100%;
+    padding: 6px 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    background-color: #003875;
+}
+
+@media screen and (min-width: 768px) {
+    .thanks-form {
+    width: 80%;
+    }
+
+    .back-link {
+    width: 50%;
+    }
+}

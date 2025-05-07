@@ -1,7 +1,7 @@
 /* Base */
 
 body,
-body *:not(html):not(style):not(br):not(tr):not(code) {
+body *:not(html, style, br, tr, code, script, meta, link, title) {
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -9,8 +9,8 @@ body *:not(html):not(style):not(br):not(tr):not(code) {
 }
 
 body {
-    -webkit-text-size-adjust: none;
-    background-color: #ffffff;
+    text-size-adjust: none;
+    background-color: #fff;
     color: #718096;
     height: 100%;
     line-height: 1.4;
@@ -77,22 +77,16 @@ img {
 /* Layout */
 
 .wrapper {
-    -premailer-cellpadding: 0;
-    -premailer-cellspacing: 0;
-    -premailer-width: 100%;
+    width: 100%;
     background-color: #edf2f7;
     margin: 0;
     padding: 0;
-    width: 100%;
 }
 
 .content {
-    -premailer-cellpadding: 0;
-    -premailer-cellspacing: 0;
-    -premailer-width: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
-    width: 100%;
 }
 
 /* Header */
@@ -120,29 +114,23 @@ img {
 /* Body */
 
 .body {
-    -premailer-cellpadding: 0;
-    -premailer-cellspacing: 0;
-    -premailer-width: 100%;
+    width: 100%;
     background-color: #edf2f7;
     border-bottom: 1px solid #edf2f7;
     border-top: 1px solid #edf2f7;
     margin: 0;
     padding: 0;
-    width: 100%;
 }
 
 .inner-body {
-    -premailer-cellpadding: 0;
-    -premailer-cellspacing: 0;
-    -premailer-width: 570px;
-    background-color: #ffffff;
+    width: 570px;
+    background-color: #fff;
     border-color: #e8e5ef;
     border-radius: 2px;
     border-width: 1px;
-    box-shadow: 0 2px 0 rgba(0, 0, 150, 0.025), 2px 4px 0 rgba(0, 0, 150, 0.015);
+    box-shadow: 0 2px 0 rgb(0 0 150 / 2.5%), 2px 4px 0 rgb(0 0 150 / 1.5%);
     margin: 0 auto;
     padding: 0;
-    width: 570px;
 }
 
 /* Subcopy */
@@ -160,13 +148,10 @@ img {
 /* Footer */
 
 .footer {
-    -premailer-cellpadding: 0;
-    -premailer-cellspacing: 0;
-    -premailer-width: 570px;
+    width: 570px;
     margin: 0 auto;
     padding: 0;
     text-align: center;
-    width: 570px;
 }
 
 .footer p {
@@ -183,11 +168,8 @@ img {
 /* Tables */
 
 .table table {
-    -premailer-cellpadding: 0;
-    -premailer-cellspacing: 0;
-    -premailer-width: 100%;
-    margin: 30px auto;
     width: 100%;
+    margin: 30px auto;
 }
 
 .table th {
@@ -212,17 +194,14 @@ img {
 /* Buttons */
 
 .action {
-    -premailer-cellpadding: 0;
-    -premailer-cellspacing: 0;
-    -premailer-width: 100%;
+    width: 100%;
     margin: 30px auto;
     padding: 0;
     text-align: center;
-    width: 100%;
 }
 
 .button {
-    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
     border-radius: 4px;
     color: #fff;
     display: inline-block;

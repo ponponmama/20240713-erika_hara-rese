@@ -19,7 +19,9 @@
             'showUserName' => false,
             'headingLevel' => 3
         ])
-        @include('custom_components.session-messages', ['showGeneral' => false, 'showShopManager' => true, 'showShop' => false])
+        <p class="session-messages">
+            @include('custom_components.session-messages', ['showGeneral' => false, 'showShopManager' => true, 'showShop' => false])
+        </p>
         <form action="{{ route('admin.create.shop_manager') }}" method="POST" class="admin-form create-form">
             @csrf
             <div class="input-group">

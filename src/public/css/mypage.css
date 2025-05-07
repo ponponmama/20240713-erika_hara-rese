@@ -1,7 +1,11 @@
 /* ページ全体 */
 .sections-container {
+    flex-direction: row;
     justify-content: space-between;
-    padding: 10px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 5%;
 }
 
 /* 現在の予約一覧 */
@@ -234,7 +238,6 @@
     margin-bottom: 10px;
 }
 
-
 .text_comment {
     width: calc(90% - 8px);
     height: 100px;
@@ -245,7 +248,7 @@
 /* お気に入り店舗 */
 .favorite-shops-section {
     flex: 1;
-    margin: 0 10px;
+    margin: 2%;
     padding: 0;
     background-color: #f4f4f4;
     border-radius: 6px;
@@ -343,7 +346,7 @@
 }
 
 /* レスポンシブデザインの設定 */
-@media (width <= 768px) {
+@media screen and (max-width: 767px) {
     /* ページ全体 */
     .container {
         width: 100%;
@@ -418,30 +421,7 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 912px) {
-    /* ページ全体 */
-    .container {
-        width: 98%;
-        flex-direction: column;
-        margin: 1%;
-    }
-
-    .reservation-section,
-    .favorite-shops {
-        width: 80%;
-        margin: auto 10%;
-    }
-
-    .reservation-section {
-        margin: 0 auto;
-        font-size: 1.2rem;
-    }
-
-    .favorite-shops {
-        margin: 5% auto;
-        flex-direction: column;
-    }
-
+@media screen and (min-height: 1181px) and (max-width: 1024px) {
     /* 予約データ,5段階評価＆レビューコメント */
     .reservation-summary,
     .review-button {

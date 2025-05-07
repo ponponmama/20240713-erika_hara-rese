@@ -35,7 +35,9 @@
 </div>
 @endsection
 @section('content')
-    @include('custom_components.session-messages')
+    <p class="session-messages">
+        @include('custom_components.session-messages')
+    </p>
     <div class="shop_table">
         @foreach ($shops as $shop)
             <div class="shop_card">

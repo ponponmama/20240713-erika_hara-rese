@@ -9,64 +9,86 @@
     $showShopManager = $showShopManager ?? false;
     $showShop = $showShop ?? false;
     $showReservation = $showReservation ?? false;
+    $showFavorite = $showFavorite ?? false;
 @endphp
 
 @if ($showGeneral)
     {{-- 一般的なセッションメッセージ（shops/index.blade.php, shops/detail.blade.php, payment/form.blade.php） --}}
-    @if (session('success'))
-        <div class="{{ $successClass }}">
+    @if (session('success') && !$showReservation && !$showFavorite)
+        @php
+            $successClass = 'alert-success';
+        @endphp
+        <span class="{{ $successClass }}">
             {{ session('success') }}
-        </div>
+        </span>
     @endif
 
-    @if (session('error'))
-        <div class="{{ $errorClass }}">
+    @if (session('error') && !$showReservation && !$showFavorite)
+        @php
+            $errorClass = 'alert-danger';
+        @endphp
+        <span class="{{ $errorClass }}">
             {{ session('error') }}
-        </div>
+        </span>
     @endif
 
     @if (session('success_message'))
-        <div class="{{ $successMessageClass }}">
+        <span class="{{ $successMessageClass }}">
             {{ session('success_message') }}
-        </div>
+        </span>
     @endif
 @endif
 
 @if ($showShopManager)
     {{-- 店舗管理者用のセッションメッセージ（shop_manager/dashboard.blade.php, shop_manager/manage-shop.blade.php） --}}
     @if (session('shop_manager_success'))
-        <div class="{{ $successClass }}">
+        <span class="{{ $successClass }}">
             {{ session('shop_manager_success') }}
-        </div>
+        </span>
     @endif
 
     @if (session('shop_manager_error'))
-        <div class="{{ $errorClass }}">
+        <span class="{{ $errorClass }}">
             {{ session('shop_manager_error') }}
-        </div>
+        </span>
     @endif
 @endif
 
 @if ($showShop)
     {{-- 店舗用のセッションメッセージ（shops/detail.blade.php） --}}
     @if (session('shop_success'))
-        <div class="{{ $successClass }}">
+        <span class="{{ $successClass }}">
             {{ session('shop_success') }}
-        </div>
+        </span>
     @endif
 
     @if (session('shop_error'))
-        <div class="{{ $errorClass }}">
+        <span class="{{ $errorClass }}">
             {{ session('shop_error') }}
-        </div>
+        </span>
     @endif
 @endif
 
 @if ($showReservation)
     {{-- 予約用のセッションメッセージ（shops/detail.blade.php） --}}
     @if (session('reservation_success'))
-        <div class="{{ $reservationSuccessClass }}">
+        <span class="{{ $reservationSuccessClass }}">
             {{ session('reservation_success') }}
-        </div>
+        </span>
+    @endif
+@endif
+
+@if ($showFavorite)
+    {{-- お気に入り店舗用のセッションメッセージ --}}
+    @if (session('favorite_success'))
+        <span class="{{ $successClass }}">
+            {{ session('favorite_success') }}
+        </span>
+    @endif
+
+    @if (session('favorite_error'))
+        <span class="{{ $errorClass }}">
+            {{ session('favorite_error') }}
+        </span>
     @endif
 @endif

@@ -3,16 +3,31 @@
 }
 
 .common_body {
+    min-height: 100vh;
+    margin: 0;
     font-family: sans-serif;
-    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .content {
     background-color: #f4f4f4;
-    width: 96%;
-    height: auto;
+    width: 100%;
     padding: 10px 20px;
-    margin: 2%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .header,
@@ -91,11 +106,9 @@
 }
 
 /* セッションメッセージスタイル */
-.alert-success,
-.alert-danger,
-.payment-success,
-.reservation-success {
+.session-messages {
     text-align: center;
+    line-height: 1.5rem;
     font-size: 1rem;
     margin: 10px 0;
     color: #004085;
@@ -112,7 +125,7 @@
 }
 
 /* レスポンシブ対応 */
-@media (width <= 767px) {
+@media screen and (min-width: 768px) {
     .content {
         background-color: #f4f4f4;
         width: 96%;
@@ -139,7 +152,7 @@
     .header,
     .header_content {
         width: 94%;
-        flex-direction: column;
+        flex-direction: row;
         margin: 2%;
         padding: 0;
     }
@@ -147,7 +160,6 @@
     .custom-count-pagination .page-item {
         margin: 0 1px;
     }
-
 
     .alert-success,
     .alert-danger,
@@ -157,12 +169,7 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 912px){
-    .container {
-        width: 80%;
-        margin: 2% 10%;
-    }
-
+@media screen and (min-height: 1181px) and (max-width: 1024px) {
     .top_logo {
     width: auto;
     color: #0056b3;

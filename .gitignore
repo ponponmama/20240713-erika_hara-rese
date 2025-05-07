@@ -3,3 +3,4 @@
 .env
 ../ssl/nginx.crt
 ../ssl/nginx.key
+.stylelintrc.json

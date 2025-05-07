@@ -1,16 +1,18 @@
 {
-    "cSpell.words": [
-        "endauth",
-        "endguest"
-    ],
-    "css.validate": true,
-    "less.validate": true,
-    "scss.validate": true,
-    "editor.quickSuggestions": {
-        "strings": true
-    },
-    "stylelint.validate": [
-        "css",
-        "scss"
-    ]
+  "cSpell.words": ["endauth", "endguest"],
+  "css.validate": true,
+  "less.validate": true,
+  "scss.validate": true,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "stylelint.validate": ["css", "scss"],
+  "cSpell.customDictionaries": {
+    "custom-dictionary-workspace": {
+      "name": "custom-dictionary-workspace",
+      "path": "${workspaceFolder:20240713-erika_hara-rese}/.cspell/custom-dictionary-workspace.txt",
+      "addWords": true,
+      "scope": "workspace"
+    }
+  }
 }

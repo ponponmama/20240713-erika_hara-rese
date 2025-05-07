@@ -1,13 +1,36 @@
-.register_body,
-.login_body,
-.thanks_body,
-.done_body {
+.button {
+    cursor: pointer;
+}
+
+.auth_body {
+    min-height: 100vh;
     margin: 0;
     display: flex;
+    font-family: sans-serif;
+    flex-direction: column;
+}
+
+main {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth_content {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
+    position: relative;
+    min-height: 70vh;
 }
 
 .registration_container,
@@ -148,7 +171,7 @@
     background-color: #003875;
 }
 
-@media (width <= 768px) {
+@media screen and (min-width: 768px) {
     .registration_container,
     .login_container {
         width: 80%;
@@ -171,7 +194,7 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 912px) {
+@media screen and (min-height: 1181px) and (max-width: 1024px) {
     .registration_container,
     .login_container {
         width: 60%;
@@ -185,7 +208,8 @@
     .login-button,
     .thanks-button,
     .back-link {
-        width: 40%;
+        width: 20%;
         font-size: 1rem;
     }
 }
+
