@@ -230,10 +230,6 @@
     .shop_card {
         flex: 0 1 30%;
     }
-
-    .search-content {
-        width: 100%;
-    }
 }
 
 @media screen and (min-height: 1181px) and (max-width: 1024px) {

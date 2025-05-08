@@ -100,7 +100,7 @@
     text-decoration: none;
 }
 
-@media (width <= 768px) {
+@media screen and (max-width: 767px) {
     .hamburger-menu {
         position: absolute;
         top: 4px;
@@ -112,7 +112,14 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 912px) {
+@media screen and (min-width: 768px) {
+    .hamburger-menu {
+        position: absolute;
+        top: 8px;
+    }
+}
+
+@media screen and (min-height: 1181px) and (max-width: 1024px) {
     .hamburger-menu {
         position: absolute;
     }
