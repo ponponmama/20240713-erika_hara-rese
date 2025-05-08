@@ -153,7 +153,7 @@ class ReservationController extends Controller
             Log::error('User not found for email sending.');
         }
 
-        return redirect()->route('mypage')->with('success', '予約が更新されました。');
+        return redirect()->route('mypage')->with('reservation_success', '予約が更新されました。');
     }
 
     /**
@@ -174,7 +174,7 @@ class ReservationController extends Controller
     {
         $reservation = Reservation::findOrFail($id);
         $reservation->delete();
-        return redirect()->route('mypage')->with('success', '予約が削除されました。');
+        return redirect()->route('mypage')->with('reservation_success', '予約が削除されました。');
     }
 
     //予約idをQRコードで取得し予約情報を検索し、JSON形式で返す。予約ID、予約日時、人数、顧客名、顧客のメールアドレスを含む

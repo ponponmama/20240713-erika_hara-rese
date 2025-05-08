@@ -16,7 +16,7 @@
                 <p class="session-messages">
                     @include('custom_components.session-messages', [
                         'showReservation' => true,
-                        'showGeneral' => false,
+                        'showGeneral' => true,
                         'showFavorite' => false,
                     ])
                 </p>

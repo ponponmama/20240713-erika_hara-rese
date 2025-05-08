@@ -13,7 +13,7 @@ class ReviewController extends Controller
         // リクエストデータのバリデーション
         $request->validate([
             'shop_id' => 'required|integer',
-            'rating' => 'required|integer|min:1|max:5', 
+            'rating' => 'required|integer|min:1|max:5',
             'comment' => 'required|string'
         ]);
 
@@ -26,6 +26,6 @@ class ReviewController extends Controller
         ]);
 
         // 前のページにリダイレクトし、成功メッセージをフラッシュセッションに追加
-        return redirect()->back()->with('success', 'レビューが投稿されました。');
+        return redirect()->back()->with('review_success', 'レビューが投稿されました。');
     }
 }

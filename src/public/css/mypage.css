@@ -421,6 +421,20 @@
     }
 }
 
+@media screen and (min-width: 768px) {
+    /* ページ全体 */
+    .container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    /* 現在の予約一覧 */
+    .reservation-section {
+        width: 100%;
+        margin: 0;
+    }
+}
+
 @media screen and (min-height: 1181px) and (max-width: 1024px) {
     /* 予約データ,5段階評価＆レビューコメント */
     .reservation-summary,

@@ -37,6 +37,12 @@
             {{ session('success_message') }}
         </span>
     @endif
+
+    @if (session('review_success'))
+        <span class="{{ $successClass }}">
+            {{ session('review_success') }}
+        </span>
+    @endif
 @endif
 
 @if ($showShopManager)
