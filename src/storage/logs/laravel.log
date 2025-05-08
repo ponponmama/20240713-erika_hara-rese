@@ -3449,3 +3449,96 @@
 [2025-05-08 22:33:10] local.INFO: ClearSessionAfterReturn middleware executed  
 [2025-05-08 22:33:10] local.INFO: clear_session_on_leave flag: false  
 [2025-05-08 22:33:10] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost\/shops\/1\/details"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:33:59] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:33:59] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:33:59] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost\/shops\/1\/details"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:34:50] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:34:50] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:34:50] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:34:57] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:34:57] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:34:57] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:35:12] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:35:12] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:35:12] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:35:36] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:35:36] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:35:36] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:35:43] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:35:43] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:35:43] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:37:35] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:37:35] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:37:35] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:38:44] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:38:44] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:38:44] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:39:21] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:39:21] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:39:21] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:44:28] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:44:28] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:44:28] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:44:34] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:44:34] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:44:34] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:44:44] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:44:44] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:44:44] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:46:01] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:46:01] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:46:01] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:46:12] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:46:12] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:46:12] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:46:26] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:46:26] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:46:26] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:47:20] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:47:20] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:47:20] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:47:48] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:47:48] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:47:48] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:47:59] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:47:59] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:47:59] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:50:02] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:50:02] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:50:02] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:50:42] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:50:42] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:50:42] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:53:42] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:53:42] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:53:42] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:54:01] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:54:01] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:54:01] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:56:01] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:56:01] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:56:01] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:56:25] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:56:25] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:56:25] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:56:34] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:56:34] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:56:34] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:56:42] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:56:42] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:56:42] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:59:09] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:59:09] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:59:09] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 22:59:28] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 22:59:28] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 22:59:28] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 23:00:37] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 23:00:37] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 23:00:37] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 23:02:04] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 23:02:04] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 23:02:04] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-08 23:02:20] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-08 23:02:20] local.INFO: clear_session_on_leave flag: false  
+[2025-05-08 23:02:20] local.INFO: After clearing session: {"_token":"xNnZOmAOafYEFNH73W5IgQNAwsJ3FlGprbQSaVTQ","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
