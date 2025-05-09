@@ -233,6 +233,10 @@
 }
 
 @media screen and (min-height: 1181px) and (min-width: 1024px) {
+    .shop_card {
+        flex: 0 1 24%;
+    }
+
     .shop-name,
     .shop-guide {
         font-size: 1.2rem;
