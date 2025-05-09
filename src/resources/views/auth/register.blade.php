@@ -13,8 +13,9 @@
             @csrf
             <div class="input-group">
                 <img src="{{ asset('images/human.png') }}" alt="" class="icon-img">
-                <input type="text" id="user_name" name="user_name" placeholder="Username" value="{{ old('user_name') }}" class
-                ="input-content input_user_name">
+                <input type="text" id="user_name" name="user_name" placeholder="Username" value="{{ old('user_name') }}"
+                    class
+                ="form-input input_user_name">
             </div>
             <p class="form__error">
                 @error('user_name')
@@ -23,7 +24,8 @@
             </p>
             <div class="input-group">
                 <img src="{{ asset('images/mail.png') }}" alt="" class="icon-img">
-                <input type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}" class="input-content input_email">
+                <input type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}"
+                    class="form-input input_email">
             </div>
             <p class="form__error">
                 @error('email')
@@ -32,7 +34,8 @@
             </p>
             <div class="input-group">
                 <img src="{{ asset('images/key.png') }}" alt="" class="icon-img">
-                <input type="password" id="password" name="password" placeholder="Password" value="{{ old('password') }}" class="input-content input_password">
+                <input type="password" id="password" name="password" placeholder="Password" value="{{ old('password') }}"
+                    class="form-input input_password">
             </div>
             <p class="form__error">
                 @error('password')

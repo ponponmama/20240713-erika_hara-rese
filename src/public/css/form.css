@@ -52,7 +52,7 @@
     background-color: #5c67f2;
 }
 
-@media (width <= 768px) {
+@media screen and (max-width: 767px) {
     .payment-group {
         width: 80%;
         margin: 5% auto;

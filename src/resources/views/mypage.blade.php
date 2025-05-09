@@ -6,8 +6,9 @@
 
 @section('content')
     @include('custom_components.header', [
-        'showMessage' => false,
+        'showMessage' => true,
         'useFormTitle' => false,
+        'message' => 'こんにちは！',
     ])
     <div class="container sections-container">
         @if ($hideReservation == 0)
@@ -34,7 +35,7 @@
                                 <p class="reservation-summary-date">予約{{ $reservation->shop->id }}</p>
                             </div>
                             <div class="form-group">
-                                <label class="form-label label_shop_name">Shop</label>
+                                <span class="form-label label_shop_name">Shop</span>
                                 <div class="select-wrapper">
                                     <span class="data-entry summary-name">
                                         {{ $reservation->shop->shop_name }}
@@ -44,7 +45,7 @@
                             <div class="form-group">
                                 <label for="date" class="form-label label_date">Date</label>
                                 <div class="select-wrapper">
-                                    <input type="date" name="date" class="data-entry input_date"
+                                    <input type="date" id="date" name="date" class="data-entry input_date"
                                         value="{{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('Y-m-d') }}">
                                 </div>
                             </div>
@@ -63,7 +64,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="form-label label_number">Number</label>
+                                <label for="number" class="form-label label_number">Number</label>
                                 <div class="select-wrapper">
                                     <select id="number" name="number" class="data-entry select_number">
                                         @for ($i = 1; $i <= 20; $i++)

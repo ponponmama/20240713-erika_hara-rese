@@ -183,7 +183,7 @@
 }
 
 /* メディアクエリ */
-@media (width <=767px) {
+@media screen and (max-width: 767px) {
     .container {
         width: 98%;
         margin: 1%;
@@ -206,7 +206,14 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 912px) {
+@media screen and (min-width: 768px) {
+    .container {
+        width: 90%;
+        margin: 5%;
+    }
+}
+
+@media screen and (min-height: 1181px) and (min-width: 1024px) {
     .container {
         width: 90%;
         margin: 5%;

@@ -304,7 +304,7 @@
     }
 }
 
-@media screen and (min-height: 1181px) and (max-width: 1024px) {
+@media screen and (min-height: 1181px) and (min-width: 1024px) {
     .detail-section,
     .reservation-section {
         margin: 2% 5%;

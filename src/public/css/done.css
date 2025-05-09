@@ -35,3 +35,9 @@
     width: 60%;
     }
 }
+
+@media screen and (min-height: 1181px) and (min-width: 1024px) {
+    .thanks-form {
+        width: 50%;
+    }
+}

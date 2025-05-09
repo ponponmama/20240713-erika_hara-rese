@@ -1,4 +1,4 @@
-.manage_container {
+.container {
     width: 70%;
     margin: 0 15%;
     flex-direction: column;
@@ -26,16 +26,17 @@
 }
 
 .label_shop_name {
-    width: 30%;
+    width: 35%;
+    text-align: left;
     font-size: 1.2rem;
     font-weight: bold;
-    padding: 2px;
+    padding: 2px 10px;
     margin-right: 10px;
     color: rgb(0 0 0 / 70%);
 }
 
 .shop_name_text {
-    width: 100%;
+    width: 65%;
     text-align: justify;
     padding: 2px;
     font-size: 1.4rem;
@@ -52,10 +53,11 @@
 }
 
 .label_description {
-    width: 30%;
+    width: 35%;
+    text-align: left;
     font-size: 1.2rem;
     font-weight: bold;
-    padding: 2px;
+    padding: 2px 10px;
     margin: 10px 0;
     color: rgb(0 0 0 / 70%);
 }
@@ -63,7 +65,7 @@
 .description_text {
     width: 100%;
     height: 160px;
-    padding: 6px;
+    padding: 10px;
     border: 1px solid #7a7a7a;
     border-radius: 4px;
     color: black;
@@ -87,7 +89,7 @@
     width: 100%;
     text-align: left;
     font-weight: bold;
-    padding: 2px;
+    padding: 2px 10px;
     font-size: 1.2rem;
     color: rgb(0 0 0 / 70%);
 }
@@ -112,18 +114,19 @@
 
 .label_open_time,
 .label_close_time {
-    width: 35%;
+    width: 20%;
     font-size: 1.2rem;
     font-weight: bold;
-    padding: 2px;
+    padding: 2px 10px;
     color: rgb(0 0 0 / 70%);
 }
 
 .input_open_time,
 .input_close_time {
-    width: 60%;
+    width: 80%;
+    line-height: 1.6rem;
     text-align: center;
-    padding: 2px;
+    padding: 2px 10px;
     font-size: 1.2rem;
     font-weight: bold;
     border: 1px solid #7a7a7a;
@@ -142,11 +145,11 @@
 }
 
 .label_image {
-    width: 30%;
+    width: 20%;
     text-align: center;
     font-weight: bold;
     font-size: 1.2rem;
-    padding: 2px;
+    padding: 2px 10px;
     color: rgb(0 0 0 / 70%);
     margin: 4px;
 }
@@ -161,14 +164,15 @@
 .custom-file-upload {
     border: 1px solid #7a7a7a;
     display: inline-block;
-    padding: 2px;
+    padding: 2px 10px;
     border-radius: 4px;
     cursor: pointer;
-    width: 100%;
+    width: 88%;
     text-align: center;
     color: rgb(0 0 0 / 70%);
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1rem;
+    line-height: 1.6rem;
 }
 
 .up_date_button_container {
@@ -179,7 +183,7 @@
 
 .up_date_button {
     width: 30%;
-    padding: 5px;
+    padding: 5px 20px;
     background-color: #0056b3;
     color: white;
     text-decoration: none;
@@ -192,7 +196,7 @@
 }
 
 .confirm_text {
-    width: 80%;
+    width: 70%;
     font-size: 1.2rem;
     color: rgb(0 0 0 / 70%);
     padding: 10px 0;
@@ -202,7 +206,6 @@
 
 .image-section {
     width: 80%;
-    height: 500px;
     overflow: hidden;
     border-radius: 6px;
     box-shadow: 2px 2px 4px rgb(0 0 0 / 61%);
@@ -210,20 +213,24 @@
 
 .shop_image {
     width: 100%;
-    height: 60%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
     display: block;
 }
 
 .description {
     width: 100%;
-    padding: 10px;
+    min-height: 50%;
+    padding: 10px 15px;
     margin: 0;
     font-size: 1.2rem;
+    text-align: left;
 }
 
 .shop-guide {
     width: 100%;
-    padding: 8px;
+    padding: 8px 10px;
     text-align: start;
     margin: 0;
     font-size: 1.2rem;
@@ -237,8 +244,8 @@
     text-align: center;
 }
 
-@media (width <= 768px) {
-    .manage_content {
+@media screen and (max-width: 767px) {
+    .container {
         width: 90%;
         margin: 2% 5%;
     }
@@ -288,6 +295,7 @@
 
     .confirm_text {
         font-size: 1rem;
+        padding: 2px 10px;
         margin: 4px;
     }
 
@@ -310,10 +318,26 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 912px) {
-    .manage_content {
-        width: 70%;
-        margin: 0 15%;
+@media screen and (min-width: 768px) {
+    .container {
+        width: 90%;
+        margin: 2% 5%;
+    }
+
+    .manage_form,
+    .image-section,
+    .confirm_text,
+    .business_hours_group,
+    .business_hours_up {
+        width: 100%;
+    }
+
+}
+
+@media screen and (min-height: 1181px) and (min-width: 1024px) {
+    .container {
+        width: 60%;
+        margin: 0 auto;
     }
 
     .manage_form,
