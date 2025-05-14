@@ -188,8 +188,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2px 12px;
+    padding: 2px;
     margin: 5px auto;
+}
+
+.reservation-button {
+    width: 33%;
 }
 
 .reservation-button,
