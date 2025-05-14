@@ -337,3 +337,35 @@
 .detail-button:hover {
     color: #5c5b5b;
 }
+
+/* 支払い状態のスタイル */
+.status-completed {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.status-amount-set {
+    color: #fd7e14;
+    font-weight: bold;
+}
+
+.status-pending {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.form-row form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+

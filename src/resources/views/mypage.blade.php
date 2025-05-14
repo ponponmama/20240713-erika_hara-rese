@@ -87,11 +87,13 @@
                                 form="delete-form-{{ $reservation->id }}">
                                 削除
                             </button>
-                            @if ($reservation->payment_status !== 'completed')
+                            @if ($reservation->payment_status === 'amount_set')
                                 <a href="{{ route('payment.form', ['reservation_id' => $reservation->id]) }}"
                                     class="button reservation-button edit-reservation-button">
                                     支払う
                                 </a>
+                            @elseif ($reservation->payment_status === 'pending')
+                                <span class="text-gray-500">支払い金額設定待ち</span>
                             @endif
                             <form action="{{ route('reservations.destroy', $reservation->id) }}" method="POST"
                                 id="delete-form-{{ $reservation->id }}" method="POST" class="delete-form">

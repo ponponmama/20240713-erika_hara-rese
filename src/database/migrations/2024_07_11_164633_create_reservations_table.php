@@ -20,7 +20,7 @@ class CreateReservationsTable extends Migration
             $table->timestamp('reservation_datetime')->nullable();
             $table->integer('number')->nullable();
             $table->text('qr_code')->nullable();
-            $table->enum('payment_status', ['pending', 'completed', 'failed'])->default('pending');
+            $table->enum('payment_status', ['pending', 'amount_set', 'completed', 'failed'])->default('pending');
             $table->integer('total_amount');
             $table->timestamps();
         });

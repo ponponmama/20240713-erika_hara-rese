@@ -47,8 +47,8 @@ class ReservationController extends Controller
         $reservation->reservation_datetime = $reservationDateTime->format('Y-m-d H:i:s');
         $reservation->number = $request->number;
         $reservation->user_id = auth()->id();
-        $reservation->total_amount = $shop->price * $request->number;
-        $reservation->payment_status = 'pending';
+        $reservation->total_amount = 0; // 初期値を0円に設定
+        $reservation->payment_status = 'pending'; // 支払い状態は「金額未設定」
 
         $reservation->save();
 

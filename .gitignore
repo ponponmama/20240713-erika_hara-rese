@@ -4,3 +4,5 @@
 ../ssl/nginx.crt
 ../ssl/nginx.key
 .stylelintrc.json
+cspell.json
+.vscode

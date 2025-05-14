@@ -16,7 +16,9 @@ class ShopManagerController extends Controller
     public function index()
     {
         $shopId = Auth::user()->shop->id;
-        $reservations = Reservation::where('shop_id', $shopId)->get();
+        $reservations = Reservation::where('shop_id', $shopId)
+            ->orderBy('reservation_datetime', 'desc')
+            ->paginate(5);
 
         return view('shop_manager.dashboard', ['reservations' => $reservations]);
     }
@@ -100,7 +102,10 @@ class ShopManagerController extends Controller
         $paymentStatusJa = '';
         switch ($paymentStatus) {
             case 'pending':
-                $paymentStatusJa = '決済手続き中';
+                $paymentStatusJa = '金額未設定';
+                break;
+            case 'amount_set':
+                $paymentStatusJa = '金額設定済み（支払い待ち）';
                 break;
             case 'completed':
                 $paymentStatusJa = '決済完了';
@@ -142,18 +147,55 @@ class ShopManagerController extends Controller
         return view('shop_manager.reservation_details', compact('reservation'));
     }
 
-    public function updatePrice(Request $request)
+    public function updatePrice(Request $request, $id)
     {
         try {
-            $shop = Auth::user()->shop;
-            $shop->price = $request->price;
-            $shop->save();
+            // デバッグ情報
+            Log::info('金額設定リクエスト', [
+                'id' => $id,
+                'request_data' => $request->all(),
+                'shop_id' => Auth::user()->shop->id
+            ]);
 
-            return redirect()->route('shop.dashboard')
-                ->with('success', '予約金額を更新しました');
+            $reservation = Reservation::where('id', $id)
+                ->where('shop_id', Auth::user()->shop->id)
+                ->firstOrFail();
+
+            // 予約データのデバッグ
+            Log::info('取得した予約データ', [
+                'reservation_id' => $reservation->id,
+                'shop_id' => $reservation->shop_id,
+                'current_amount' => $reservation->total_amount,
+                'current_status' => $reservation->payment_status
+            ]);
+
+            $request->validate([
+                'total_amount' => 'required|integer|min:0',
+            ]);
+
+            // 更新データのデバッグ
+            Log::info('更新する予約データ', [
+                'new_amount' => $request->total_amount,
+                'new_status' => 'amount_set'
+            ]);
+
+            $result = $reservation->update([
+                'total_amount' => $request->total_amount,
+                'payment_status' => 'amount_set'
+            ]);
+
+            // 更新結果のデバッグ
+            Log::info('更新結果', ['result' => $result]);
+
+            return redirect()->route('shop_manager.dashboard')
+                ->with('success', '予約金額を設定しました');
         } catch (\Exception $e) {
-            return redirect()->route('shop.dashboard')
-                ->with('error', '予約金額の更新に失敗しました');
+            // エラーの詳細をログに記録
+            Log::error('予約金額設定エラー: ' . $e->getMessage());
+            Log::error($e->getTraceAsString());
+
+            return redirect()->route('shop_manager.dashboard')
+                ->with('error', '予約金額の設定に失敗しました: ' . $e->getMessage());
         }
     }
 }
