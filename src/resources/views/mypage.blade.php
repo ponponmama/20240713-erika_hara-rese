@@ -8,9 +8,14 @@
     @include('custom_components.header', [
         'showMessage' => true,
         'useFormTitle' => false,
-        'message' => 'こんにちは！',
+        'message' =>
+            \Carbon\Carbon::now()->hour < 12
+                ? 'おはようございます！'
+                : (\Carbon\Carbon::now()->hour < 18
+                    ? 'こんにちは！'
+                    : 'こんばんは！'),
     ])
-    <div class="container sections-container">
+    <div class="container">
         @if ($hideReservation == 0)
             <div class="reservation-section">
                 <h2 class="title-name section-title">予約状況</h2>
@@ -32,27 +37,54 @@
                             </a>
                             <div class="reservation-summary-item">
                                 <img src="{{ asset('images/clock.svg') }}" alt="Clock Icon" class="clock-icon">
-                                <p class="reservation-summary-date">予約{{ $reservation->shop->id }}</p>
+                                <p class="reservation-summary-date">予約{{ $loop->iteration }}</p>
                             </div>
-                            <div class="form-group">
-                                <span class="form-label label_shop_name">Shop</span>
+                            <div class="reservation-summary-view" id="view-{{ $reservation->id }}">
+                                <fieldset class="reservation-field">
+                                    <label class="view-label">shop</label>
+                                    <p class="view-data">
+                                        {{ $reservation->shop->shop_name }}
+                                    </p>
+                                </fieldset>
+                                <fieldset class="reservation-field">
+                                    <label class="view-label">Date</label>
+                                    <p class="view-data">
+                                        {{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('Y-m-d') }}
+                                    </p>
+                                </fieldset>
+                                <fieldset class="reservation-field">
+                                    <label class="view-label">Time</label>
+                                    <p class="view-data">
+                                        {{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('H:i') }}
+                                    </p>
+                                </fieldset>
+                                <fieldset class="reservation-field">
+                                    <label class="view-label">人数</label>
+                                    <p class="view-data">
+                                        {{ $reservation->number . '人' }}
+                                    </p>
+                                </fieldset>
+                            </div>
+                            <div class="form-group edit-form" id="edit-{{ $reservation->id }}" style="display: none;">
+                                <span class="form-label label_shop_name">shop</span>
                                 <div class="select-wrapper">
                                     <span class="data-entry summary-name">
                                         {{ $reservation->shop->shop_name }}
                                     </span>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group edit-form" id="edit-{{ $reservation->id }}" style="display: none;">
                                 <label for="date" class="form-label label_date">Date</label>
                                 <div class="select-wrapper">
                                     <input type="date" id="date" name="date" class="data-entry input_date"
                                         value="{{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('Y-m-d') }}">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="time" class="form-label label_time">Time</label>
+                            <div class="form-group edit-form" id="edit-{{ $reservation->id }}" style="display: none;">
+                                <label for="time" class="form-label label_time">Time:</label>
                                 <div class="select-wrapper">
                                     <select id="time" name="time" class="data-entry select_time">
+                                        <option value="">時刻を選択してください</option>
                                         @foreach ($reservation->times as $time)
                                             <option value="{{ $time }}"
                                                 {{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('H:i') == $time ? 'selected' : '' }}>
@@ -63,8 +95,8 @@
                                     <span class="custom-select-icon"></span>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="number" class="form-label label_number">Number</label>
+                            <div class="form-group edit-form" id="edit-{{ $reservation->id }}" style="display: none;">
+                                <label for="number" class="form-label label_number">人数</label>
                                 <div class="select-wrapper">
                                     <select id="number" name="number" class="data-entry select_number">
                                         @for ($i = 1; $i <= 20; $i++)
@@ -79,30 +111,42 @@
                             </div>
                         </form>
                         <div class="reservation-button-container">
-                            <button type="submit" class="button reservation-button edit-reservation-button"
-                                form="update-form-{{ $reservation->id }}">
+                            <button type="button" class="button reservation-button edit-reservation-button"
+                                onclick="toggleEditForm({{ $reservation->id }})">
                                 変更
+                            </button>
+                            <button type="submit" class="button reservation-button edit-reservation-button"
+                                form="update-form-{{ $reservation->id }}" style="display: none;"
+                                id="update-button-{{ $reservation->id }}">
+                                更新
+                            </button>
+                            <button type="button" class="button reservation-button cancel-button"
+                                onclick="toggleEditForm({{ $reservation->id }})" style="display: none;"
+                                id="cancel-button-{{ $reservation->id }}">
+                                キャンセル
                             </button>
                             <button type="submit" class="button reservation-button delete-reservation-button"
                                 form="delete-form-{{ $reservation->id }}">
                                 削除
                             </button>
-                            @if ($reservation->payment_status === 'amount_set')
-                                <a href="{{ route('payment.form', ['reservation_id' => $reservation->id]) }}"
-                                    class="button reservation-button edit-reservation-button">
-                                    支払う
-                                </a>
-                            @elseif ($reservation->payment_status === 'pending')
-                                <span class="text-gray-500">支払い金額設定待ち</span>
-                            @endif
                             <form action="{{ route('reservations.destroy', $reservation->id) }}" method="POST"
                                 id="delete-form-{{ $reservation->id }}" method="POST" class="delete-form">
                                 @csrf
                                 @method('DELETE')
                             </form>
                         </div>
-                        <img src="{{ asset($reservation->qr_code) }}" alt="QR Code for Reservation {{ $reservation->id }}"
-                            class="qr_code_image">
+                        <div class="payment-button-container">
+                            @if ($reservation->payment_status === 'amount_set')
+                                <a href="{{ route('payment.form', ['reservation_id' => $reservation->id]) }}"
+                                    class="button payment-button">
+                                    支払う
+                                </a>
+                            @else
+                                <span class="payment-amount">ご利用金額のご案内待ち</span>
+                            @endif
+                        </div>
+                        <img src="{{ asset($reservation->qr_code) }}"
+                            alt="QR Code for Reservation {{ $reservation->id }}" class="qr_code_image">
                     </div>
                     <form action="{{ route('reviews.store') }}" method="POST" class="store_form">
                         @csrf
@@ -171,3 +215,33 @@
         </div>
     </div>
 @endsection
+
+<script>
+    function toggleEditForm(reservationId) {
+        const viewElement = document.getElementById(`view-${reservationId}`);
+        const editElements = document.querySelectorAll(`#edit-${reservationId}`);
+        const updateButton = document.getElementById(`update-button-${reservationId}`);
+        const editButton = document.querySelector(`button[onclick="toggleEditForm(${reservationId})"]`);
+        const cancelButton = document.getElementById(`cancel-button-${reservationId}`);
+
+        if (viewElement.style.display !== 'none') {
+            // 表示モードから編集モードへ
+            viewElement.style.display = 'none';
+            editElements.forEach(element => {
+                element.style.display = 'flex';
+            });
+            updateButton.style.display = 'inline-block';
+            cancelButton.style.display = 'inline-block';
+            editButton.style.display = 'none';
+        } else {
+            // 編集モードから表示モードへ
+            viewElement.style.display = 'flex';
+            editElements.forEach(element => {
+                element.style.display = 'none';
+            });
+            updateButton.style.display = 'none';
+            cancelButton.style.display = 'none';
+            editButton.style.display = 'inline-block';
+        }
+    }
+</script>

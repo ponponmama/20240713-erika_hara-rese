@@ -2,17 +2,13 @@
     position: relative;
 }
 
-.detail-container {
-    justify-content: space-between;
-}
-
 .detail-section,
 .reservation-section {
     padding: 1%;
 }
 
 .detail-section {
-    width: 52%;
+    width: 46%;
     margin: 1%;
     text-align: left;
 }
@@ -22,7 +18,7 @@
     position: absolute;
     top: 3%;
     height: 90%;
-    right: 2%;
+    right: 1%;
     margin: 1%;
 }
 
@@ -307,7 +303,7 @@
 @media screen and (min-height: 1181px) and (min-width: 1024px) {
     .detail-section,
     .reservation-section {
-        margin: 2% 5%;
+        margin: 2% 3%;
     }
 
     .label_date {

@@ -21,10 +21,6 @@
     font-size: 0.8rem;
 }
 
-.section-title {
-    margin: 1% 0;
-}
-
 .title-name {
     font-size: 1.2rem;
     margin: 1%;
@@ -41,31 +37,14 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 10px;
+    padding: 4%;
     border-radius: 6px;
-    margin: 0.6% 0;
+    margin: 1% 0;
     font-size: 0.8rem;
     box-shadow: 2px 2px 6px rgb(0 0 0 / 72.6%);
 }
 
 .reservation-summary {
-    background-color: #044c99;
-    color: white;
-}
-
-/* 5段階評価＆レビューコメント */
-.store_form {
-    align-items: center;
-    background-color: white;
-}
-
-/* 予約変更form */
-.update_form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 4px 12px;
     background-color: #044c99;
     color: white;
 }
@@ -97,45 +76,93 @@
     align-items: center;
 }
 
-.clock-icon {
-    width: 25px;
-    height: 25px;
-    margin: 15px 14px;
-}
-
 .reservation-summary-date {
-    width: calc(40% - 8px);
-    padding: 4px;
+    width: 60%;
+    padding: 2%;
     margin: 5px;
     text-align: left;
 }
 
-.form-group,
-.rating-group {
-    display: flex;
+.clock-icon {
+    width: 25px;
+    height: 25px;
+    margin: 3%;
+}
+
+/* 予約変更form */
+.update_form {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #044c99;
+    color: white;
+}
+
+
+.form-group,
+.reservation-summary-view,
+.rating-group,
+.reservation-field {
+    width: 100%;
+    display: flex;
+}
+
+.form-group {
     align-items: center;
     text-align: left;
+}
+
+.reservation-summary-view {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 .rating-group {
     justify-content: flex-start;
 }
 
+.reservation-field {
+    align-items: center;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.data-entry,
+.view-data {
+    width: 70%;
+    padding: 2px 10px;
+    margin: auto;
+
+}
+
+.view-label,
 .form-label {
-    width: calc(44% - 10px);
+    width: 30%;
     margin: 2px 10px;
     padding: 5px;
     color: white;
 }
 
 .data-entry {
-    width: calc(80% - 10px);
-    padding: 5px;
     border-radius: 6px;
     border: none;
     text-align: left;
 }
+
+.view-label {
+    color: white;
+}
+
+/* 5段階評価＆レビューコメント */
+.store_form {
+    align-items: center;
+    background-color: white;
+}
+
+
 
 .select_time,
 .select_number,
@@ -183,7 +210,8 @@
     z-index: 3;
 }
 
-.reservation-button-container {
+.reservation-button-container,
+.payment-button-container {
     width: 100%;
     display: flex;
     align-items: center;
@@ -193,11 +221,47 @@
 }
 
 .reservation-button {
-    width: 33%;
+    width: 30%;
+    margin: 0 5px;
+}
+
+.edit-form {
+    display: none;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.payment-amount {
+    color: white;
+    font-size: 0.9rem;
+}
+
+.edit-form-container {
+    width: 100%;
+    display: none;
+}
+
+.edit-form-container .form-group {
+    width: 100%;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.edit-form-container .select-wrapper {
+    width: 70%;
+}
+
+.edit-form-container .form-label {
+    width: 30%;
+    margin: 2px 10px;
+    padding: 5px;
+    color: white;
 }
 
 .reservation-button,
-.review-button {
+.review-button,
+.payment-button {
     padding: 6px 10px;
     background-color: #f4f4f4;
     color: #0056b3;
@@ -211,14 +275,21 @@
     cursor: pointer;
 }
 
+.payment-button:hover,
+.reservation-button:hover {
+    background-color: #9dc9f8;
+    color: #f4f4f4;
+}
+
+
 .review-button {
     background-color: #0056b3;
     color: white;
 }
 
-.reservation-button:hover {
-    background-color: #0676ee;
-    color: #f4f4f4;
+.review-button:hover {
+    background-color: white;
+    color: #0056b3;
 }
 
 .qr_code_image {
@@ -433,10 +504,6 @@
         flex: 0 1 90%;
         justify-content: center;
     }
-
-    .data-entry {
-        width: 100%;
-    }
 }
 
 @media screen and (min-height: 1181px) and (min-width: 1024px) {
@@ -459,3 +526,6 @@
     }
 
 }
+
+
+

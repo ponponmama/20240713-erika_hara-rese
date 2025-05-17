@@ -83,25 +83,25 @@
                 <div class="reservation-summary">
                     @if (session('reservation_details'))
                         <div class="summary-item">
-                            <label class="label label_shop">Shop:</label>
+                            <label class="label label_shop">Shop</label>
                             <span class="summary-date">
                                 {{ session('reservation_details')->shop->shop_name }}
                             </span>
                         </div>
                         <div class="summary-item">
-                            <label class="label label_date_session">Date:</label>
+                            <label class="label label_date_session">Date</label>
                             <span class="summary-date">
                                 {{ \Carbon\Carbon::parse(session('reservation_details')->reservation_datetime)->format('Y-m-d') }}
                             </span>
                         </div>
                         <div class="summary-item">
-                            <label class="label label_time_session">Time:</label>
+                            <label class="label label_time_session">Time</label>
                             <span class="summary-date">
                                 {{ \Carbon\Carbon::parse(session('reservation_details')->reservation_datetime)->format('H:i') }}
                             </span>
                         </div>
                         <div class="summary-item">
-                            <label class="label label_number_session">Number:</label>
+                            <label class="label label_number_session">人数</label>
                             <span class="summary-date">
                                 {{ session('reservation_details')->number . '人' }}
                             </span>
