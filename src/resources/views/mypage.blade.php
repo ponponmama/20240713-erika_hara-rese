@@ -96,7 +96,7 @@
                                 </div>
                             </div>
                             <div class="form-group edit-form" id="edit-{{ $reservation->id }}" style="display: none;">
-                                <label for="number" class="form-label label_number">人数</label>
+                                <label for="number" class="form-label">人数</label>
                                 <div class="select-wrapper">
                                     <select id="number" name="number" class="data-entry select_number">
                                         @for ($i = 1; $i <= 20; $i++)
@@ -163,7 +163,7 @@
                                         </option>
                                     @endfor
                                 </select>
-                                <span class="rating-select-icon"></span>
+                                <span class="custom-select-icon rating-select-icon"></span>
                             </div>
                         </div>
                         <div class="rating-group">

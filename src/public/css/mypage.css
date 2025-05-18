@@ -29,11 +29,16 @@
 }
 
 .reservation-summary,
-.store_form {
-    position: relative;
+.store_form,
+.update_form {
     width: 100%;
     display: flex;
-    box-sizing: border-box;
+    flex-direction: column;
+}
+
+.reservation-summary,
+.store_form {
+    position: relative;
     flex-direction: column;
     justify-content: center;
     text-align: center;
@@ -43,6 +48,20 @@
     font-size: 0.8rem;
     box-shadow: 2px 2px 6px rgb(0 0 0 / 72.6%);
 }
+
+/* 予約変更form */
+.update_form {
+    align-items: center;
+    background-color: #044c99;
+    color: white;
+}
+
+/* 5段階評価＆レビューコメント */
+.store_form {
+    align-items: center;
+    background-color: white;
+}
+
 
 .reservation-summary {
     background-color: #044c99;
@@ -89,15 +108,6 @@
     margin: 3%;
 }
 
-/* 予約変更form */
-.update_form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #044c99;
-    color: white;
-}
 
 
 .form-group,
@@ -108,9 +118,11 @@
     display: flex;
 }
 
+.rating-group,
 .form-group {
     align-items: center;
     text-align: left;
+    margin-bottom: 1%;
 }
 
 .reservation-summary-view {
@@ -132,37 +144,26 @@
 
 .data-entry,
 .view-data {
-    width: 70%;
-    padding: 2px 10px;
-    margin: auto;
-
+    width: 100%;
+    text-align: left;
 }
 
 .view-label,
 .form-label {
     width: 30%;
-    margin: 2px 10px;
-    padding: 5px;
     color: white;
 }
 
 .data-entry {
     border-radius: 6px;
     border: none;
-    text-align: left;
+    padding: 2px 10px;
 }
 
-.view-label {
-    color: white;
+.select-wrapper {
+    width: 100%;
+    position: relative;
 }
-
-/* 5段階評価＆レビューコメント */
-.store_form {
-    align-items: center;
-    background-color: white;
-}
-
-
 
 .select_time,
 .select_number,
@@ -175,18 +176,11 @@
 }
 
 .select_rating {
-    padding: 4px;
-    margin-bottom: 10px;
     font-weight: bold;
     border: 1px solid #0056b3;
     text-align: center;
     outline: none;
     z-index: 1;
-}
-
-.select-wrapper {
-    width: 100%;
-    position: relative;
 }
 
 /* カスタムアイコンのスタイル */
@@ -202,12 +196,6 @@
     clip-path: polygon(0 0, 50% 24%, 100% 0, 50% 100%, 0 0);
     pointer-events: none;
     z-index: 2;
-}
-
-.rating-select-icon {
-    right: 15px;
-    top: 34%;
-    z-index: 3;
 }
 
 .reservation-button-container,
@@ -228,35 +216,12 @@
 .edit-form {
     display: none;
     width: 100%;
-    margin: 5px 0;
+    margin: 5px auto;
 }
 
 .payment-amount {
     color: white;
     font-size: 0.9rem;
-}
-
-.edit-form-container {
-    width: 100%;
-    display: none;
-}
-
-.edit-form-container .form-group {
-    width: 100%;
-    margin: 5px 0;
-    display: flex;
-    align-items: center;
-}
-
-.edit-form-container .select-wrapper {
-    width: 70%;
-}
-
-.edit-form-container .form-label {
-    width: 30%;
-    margin: 2px 10px;
-    padding: 5px;
-    color: white;
 }
 
 .reservation-button,
@@ -305,13 +270,7 @@
     color: black;
 }
 
-.label_comment {
-    width: calc(40% - 10px);
-    margin-bottom: 10px;
-}
-
 .text_comment {
-    width: calc(90% - 8px);
     height: 100px;
     border: 1px solid #0056b3;
     outline: none;
