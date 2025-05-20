@@ -52,7 +52,7 @@
     background-color: #5c67f2;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 719px) {
     .payment-group {
         width: 80%;
         margin: 5% auto;
@@ -68,7 +68,7 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 912px) {
+@media (min-width: 720px) and (max-width: 912px) {
     .payment-group {
         width: 40%;
         margin: 5% auto;

@@ -6,7 +6,7 @@
     margin-bottom: 5%;
 }
 
-/* 現在の予約一覧 */
+/* 予約一覧 左側 */
 .reservation-section {
     width: 45%;
     display: flex;
@@ -21,23 +21,10 @@
     font-size: 0.8rem;
 }
 
-.title-name {
-    font-size: 1.2rem;
-    margin: 1%;
-    text-align: center;
-    padding: 2px;
-}
-
-.reservation-summary,
-.store_form,
-.update_form {
+/* 予約一覧 予約情報 */
+.reservation-summary {
     width: 100%;
     display: flex;
-    flex-direction: column;
-}
-
-.reservation-summary,
-.store_form {
     position: relative;
     flex-direction: column;
     justify-content: center;
@@ -46,28 +33,29 @@
     border-radius: 6px;
     margin: 1% 0;
     font-size: 0.8rem;
+    background-color: #044c99;
+    color: white;
     box-shadow: 2px 2px 6px rgb(0 0 0 / 72.6%);
 }
 
 /* 予約変更form */
 .update_form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     background-color: #044c99;
     color: white;
 }
 
-/* 5段階評価＆レビューコメント */
-.store_form {
+/* 予約変更form 予約文字時計&予約項名&クロスボタンのコンテナ */
+.reservation-summary-item {
+    width: 100%;
+    display: flex;
     align-items: center;
-    background-color: white;
 }
 
-
-.reservation-summary {
-    background-color: #044c99;
-    color: white;
-}
-
+/* 予約変更form クロスボタン */
 .close-button {
     position: absolute;
     top: 16px;
@@ -82,114 +70,119 @@
     box-shadow: none;
 }
 
+/* 予約変更form クロスボタン */
 .cross_image {
-    width: 20px;
-    height: 20px;
-    margin: 12px 14px;
-    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    margin: 3%;
 }
 
-.reservation-summary-item {
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.reservation-summary-date {
-    width: 60%;
-    padding: 2%;
-    margin: 5px;
-    text-align: left;
-}
-
+/* 予約変更form 時計アイコン */
 .clock-icon {
     width: 25px;
     height: 25px;
     margin: 3%;
 }
 
+/* 予約変更form 予約文字 */
+.reservation-summary-date {
+    width: 50%;
+    line-height: 1.5rem;
+    margin: 3%;
+    text-align: left;
+}
 
+/* 予約変更form 予約情報 表示 */
+.reservation-summary-view {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
-.form-group,
-.reservation-summary-view,
-.rating-group,
+/* 予約変更form 予約情報 表示 フィールド */
 .reservation-field {
     width: 100%;
     display: flex;
-}
-
-.rating-group,
-.form-group {
-    align-items: center;
-    text-align: left;
-    margin-bottom: 1%;
-}
-
-.reservation-summary-view {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-.rating-group {
-    justify-content: flex-start;
-}
-
-.reservation-field {
     align-items: center;
     border: none;
     padding: 0;
-    margin: 0;
 }
 
-.data-entry,
-.view-data {
+/* 予約変更form 編集form */
+.edit-form {
+    display: none;
     width: 100%;
-    text-align: left;
 }
 
+/* 予約内容&予約変更fieldのコンテナ */
+.form-group,
+.reservation-field {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 3%;
+}
+
+/* 予約変更form 表示フィールド ラベル */
 .view-label,
 .form-label {
     width: 30%;
-    color: white;
+    line-height: 1.5rem;
+    padding-left: 3%;
+    margin: 0;
 }
 
+/* 予約変更form 表示フィールド データ */
+.name-entry,
+.data-entry,
+.view-data {
+    width: 100%;
+    line-height: 1.5rem;
+    padding-left: 3%;
+    margin: 0;
+}
+
+/* 予約変更form ショップネーム&予約内容表示 */
+.name-entry,
+.view-data {
+    display: block;
+}
+
+/* 各select box */
 .data-entry {
-    border-radius: 6px;
     border: none;
-    padding: 2px 10px;
 }
 
+/* select box カレンダーのみ */
+.input_date {
+    width: 70%;
+    border-radius: 6px;
+}
+
+/* カレンダーピッカーのstyle */
+.data-entry.input_date::-webkit-calendar-picker-indicator {
+    position: relative;
+    right: 10px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+/* ▽疑似要素用コンテナ */
 .select-wrapper {
     width: 100%;
     position: relative;
 }
 
-.select_time,
-.select_number,
-.select_rating {
-    width: 100%;
-    appearance: none;
-    position: relative;
-    background-color: white;
-    z-index: 1;
-}
-
-.select_rating {
-    font-weight: bold;
-    border: 1px solid #0056b3;
-    text-align: center;
-    outline: none;
-    z-index: 1;
-}
-
-/* カスタムアイコンのスタイル */
+/* ▽カスタムアイコンの予約用&評価用のstyle */
 .custom-select-icon,
 .rating-select-icon {
     position: absolute;
-    right: 20px;
+    right: 15px;
     top: 50%;
-    transform: translateY(-45%);
+    transform: translateY(-50%);
     width: 16px;
     height: 8px;
     background-color: #b4b4b4;
@@ -198,6 +191,16 @@
     z-index: 2;
 }
 
+/* 予約変更form QRコード 画像 */
+.qr_code_image {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+    margin: 5px auto;
+}
+
+/* 予約ボタン コンテナ */
 .reservation-button-container,
 .payment-button-container {
     width: 100%;
@@ -208,36 +211,32 @@
     margin: 5px auto;
 }
 
+/* 各ボタン共通のstyle */
 .reservation-button {
     width: 30%;
-    margin: 0 5px;
+    background-color: #f4f4f4;
+    color: #0056b3;
+
 }
 
-.edit-form {
-    display: none;
-    width: 100%;
-    margin: 5px auto;
-}
-
-.payment-amount {
-    color: white;
-    font-size: 0.9rem;
-}
-
+/* f4の方のボタンstyle */
 .reservation-button,
 .review-button,
 .payment-button {
     padding: 6px 10px;
-    background-color: #f4f4f4;
-    color: #0056b3;
     text-decoration: none;
     border-radius: 6px;
     display: inline-block;
-    margin: 6px;
+    margin: 3%;
     font-size: 0.7rem;
     text-align: center;
     border: none;
-    cursor: pointer;
+}
+
+/* 支払い金額 */
+.payment-amount {
+    color: white;
+    font-size: 0.7rem;
 }
 
 .payment-button:hover,
@@ -246,7 +245,63 @@
     color: #f4f4f4;
 }
 
+/* 各select 時間,人数,評価 共通style */
+.select_time,
+.select_number,
+.select_rating {
+    width: 100%;
+    appearance: none;
+    position: relative;
+    background-color: white;
+    border-radius: 6px;
+    z-index: 1;
+    line-height: 1.5rem;
+}
 
+/* 5段階評価＆レビューコメント */
+.store_form {
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 4%;
+    border-radius: 6px;
+    margin: 1% 0;
+    font-size: 0.8rem;
+    align-items: center;
+    background-color: white;
+    box-shadow: 2px 2px 6px rgb(0 0 0 / 72.6%);
+}
+
+/* 評価select box */
+.select_rating {
+    font-weight: bold;
+    border: 1px solid #0056b3;
+    text-align: center;
+    outline: none;
+}
+
+/* 評価select box & コメントtextarea のコンテナ */
+.rating-group {
+    justify-content: flex-start;
+}
+
+/* 評価ラベル */
+.label_rating,
+.label_comment {
+    color: black;
+}
+
+/* コメントtextarea */
+.text_comment {
+    height: 100px;
+    border: 1px solid #0056b3;
+    outline: none;
+}
+
+/* レビューボタン */
 .review-button {
     background-color: #0056b3;
     color: white;
@@ -257,26 +312,7 @@
     color: #0056b3;
 }
 
-.qr_code_image {
-    width: 100px;
-    height: 100px;
-    padding: 10px;
-    text-align: center;
-    margin: 5px auto;
-}
-
-.label_rating,
-.label_comment {
-    color: black;
-}
-
-.text_comment {
-    height: 100px;
-    border: 1px solid #0056b3;
-    outline: none;
-}
-
-/* お気に入り店舗 */
+/* お気に入り店舗 右側 */
 .favorite-shops-section {
     width: 50%;
     flex: 1;
@@ -286,6 +322,15 @@
     border-radius: 6px;
 }
 
+/* 予約一覧 タイトル */
+.title-name {
+    font-size: 1.2rem;
+    margin: 1%;
+    text-align: center;
+    padding: 2px;
+}
+
+/* お気に入り店舗 image全体のstyle */
 .favorite-shops {
     background-color: #f4f4f4;
     border-radius: 6px;
@@ -298,6 +343,7 @@
     margin-top: 1%;
 }
 
+/* お気に入り店舗image一覧のstyle */
 .shop_card {
     flex: 0 1 40%;
     height: 10%;
@@ -309,7 +355,7 @@
     overflow: hidden;
 }
 
-/* カード内の画像スタイル */
+/* カード内の画像style */
 .shop_card_image {
     width: 100%;
     height: 50%;
@@ -318,27 +364,30 @@
     background-color: #f4f4f4;
 }
 
-/* カード内の情報スタイル */
+/* カード内の情報style */
 .shop_info {
     padding: 6px;
 }
 
-.shop-name {
-    font-size: 1rem;
-}
-
+/* カード内の店舗名&店舗ガイドstyle */
 .shop-name,
 .shop-guide {
     margin: 0;
     padding: 6px;
     text-align: left;
-
 }
 
+/* カード内の店舗名style */
+.shop-name {
+    font-size: 1rem;
+}
+
+/* カード内の店舗ガイドstyle */
 .shop-guide {
     font-size: 0.8rem;
 }
 
+/* ボタンコンテナstyle */
 .button-container {
     display: flex;
     align-items: center;
@@ -347,17 +396,23 @@
     margin-top: 2px;
 }
 
+/* 詳しく見るボタンstyle */
 .shop-detail {
-    padding: 6px 15px;
+    padding: 6px 10px;
+    text-decoration: none;
+    border-radius: 6px;
     background-color: #0056b3;
     color: white;
-    text-decoration: none;
-    border-radius: 5px;
     display: inline-block;
-    margin: 8px;
-    font-size: 0.8rem;
+    margin: 3%;
+    font-size: 0.7rem;
     text-align: center;
-    cursor: pointer;
+}
+
+/* お気に入りボタンのformのstyle */
+.favorite_form {
+    text-align: center;
+    margin: 3%;
 }
 
 /* お気に入りボタンのスタイル */
@@ -365,11 +420,9 @@
     border: none;
     outline: none;
     background: none;
-    cursor: pointer;
     font-size: 1.4rem;
     color: rgb(228 225 225);
-    padding: 1px 10px;
-    margin-right: 10px;
+    padding: 6px 10px;
 }
 
 /* お気に入りに追加されたときのボタンのスタイル */
@@ -377,8 +430,8 @@
     color: red;    /* お気に入りの場合は赤色に */
 }
 
-/* レスポンシブデザインの設定 */
-@media screen and (max-width: 767px) {
+/* ここからレスポンシブデザインの設定 */
+@media screen and (max-width: 719px) {
     /* ページ全体 */
     .container {
         width: 100%;
@@ -392,44 +445,16 @@
         margin: 0;
     }
 
+    /* お気に入り店舗 */
     .favorite-shops-section {
         width: 100%;
         margin: 0;
-    }
-
-    .close-button {
-        top: 10px;
-        right: 10px;
-    }
-
-    .cross_image,
-    .clock-icon {
-        margin: 10px;
-    }
-
-    .reservation-summary-date {
-        width: calc(50% - 8px);
-    }
-
-    .form-label {
-        margin: 2px;
-    }
-
-    /* カスタムアイコンのスタイル */
-    .custom-select-icon {
-        top: 45%;
-    }
-
-    .reservation-button-container {
-        padding: 4px;
     }
 
     .reservation-button,
     .review-button,
     .shop-detail {
         width: 60%;
-        padding: 2px;
-        margin: 8px;
         font-size: 1rem;
     }
 
@@ -438,8 +463,14 @@
         font-size: 1rem;
     }
 
-    .rating-select-icon {
-        top: 30%;
+    .rating-group {
+        flex-direction: column;
+    }
+
+    .label_rating,
+    .label_comment {
+        width: 100%;
+        margin-bottom: 3%;
     }
 
     /* お気に入り店舗 */
@@ -453,7 +484,7 @@
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) and (max-width: 1024px) {
     /* ページ全体 */
     .container {
         flex-direction: row;
@@ -465,7 +496,7 @@
     }
 }
 
-@media screen and (min-height: 1181px) and (min-width: 1024px) {
+@media screen and (min-height: 1024px) and (min-width: 1024px) {
     .container {
         padding: 4px;
     }

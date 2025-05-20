@@ -195,7 +195,7 @@
     }
 }
 
-@media screen and (min-height: 1181px) and (min-width: 1024px) {
+@media screen and (min-height: 1024px) and (min-width: 1024px) {
     .management_form,
     .shop_registration_form {
         width: 100%;

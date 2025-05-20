@@ -91,6 +91,12 @@
     text-decoration: none;
 }
 
+.logout-button-form {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
 .logout-button {
     background: none;
     border: none;
@@ -98,6 +104,9 @@
     color: blue;
     cursor: pointer;
     text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 4px;
 }
 
 @media screen and (max-width: 767px) {
@@ -112,14 +121,14 @@
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
     .hamburger-menu {
         position: absolute;
         top: 8px;
     }
 }
 
-@media screen and (min-height: 1181px) and (min-width: 1024px) {
+@media screen and (min-height: 1024px) and (min-width: 1024px) {
     .hamburger-menu {
         position: absolute;
     }

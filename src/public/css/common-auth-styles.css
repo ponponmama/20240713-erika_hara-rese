@@ -157,7 +157,7 @@ main {
     background-color: #003875;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 719px) {
     .registration_container,
     .login_container {
         width: 90%;
@@ -186,7 +186,7 @@ main {
     }
 }
 
-@media screen and (min-height: 1181px) and (min-width: 1024px) {
+@media screen and (min-height: 1024px) and (min-width: 1024px) {
     .registration_container,
     .login_container {
         width: 50%;

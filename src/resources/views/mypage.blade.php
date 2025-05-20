@@ -66,9 +66,9 @@
                                 </fieldset>
                             </div>
                             <div class="form-group edit-form" id="edit-{{ $reservation->id }}" style="display: none;">
-                                <span class="form-label label_shop_name">shop</span>
+                                <span class="form-label">shop</span>
                                 <div class="select-wrapper">
-                                    <span class="data-entry summary-name">
+                                    <span class="data-entry name-entry">
                                         {{ $reservation->shop->shop_name }}
                                     </span>
                                 </div>
@@ -81,10 +81,9 @@
                                 </div>
                             </div>
                             <div class="form-group edit-form" id="edit-{{ $reservation->id }}" style="display: none;">
-                                <label for="time" class="form-label label_time">Time:</label>
+                                <label for="time" class="form-label">Time:</label>
                                 <div class="select-wrapper">
                                     <select id="time" name="time" class="data-entry select_time">
-                                        <option value="">時刻を選択してください</option>
                                         @foreach ($reservation->times as $time)
                                             <option value="{{ $time }}"
                                                 {{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('H:i') == $time ? 'selected' : '' }}>
@@ -111,21 +110,21 @@
                             </div>
                         </form>
                         <div class="reservation-button-container">
-                            <button type="button" class="button reservation-button edit-reservation-button"
+                            <button type="button" class="button reservation-button"
                                 onclick="toggleEditForm({{ $reservation->id }})">
                                 変更
                             </button>
-                            <button type="submit" class="button reservation-button edit-reservation-button"
+                            <button type="submit" class="button reservation-button"
                                 form="update-form-{{ $reservation->id }}" style="display: none;"
                                 id="update-button-{{ $reservation->id }}">
                                 更新
                             </button>
-                            <button type="button" class="button reservation-button cancel-button"
+                            <button type="button" class="button reservation-button"
                                 onclick="toggleEditForm({{ $reservation->id }})" style="display: none;"
                                 id="cancel-button-{{ $reservation->id }}">
                                 キャンセル
                             </button>
-                            <button type="submit" class="button reservation-button delete-reservation-button"
+                            <button type="submit" class="button reservation-button"
                                 form="delete-form-{{ $reservation->id }}">
                                 削除
                             </button>
@@ -142,7 +141,9 @@
                                     支払う
                                 </a>
                             @else
-                                <span class="payment-amount">ご利用金額のご案内待ち</span>
+                                @if (\Carbon\Carbon::parse($reservation->reservation_datetime)->isToday())
+                                    <span class="payment-amount">金額決定するとボタンが表示されます</span>
+                                @endif
                             @endif
                         </div>
                         <img src="{{ asset($reservation->qr_code) }}"
@@ -151,7 +152,7 @@
                     <form action="{{ route('reviews.store') }}" method="POST" class="store_form">
                         @csrf
                         <input type="hidden" name="shop_id" value="{{ $last_visited_shop_id }}">
-                        <div class="rating-group">
+                        <div class="form-group rating-group">
                             <label for="rating" class="form-label label_rating">
                                 評価
                             </label>
@@ -163,10 +164,10 @@
                                         </option>
                                     @endfor
                                 </select>
-                                <span class="custom-select-icon rating-select-icon"></span>
+                                <span class="custom-select-icon"></span>
                             </div>
                         </div>
-                        <div class="rating-group">
+                        <div class="form-group rating-group">
                             <label for="comment" class="form-label label_comment">コメント</label>
                             <textarea name="comment" id="comment" class="data-entry text_comment"></textarea>
                         </div>
@@ -201,13 +202,11 @@
                                     ＃{{ $genre->genre_name }}
                                 @endforeach
                             </p>
-                            <div class="button-container">
-                                @include('custom_components.shop-buttons', [
-                                    'shop' => $favorite,
-                                    'routeName' => 'shop.details',
-                                    'showFavoriteForm' => true,
-                                ])
-                            </div>
+                            @include('custom_components.shop-buttons', [
+                                'shop' => $favorite,
+                                'routeName' => 'shop.details',
+                                'showFavoriteForm' => true,
+                            ])
                         </div>
                     </div>
                 @endforeach
@@ -223,6 +222,8 @@
         const updateButton = document.getElementById(`update-button-${reservationId}`);
         const editButton = document.querySelector(`button[onclick="toggleEditForm(${reservationId})"]`);
         const cancelButton = document.getElementById(`cancel-button-${reservationId}`);
+        // 削除ボタンを取得
+        const deleteButton = document.querySelector(`button[form="delete-form-${reservationId}"]`);
 
         if (viewElement.style.display !== 'none') {
             // 表示モードから編集モードへ
@@ -233,6 +234,8 @@
             updateButton.style.display = 'inline-block';
             cancelButton.style.display = 'inline-block';
             editButton.style.display = 'none';
+            // 削除ボタンを非表示にする
+            deleteButton.style.display = 'none';
         } else {
             // 編集モードから表示モードへ
             viewElement.style.display = 'flex';
@@ -242,6 +245,8 @@
             updateButton.style.display = 'none';
             cancelButton.style.display = 'none';
             editButton.style.display = 'inline-block';
+            // 削除ボタンを再表示する
+            deleteButton.style.display = 'inline-block';
         }
     }
 </script>
