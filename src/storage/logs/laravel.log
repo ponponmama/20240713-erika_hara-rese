@@ -6031,3 +6031,15 @@
 [2025-05-22 16:10:28] local.INFO: ClearSessionAfterReturn middleware executed  
 [2025-05-22 16:10:28] local.INFO: clear_session_on_leave flag: false  
 [2025-05-22 16:10:28] local.INFO: After clearing session: {"_token":"PJaqjN4B0G3a4nbbcNJbRPTp2B1zjncmV4DZsknn","_flash":{"old":[],"new":[]},"_previous":{"url":"http:\/\/localhost\/shop-manager\/dashboard"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":53}  
+[2025-05-22 16:18:02] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-22 16:18:02] local.INFO: clear_session_on_leave flag: false  
+[2025-05-22 16:18:02] local.INFO: After clearing session: {"_token":"MZSBetxVtQrAnLS5O05BpqgvmeU850WCvECB1FTT"}  
+[2025-05-22 16:18:03] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-22 16:18:03] local.INFO: clear_session_on_leave flag: false  
+[2025-05-22 16:18:03] local.INFO: After clearing session: {"_token":"MZSBetxVtQrAnLS5O05BpqgvmeU850WCvECB1FTT","_flash":{"old":[],"new":[]}}  
+[2025-05-22 16:18:57] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-22 16:18:57] local.INFO: clear_session_on_leave flag: false  
+[2025-05-22 16:18:57] local.INFO: After clearing session: {"_token":"MZSBetxVtQrAnLS5O05BpqgvmeU850WCvECB1FTT","_flash":{"old":[],"new":[]},"_previous":{"url":"http:\/\/localhost\/login"}}  
+[2025-05-22 16:19:32] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-22 16:19:32] local.INFO: clear_session_on_leave flag: false  
+[2025-05-22 16:19:32] local.INFO: After clearing session: {"_token":"MZSBetxVtQrAnLS5O05BpqgvmeU850WCvECB1FTT","_flash":{"old":[],"new":[]},"_previous":{"url":"http:\/\/localhost\/register"}}  

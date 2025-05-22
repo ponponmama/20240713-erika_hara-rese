@@ -3,7 +3,8 @@
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ </h3>
 
 <p align="center">
-    <img src="rese.png" alt="Reseアプリの画面">
+   <img src="rese.png" alt="Reseアプリの画面">
+   <img src="mypage.png" alt="Reseアプリの画面">
 </p>
 
 #### サービス概要
