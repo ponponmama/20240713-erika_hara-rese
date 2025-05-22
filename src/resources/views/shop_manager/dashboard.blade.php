@@ -144,12 +144,12 @@
             <p class="qr_data_content"><strong>メールアドレス:</strong> <span id="reservation-email"></span></p>
         </div>
         <div class="qr-section-button">
-            <button id="start-scanner-btn" class="button start-scanner-btn">スキャン</button>
-            <button id="stop-scanner-btn" class="button stop-scanner-btn">停止</button>
-            <button id="reset-btn" class="button reset-btn">リセット</button>
+            <button id="start-scanner-btn" class="button scanner-btn">スキャン</button>
+            <button id="stop-scanner-btn" class="button scanner-btn">停止</button>
+            <button id="reset-btn" class="button scanner-btn">リセット</button>
         </div>
     </div>
-    <div class="camera-reader" id="reader">
+    <div class="camera-reader" id="reader" style="display: none; width: 0; height: 0; overflow: hidden;">
         <video id="video-preview" style="display: none;"></video>
         <canvas id="canvas-preview"></canvas>
     </div>
@@ -177,14 +177,20 @@
 
             startButton.addEventListener('click', function() {
                 if (!stream) {
+                    const reader = document.getElementById('reader');
+                    reader.style.display = 'block';
+                    reader.style.width = 'auto';
+                    reader.style.height = 'auto';
+                    reader.style.overflow = 'visible';
+
                     navigator.mediaDevices.getUserMedia({
                             video: {
                                 facingMode: "environment",
                                 width: {
-                                    ideal: 640
+                                    ideal: 1280
                                 },
                                 height: {
-                                    ideal: 480
+                                    ideal: 720
                                 }
                             }
                         })
@@ -209,6 +215,12 @@
                     videoElement.srcObject = null;
                     stopButton.style.display = 'none';
                     startButton.style.display = 'block';
+
+                    const reader = document.getElementById('reader');
+                    reader.style.display = 'none';
+                    reader.style.width = '0';
+                    reader.style.height = '0';
+                    reader.style.overflow = 'hidden';
                 }
             });
 

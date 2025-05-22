@@ -4,7 +4,7 @@
 }
 
 .common_body {
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
     font-family: sans-serif;
     display: flex;
@@ -128,7 +128,7 @@ main {
 }
 
 /* レスポンシブ対応 */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 719px) {
     .content {
         background-color: #f4f4f4;
         width: 96%;
@@ -175,7 +175,7 @@ main {
     }
 }
 
-@media screen and (min-height: 1024px) and (min-width: 1024px) {
+@media screen and (min-height: 1025px) and (min-width: 1025px) {
     .top_logo {
         margin: 0 10px 0 15px ;
     }

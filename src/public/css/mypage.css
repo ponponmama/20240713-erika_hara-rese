@@ -212,11 +212,11 @@
 }
 
 /* 各ボタン共通のstyle */
-.reservation-button {
+.reservation-button,
+.payment-button {
     width: 30%;
     background-color: #f4f4f4;
     color: #0056b3;
-
 }
 
 /* f4の方のボタンstyle */
@@ -231,12 +231,6 @@
     font-size: 0.7rem;
     text-align: center;
     border: none;
-}
-
-/* 支払い金額 */
-.payment-amount {
-    color: white;
-    font-size: 0.7rem;
 }
 
 .payment-button:hover,
@@ -496,7 +490,7 @@
     }
 }
 
-@media screen and (min-height: 1024px) and (min-width: 1024px) {
+@media screen and (min-height: 1025px) and (min-width: 1025px) {
     .container {
         padding: 4px;
     }

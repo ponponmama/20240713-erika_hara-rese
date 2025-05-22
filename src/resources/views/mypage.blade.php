@@ -16,23 +16,24 @@
                     : 'こんばんは！'),
     ])
     <div class="container">
-        @if ($hideReservation == 0)
-            <div class="reservation-section">
-                <h2 class="title-name section-title">予約状況</h2>
-                <p class="session-messages">
-                    @include('custom_components.session-messages', [
-                        'showReservation' => true,
-                        'showGeneral' => true,
-                        'showFavorite' => false,
-                    ])
-                </p>
-                @foreach ($reservations as $reservation)
-                    <div class="reservation-summary">
+        <div class="reservation-section">
+            <h2 class="title-name section-title">予約状況</h2>
+            <p class="session-messages">
+                @include('custom_components.session-messages', [
+                    'showReservation' => true,
+                    'showGeneral' => true,
+                    'showFavorite' => false,
+                ])
+            </p>
+            @foreach ($reservations as $reservation)
+                @if ($reservation->id != $hideReservationId)
+                    <div class="reservation-summary" id="reservation-{{ $reservation->id }}">
                         <form action="{{ route('reservations.update', $reservation->id) }}" method="POST"
                             id="update-form-{{ $reservation->id }}" class="update_form">
                             @csrf
                             @method('PUT')
-                            <a href="{{ route('mypage', ['hide_reservation' => 1]) }}" class="button close-button">
+                            <a href="{{ route('mypage', ['hide_reservation' => $reservation->id]) }}"
+                                class="button close-button">
                                 <img src="{{ asset('images/cross.png') }}" alt="Close" class="cross_image">
                             </a>
                             <div class="reservation-summary-item">
@@ -140,42 +141,44 @@
                                     class="button payment-button">
                                     支払う
                                 </a>
+                            @elseif ($reservation->payment_status === 'completed')
+                                <span class="payment-amount">お支払いありがとうございました</span>
                             @else
-                                @if (\Carbon\Carbon::parse($reservation->reservation_datetime)->isToday())
-                                    <span class="payment-amount">金額決定するとボタンが表示されます</span>
-                                @endif
+                                <span class="payment-amount">金額決定するとボタンが表示されます</span>
                             @endif
                         </div>
                         <img src="{{ asset($reservation->qr_code) }}"
                             alt="QR Code for Reservation {{ $reservation->id }}" class="qr_code_image">
                     </div>
-                    <form action="{{ route('reviews.store') }}" method="POST" class="store_form">
-                        @csrf
-                        <input type="hidden" name="shop_id" value="{{ $last_visited_shop_id }}">
-                        <div class="form-group rating-group">
-                            <label for="rating" class="form-label label_rating">
-                                評価
-                            </label>
-                            <div class="select-wrapper">
-                                <select name="rating" id="rating" class="data-entry select_rating">
-                                    @for ($i = 1; $i <= 5; $i++)
-                                        <option value="{{ $i }}">
-                                            {{ $i }}
-                                        </option>
-                                    @endfor
-                                </select>
-                                <span class="custom-select-icon"></span>
+                    @if ($reservation->payment_status === 'completed')
+                        <form action="{{ route('reviews.store') }}" method="POST" class="store_form">
+                            @csrf
+                            <input type="hidden" name="shop_id" value="{{ $last_visited_shop_id }}">
+                            <div class="form-group rating-group">
+                                <label for="rating" class="form-label label_rating">
+                                    評価
+                                </label>
+                                <div class="select-wrapper">
+                                    <select name="rating" id="rating" class="data-entry select_rating">
+                                        @for ($i = 1; $i <= 5; $i++)
+                                            <option value="{{ $i }}">
+                                                {{ $i }}
+                                            </option>
+                                        @endfor
+                                    </select>
+                                    <span class="custom-select-icon"></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group rating-group">
-                            <label for="comment" class="form-label label_comment">コメント</label>
-                            <textarea name="comment" id="comment" class="data-entry text_comment"></textarea>
-                        </div>
-                        <button type="submit" class="button review-button">レビューを投稿</button>
-                    </form>
-                @endforeach
-            </div>
-        @endif
+                            <div class="form-group rating-group">
+                                <label for="comment" class="form-label label_comment">コメント</label>
+                                <textarea name="comment" id="comment" class="data-entry text_comment"></textarea>
+                            </div>
+                            <button type="submit" class="button review-button">レビューを投稿</button>
+                        </form>
+                    @endif
+                @endif
+            @endforeach
+        </div>
         <div class="favorite-shops-section">
             <h2 class="title-name favorite-title">お気に入り店舗</h2>
             <p class="session-messages">

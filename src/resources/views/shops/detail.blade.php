@@ -111,7 +111,7 @@
                         @if (session('reservation_details'))
                             <img src="{{ asset(session('reservation_details')->qr_code) }}" alt="QR Code"
                                 class="qr_code_img">
-                            <h2 class="qr-text">来店時にこのQRコードを提示してください</h2>
+                            <h3 class="qr-text">来店時にこのQRコードを提示してください</h3>
                         @endif
                     </div>
                 </div>

@@ -95,7 +95,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     background-color: #044c99;
     color: white;
@@ -173,13 +173,15 @@
 }
 
 .reservation-summary {
-    width: calc(100% - 20px);
-    height: 60%;
+    width: 98%;
+    height: 100%;
     padding: 4px 10px;
     border-radius: 6px;
     background-color: #044c99;
     color: white;
-
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
 }
 
 .summary-item {
@@ -212,6 +214,11 @@
     width: 100%;
     padding: 2px;
     text-align: center;
+    margin-top: auto;
+}
+
+.qr_code_img {
+    margin: 5%;
 }
 
 .qr-text {
@@ -219,7 +226,7 @@
     text-align: center;
     padding: 4px;
     font-size: 1rem;
-    margin: 4px 0;
+    margin: 10% 0;
 }
 
 .form__error {

@@ -24,7 +24,7 @@ class UserController extends Controller
         $user = Auth::user();
         $reservations = $user->reservations()->with('shop')->get();
         $favorites = $user->favorites;
-        $hideReservation = $request->query('hide_reservation', 0);
+        $hideReservationId = $request->query('hide_reservation', 0);
 
         $last_visited_shop_id = null;
         if ($reservations->isNotEmpty()) {
@@ -42,7 +42,7 @@ class UserController extends Controller
         return view('mypage', [
             'reservations' => $reservations,
             'favorites' => $favorites,
-            'hideReservation' => $hideReservation,
+            'hideReservationId' => $hideReservationId,
             'last_visited_shop_id' => $last_visited_shop_id
         ]);
     }
