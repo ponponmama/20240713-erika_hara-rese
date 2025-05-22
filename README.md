@@ -4,6 +4,7 @@
 
 <p align="center">
    <img src="rese.png" alt="Reseアプリの画面">
+   <img src="detail.png" alt="Reseアプリの画面">
    <img src="mypage.png" alt="Reseアプリの画面">
 </p>
 
