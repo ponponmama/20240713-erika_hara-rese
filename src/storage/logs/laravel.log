@@ -6043,3 +6043,16 @@
 [2025-05-22 16:19:32] local.INFO: ClearSessionAfterReturn middleware executed  
 [2025-05-22 16:19:32] local.INFO: clear_session_on_leave flag: false  
 [2025-05-22 16:19:32] local.INFO: After clearing session: {"_token":"MZSBetxVtQrAnLS5O05BpqgvmeU850WCvECB1FTT","_flash":{"old":[],"new":[]},"_previous":{"url":"http:\/\/localhost\/register"}}  
+[2025-05-22 16:24:16] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-22 16:24:16] local.INFO: clear_session_on_leave flag: false  
+[2025-05-22 16:24:16] local.INFO: After clearing session: {"_token":"hfG56dfaH9bJo3h7BSASXXPZgKeTkfaG1TMajOD1","_flash":{"old":[],"new":[]},"_previous":{"url":"http:\/\/localhost\/login"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-22 16:24:17] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-22 16:24:17] local.INFO: clear_session_on_leave flag: false  
+[2025-05-22 16:24:17] local.INFO: After clearing session: {"_token":"hfG56dfaH9bJo3h7BSASXXPZgKeTkfaG1TMajOD1","_flash":{"old":[],"new":[]},"_previous":{"url":"http:\/\/localhost\/login"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
+[2025-05-22 16:24:22] local.INFO: getBusinessHoursメソッドが呼び出されました  
+[2025-05-22 16:24:22] local.INFO: パラメータ: {"openTime":"11:00","closeTime":"23:00","date":"2025-05-31","current":"2025-05-22 16:24:22"} 
+[2025-05-22 16:24:22] local.INFO: 返却する営業時間: ["11:00","11:15","11:30","11:45","12:00","12:15","12:30","12:45","13:00","13:15","13:30","13:45","14:00","14:15","14:30","14:45","15:00","15:15","15:30","15:45","16:00","16:15","16:30","16:45","17:00","17:15","17:30","17:45","18:00","18:15","18:30","18:45","19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45","22:00","22:15","22:30","22:45","23:00"] 
+[2025-05-22 16:24:22] local.INFO: Times for reservation 140: ["11:00","11:15","11:30","11:45","12:00","12:15","12:30","12:45","13:00","13:15","13:30","13:45","14:00","14:15","14:30","14:45","15:00","15:15","15:30","15:45","16:00","16:15","16:30","16:45","17:00","17:15","17:30","17:45","18:00","18:15","18:30","18:45","19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45","22:00","22:15","22:30","22:45","23:00"]  
+[2025-05-22 16:24:23] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-05-22 16:24:23] local.INFO: clear_session_on_leave flag: false  
+[2025-05-22 16:24:23] local.INFO: After clearing session: {"_token":"hfG56dfaH9bJo3h7BSASXXPZgKeTkfaG1TMajOD1","_flash":{"old":[],"new":[]},"_previous":{"url":"http:\/\/localhost"},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":72}  
