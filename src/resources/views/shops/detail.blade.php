@@ -43,9 +43,11 @@
                         <input type="date" id="date" name="date" class="input_date" value="{{ $date }}"
                             min="{{ date('Y-m-d') }}"
                             onchange="window.location.href='{{ route('shops.updateDate', ['id' => $shop->id]) }}?date=' + this.value">
-                        @error('date')
-                            <div class="form__error">{{ $message }}</div>
-                        @enderror
+                        <p class="form__error">
+                            @error('date')
+                                {{ $message }}
+                            @enderror
+                        </p>
                         <label for="time" class="label label_time"></label>
                         <div class="select-wrapper">
                             <select id="time" name="time" class="select_time">
@@ -59,9 +61,11 @@
                             </select>
                             <span class="custom-select-icon"></span>
                         </div>
-                        @error('time')
-                            <div class="form__error">{{ $message }}</div>
-                        @enderror
+                        <p class="form__error">
+                            @error('time')
+                                {{ $message }}
+                            @enderror
+                        </p>
                         <label for="number" class="label label_number"></label>
                         <div class="select-wrapper">
                             <select id="number" name="number" class="select_number">
@@ -75,9 +79,11 @@
                             </select>
                             <span class="custom-select-icon"></span>
                         </div>
-                        @error('number')
-                            <div class="form__error">{{ $message }}</div>
-                        @enderror
+                        <p class="form__error">
+                            @error('number')
+                                {{ $message }}
+                            @enderror
+                        </p>
                     </form>
                 @endif
                 <div class="reservation-summary">

@@ -7,6 +7,7 @@ use App\Models\Shop;
 use App\Models\Reservation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use App\Http\Requests\ShopManagerRequest;
 
 
 
@@ -31,26 +32,14 @@ class ShopManagerController extends Controller
     }
 
     //店舗情報の更新処理
-    public function update(Request $request, $id)
+    public function update(ShopManagerRequest $request, $id)
     {
-        $request->validate([
-            'description' => 'required|string',
-            'open_time' => 'required|date_format:H:i',
-            'close_time' => 'required|date_format:H:i',
-            'image' => 'sometimes|file|image|max:5000',
-            'price' => 'required|integer|min:0',
-        ]);
-
         $shop = Shop::findOrFail($id);
         $data = [
             'description' => $request->description,
-            'open_time' => $request->open_time. ':00',
-            'close_time' => $request->close_time. ':00',
-            'price' => $request->price,
+            'open_time' => $request->open_time . ':00',
+            'close_time' => $request->close_time . ':00',
         ];
-
-        Log::info('Open Time:', ['open_time' => $request->open_time]);
-        Log::info('Close Time:', ['close_time' => $request->close_time]);
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $path = $request->image->store('images', 'public');
