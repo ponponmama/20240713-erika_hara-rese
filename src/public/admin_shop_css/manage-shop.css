@@ -17,7 +17,7 @@
     padding: 4px;
 }
 
-.shop_name_content {
+.form-group {
     display: flex;
     width: 100%;
     align-items: center;
@@ -25,8 +25,8 @@
     margin-bottom: 4%;
 }
 
-.label_shop_name {
-    width: 35%;
+.form-label {
+    width: 30%;
     text-align: left;
     font-size: 1.2rem;
     font-weight: bold;
@@ -35,8 +35,8 @@
     color: rgb(0 0 0 / 70%);
 }
 
-.shop_name_text {
-    width: 65%;
+.data-entry {
+    width: 70%;
     text-align: justify;
     padding: 2px;
     font-size: 1.4rem;
@@ -44,26 +44,21 @@
     border-radius: 4px;
 }
 
-.input-group-description {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    padding: 2px;
-    margin-bottom: 4%;
-}
-
-.label_description {
-    width: 35%;
-    text-align: left;
-    font-size: 1.2rem;
-    font-weight: bold;
+.input_time {
+    width: 70%;
+    line-height: 1.6rem;
+    text-align: center;
     padding: 2px 10px;
-    margin: 10px 0;
-    color: rgb(0 0 0 / 70%);
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: 1px solid #7a7a7a;
+    border-radius: 4px;
+    appearance: none;
+    color: black;
 }
 
 .description_text {
-    width: 100%;
+    width: 70%;
     height: 160px;
     padding: 10px;
     border: 1px solid #7a7a7a;
@@ -72,16 +67,6 @@
     font-size: 1rem;
     outline: none;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.input-group,
-.input-group-description {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5%;
-    justify-content: center;
-    padding: 2px;
 }
 
 .business_hours {
@@ -103,40 +88,11 @@
     vertical-align: middle;
 }
 
-.input-group-time {
-    display: flex;
-    width: 100%;
-    padding: 2px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
 
-.label_open_time,
-.label_close_time {
-    width: 20%;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 2px 10px;
-    color: rgb(0 0 0 / 70%);
-}
 
-.input_open_time,
-.input_close_time {
-    width: 80%;
-    line-height: 1.6rem;
-    text-align: center;
-    padding: 2px 10px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border: 1px solid #7a7a7a;
-    border-radius: 4px;
-    appearance: none;
-    color: black;
-}
 
-.input_open_time::-webkit-calendar-picker-indicator,
-.input_close_time::-webkit-calendar-picker-indicator {
+
+.input_time::-webkit-calendar-picker-indicator {
     display: none;
 }
 
@@ -166,12 +122,23 @@
     padding: 2px 10px;
     border-radius: 4px;
     cursor: pointer;
-    width: 88%;
+    width: 70%;
     text-align: center;
     color: rgb(0 0 0 / 70%);
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.4rem;
     line-height: 1.6rem;
+}
+
+.file-name {
+    height: 80px;
+}
+
+.preview_image img {
+    max-width: 80px;
+    max-height: 80px;
+    margin-top: 5px;
+    object-fit: contain;
 }
 
 .up_date_button_container {
@@ -207,44 +174,85 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 60%;
+    height: 550px;
     overflow: hidden;
     background-color: white;
     border-radius: 10px 10px 0 0;
     box-shadow: 2px 2px 4px rgb(0 0 0 / 61%);
 }
 
-.image-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 50%;
-    overflow: hidden;
-    background-color: white;
-    border-radius: 10px 10px 0 0;
-}
 
 .shop_image {
     width: 100%;
-    height: 100%;
+    height: 70%;
     object-fit: cover;
+    background-color: #f4f4f4;
+    border-radius: 10px 10px 0 0;
 }
 
-.description {
+.shop_info {
     width: 100%;
-    padding: 10px 15px;
+    height: 30%;
+    padding: 10px;
+}
+
+.shop-name {
+    width: 100%;
     margin: 0;
-    font-size: 1.2rem;
     text-align: left;
+    padding: 5px;
+    font-size: 1.3rem;
 }
 
 .shop-guide {
-    width: 100%;
-    padding: 8px 10px;
+    padding: 6px;
     text-align: start;
     margin: 0;
+    font-size: 0.6rem;
+}
+
+.shop_info_container {
+    width: 100%;
+    padding: 10px;
+    background-color: #f4f4f4;
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 61%);
+    border-radius: 10px;
+}
+
+.description_title {
+    width: 60%;
+    padding: 2px;
     font-size: 1.2rem;
+    text-align: center;
+    margin: 0;
+    color: rgb(0 0 0 / 70%);
+    font-weight: bold;
+}
+
+.detail-shop-guide {
+    width: 60%;
+    padding: 10px 0;
+    text-align: start;
+    font-size: 0.8rem;
+    margin: 0;
+    color: black;
+}
+
+.description {
+    width: 60%;
+    height: 100px;
+    padding: 2px;
+    font-size: 0.8rem;
+    text-align: left;
+    margin: 0;
+    color: black;
+
+}
+
+.business_hours_title {
+    width: 100%;
+    color: black;
 }
 
 .business_hours_up {
