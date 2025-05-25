@@ -13,7 +13,6 @@
         <p class="session-messages">
             @include('custom_components.session-messages')
         </p>
-
         <div class="reservations">
             <h2 class="reservations-list">予約情報</h2>
             <table class="shop_reservation">
@@ -30,13 +29,13 @@
                 </thead>
                 <tbody>
                     @foreach ($reservations as $reservation)
-                        <tr>
+                        <tr class="reservation_tr">
                             <td class="reservation_td">{{ $reservation->reservation_datetime->format('Y-m-d') }}</td>
                             <td class="reservation_td">{{ $reservation->reservation_datetime->format('H:i') }}</td>
                             <td class="reservation_td">{{ $reservation->number }}</td>
                             <td class="reservation_td">{{ $reservation->id }}</td>
                             <td class="reservation_td">{{ $reservation->user->user_name }}</td>
-                            <td class="reservation_td">{{ $reservation->user->email }}</td>
+                            <td class="reservation_td email-column">{{ $reservation->user->email }}</td>
                             <td class="reservation_td">
                                 <button onclick="openReservationModal({{ $reservation->id }})"
                                     class="button detail-button">詳細</button>
@@ -52,8 +51,8 @@
             <div id="reservationModal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <h2>予約詳細</h2>
-                    <div id="reservationDetails">
+                    <h3>予約詳細</h3>
+                    <div id="reservationDetails" class="reservation-details-container">
                         <!-- ここに予約詳細が動的に表示されます -->
                     </div>
                 </div>
@@ -72,45 +71,49 @@
                             detailsContainer.innerHTML = `
                             <div class="detail-row">
                                 <span class="detail-label">予約日:</span>
-                                <span>${data.reservation_datetime}</span>
+                                <span class="detail-value">${data.reservation_datetime}</span>
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">時間:</span>
-                                <span>${data.time}</span>
+                                <span class="detail-value">${data.time}</span>
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">人数:</span>
-                                <span>${data.number}人</span>
+                                <span class="detail-value">${data.number}人</span>
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">予約ID:</span>
-                                <span>${data.id}</span>
+                                <span class="detail-value">${data.id}</span>
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">顧客名:</span>
-                                <span>${data.user_name}</span>
+                                <span class="detail-value">${data.user_name}</span>
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">メールアドレス:</span>
-                                <span>${data.email}</span>
+                                <span class="detail-value">${data.email}</span>
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">支払い状態:</span>
-                                <span class="${data.payment_status === '決済完了' ? 'status-completed' :
-                                  data.payment_status === '金額設定済み（支払い待ち）' ? 'status-amount-set' :
-                                  'status-pending'}">${data.payment_status}</span>
+                                <span class="detail-value ${data.payment_status === '決済完了' ? 'status-completed' :
+                                data.payment_status === '金額設定済み（支払い待ち）' ? 'status-amount-set' :
+                                'status-pending'}">${data.payment_status}</span>
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">合計金額:</span>
-                                <span>${data.total_amount}円</span>
+                                <span class="detail-value">${data.total_amount}円</span>
                             </div>
                             <div class="detail-row form-row">
-                                <form action="/shop-manager/reservations/${data.id}/update-price" method="POST">
+                                <form action="/shop-manager/reservations/${data.id}/update-price" method="POST" class="price-form">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <input type="hidden" name="_method" value="PUT">
-                                    <span class="detail-label">金額設定:</span>
-                                    <input type="number" name="total_amount" value="${data.total_amount}" min="0" class="price-input">円
-                                    <button type="submit" class="button price-update-btn">金額確定</button>
+                                    <div class="price-container">
+                                        <span class="detail-label">金額設定:</span>
+                                        <input type="number" name="total_amount" value="${data.total_amount}" min="0" class="detail-value price-input">円
+                                    </div>
+                                    <div class="price-button-container">
+                                        <button type="submit" class="button price-update-btn">金額確定</button>
+                                    </div>
                                 </form>
                             </div>
                         `;

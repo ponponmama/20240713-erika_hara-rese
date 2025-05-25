@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container manage_container">
+    <div class="container">
         <p class="session-messages">
             @include('custom_components.session-messages')
         </p>
@@ -16,10 +16,10 @@
             @method('PUT')
             <div class="form-group">
                 <label class="form-label">店舗名</label>
-                <span class="data-entry">{{ $shop->shop_name }}</span>
+                <span class="data-entry shop-name-entry">{{ $shop->shop_name }}</span>
             </div>
-            <div class="form-group input-group-description">
-                <label for="description" class="form-label label_description">店舗紹介</label>
+            <div class="form-group">
+                <label for="description" class="form-label">店舗紹介</label>
                 <textarea id="description" name="description" class="data-entry description_text">{{ $shop->description }}</textarea>
             </div>
             <p class="form__error">
@@ -28,7 +28,7 @@
                 @enderror
             </p>
             <span class="business_hours">営業時間</span>
-            <div class="form-group input-group-time">
+            <div class="form-group">
                 <label for="open_time" class="form-label">
                     <img src="{{ asset('images/clock.svg') }}" alt="" class="icon-img">
                     オープン
@@ -41,7 +41,7 @@
                     {{ $message }}
                 @enderror
             </p>
-            <div class="form-group input-group-time">
+            <div class="form-group">
                 <label for="close_time" class="form-label">
                     <img src="{{ asset('images/clock.svg') }}" alt="" class="icon-img">
                     クローズ
@@ -54,16 +54,15 @@
                     {{ $message }}
                 @enderror
             </p>
-            <div class="form-group input-group">
-
+            <div class="form-group">
                 <label for="image" class="form-label">
                     <img src="{{ asset('images/img.png') }}" alt="" class="icon-img">
                     写真
                 </label>
-                <input type="file" id="image" name="image" class="data-entry input_image" accept="image/*"
+                <input type="file" id="image" name="image" class="input_image" accept="image/*"
                     onchange="updateFileName(this)">
-                <label for="image" class="custom-file-upload">
-                    <i class="fa-cloud-upload">写真を選択</i>
+                <label for="image" class="data-entry custom-file-upload">
+                    <i class="fa-cloud-upload button">写真を選択</i>
                 </label>
             </div>
             <p class="form__error">
@@ -77,11 +76,10 @@
                 <button type="submit" class="button up_date_button">更新する</button>
             </div>
         </form>
-        <h2 class="confirm_text">更新された情報はこちらで確認できます</h2>
+        <h3 class="confirm_text">更新された情報はこちらで確認できます</h3>
         <figure class="shop-image-wrapper">
             <img src="{{ asset('storage/' . $shop->image) }}" alt="{{ $shop->shop_name }}" class="shop_image">
             <div class="shop_info">
-                <h3 class="shop-name">{{ $shop->shop_name }}</h3>
                 <p class="shop-guide">
                     @foreach ($shop->areas as $area)
                         ＃{{ $area->area_name }}
@@ -90,6 +88,7 @@
                         ＃{{ $genre->genre_name }}
                     @endforeach
                 </p>
+                <h3 class="shop-name">{{ $shop->shop_name }}</h3>
             </div>
         </figure>
         <p class="description_title">Description</p>
