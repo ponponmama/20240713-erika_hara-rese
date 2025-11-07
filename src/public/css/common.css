@@ -1,0 +1,187 @@
+.link,
+.button {
+    cursor: pointer;
+}
+
+.common_body {
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content {
+    background-color: #f4f4f4;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.header,
+.header_content {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding: 0 5px;
+    background-color: #f4f4f4;
+}
+
+.header_content {
+    justify-content: left;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.top_logo {
+    width: auto;
+    color: #0056b3;
+    padding: 10px 4px;
+    text-align: left;
+    font-size: 1.8rem;
+    margin: 0 10px;
+}
+
+.user__name,
+.title-name {
+    font-size: 1.4rem;
+    margin: 1% auto;
+    padding: 2px;
+    color: rgb(0 0 0 / 70%);
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ページネーションの共通スタイル */
+.custom-count-pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+    flex-wrap: wrap;
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+}
+
+.custom-count-pagination .page-item {
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.custom-count-pagination .page-link {
+    color: blue;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid rgb(119 118 118);
+    background-color: white;
+    padding: 6px 8px;
+    font-size: 0.8rem;
+}
+
+.custom-count-pagination .page-item.active .page-link {
+    background-color: blue;
+    color: white;
+    border-color: blue;
+}
+
+.custom-count-pagination .page-link:hover {
+    background-color: #8cbff5;
+}
+
+/* セッションメッセージスタイル */
+.session-messages {
+    width: 100%;
+    text-align: center;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    margin: 1% auto;
+    color: #004085;
+    min-height: 1.5rem;
+}
+
+.form__error {
+    height: 22px;
+    line-height: 22px;
+    color: #f00;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 719px) {
+    .content {
+        background-color: #f4f4f4;
+        width: 96%;
+        padding: 10px 20px;
+        margin: 2%;
+    }
+
+    .container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .top_logo {
+        width: 50%;
+        padding: 2px 30px;
+        margin-left: 30px;
+    }
+
+    .header,
+    .header_content {
+        width: 100%;
+        flex-direction: row;
+        box-sizing: border-box;
+        margin-top: 2%;
+        padding: 0;
+    }
+
+    .custom-count-pagination .page-item {
+        margin: 0 1px;
+    }
+
+    .alert-success,
+    .alert-danger,
+    .payment-success,
+    .reservation-success {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .top_logo {
+        width: 30%;
+        padding: 2px 35px;
+    }
+}
+
+@media screen and (min-height: 1025px) and (min-width: 1025px) {
+    .top_logo {
+        margin: 0 10px 0 15px ;
+    }
+
+    .form-title,
+    .user__name {
+        font-size: 1.3rem;
+    }
+}

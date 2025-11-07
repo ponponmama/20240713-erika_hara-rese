@@ -1,0 +1,12 @@
+/docker/mysql/data/
+/vendor
+.env
+../ssl/nginx.crt
+../ssl/nginx.key
+src/nginx.crt
+src/nginx.key
+.stylelintrc.json
+cspell.json
+.vscode
+cspell.json
+.cspell

@@ -1,0 +1,216 @@
+.container {
+    flex-direction: column;
+}
+
+/* 店舗代表者用 */
+.management_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 61%);
+    width: 50%;
+    margin: auto;
+    padding: 4px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.icon-img {
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    margin: 15px 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.select-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.data-entry {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 1px solid #7a7a7a;
+    border-radius: 6px;
+    outline: none;
+}
+
+.custom-select-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-45%);
+    width: 18px;
+    height: 10px;
+    background-color: #b4b4b4;
+    clip-path: polygon(0 0, 50% 24%, 100% 0, 50% 100%, 0 0);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* 新規店舗登録用 */
+.shop_registration_form {
+    margin-top: 5%;
+}
+
+.admin-form {
+    width: 80%;
+}
+
+.select_shop_id {
+    text-align: center;
+    appearance: none;
+    position: relative;
+    z-index: 1;
+    color: rgb(0 0 0 / 70%);
+}
+
+.date-entry {
+    border-bottom: 1px solid #7a7a7a;
+    line-height: 40px;
+    height: 40px;
+}
+
+.time-input {
+    text-align: center;
+    appearance: none;
+}
+
+.description_text {
+    height: 100px;
+}
+
+/* プレースホルダー */
+.date-entry::placeholder,
+.description_text::placeholder {
+    font-size: 1.2rem;
+    color: rgb(0 0 0 / 70%);
+    opacity: 0.7;
+}
+
+.input-group-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.admin-time-label {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 2px 5%;
+    color: rgb(0 0 0 / 70%);
+}
+
+.time-input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+/* ファイル名を表示するスタイル */
+.file-name-display {
+    display: block;
+    margin-top: 2px;
+}
+
+.custom-file-upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    color: rgb(0 0 0 / 70%);
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.input_image {
+    display: none;
+}
+
+.button {
+    width: 35%;
+    padding: 8px 15px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+    margin: 0 auto 10%;
+}
+
+.button:hover {
+    background-color: #003875;
+}
+
+/* メディアクエリ */
+@media screen and (max-width: 767px) {
+    .shop_manager_form,
+    .shop_registration_form {
+        width: 100%;
+    }
+
+    .custom-select-icon {
+        right: 10px;
+    }
+
+    .data-entry {
+        line-height: 1.2rem;
+        font-size: 0.8rem;
+    }
+
+    .date-entry::placeholder,
+    .description_text::placeholder {
+        font-size: 0.8rem;
+    }
+
+    .description_text {
+        height: 100px;
+    }
+
+    .admin-time-label {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding-left: 5%;
+    }
+
+    .button {
+        width: 70%;
+        padding: 8px 10px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .management_form,
+    .shop_registration_form {
+        width: 60%;
+    }
+
+        .button {
+        width: 50%;
+        padding: 8px 10px;
+    }
+
+}
+
+
+

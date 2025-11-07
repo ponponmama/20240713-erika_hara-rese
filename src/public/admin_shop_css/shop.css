@@ -1,0 +1,334 @@
+.shop_container {
+    flex-direction: column;
+}
+
+.shop_manager_name {
+    margin: 6px auto;
+    padding: 4px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: rgb(0 0 0 / 70%);
+}
+
+.reservations {
+    width: 70%;
+    padding: 4px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.reservations-list {
+    width: 100%;
+    color: rgb(0 0 0 / 70%);
+    font-size: 1.3rem;
+    padding: 4px;
+    margin: 8px 4px;
+}
+
+.shop_reservation {
+    width: 100%;
+    display: table;
+    border-collapse: collapse;
+    background-color: #f4f4f4;
+    border: 1px solid #7a7a7a;
+    border-radius: 10px;
+    color: black;
+    font-size: 1rem;
+    box-shadow: 3px 3px 6px rgb(0 0 0 / 61%);
+}
+
+.reservation_th,
+.reservation_td {
+    border: 1px solid #7a7a7a;
+    padding: 4px 10px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.qr-data-display {
+    padding: 2px;
+    margin: 8px 4px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(0 0 0 / 70%);
+}
+
+.reservation-details {
+    width: 50%;
+    text-align: left;
+    padding: 50px;
+    background-color: #f4f4f4;
+    border-radius: 6px;
+    box-shadow: 3px 3px 6px rgb(0 0 0 / 61%);
+    margin: 0 auto;
+}
+
+.qr_data_content {
+    margin: 6px 0;
+    color: rgb(0 0 0 / 70%);
+    font-size: 1rem;
+}
+
+.qr-section-button {
+    width: 50%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5% auto;
+}
+
+.scanner-btn {
+    width: 30%;
+    padding: 6px 15px;
+    background-color: #0056b3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 1rem;
+    text-align: center;
+    margin: 2% 0;
+    border: none;
+}
+
+.camera-reader {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#video-preview,
+#canvas-preview {
+    width: 70%;
+    height: auto;
+    display: block;
+    margin: 5% auto;
+}
+
+
+/* モーダル関連のスタイル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 40%);
+}
+
+.modal-show {
+    display: block;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 30% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+    max-height: 80vh;
+    overflow: auto;
+    box-shadow: 10px 10px 20px rgb(9 1 55 / 70%);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.detail-row {
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px 10px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.detail-label {
+    width: 45%;
+    font-weight: bold;
+    margin-right: 3%;
+}
+
+.detail-value {
+    width: 55%;
+}
+
+.detail-button {
+    padding: 5px 10px;
+    color: #b4b4b4;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.detail-button:hover {
+    color: #5c5b5b;
+}
+
+/* 支払い状態のスタイル */
+.status-completed {
+    color: blue;
+    font-weight: bold;
+}
+
+.status-amount-set {
+    color: #fd7e14;
+    font-weight: bold;
+}
+
+.status-pending {
+    color: red;
+    font-weight: bold;
+}
+
+.form-row {
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.price-form {
+    width: 100%;
+}
+
+.price-container {
+    width: 100%;
+    display: flex;
+    margin: 5px 0;
+    padding: 5px 10px;
+    text-align: left;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.price-input {
+    display: block;
+    border: 1px solid #7a7a7a;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-align: right;
+}
+
+
+.price-button-container {
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    margin: 5% 0;
+}
+
+.price-update-btn {
+    padding: 6px 20px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.price-update-btn:hover {
+    background-color: #003875;
+}
+
+@media screen and (max-width: 540px) {
+    .shop_manager_name {
+        margin: 4px auto;
+        font-size: 1.2rem;
+    }
+
+    .reservations {
+        width: 100%;
+    }
+
+    .shop_reservation {
+        overflow-x: auto;
+        display: block;
+    }
+
+    .reservation_td
+    {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .qr-data-display {
+        margin: 4px 0;
+        font-size: 1.2rem;
+    }
+
+    .reservation-details {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .qr_data_content {
+        margin: 4px 0;
+        font-size: 0.8rem;
+    }
+
+    .qr-section-button {
+        width: 100%;
+        margin: 4px 0;
+    }
+
+    .scanner-btn {
+        padding: 6px;
+    }
+
+    #video-preview,
+    #canvas-preview {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 540px) and (max-width: 768px) {
+    .reservations {
+        width: 100%;
+    }
+
+    .shop_reservation {
+        overflow-x: auto;
+        display: block;
+    }
+
+    .reservation_td {
+        white-space: nowrap;
+        padding: 4px 10px;
+    }
+
+    .reservation-details {
+        width: 60%;
+    }
+}
+
+

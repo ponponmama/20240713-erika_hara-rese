@@ -1,0 +1,43 @@
+.thanks-form {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 61%);
+    padding: 40px;
+    width: 70%;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-thanks-title {
+    font-size: 1.4rem;
+    margin: 15% 10% 5%;
+}
+
+.thanks-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5% auto 15%;
+}
+
+@media screen and (max-width: 719px){
+    .thanks-form {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .thanks-form {
+    width: 60%;
+    }
+}
+
+@media screen and (min-height: 1024px) and (min-width: 1024px) {
+    .thanks-form {
+        width: 50%;
+    }
+}

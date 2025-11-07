@@ -1,0 +1,135 @@
+/* ハンバーガーメニューのスタイル追加 */
+.menu-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: flex-start;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-toggle:checked+.hamburger-menu+.nav-menu {
+    display: block;
+}
+
+.hamburger-menu {
+    cursor: pointer;
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-color: #0056b3;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 61%);
+    border-radius: 3px;
+    padding: 5px;
+    position: relative;
+    z-index: 1000;
+    margin-right: 10px;
+    top: 16px;
+}
+
+.nav-menu {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: white;
+    padding: 0;
+    font-size: 1.5rem;
+    z-index: 1001;
+    overflow: auto;
+}
+
+.n-menu {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.top-bar {
+    width: 50%;
+    height: 1%;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+    padding: 0 1px;
+}
+
+.middle-bar {
+    width: 100%;
+    height: 1%;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+    padding: 0 1px;
+}
+
+.bottom-bar {
+    width: 25%;
+    height: 1%;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+    padding: 0 1px;
+}
+
+.nav-link,
+.logout-button {
+    width: auto;
+    font-size: 2rem;
+    color: blue;
+    font-weight: bold;
+    padding: 6px;
+    margin: 4px;
+    text-decoration: none;
+}
+
+.logout-button-form {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    padding: 0;
+    color: blue;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 4px;
+}
+
+@media screen and (max-width: 767px) {
+    .hamburger-menu {
+        position: absolute;
+        top: 4px;
+    }
+
+    .nav-menu {
+        top: 0;
+        left: 0;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .hamburger-menu {
+        position: absolute;
+        top: 8px;
+    }
+}
+
+@media screen and (min-height: 1024px) and (min-width: 1024px) {
+    .hamburger-menu {
+        position: absolute;
+    }
+}
