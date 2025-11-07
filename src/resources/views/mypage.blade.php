@@ -147,7 +147,7 @@
                                 <span class="payment-amount">金額決定するとボタンが表示されます</span>
                             @endif
                         </div>
-                        <img src="{{ asset($reservation->qr_code) }}"
+                        <img src="{{ asset('storage/' . $reservation->qr_code) }}"
                             alt="QR Code for Reservation {{ $reservation->id }}" class="qr_code_image">
                     </div>
                     @if ($reservation->payment_status === 'completed')

@@ -53,7 +53,7 @@ class ReservationController extends Controller
         $reservation->save();
 
         // QRコードを生成し、指定のパスにファイルとして保存
-        $qrCodePath = 'storage/qr_codes/' . $reservation->id . '.svg'; // 保存パスを指定
+        $qrCodePath = 'qr_codes/' . $reservation->id . '.svg'; // 保存パスを指定
         QrCode::format('svg')->size(100)->generate('Reservation ID: ' . $reservation->id, storage_path('app/public/qr_codes/' . $reservation->id . '.svg'));
 
         $reservation->qr_code = $qrCodePath;
@@ -62,7 +62,12 @@ class ReservationController extends Controller
         // この処理では、現在認証されているユーザーのメールアドレスに対して、予約の詳細を含むメールを送信します。
         $user = auth()->user(); // ログインしているユーザー情報を取得
         if ($user) {
-            Mail::to($user->email)->send(new ReservationNotification($user, $reservation));
+            try {
+                Mail::to($user->email)->send(new ReservationNotification($user, $reservation));
+            } catch (\Exception $e) {
+                // メール送信に失敗した場合は、エラーログにその情報を記録しますが、予約処理は続行します。
+                Log::error('Failed to send reservation notification email: ' . $e->getMessage());
+            }
         } else {
             // 送信に失敗した場合は、エラーログにその情報を記録します。
             Log::error('User not found for email sending.');
@@ -140,7 +145,7 @@ class ReservationController extends Controller
         $reservation->save();
 
         // QRコードを再生成（必要に応じて）
-        $qrCodePath = 'storage/qr_codes/' . $reservation->id . '.svg'; // 保存パスを指定
+        $qrCodePath = 'qr_codes/' . $reservation->id . '.svg'; // 保存パスを指定
         QrCode::format('svg')->size(100)->generate('Reservation ID: ' . $reservation->id, storage_path('app/public/qr_codes/' . $reservation->id . '.svg'));
 
         $reservation->qr_code = $qrCodePath;
@@ -148,7 +153,12 @@ class ReservationController extends Controller
 
         $user = auth()->user(); // ログインしているユーザー情報を取得
         if ($user) {
-            Mail::to($user->email)->send(new ReservationUpdated ($user, $reservation));
+            try {
+                Mail::to($user->email)->send(new ReservationUpdated ($user, $reservation));
+            } catch (\Exception $e) {
+                // メール送信に失敗した場合は、エラーログにその情報を記録しますが、予約処理は続行します。
+                Log::error('Failed to send reservation updated email: ' . $e->getMessage());
+            }
         } else {
             Log::error('User not found for email sending.');
         }
