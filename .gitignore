@@ -10,3 +10,4 @@ cspell.json
 .vscode
 cspell.json
 .cspell
+src/nginx.crt
