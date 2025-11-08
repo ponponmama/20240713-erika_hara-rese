@@ -12,3 +12,5 @@ cspell.json
 .cspell
 src/nginx.crt
 src/public/js/*
+/src/storage/logs/
+/src/storage/logs/laravel.log
