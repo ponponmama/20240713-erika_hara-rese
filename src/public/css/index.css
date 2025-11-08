@@ -1,3 +1,7 @@
+.header {
+    justify-content: space-between;
+}
+
 .search-content {
     width: 60%;
     height: 35px;
@@ -5,8 +9,8 @@
     border-radius: 6px;
     background-color: white;
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin: auto;
 }
 
 .search-form__item-input,
@@ -155,10 +159,10 @@
     border: none;
     outline: none;
     background: none;
-    cursor: pointer;
     font-size: 2rem;
     color: rgb(228 225 225);
     padding: 1px 15px;
+    text-decoration: none;
 }
 
 /* お気に入りに追加されたときのボタンのスタイル */
