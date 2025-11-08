@@ -438,3 +438,9 @@
 [2025-11-08 14:55:49] local.INFO: ClearSessionAfterReturn middleware executed  
 [2025-11-08 14:55:49] local.INFO: clear_session_on_leave flag: false  
 [2025-11-08 14:55:49] local.INFO: After clearing session: {"_token":"tRVWSpYmBZZDVptPqw0Qexyj1x5PnJDW2mru4CfB","_previous":{"url":"http:\/\/localhost"},"_flash":{"old":[],"new":[]},"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":2}  
+[2025-11-08 15:01:36] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-11-08 15:01:36] local.INFO: clear_session_on_leave flag: false  
+[2025-11-08 15:01:36] local.INFO: After clearing session: {"_token":"9MJvHDi0IBE2T2wMHBRwh7t5i5NSDkWsx9ADbs1d"}  
+[2025-11-08 15:01:36] local.INFO: ClearSessionAfterReturn middleware executed  
+[2025-11-08 15:01:36] local.INFO: clear_session_on_leave flag: false  
+[2025-11-08 15:01:36] local.INFO: After clearing session: {"_token":"9MJvHDi0IBE2T2wMHBRwh7t5i5NSDkWsx9ADbs1d","_flash":{"old":[],"new":[]}}  
