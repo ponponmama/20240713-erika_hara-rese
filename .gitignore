@@ -11,3 +11,4 @@ cspell.json
 cspell.json
 .cspell
 src/nginx.crt
+src/public/js/*
