@@ -238,6 +238,9 @@ php -v
 
 ```bash
 apt-get update
+```
+
+```bash
 apt-get install -y php8.1-curl
 ```
 
