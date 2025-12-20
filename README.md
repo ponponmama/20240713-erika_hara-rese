@@ -134,7 +134,47 @@ cd 20240713-erika_hara-rese
 sudo apt-get update
 ```
 
-Docker コンテナのビルドと起動
+3. SSL 証明書の生成
+
+QR コードを照合するためにカメラにアクセスするため、HTTPS 環境が必要です。SSL 証明書を生成します。
+
+**プロジェクトルートディレクトリ（ホスト側）で実行してください。** コンテナ内ではなく、ホスト側で実行します。
+
+まず、証明書を配置するディレクトリを作成します：
+
+```bash
+mkdir -p docker/nginx/ssl
+```
+
+```bash
+cd docker/nginx/ssl
+```
+
+次に、openssl コマンドを使用して SSL 証明書を生成します：
+
+```bash
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout nginx.key -out nginx.crt
+```
+
+このコマンド実行時には、以下の情報を対話形式で入力します：
+
+- 国名 (Country Name) - 例: `JP`
+- 都道府県名 (State or Province Name) - 例: `Tokyo`
+- 市区町村名 (Locality Name) - 例: `Tokyo`
+- 組織名 (Organization Name) - 例: `Development`
+- 組織単位名 (Organizational Unit Name) - オプション（空白でも可）
+- 共通名 (Common Name) - 例: `localhost`
+- メールアドレス (Email Address) - オプション（空白でも可）
+
+これにより、`docker/nginx/ssl/nginx.key` (秘密鍵) と `docker/nginx/ssl/nginx.crt` (公開証明書) が生成されます。
+
+プロジェクトルートに戻ります：
+
+```bash
+cd ../../..
+```
+
+4. Docker コンテナのビルドと起動
 
 ```bash
 docker-compose up -d --build
@@ -176,38 +216,41 @@ chmod +x setup.sh
 
 <br>
 
-- 3-3. curl 拡張機能をインストールするために PHP のバージョンを確認します。
+- 3-3. curl 拡張機能の確認とインストール
 
-```bash
-php -v
-```
-
-- 確認したバージョンに合わせて curl 拡張機能をインストール
-  （例：PHP 8.1 の場合）
-
-```bash
-apt-get install php8.1-curl
-```
-
-- または、利用可能なパッケージを確認してからインストール
-
-```bash
-apt-cache search php-curl
-```
-
-- curl 拡張機能が正しくロードされているか確認
+curl 拡張機能が正しくロードされているか確認します：
 
 ```bash
 php -m | grep curl
 ```
 
-正しく curl 拡張機能がロードされている場合、
-"curl"の文字がでます。
+正しく curl 拡張機能がロードされている場合、"curl"の文字が表示されます。
 
-※ もし"curl"が表示されない場合は、php.ini ファイルで以下の設定を確認してください：
+**もし"curl"が表示されない場合**は、curl 拡張機能をインストールする必要があります。
 
-```ini
-extension=curl
+PHP のバージョンを確認します：
+
+```bash
+php -v
+```
+
+確認したバージョンに合わせて curl 拡張機能をインストールします（例：PHP 8.1 の場合）：
+
+```bash
+apt-get update
+apt-get install -y php8.1-curl
+```
+
+または、利用可能なパッケージを確認してからインストール：
+
+```bash
+apt-cache search php-curl
+```
+
+インストール後、再度確認します：
+
+```bash
+php -m | grep curl
 ```
 
 - 3-4. composer インストール
@@ -238,57 +281,9 @@ php artisan config:clear
 
 5. 環境設定手順
 
-#### HTTPS 証明書の発行方法
+#### HTTPS 設定（SSL 証明書を生成した場合のみ）
 
-- QR コードを照合するためにカメラにアクセスしますが、https 環境であることが条件です。
-
-HTTPS 通信を行うためには SSL 証明書が必要です。以下のコマンドを使用して自己署名の SSL 証明書を生成できます。
-この証明書は開発環境でのテスト用途に適しています。
-
-GitHub クローンには下記の証明書は含まれていないため、作成してください。
-
-**重要**: 証明書は `src/` ディレクトリに生成してください。コンテナ内では `/var/www/` がホスト側の `./src` に対応しています。
-
-以下のコマンドを実行してください：
-
-```bash
-docker-compose exec php bash
-```
-
-コンテナ内に入ったら、`/var/www/` ディレクトリ（ホスト側の `src/` に対応）に移動して証明書を生成します：
-
-```bash
-cd /var/www/
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout nginx.key -out nginx.crt
-```
-
-これにより、ホスト側の `src/nginx.key` と `src/nginx.crt` が生成されます。
-
-このコマンド実行時には、以下のような情報を入力します。
-
-- 国名 (2 文字コード)
-- 州または県名
-- 市区町村名
-- 組織名
-- 組織内部名
-- 共通名（サーバの FQDN またはあなたの名前）
-- メールアドレス
-
-例えば、以下のように入力します。
-
-#### SSL 証明書生成のための情報入力例
-
-- **Country Name (2 letter code)**: `JP` (日本)
-- **State or Province Name (full name)**: `Hyogo` (兵庫県)
-- **Locality Name (city)**: `Kobe` (神戸市)
-- **Organization Name (company)**: `Rese Inc.` (リーズ株式会社)
-- **Organizational Unit Name (eg, section) []**:無い場合は空白でも OK
-- **Common Name (server FQDN or YOUR name)**: `localhost` (開発環境やテスト環境での一般的な設定)
-- **Email Address**: `yourmail@gmail.com` (連絡先メールアドレス)
-
-これらの情報は、SSL 証明書を生成する際に必要とされるものです。実際に証明書を生成する際には、適切な値を入力してください。
-
-このコマンドにより、`nginx.key` (秘密鍵) と `nginx.crt` (公開証明書) が生成されます。生成時には上記のようにいくつかの質問に答える必要があります。
+SSL 証明書を生成した場合は、以下の手順で HTTPS を有効化してください。
 
 #### Docker 環境設定
 
@@ -313,6 +308,18 @@ volumes:
 - ボリュームマウントは `ホスト側のパス:コンテナ内のパス` の形式で指定する必要があります
 - `<証明書を配置したディレクトリ>` の部分は、実際に証明書を生成したディレクトリのパスに置き換えてください（例：`./src` や `./certificates` など）
 - コンテナ内のパスは `/etc/nginx/ssl/` ディレクトリにマウントしてください
+
+**証明書の配置場所による設定方法**:
+
+- **README.md の通りに`docker/nginx/ssl`に証明書を生成した場合**:
+
+  - `docker-compose.yml`のポート 443 と SSL 証明書のマウント設定のコメントアウトを外すだけで使用できます
+  - `default.conf`の SSL 設定のコメントアウトも外してください
+
+- **ご自分の環境に合わせて別のディレクトリに証明書を生成した場合**:
+  - `<証明書を配置したディレクトリ>` の部分を、実際に証明書を生成したディレクトリのパスに置き換えてください（例：`./src` や `./certificates` など）
+  - `docker-compose.yml`のポート 443 と SSL 証明書のマウント設定のコメントアウトを外し、パスを調整してください
+  - `default.conf`の SSL 設定のコメントアウトも外してください
 
 #### default.conf を編集
 
