@@ -5,12 +5,13 @@
 ../ssl/nginx.key
 src/nginx.crt
 src/nginx.key
+docker/nginx/ssl/
 .stylelintrc.json
 cspell.json
 .vscode
 cspell.json
 .cspell
-src/nginx.crt
 src/public/js/*
 /src/storage/logs/
 /src/storage/logs/laravel.log
+/src/storage/app/public/qr_codes/

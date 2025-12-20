@@ -7,8 +7,7 @@ services:
     volumes:
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./src:/var/www/
-      - ./src/nginx.crt:/etc/nginx/ssl/nginx.crt
-      - ./src/nginx.key:/etc/nginx/ssl/nginx.key
+      - ./docker/nginx/ssl:/etc/nginx/ssl
     depends_on:
       - php
 
