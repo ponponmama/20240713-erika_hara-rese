@@ -7,14 +7,13 @@
     <title>Rese</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/common-auth-styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
     @yield('css')
 </head>
 
 <body class="auth_body">
     <main>
-        <div class="auth_content">
-            @yield('content')
-        </div>
+        @yield('content')
     </main>
 </body>
 

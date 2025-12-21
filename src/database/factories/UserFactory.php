@@ -29,7 +29,7 @@ class UserFactory extends Factory
         return $this->state(function (array $attributes) use ($shopId)  {
             return [
                 'user_name' => "test{$shopId}",
-                'email' => "test{$shopId}@test.com",
+                'email' => "test@{$shopId}.com",
                 'role' => 2,
                 'password' => Hash::make('shop_pass')  // テスト用の既知のパスワード
             ];

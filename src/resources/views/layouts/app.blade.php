@@ -12,20 +12,22 @@
 </head>
 
 <body class="common_body">
-    <main>
-        <div class="content">
-            <div class="header">
-                @include('partials.navbar')
+    <main class="main_content">
+        <div class="header">
+            @include('partials.navbar')
                 <h1 class="top_logo">
                     Rese
                 </h1>
-                @yield('search')
+            @yield('search')
+        </div>
+        <div class="content_container">
+            <div class="content">
+                @if(Request::is('shops/*'))
+                    @yield('detail_shop')
+                    @yield('reservation_form')
+                @endif
+                @yield('content')
             </div>
-            @if(Request::is('shops/*'))
-                @yield('detail_shop')
-                @yield('reservation_form')
-            @endif
-            @yield('content')
         </div>
     </main>
 </body>

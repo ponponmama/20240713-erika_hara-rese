@@ -1,4 +1,8 @@
-@extends('layouts.auth_app')
+@extends('layouts.app')
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/auth-styles.css') }}">
+@endsection
 
 @section('content')
     <div class="login_container">
