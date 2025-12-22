@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,22 +14,25 @@
 
 <body class="common_body">
     <main class="main_content">
-        <div class="header">
-            @include('partials.navbar')
+        <header class="header">
+            <div class="header-brand">
+                @include('partials.navbar')
                 <h1 class="top_logo">
                     Rese
                 </h1>
-            @yield('search')
-        </div>
-        <div class="content_container">
-            <div class="content">
-                @if(Request::is('shops/*'))
-                    @yield('detail_shop')
-                    @yield('reservation_form')
-                @endif
-                @yield('content')
             </div>
+            <div class="header-search">
+                @yield('search')
+            </div>
+        </header>
+        <div class="content">
+            @if (Request::is('shops/*'))
+                @yield('detail_shop')
+                @yield('reservation_form')
+            @endif
+            @yield('content')
         </div>
     </main>
 </body>
+
 </html>

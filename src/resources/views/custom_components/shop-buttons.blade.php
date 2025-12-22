@@ -4,7 +4,7 @@
 @endphp
 
 <div class="button-container">
-    <a href="{{ route($routeName, ['id' => $shop->id]) }}" class="link shop-detail" title="店舗の詳細情報を表示">詳しくみる</a>
+    <a href="{{ route($routeName, ['id' => $shop->id]) }}" class="link shop-detail-button" title="店舗の詳細情報を表示">詳しくみる</a>
     @auth
         @if (auth()->user()->favorites->contains($shop))
             <form action="{{ route('shops.unfavorite', $shop) }}" method="POST" @class(['favorite_form' => $showFavoriteForm])>
