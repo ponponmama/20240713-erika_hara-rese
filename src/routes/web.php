@@ -135,7 +135,7 @@ Route::middleware(['auth', 'role:2'])->group(function () {
    // QRコードスキャン結果から予約情報取得、JSON形式で返すためのroute(APIにコード)
     Route::post('/reservation/details', [ReservationController::class, 'getReservationDetails'])->name('reservation.details');
     //店舗の予約一覧表示
-    Route::resource('reviews', ShopReviewController::class)->only(['index', 'show']);
+    Route::resource('reviews', ShopReviewController::class)->only(['index']);
     // 価格設定用のルート
     Route::patch('/shop-manager/update-price', [ShopManagerController::class, 'updatePrice'])->name('shop.update.price');
     // 予約詳細を取得するためのルート

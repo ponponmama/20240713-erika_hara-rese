@@ -27,14 +27,21 @@ class ShopManagerController extends Controller
     //店舗情報の取得して表示
     public function edit($id)
     {
-        $shop = Shop::findOrFail($id);
+        // 自分の店舗のみ編集可能
+        $shop = Shop::where('id', $id)
+            ->where('user_id', auth()->id())
+            ->firstOrFail();
         return view('shop_manager.manage-shop', compact('shop'));
     }
 
     //店舗情報の更新処理
     public function update(ShopManagerRequest $request, $id)
     {
-        $shop = Shop::findOrFail($id);
+        // 自分の店舗のみ更新可能
+        $shop = Shop::where('id', $id)
+            ->where('user_id', auth()->id())
+            ->firstOrFail();
+
         $data = [
             'description' => $request->description,
             'open_time' => $request->open_time . ':00',

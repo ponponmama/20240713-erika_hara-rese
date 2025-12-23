@@ -16,7 +16,7 @@ class ReviewPolicy
 
         // ショップオーナーは自分の店舗のレビューのみ見れる
         if ($user->role === 2) {
-            return $user->admin->shop_id === $review->shop_id;
+            return $user->shop && $user->shop->id === $review->shop_id;
         }
 
         return false;
