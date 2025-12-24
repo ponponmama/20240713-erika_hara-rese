@@ -110,20 +110,8 @@
 @media screen and (max-width: 767px) {
     .hamburger-menu {
         position: absolute;
-        top: 4px;
+        top: 15px;
     }
 
-    .nav-menu {
-        top: 0;
-        left: 0;
-    }
 }
 
-
-@media screen and (min-height: 720px) and (max-width: 1024px) {
-    .hamburger-menu {
-        position: absolute;
-        top: 8px;
-
-    }
-}

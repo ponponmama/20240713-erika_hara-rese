@@ -18,7 +18,7 @@
     <div class="management_form review_form">
         <table class="table-section reviews-table">
             <thead>
-                <tr>
+                <tr class="review-th">
                     <th class="admin-th">投稿日時</th>
                     <th class="admin-th">店舗名</th>
                     <th class="admin-th">ユーザー名</th>
@@ -29,7 +29,7 @@
             </thead>
             <tbody>
                 @foreach($reviews as $review)
-                    <tr>
+                    <tr class="review-tr">
                         <td class="admin-td">{{ $review->created_at->format('Y/m/d H:i') }}</td>
                         <td class="admin-td">{{ $review->shop->shop_name }}</td>
                         <td class="admin-td">{{ $review->user->user_name }}</td>

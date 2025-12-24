@@ -21,7 +21,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
+    padding: 20px;
 }
 
 .header {
@@ -52,7 +52,7 @@ body {
 .content {
     width: 100%;
     min-height: calc(100vh - 100px);
-    padding: 0 70px 50px 70px;
+    padding: 0 50px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -91,7 +91,7 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 1%;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     scroll-behavior: smooth;
     overscroll-behavior: contain;
 }
@@ -143,42 +143,22 @@ body {
 }
 
 /* レスポンシブ対応 */
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 768px) {
     .content {
-        background-color: #f4f4f4;
-        width: 96%;
-        padding: 10px 20px;
-        margin: 2%;
+        padding: 0;
     }
 
-    .container {
-        width: 100%;
+    .header {
         flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .header-brand {
+        width: 100%;
     }
 
     .top_logo {
         width: 50%;
-        padding: 2px 30px;
-        margin-left: 30px;
-    }
-
-    .header,
-    .header_content {
-        width: 100%;
-        flex-direction: row;
-        box-sizing: border-box;
-        margin-top: 2%;
-        padding: 0;
-    }
-
-    .custom-count-pagination .page-item {
-        margin: 0 1px;
-    }
-
-    .alert-success,
-    .alert-danger,
-    .payment-success,
-    .reservation-success {
-        font-size: 14px;
+        padding-left: 50px;
     }
 }
