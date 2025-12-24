@@ -16,24 +16,24 @@
         @include('custom_components.session-messages')
     </p>
     <div class="management_form review_form">
-        <table class="table-section reviews-table">
+        <table class="table-section">
             <thead>
                 <tr class="review-th">
-                    <th class="admin-th">投稿日時</th>
-                    <th class="admin-th">店舗名</th>
-                    <th class="admin-th">ユーザー名</th>
-                    <th class="admin-th">評価</th>
-                    <th class="admin-th">コメント</th>
-                    <th class="admin-info">詳細</th>
+                    <th class="review-th">投稿日時</th>
+                    <th class="review-th">店舗名</th>
+                    <th class="review-th">ユーザー名</th>
+                    <th class="review-th">評価</th>
+                    <th class="review-th">コメント</th>
+                    <th class="review-info">詳細</th>
                     </tr>
             </thead>
             <tbody>
                 @foreach($reviews as $review)
                     <tr class="review-tr">
-                        <td class="admin-td">{{ $review->created_at->format('Y/m/d H:i') }}</td>
-                        <td class="admin-td">{{ $review->shop->shop_name }}</td>
-                        <td class="admin-td">{{ $review->user->user_name }}</td>
-                        <td class="admin-td">
+                        <td class="review-td">{{ $review->created_at->format('Y/m/d H:i') }}</td>
+                        <td class="review-td">{{ $review->shop->shop_name }}</td>
+                        <td class="review-td">{{ $review->user->user_name }}</td>
+                        <td class="review-td">
                             @for($i = 1; $i <= 5; $i++)
                                 @if($i <= $review->rating)
                                     <i class="fas fa-star review-star"></i>
@@ -43,8 +43,8 @@
                             @endfor
                         </td>
                         <td class="comment-column">{{ Str::limit($review->comment, 50) }}</td>
-                        <td class="admin-button-section">
-                            <button onclick="openReviewModal({{ $review->id }})" class="admin-button detail-button">詳細</button>
+                        <td class="review-button-section">
+                            <button onclick="openReviewModal({{ $review->id }})" class="review-button detail-button">詳細</button>
                         </td>
                     </tr>
                 @endforeach

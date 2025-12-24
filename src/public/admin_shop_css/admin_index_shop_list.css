@@ -23,12 +23,15 @@
     padding: 15px;
 }
 
-.admin-th {
+.admin-th,
+.review-th {
+    width: calc(100% / 6);
     padding: 4px 10px;
     text-align: left;
 }
 
-.admin-info {
+.admin-info,
+.review-info {
     text-align: center;
 }
 
@@ -42,14 +45,20 @@
 }
 
 .admin-td,
-.admin-button-section {
+.review-td,
+.admin-button-section,
+.review-button-section {
     padding: 4px 10px;
     text-align: left;
     border-bottom: 1px solid #242323;
 }
 
 .admin-tr:last-child .admin-td,
-.admin-tr:last-child .comment-column {
+.review-tr:last-child .review-td,
+.admin-tr:last-child .comment-column,
+.review-tr:last-child .comment-column,
+.admin-tr:last-child .admin-button-section,
+.review-tr:last-child .review-button-section {
     border-bottom: none;
 }
 
@@ -60,11 +69,13 @@
     border-bottom: 1px solid #242323;
 }
 
-.admin-button-section {
+.admin-button-section,
+.review-button-section {
     border-bottom: 1px solid #242323;
 }
 
-.admin-button {
+.admin-button,
+.review-button {
     padding: 6px 0 6px 6px;
     color: #b4b4b4;
     border: none;
@@ -74,7 +85,8 @@
     text-decoration: none;
 }
 
-.admin-button:hover {
+.admin-button:hover,
+.review-button:hover {
     color: #5c5b5b;
 }
 
