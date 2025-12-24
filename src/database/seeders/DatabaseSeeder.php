@@ -63,7 +63,7 @@ class DatabaseSeeder extends Seeder
         }
 
         // レビューをシード
-        Review::factory()->count(100)->create();
+        Review::factory()->count(200)->create();
 
         // 支払い情報をシード
         $this->call([
