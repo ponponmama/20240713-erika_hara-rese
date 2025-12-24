@@ -1,0 +1,81 @@
+.container {
+    flex-direction: column;
+}
+
+.review-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(0 0 0 / 70%);
+    margin: 20px auto;
+    padding: 4px;
+}
+
+.review_form {
+    width: 70%;
+    margin: 40px auto;
+    align-self: flex-start;
+}
+
+/* テーブルスタイル */
+.table-section {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #f4f4f4;
+    border: 1px solid #242323;
+    border-radius: 10px;
+    color: black;
+    font-size: 13px;
+    box-shadow: 3px 3px 6px rgb(0 0 0 / 61%);
+    padding: 15px;
+}
+
+.review-th {
+    width: 100%;
+    height: 100%;
+}
+
+.shop-manager-th {
+    padding: 4px 10px;
+    text-align: left;
+}
+
+.review-tr {
+    width: 100%;
+    height: 60px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #242323;
+    color: black;
+    font-size: 13px;
+}
+
+.shop-manager-td {
+    padding: 4px 10px;
+    text-align: left;
+    border-bottom: 1px solid #242323;
+}
+
+.review-tr:last-child .shop-manager-td,
+.review-tr:last-child .comment-column {
+    border-bottom: none;
+}
+
+.comment-column {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    border-bottom: 1px solid #242323;
+}
+
+/*shop_manager/index用 */
+.review-star {
+    color: #fd9103;
+}
+
+.review-star-empty {
+    color: #fd9103;
+}
+
+

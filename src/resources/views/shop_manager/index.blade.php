@@ -1,14 +1,15 @@
 @extends('layouts.app')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('admin_shop_css/admin_index_shop_list.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin_shop_css/shop_review.css') }}">
 @endsection
 
 @section('content')
+    <p class="review-title">レビュー 一覧</p>
     <div class="review_form">
         <table class="table-section reviews-table">
             <thead>
-                <tr>
+                <tr class="review-th">
                     <th class="shop-manager-th">投稿日時</th>
                     <th class="shop-manager-th">ユーザー名</th>
                     <th class="shop-manager-th">評価</th>
@@ -17,7 +18,7 @@
             </thead>
             <tbody>
                 @foreach($reviews as $review)
-                    <tr>
+                    <tr class="review-tr">
                         <td class="shop-manager-td">{{ $review->created_at->format('Y/m/d H:i') }}</td>
                         <td class="shop-manager-td">{{ $review->user->user_name }}</td>
                         <td class="shop-manager-td">

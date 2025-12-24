@@ -35,7 +35,7 @@
     inset: 0;
     background-color: white;
     padding: 0;
-    font-size: 1.5rem;
+    font-size: 24px;
     z-index: 1001;
     overflow: auto;
 }
@@ -81,7 +81,7 @@
 .nav-link,
 .logout-button {
     width: auto;
-    font-size: 2rem;
+    font-size: 32px;
     color: blue;
     font-weight: bold;
     padding: 6px;
@@ -102,7 +102,7 @@
     color: blue;
     cursor: pointer;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 32px;
     font-weight: bold;
     margin: 4px;
 }

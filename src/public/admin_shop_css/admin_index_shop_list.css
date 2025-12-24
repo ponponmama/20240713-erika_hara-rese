@@ -8,12 +8,6 @@
     margin: auto;
 }
 
-.review_form {
-    width: 70%;
-    margin: 0 auto;
-    align-self: flex-start;
-}
-
 /* テーブルスタイル */
 .table-section {
     width: 100%;
@@ -23,30 +17,39 @@
     border: 1px solid #7a7a7a;
     border-radius: 10px;
     color: black;
-    font-size: 0.8rem;
+    font-size: 13px;
     box-shadow: 3px 3px 6px rgb(0 0 0 / 61%);
     margin-top: 20px;
     padding: 15px;
 }
 
-.admin-th,
-.shop-manager-th {
+.admin-th {
     padding: 4px 10px;
     text-align: left;
 }
 
-.admin-info,
-.shop-manager-info {
+.admin-info {
     text-align: right;
 }
 
-.admin-td,
-.shop-manager-td {
+.review-tr {
+    width: 100%;
+    height: 60px;
+    background-color: #f4f4f4;
+    border: 1px solid #7a7a7a;
+    border-radius: 10px;
+    color: black;
+    font-size: 13px;
+    box-shadow: 3px 3px 6px rgb(0 0 0 / 61%);
+    margin-top: 20px;
+    padding: 15px;
+}
+
+.admin-td {
     text-align: left;
 }
 
-.admin-button-section,
-.shop-manager-button-section {
+.admin-button-section {
     width: auto;
     display: flex;
     align-items: center;
@@ -55,19 +58,17 @@
     text-align: center;
 }
 
-.admin-button,
-.shop-manager-button {
+.admin-button {
     padding: 6px 0 6px 6px;
     color: #b4b4b4;
     border: none;
-    font-size: 0.8rem;
+    font-size: 13px;
     text-align: right;
     background: none;
     text-decoration: none;
 }
 
-.admin-button:hover,
-.shop-manager-button:hover {
+.admin-button:hover {
     color: #5c5b5b;
 }
 
@@ -184,7 +185,7 @@
     padding: 6px;
     color: #b4b4b4;
     border: none;
-    font-size: 1.2rem;
+    font-size: 19px;
     text-align: center;
     background: none;
     text-decoration: none;

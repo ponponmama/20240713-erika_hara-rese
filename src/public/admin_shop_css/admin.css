@@ -41,7 +41,7 @@
 .data-entry {
     width: 100%;
     padding: 10px;
-    font-size: 1.2rem;
+    font-size: 19px;
     border: 1px solid #7a7a7a;
     border-radius: 6px;
     outline: none;
@@ -95,7 +95,7 @@
 /* プレースホルダー */
 .date-entry::placeholder,
 .description_text::placeholder {
-    font-size: 1.2rem;
+    font-size: 19px;
     color: rgb(0 0 0 / 70%);
     opacity: 0.7;
 }
@@ -111,7 +111,7 @@
     display: block;
     width: 100%;
     text-align: left;
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: bold;
     padding: 2px 5%;
     color: rgb(0 0 0 / 70%);
@@ -151,7 +151,7 @@
     color: white;
     border: none;
     border-radius: 6px;
-    font-size: 1rem;
+    font-size: 16px;
     text-align: center;
     display: block;
     margin: 0 auto 10%;
@@ -173,13 +173,13 @@
     }
 
     .data-entry {
-        line-height: 1.2rem;
-        font-size: 0.8rem;
+        line-height: 19px;
+        font-size: 13px;
     }
 
     .date-entry::placeholder,
     .description_text::placeholder {
-        font-size: 0.8rem;
+        font-size: 13px;
     }
 
     .description_text {
