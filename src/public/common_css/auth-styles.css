@@ -3,7 +3,6 @@
     align-items: center;
 }
 
-
 .registration_container,
 .login_container {
     width: 38%;
@@ -105,6 +104,8 @@
 }
 
 .button-container {
+    width: 100%;
+    height: 50px;
     display: flex;
     justify-content: flex-end;
     margin: 2% 2% 5%;
@@ -112,6 +113,7 @@
 
 .thanks-button-container {
     width: 100%;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,13 +121,13 @@
 }
 
 .register-button {
-    width: 110px;
+    width: 120px;
     height: 35px;
     line-height: 35px;
 }
 
 .login-button {
-    width: 90px;
+    width: 100px;
     height: 35px;
     line-height: 35px;
 }
@@ -134,7 +136,7 @@
 .link {
     height: 35px;
     line-height: 35px;
-    padding: 0 10px;
+    padding: 0 5px;
     background-color: rgba(0, 0, 255, 0.7);
     color: white;
     border: none;
@@ -151,18 +153,23 @@
     background-color: #003875;
 }
 
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 540px) {
     .registration_container,
     .login_container {
-        width: 90%;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 541px) and (max-width: 1024px) {
+    .content {
+        width: 50%;
+        margin: auto;
     }
 
-    .form-input {
-        font-size: 16px;
-    }
-
-    .form-input::placeholder {
-        font-size: 16px;
+    .registration_container,
+    .login_container {
+        width: 100%;
+        margin: auto;
     }
 
     .thanks-form {
@@ -173,27 +180,4 @@
     .login-form {
         width: 100%;
     }
-
-    .button,
-    .link {
-        width: 30%;
-    }
 }
-
-@media screen and (min-height: 1024px) and (min-width: 1024px) {
-    .registration_container,
-    .login_container {
-        width: 50%;
-    }
-
-    .thanks-form {
-        width: 60%;
-    }
-
-    .button,
-    .link {
-        width: 30%;
-        font-size: 16px;
-    }
-}
-

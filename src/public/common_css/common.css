@@ -18,7 +18,6 @@ body {
 
 .main_content {
     width: 100%;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -51,10 +50,12 @@ body {
 
 .content {
     width: 100%;
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 120px);
     padding: 0 50px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: relative;
 }
 
@@ -90,7 +91,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 1%;
+    margin-top: 10px;
     flex-wrap: nowrap;
     scroll-behavior: smooth;
     overscroll-behavior: contain;
@@ -98,7 +99,7 @@ body {
 
 .custom-count-pagination .page-item {
     display: inline-block;
-    margin: 0 4px;
+    margin: 0 2px;
 }
 
 .custom-count-pagination .page-link {
@@ -107,7 +108,7 @@ body {
     text-decoration: none;
     border: 1px solid rgb(119 118 118);
     background-color: white;
-    padding: 6px 8px;
+    padding: 5px 6px;
     font-size: 13px;
 }
 
@@ -150,7 +151,7 @@ body {
 
     .header {
         flex-direction: column;
-        padding: 0 20px;
+        padding: 0;
     }
 
     .header-brand {

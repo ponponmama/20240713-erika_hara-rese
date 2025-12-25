@@ -34,7 +34,7 @@
                     @endif
                     @if (auth()->user()->role === 1)
                         <li><a href="{{ url('/admin/dashboard') }}" class="nav-link">Admin Dashboard</a></li>
-                        <li><a href="{{ route('admin.reviews.index') }}" class="nav-link">レビュー管理</a></li>
+                        <li><a href="{{ route('admin.reviews') }}" class="nav-link">レビュー管理</a></li>
                         <li><a href="{{ route('admin.shops.list') }}" class="nav-link">店舗一覧</a></li>
                     @endif
                 @endauth

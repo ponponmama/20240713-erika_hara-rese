@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Log;
 use App\Http\Requests\StoreShopRequest;
 use App\Http\Requests\CreateShopManagerRequest;
 
-
 class AdminController extends Controller
 {
     // 管理ダッシュボード表示
@@ -145,10 +144,10 @@ class AdminController extends Controller
     {
         try {
             $review->delete();
-            return redirect()->route('admin.reviews.index')->with('success', 'レビューを削除しました');
+            return redirect()->route('admin.reviews')->with('success', 'レビューを削除しました');
         } catch (\Exception $e) {
             Log::error('Review delete error: ' . $e->getMessage());
-            return redirect()->route('admin.reviews.index')->with('error', 'レビューの削除に失敗しました');
+            return redirect()->route('admin.reviews')->with('error', 'レビューの削除に失敗しました');
         }
     }
 
@@ -157,7 +156,9 @@ class AdminController extends Controller
     {
         // 画面幅に応じて表示行数を変更
         $perPage = 15; // 768px以上の画面では15行表示
+        /** @var \Illuminate\Pagination\LengthAwarePaginator $shops */
         $shops = Shop::with(['areas', 'genres'])->paginate($perPage);
+        $shops->onEachSide(0);
         return view('admin.shops_list', compact('shops'));
     }
 

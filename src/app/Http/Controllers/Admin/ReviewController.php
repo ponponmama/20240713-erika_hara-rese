@@ -16,7 +16,7 @@ class ReviewController extends Controller
             ->paginate(10)
             ->onEachSide(0);
 
-        return view('admin.reviews.index', compact('reviews'));
+        return view('admin.reviews', compact('reviews'));
     }
     //adminのrouteでのreview評価一覧から詳細で表示
     public function show(Review $review)
@@ -28,7 +28,7 @@ class ReviewController extends Controller
     public function destroy(Review $review)
     {
         $review->delete();
-        return redirect()->route('admin.reviews.index')
+        return redirect()->route('admin.reviews')
             ->with('success', 'レビューを削除しました。');
     }
 }

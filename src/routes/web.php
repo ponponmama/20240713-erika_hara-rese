@@ -105,7 +105,7 @@ Route::middleware(['auth', 'role:1'])->group(function () {
     // 画像保存機能
     Route::get('/admin/save-image', [AdminController::class, 'saveImage'])->name('admin.save.image');
     // 管理者用レビュールート(adminのrouteでreviewの一覧表示用)
-    Route::get('/admin/reviews', [AdminReviewController::class, 'index'])->name('admin.reviews.index');
+    Route::get('/admin/reviews', [AdminReviewController::class, 'index'])->name('admin.reviews');
     //一覧表示から詳細画面へ
     Route::get('/admin/reviews/{review}', [AdminReviewController::class, 'show'])->name('admin.reviews.show');
     //選択したreviewの削除

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('admin_shop_css/shop_review.css') }}">
+    <link rel="stylesheet" href="{{ asset('shop_css/shop_review.css') }}">
 @endsection
 
 @section('content')
@@ -10,18 +10,18 @@
         <table class="table-section reviews-table">
             <thead>
                 <tr class="review-th">
-                    <th class="shop-manager-th">投稿日時</th>
-                    <th class="shop-manager-th">ユーザー名</th>
-                    <th class="shop-manager-th">評価</th>
-                    <th class="shop-manager-th">コメント</th>
+                    <th class="review-th">投稿日時</th>
+                    <th class="review-th">ユーザー名</th>
+                    <th class="review-th">評価</th>
+                    <th class="review-th">コメント</th>
                     </tr>
             </thead>
             <tbody>
                 @foreach($reviews as $review)
                     <tr class="review-tr">
-                        <td class="shop-manager-td">{{ $review->created_at->format('Y/m/d H:i') }}</td>
-                        <td class="shop-manager-td">{{ $review->user->user_name }}</td>
-                        <td class="shop-manager-td">
+                        <td class="review-td">{{ $review->created_at->format('Y/m/d H:i') }}</td>
+                        <td class="review-td">{{ $review->user->user_name }}</td>
+                        <td class="review-td">
                             @for($i = 1; $i <= 5; $i++)
                                 @if($i <= $review->rating)
                                     <i class="fas fa-star review-star"></i>
