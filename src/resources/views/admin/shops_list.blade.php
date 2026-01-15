@@ -17,19 +17,19 @@
         </p>
         <div class="management_form shop_list_form">
             <table class="table-section shop_list_table">
-                <thead>
-                    <tr>
+                <thead class="admin-thead">
+                    <tr class="admin-tr">
                         <th class="admin-th">店舗名</th>
                         <th class="admin-th">エリア</th>
                         <th class="admin-th">ジャンル</th>
                         <th class="admin-th">営業時間</th>
-                        <th class="admin-info">詳細</th>
+                        <th class="admin-th admin-info">詳細</th>
                     </tr>
                 </thead>
                 <tbody>
                     @if (count($shops) > 0)
                         @foreach ($shops as $shop)
-                            <tr>
+                            <tr class="admin-tr">
                                 <td class="admin-td">{{ $shop->shop_name }}</td>
                                 <td class="admin-td">
                                     @foreach ($shop->areas as $area)

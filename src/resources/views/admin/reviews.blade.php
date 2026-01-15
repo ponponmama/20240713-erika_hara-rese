@@ -17,13 +17,13 @@
     <div class="review_form">
         <table class="table-section">
             <thead>
-                <tr class="review-th">
+                <tr class="review-tr">
                     <th class="review-th">投稿日時</th>
                     <th class="review-th">店舗名</th>
                     <th class="review-th">ユーザー名</th>
                     <th class="review-th">評価</th>
                     <th class="review-th">コメント</th>
-                    <th class="review-info">詳細</th>
+                    <th class="review-th review-info">詳細</th>
                 </tr>
             </thead>
             <tbody>
