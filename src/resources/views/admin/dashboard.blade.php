@@ -2,6 +2,8 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('admin_css/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin_css/admin_modal.css') }}">
+    <link rel="stylesheet" href="{{ asset('users_css/index.css') }}">
 @endsection
 
 @section('content')
@@ -177,11 +179,109 @@
             </form>
         </div>
     </div>
+
+    <!-- 店舗登録確認モーダル -->
+    @if (session('shop_success') && session('new_shop_id'))
+        <div id="shop-registration-modal" class="registration-modal" style="display: block;">
+            <div class="registration-modal-content">
+                <span class="close-registration-modal">&times;</span>
+                <h2>店舗登録完了</h2>
+                <div class="registration-modal-body">
+                    <div class="registered-shop-detail">
+                        <h3>登録した店舗</h3>
+                        @php
+                            $newShop = \App\Models\Shop::with(['areas', 'genres'])->find(session('new_shop_id'));
+                        @endphp
+                        @if ($newShop)
+                            <div class="registered-shop-card">
+                                @if ($newShop->image)
+                                    <img src="{{ asset('storage/' . $newShop->image) }}" alt="{{ $newShop->shop_name }}"
+                                        class="registered-shop-image">
+                                @else
+                                    <div class="registered-shop-image-placeholder">画像なし</div>
+                                @endif
+                                <div class="registered-shop-info">
+                                    <h4>{{ $newShop->shop_name }}</h4>
+                                    <p class="shop-tags">
+                                        @foreach ($newShop->areas as $area)
+                                            ＃{{ $area->area_name }}
+                                        @endforeach
+                                        @foreach ($newShop->genres as $genre)
+                                            ＃{{ $genre->genre_name }}
+                                        @endforeach
+                                    </p>
+                                    <p class="shop-hours">{{ $newShop->open_time }} - {{ $newShop->close_time }}</p>
+                                    <p class="shop-description">{{ Str::limit($newShop->description, 100) }}</p>
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                    <div class="shops-list-mini">
+                        <h3>店舗一覧</h3>
+                        <div class="shops-list-scroll">
+                            <div class="shop_table modal-shop-table">
+                                @foreach ($shops as $shop)
+                                    <div class="shop_card modal-shop-card">
+                                        @if ($shop->image)
+                                            <img src="{{ asset('storage/' . $shop->image) }}"
+                                                alt="{{ $shop->shop_name }}">
+                                        @else
+                                            <div class="shop-image-placeholder">画像なし</div>
+                                        @endif
+                                        <div class="shop_info">
+                                            <h3 class="shop-name">{{ $shop->shop_name }}</h3>
+                                            <p class="shop-guide">
+                                                @foreach ($shop->areas as $area)
+                                                    ＃{{ $area->area_name }}
+                                                @endforeach
+                                                @foreach ($shop->genres as $genre)
+                                                    ＃{{ $genre->genre_name }}
+                                                @endforeach
+                                            </p>
+                                            @include('custom_components.shop-buttons', [
+                                                'shop' => $shop,
+                                                'showFavoriteForm' => false,
+                                            ])
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="button close-modal-button" onclick="closeRegistrationModal()">閉じる</button>
+            </div>
+        </div>
+    @endif
+
     <script>
         document.getElementById('image').addEventListener('change', function() {
             var fileName = this.files[0].name;
             var fileLabel = document.getElementById('file-name');
             fileLabel.textContent = fileName;
+        });
+
+        // モーダルを閉じる
+        function closeRegistrationModal() {
+            document.getElementById('shop-registration-modal').style.display = 'none';
+        }
+
+        // ×ボタンで閉じる
+        document.addEventListener('DOMContentLoaded', function() {
+            const closeBtn = document.querySelector('.close-registration-modal');
+            if (closeBtn) {
+                closeBtn.onclick = function() {
+                    closeRegistrationModal();
+                }
+            }
+
+            // モーダル外をクリックして閉じる
+            window.onclick = function(event) {
+                const modal = document.getElementById('shop-registration-modal');
+                if (event.target == modal) {
+                    closeRegistrationModal();
+                }
+            }
         });
     </script>
 @endsection

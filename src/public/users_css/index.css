@@ -47,7 +47,7 @@
     align-items: center;
 }
 
-.select-wrapper {
+.search-form__section .select-wrapper {
     width: 110px;
     display: flex;
     align-items: center;

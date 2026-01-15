@@ -96,7 +96,9 @@ class AdminController extends Controller
             $shop->genres()->attach($genre->id);
 
             DB::commit();
-            return redirect()->route('admin.dashboard')->with('shop_success', '新規店舗が正常に登録されました。');
+            return redirect()->route('admin.dashboard')
+                ->with('shop_success', '新規店舗が正常に登録されました。')
+                ->with('new_shop_id', $shop->id);
         } catch (\Exception $e) {
             DB::rollback();
             Log::error('Error in createShop', [
