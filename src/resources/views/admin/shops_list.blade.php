@@ -139,7 +139,7 @@
 
                             document.getElementById('modal-shop-area').textContent = areaNames;
                             document.getElementById('modal-shop-genre').textContent =
-                            genreNames;
+                                genreNames;
                             document.getElementById('modal-shop-hours').textContent =
                                 `${data.open_time} - ${data.close_time}`;
 
@@ -148,7 +148,7 @@
                                 document.getElementById('modal-shop-image').src =
                                     `/storage/${data.image}`;
                                 document.getElementById('modal-shop-image').alt = data
-                                .shop_name;
+                                    .shop_name;
                                 document.getElementById('modal-shop-image-container').style
                                     .display = 'block';
                             } else {
