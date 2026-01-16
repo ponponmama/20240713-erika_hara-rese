@@ -40,9 +40,18 @@
         @include('custom_components.session-messages', [
             'showGeneral' => true,
             'showReservation' => false,
-            'showFavorite' => true
+            'showFavorite' => true,
         ])
     </p>
+    @auth
+        @if (Auth::user()->role === 1 && session('shop_success') && session('new_shop_id'))
+            <div class="back-to-admin-container">
+                <a href="{{ route('admin.dashboard') }}" class="button back-to-admin-button">
+                    ← 管理画面に戻る
+                </a>
+            </div>
+        @endif
+    @endauth
     <div class="shop_table">
         @foreach ($shops as $shop)
             <div class="shop_card">

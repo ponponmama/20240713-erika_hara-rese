@@ -71,41 +71,38 @@
     <div id="shop-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h3 id="modal-shop-name"></h3>
+            <div id="modal-shop-image-container" class="shop-image-container" style="display: none;">
+                <h3 class="shop-image-title">登録店舗情報</h3>
+                <img id="modal-shop-image" src="" alt="" class="shop-image">
+            </div>
             <div class="shop-details">
                 <div class="detail-item">
+                    <h4 class="shop-title">店舗名</h4>
+                    <p class="modal-title-section" id="modal-shop-name"></p>
+                </div>
+                <div class="detail-item shop-description-item">
                     <h4 class="shop-title">店舗詳細</h4>
                     <p class="modal-title-section" id="modal-shop-description"></p>
                 </div>
-
                 <div class="detail-item">
                     <h4 class="shop-title shop-image-title">エリア</h4>
                     <p class="modal-title-section" id="modal-shop-area"></p>
                 </div>
-
                 <div class="detail-item">
                     <h4 class="shop-title shop-image-title">ジャンル</h4>
                     <p class="modal-title-section" id="modal-shop-genre"></p>
                 </div>
-
                 <div class="detail-item">
                     <h4 class="shop-title shop-image-title">営業時間</h4>
                     <p class="modal-title-section" id="modal-shop-hours"></p>
                 </div>
-
-                <div class="detail-item" id="modal-shop-image-container" style="display: none;">
-                    <h4 class="shop-title shop-image-title">店舗画像</h4>
-                    <img id="modal-shop-image" src="" alt="" class="shop-image">
-                </div>
-
-                <div class="detail-item delete-item">
-                    <form id="delete-form" action="" method="POST" class="delete-form">
-                        @csrf
+            </div>
+            <div class="detail-item delete-item">
+                <form id="delete-form" action="" method="POST" class="delete-form">
+                    @csrf
                         @method('DELETE')
-                        <button type="submit" class="admin-button delete-button"
-                            onclick="return confirm('本当にこの店舗を削除しますか？')">削除</button>
-                    </form>
-                </div>
+                        <button type="submit" class="admin-button delete-button" onclick="return confirm('本当にこの店舗を削除しますか？')">削除</button>
+                </form>
             </div>
         </div>
     </div>

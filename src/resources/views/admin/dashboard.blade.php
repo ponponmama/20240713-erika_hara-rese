@@ -3,7 +3,6 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('admin_css/admin.css') }}">
     <link rel="stylesheet" href="{{ asset('admin_css/admin_modal.css') }}">
-    <link rel="stylesheet" href="{{ asset('users_css/index.css') }}">
 @endsection
 
 @section('content')
@@ -188,7 +187,7 @@
                 <h2>店舗登録完了</h2>
                 <div class="registration-modal-body">
                     <div class="registered-shop-detail">
-                        <h3>登録した店舗</h3>
+                        <h3>登録した店舗情報</h3>
                         @php
                             $newShop = \App\Models\Shop::with(['areas', 'genres'])->find(session('new_shop_id'));
                         @endphp
@@ -214,39 +213,12 @@
                                     <p class="shop-description">{{ Str::limit($newShop->description, 100) }}</p>
                                 </div>
                             </div>
-                        @endif
-                    </div>
-                    <div class="shops-list-mini">
-                        <h3>店舗一覧</h3>
-                        <div class="shops-list-scroll">
-                            <div class="shop_table modal-shop-table">
-                                @foreach ($shops as $shop)
-                                    <div class="shop_card modal-shop-card">
-                                        @if ($shop->image)
-                                            <img src="{{ asset('storage/' . $shop->image) }}"
-                                                alt="{{ $shop->shop_name }}">
-                                        @else
-                                            <div class="shop-image-placeholder">画像なし</div>
-                                        @endif
-                                        <div class="shop_info">
-                                            <h3 class="shop-name">{{ $shop->shop_name }}</h3>
-                                            <p class="shop-guide">
-                                                @foreach ($shop->areas as $area)
-                                                    ＃{{ $area->area_name }}
-                                                @endforeach
-                                                @foreach ($shop->genres as $genre)
-                                                    ＃{{ $genre->genre_name }}
-                                                @endforeach
-                                            </p>
-                                            @include('custom_components.shop-buttons', [
-                                                'shop' => $shop,
-                                                'showFavoriteForm' => false,
-                                            ])
-                                        </div>
-                                    </div>
-                                @endforeach
+                            <div class="view-shop-link-container">
+                                <a href="{{ route('shops.index') }}" class="button view-shop-link">
+                                    店舗一覧ページで確認する
+                                </a>
                             </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
                 <button class="button close-modal-button" onclick="closeRegistrationModal()">閉じる</button>

@@ -10,12 +10,12 @@
     table-layout: fixed;
     border-collapse: separate;
     border-spacing: 0;
-    background-color: #f4f4f4;
-    border: 1px solid #242323;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgb(0 0 0 / 55%);
     border-radius: 10px;
-    color: black;
+    color: rgba(0, 0, 0, 0.8);
     font-size: 13px;
-    box-shadow: 3px 3px 6px rgb(0 0 0 / 61%);
+    box-shadow: 6px 6px 12px rgb(0 0 0 / 55%);
     padding: 20px;
 }
 
@@ -25,7 +25,7 @@
     border-top: none;
     border-left: none;
     border-right: none;
-    color: black;
+    color: rgba(0, 0, 0, 0.8);
     font-size: 13px;
 }
 
@@ -38,7 +38,7 @@
 .review-th {
     padding: 4px 10px;
     text-align: left;
-    border-bottom: 1px solid #242323;
+    border-bottom: 1px solid rgb(0 0 0 / 55%);
 }
 
 .review-info {
@@ -48,7 +48,7 @@
 .review-button-section {
     padding: 4px 10px;
     text-align: center;
-    border-bottom: 1px solid #242323;
+    border-bottom: 1px solid rgb(0 0 0 / 55%);
 }
 
 .review-tr:last-child .review-td,
@@ -61,7 +61,7 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
-    border-bottom: 1px solid #242323;
+    border-bottom: 1px solid rgb(0 0 0 / 55%);
     max-width: 100px;
     white-space: nowrap;
     overflow: hidden;
@@ -104,16 +104,16 @@
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: rgba(255, 255, 255, 0.9);
     margin: 25% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid rgb(0 0 0 / 70%);
     width: 80%;
     max-width: 600px;
-    border-radius: 6px;
+    border-radius: 10px;
     max-height: 70vh;
     overflow-y: auto;
-    box-shadow: 10px 10px 20px rgb(9 1 55 / 70%);
+    box-shadow: 10px 10px 20px rgb(0 0 0 / 55%);
 }
 
 .modal-show {
@@ -130,7 +130,7 @@
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: rgba(0, 0, 0, 0.8);
     text-decoration: none;
     cursor: pointer;
 }
