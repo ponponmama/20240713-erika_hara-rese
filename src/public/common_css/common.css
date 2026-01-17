@@ -80,15 +80,25 @@ body {
     margin: 0 10px;
 }
 
-.user__name,
-.title-name {
-    font-size: 22px;
+.title-name,
+.user__name {
+    height: 30px;
+    line-height: 30px;
     margin: 1% auto;
     padding: 2px;
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(0, 0, 0, 0.6);
     font-weight: bold;
     text-align: center;
 }
+
+.user__name {
+    font-size: 26px;
+}
+
+.title-name {
+    font-size: 22px;
+}
+
 
 /* ページネーションの共通スタイル */
 .custom-count-pagination {
@@ -129,12 +139,12 @@ body {
 /* セッションメッセージスタイル */
 .session-messages {
     width: 100%;
+    height: 22px;
+    line-height: 22px;
     text-align: center;
-    line-height: 16px;
-    font-size: 16px;
-    margin: 5px auto;
+    font-size: 14px;
+    margin: 2px auto;
     color: #004085;
-    min-height: 16px;
 }
 
 .form__error {
@@ -142,9 +152,9 @@ body {
     line-height: 22px;
     color: #f00;
     text-align: center;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
-    margin-top: 2px;
+    margin: 2px;
 }
 
 /* レスポンシブ対応 */
@@ -173,4 +183,19 @@ body {
         width: 100%;
     }
 
+    .user__name, .title-name {
+        margin: 2% auto;
+    }
+
+    .title-name {
+        font-size: 16px;
+    }
+
+    .user__name {
+        font-size: 18px;
+    }
+
+    .session-messages {
+        margin: 2% auto;
+    }
 }

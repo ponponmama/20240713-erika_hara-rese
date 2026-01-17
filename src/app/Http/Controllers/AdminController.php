@@ -194,11 +194,8 @@ class AdminController extends Controller
             DB::beginTransaction();
 
             // 画像ファイルの削除
-            if ($shop->image) {
-                $imagePath = storage_path('app/public/images/' . $shop->image);
-                if (file_exists($imagePath)) {
-                    unlink($imagePath);
-                }
+            if ($shop->image && Storage::disk('public')->exists($shop->image)) {
+                Storage::disk('public')->delete($shop->image);
             }
 
             // 店舗に関連付けられている店舗代表者（ユーザー）を取得

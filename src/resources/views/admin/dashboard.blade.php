@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('admin_css/admin.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin_css/admin_modal.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin_css/admin_dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin_css/admin_modal_common.css') }}">
+@endsection
+
+@section('js')
+    <script src="{{ asset('admin_js/admin_dashboard.js') }}"></script>
 @endsection
 
 @section('content')
@@ -51,7 +55,7 @@
                 <div class="input-group">
                     <img src="{{ asset('images/human.png') }}" alt="" class="icon-img">
                     <input type="text" id="user_name" name="user_name" placeholder="Username"
-                        value="{{ old('user_name') }}" class="data-entry">
+                        value="{{ old('user_name') }}" class="data-entry" autocomplete="username">
                 </div>
                 <p class="form__error">
                     @error('user_name')
@@ -61,7 +65,7 @@
                 <div class="input-group">
                     <img src="{{ asset('images/mail.png') }}" alt="" class="icon-img">
                     <input type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}"
-                        class="data-entry">
+                        class="data-entry" autocomplete="email">
                 </div>
                 <p class="form__error">
                     @error('email')
@@ -71,14 +75,16 @@
                 <div class="input-group">
                     <img src="{{ asset('images/key.png') }}" alt="" class="icon-img">
                     <input type="password" id="password" name="password" placeholder="Password"
-                        value="{{ old('password') }}" class="data-entry">
+                        value="{{ old('password') }}" class="data-entry" autocomplete="new-password">
                 </div>
                 <p class="form__error">
                     @error('password')
                         {{ $message }}
                     @enderror
                 </p>
-                <button class="button register-button" type="submit">店舗代表者登録</button>
+                <button class="button register-button" type="submit">
+                    店舗代表者登録
+                </button>
             </form>
         </div>
         <div class="management_form shop_registration_form">
@@ -180,80 +186,66 @@
     </div>
 
     <!-- 店舗登録確認モーダル -->
-    @if (session('shop_success') && session('new_shop_id'))
-        <div id="shop-registration-modal" class="registration-modal" style="display: block;">
-            <div class="registration-modal-content">
-                <span class="close-registration-modal">&times;</span>
-                <h2>店舗登録完了</h2>
-                <div class="registration-modal-body">
-                    <div class="registered-shop-detail">
-                        <h3>登録した店舗情報</h3>
-                        @php
+    {{-- 開発用: モーダルを常に表示する場合は下の行をコメントアウト --}}
+    {{-- @if (session('shop_success') && session('new_shop_id')) --}}
+    @if (true)
+        {{-- 開発用: style="display: block;" を削除すること --}}
+        <div id="shop-registration-modal" class="registration-modal modal" style="display: block;">
+            <div class="modal-content">
+                <span class="close-modal-button">&times;</span>
+                <div class="registered-shop-detail">
+                    <h3 class="card-title">登録した店舗詳細情報</h3>
+                    @php
+                        // 開発用: セッションがない場合は最新の店舗を取得（IDが最大のもの）
+                        // 本番環境では、このelseブロックを削除して、session('new_shop_id')のみを使用すること
+                        if (session('new_shop_id')) {
                             $newShop = \App\Models\Shop::with(['areas', 'genres'])->find(session('new_shop_id'));
-                        @endphp
-                        @if ($newShop)
-                            <div class="registered-shop-card">
-                                @if ($newShop->image)
-                                    <img src="{{ asset('storage/' . $newShop->image) }}" alt="{{ $newShop->shop_name }}"
-                                        class="registered-shop-image">
-                                @else
-                                    <div class="registered-shop-image-placeholder">画像なし</div>
-                                @endif
-                                <div class="registered-shop-info">
-                                    <h4>{{ $newShop->shop_name }}</h4>
-                                    <p class="shop-tags">
-                                        @foreach ($newShop->areas as $area)
-                                            ＃{{ $area->area_name }}
-                                        @endforeach
-                                        @foreach ($newShop->genres as $genre)
-                                            ＃{{ $genre->genre_name }}
-                                        @endforeach
-                                    </p>
-                                    <p class="shop-hours">{{ $newShop->open_time }} - {{ $newShop->close_time }}</p>
-                                    <p class="shop-description">{{ Str::limit($newShop->description, 100) }}</p>
-                                </div>
+                        } else {
+                            // IDが最大の店舗を取得
+                            $maxId = \App\Models\Shop::max('id');
+                            $newShop = $maxId ? \App\Models\Shop::with(['areas', 'genres'])->find($maxId) : null;
+                        }
+                    @endphp
+                    @if ($newShop)
+                        <div class="registered-shop-card">
+                            <img src="{{ asset('storage/' . $newShop->image) }}" alt="{{ $newShop->shop_name }}"
+                                class="shop-image">
+                            <div class="registered-shop-info">
+                                <p class="shop-name">{{ $newShop->shop_name }}</p>
+                                <p class="shop-tags">
+                                    @foreach ($newShop->areas as $area)
+                                        ＃{{ $area->area_name }}
+                                    @endforeach
+                                    @foreach ($newShop->genres as $genre)
+                                        ＃{{ $genre->genre_name }}
+                                    @endforeach
+                                </p>
                             </div>
-                            <div class="view-shop-link-container">
-                                <a href="{{ route('shops.index') }}" class="button view-shop-link">
-                                    店舗一覧ページで確認する
-                                </a>
+                        </div>
+                        <div class="registered-shop-detail-info">
+                            <div class="detail-item">
+                                <h4 class="detail-title">店舗名</h4>
+                                <p class="modal-detail-section">{{ $newShop->shop_name }}</p>
                             </div>
-                        @endif
-                    </div>
+                            <div class="detail-item shop-description-section">
+                                <h4 class="detail-title">店舗詳細</h4>
+                                <p class="modal-detail-section shop-description-item">{{ Str::limit($newShop->description, 100) }}</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4 class="detail-title">営業時間</h4>
+                                <p class="modal-detail-section">{{ $newShop->open_time }} - {{ $newShop->close_time }}</p>
+                            </div>
+                        </div>
+                        <div class="view-shop-link-container">
+                            <a href="{{ route('shops.index', ['from_admin' => 'true', 'shop_id' => $newShop->id]) }}"
+                                class="view-shop-link link">
+                                店舗一覧ページで確認する
+                            </a>
+                        </div>
+                    @endif
                 </div>
-                <button class="button close-modal-button" onclick="closeRegistrationModal()">閉じる</button>
             </div>
         </div>
+        </div>
     @endif
-
-    <script>
-        document.getElementById('image').addEventListener('change', function() {
-            var fileName = this.files[0].name;
-            var fileLabel = document.getElementById('file-name');
-            fileLabel.textContent = fileName;
-        });
-
-        // モーダルを閉じる
-        function closeRegistrationModal() {
-            document.getElementById('shop-registration-modal').style.display = 'none';
-        }
-
-        // ×ボタンで閉じる
-        document.addEventListener('DOMContentLoaded', function() {
-            const closeBtn = document.querySelector('.close-registration-modal');
-            if (closeBtn) {
-                closeBtn.onclick = function() {
-                    closeRegistrationModal();
-                }
-            }
-
-            // モーダル外をクリックして閉じる
-            window.onclick = function(event) {
-                const modal = document.getElementById('shop-registration-modal');
-                if (event.target == modal) {
-                    closeRegistrationModal();
-                }
-            }
-        });
-    </script>
 @endsection

@@ -7,6 +7,7 @@ use App\Models\Shop;
 use App\Models\Reservation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\ShopManagerRequest;
 
 
@@ -50,6 +51,12 @@ class ShopManagerController extends Controller
         ];
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            // 古い画像を削除
+            if ($shop->image && Storage::disk('public')->exists($shop->image)) {
+                Storage::disk('public')->delete($shop->image);
+            }
+
+            // 新しい画像を保存
             $path = $request->image->store('images', 'public');
             $data['image'] = $path;
         }

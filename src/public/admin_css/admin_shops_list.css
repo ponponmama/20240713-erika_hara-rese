@@ -5,7 +5,7 @@
 
 .management_form {
     width: 70%;
-    margin: 20px auto;
+    margin: 0 auto;
     align-self: flex-start;
 }
 
@@ -16,30 +16,34 @@
     border-collapse: separate;
     border-spacing: 0;
     background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgb(0 0 0 / 55%);
+    border: 1px solid rgb(0 0 0 / 40%);
     border-radius: 10px;
     color: rgba(0, 0, 0, 0.8);
-    font-size: 13px;
-    box-shadow: 6px 6px 12px rgb(0 0 0 / 55%);
+    box-shadow: 10px 10px 20px rgb(0 0 0 / 40%);
     padding: 20px 50px;
+    margin-bottom: 30px;
 }
 
 .admin-tr {
     width: 100%;
-    height: 50px;
 }
-
 
 .admin-td,
 .admin-th,
 .admin-info {
     padding: 4px 10px;
-    border-bottom: 1px solid rgb(0 0 0 / 55%);
+    border-bottom: 1px solid rgb(0 0 0 / 40%);
 }
 
 .admin-th {
     width: calc((100% - 80px) / 5);
     height: 70px;
+    font-size: 18px;
+}
+
+.admin-td {
+    height: 50px;
+    font-size: 16px;
 }
 
 .admin-td,
@@ -79,136 +83,6 @@
     color: #5c5b5b;
 }
 
-/* モーダルスタイル */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0 0 0 / 40%);
-}
-
-.modal-content {
-    background-color: rgba(255, 255, 255, 0.9);
-    margin: 5% auto;
-    padding: 20px;
-    width: 70%;
-    max-width: 600px;
-    border-radius: 10px;
-    max-height: 85vh;
-    overflow-y: auto;
-    border: 2px solid rgb(0 0 0 / 40%);
-    box-shadow: 6px 6px 12px rgb(0 0 0 / 55%);
-    padding: 20px;
-    position: relative;
-    text-align: center;
-}
-
-.shop-details {
-    text-align: left;
-    width: 100%;
-}
-
-.close {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 15px;
-    z-index: 10;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.shop-image-container {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    width: 100%;
-}
-
-.shop-image-container .shop-image-title {
-    margin-bottom: 10px;
-    text-align: left;
-    font-weight: bold;
-    color: rgb(0 0 0 / 70%);
-    width: 100%;
-    min-width: auto;
-}
-
-.detail-item {
-    margin: 5px 0;
-    padding: 5px 10px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    height: 35px;
-}
-
-.shop-description-item {
-    height: 130px;
-}
-
-.modal-shop-name {
-    margin-top: 20px;
-    margin-bottom: 15px;
-    padding: 10px;
-    clear: both;
-    text-align: left;
-}
-
-.delete-form {
-    width: 90%;
-    margin: auto;
-    text-align: center;
-}
-
-.shop-title {
-    font-weight: bold;
-    margin: 0;
-    margin-right: 10px;
-    min-width: 120px;
-    color: rgb(0 0 0 / 70%);
-}
-
-.modal-title-section {
-    margin: 0;
-    color: rgb(0 0 0 / 70%);
-}
-
-.shop-image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    max-height: 400px;
-    object-fit: cover;
-}
-
-.delete-button {
-    width: auto;
-    max-width: 40%;
-    padding: 6px;
-    color: #b4b4b4;
-    border: none;
-    font-size: 19px;
-    text-align: center;
-    background: none;
-    text-decoration: none;
-}
-
-.delete-button:hover {
-    color: red;
-}
 
 /* メディアクエリ */
 @media screen and (max-width: 768px) {

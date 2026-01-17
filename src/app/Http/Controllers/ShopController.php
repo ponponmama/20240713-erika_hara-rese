@@ -24,6 +24,11 @@ class ShopController extends Controller
     // 店舗一覧を表示,検索フォームに渡す。
     public function index(Request $request)
     {
+        // 管理画面から遷移した場合、セッションを設定
+        if ($request->has('from_admin') && $request->has('shop_id') && auth()->check() && auth()->user()->role === 1) {
+            session(['shop_success' => true, 'new_shop_id' => $request->input('shop_id')]);
+        }
+
         $query = Shop::with(['areas', 'genres']); // 関連データを事前にロード
 
         if ($request->has('search-area') && $request->input('search-area') != '') {

@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Reservation;
-use Libern\QRCodeReader\QRCodeReader; 
+use Libern\QRCodeReader\QRCodeReader;
+use Illuminate\Support\Facades\Log;
 
 
 class QRController extends Controller
