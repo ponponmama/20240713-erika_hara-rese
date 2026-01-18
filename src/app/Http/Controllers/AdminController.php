@@ -59,10 +59,10 @@ class AdminController extends Controller
             $shop->user_id = $user->id;
             $shop->save();
 
-            return redirect()->route('admin.dashboard')->with('shop_manager_success', '新しいShopManagerが正常に登録されました');
+            return redirect()->route('admin.dashboard')->with('admin_success', '新しいShopManagerが正常に登録されました');
         } catch (\Exception $e) {
             Log::error('Shop manager creation error: ' . $e->getMessage());
-            return redirect()->route('admin.dashboard')->with('shop_manager_error', '店舗代表者の登録に失敗しました');
+            return redirect()->route('admin.dashboard')->with('admin_error', '店舗代表者の登録に失敗しました');
         }
     }
 

@@ -27,7 +27,8 @@
             <p class="session-messages">
                 @include('custom_components.session-messages', [
                     'showGeneral' => false,
-                    'showShopManager' => true,
+                    'showAdmin' => true,
+                    'showShopManager' => false,
                     'showShop' => false,
                 ])
             </p>

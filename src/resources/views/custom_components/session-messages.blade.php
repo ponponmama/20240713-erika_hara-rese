@@ -6,6 +6,7 @@
 
     // 表示するメッセージタイプを制御
     $showGeneral = $showGeneral ?? true;
+    $showAdmin = $showAdmin ?? false;
     $showShopManager = $showShopManager ?? false;
     $showShop = $showShop ?? false;
     $showReservation = $showReservation ?? false;
@@ -41,6 +42,21 @@
     @if (session('review_success'))
         <span class="{{ $successClass }}">
             {{ session('review_success') }}
+        </span>
+    @endif
+@endif
+
+@if ($showAdmin)
+    {{-- 管理者用のセッションメッセージ（admin/dashboard.blade.php） --}}
+    @if (session('admin_success'))
+        <span class="{{ $successClass }}">
+            {{ session('admin_success') }}
+        </span>
+    @endif
+
+    @if (session('admin_error'))
+        <span class="{{ $errorClass }}">
+            {{ session('admin_error') }}
         </span>
     @endif
 @endif
