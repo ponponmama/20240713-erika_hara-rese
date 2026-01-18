@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    const closeBtn = document.querySelector('.close-registration-modal-button');
+    const closeBtn = document.querySelector('.close-modal-button');
     if (closeBtn) {
         closeBtn.onclick = function () {
             closeRegistrationModal();
