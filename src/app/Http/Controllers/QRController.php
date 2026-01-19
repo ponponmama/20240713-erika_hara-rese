@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Reservation;
 use Libern\QRCodeReader\QRCodeReader;
 use Illuminate\Support\Facades\Log;
@@ -17,7 +16,7 @@ class QRController extends Controller
         $reservation = Reservation::findOrFail($id);
         // QRコードのファイルパスを取得
         $qrCodePath = public_path($reservation->qr_code);
-        \Log::info("QR Code Path: " . $qrCodePath);
+        Log::info("QR Code Path: " . $qrCodePath);
 
         try {
             // QRコードリーダーを初期化
@@ -26,7 +25,7 @@ class QRController extends Controller
             $text = $qrcode->decode($qrCodePath); // メソッドを変更
         } catch (\Exception $e) {
             // QRコードのデコード中にエラーが発生した場合、エラーメッセージをログに記録し、エラーレスポンスを返します。
-            \Log::error("QR Decode error: " . $e->getMessage());
+            Log::error("QR Decode error: " . $e->getMessage());
             return response()->json(['error' => $e->getMessage()], 500);
         }
 

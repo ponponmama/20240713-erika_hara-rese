@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "02c3af025d8a81c1bca23139efa22742",
+    "content-hash": "aa34e95ebb2d45a0a7ae6608e9f4b6d6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1835,6 +1835,56 @@
                 }
             ],
             "time": "2024-01-28T23:22:08+00:00"
+        },
+        {
+            "name": "libern/qr-code-reader",
+            "version": "v1.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/libern/qr-code-reader.git",
+                "reference": "4589a5e1535e49fc72e0e4a2334f067b4c662eb3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/libern/qr-code-reader/zipball/4589a5e1535e49fc72e0e4a2334f067b4c662eb3",
+                "reference": "4589a5e1535e49fc72e0e4a2334f067b4c662eb3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/lib/common/customFunctions.php"
+                ],
+                "psr-4": {
+                    "Zxing\\": "src/lib/",
+                    "Libern\\QRCodeReader\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Libern Lin",
+                    "email": "libernlin@gmail.com"
+                }
+            ],
+            "description": "Simple PHP QR Code Reader / Decoder",
+            "homepage": "https://github.com/libern/qr-code-reader",
+            "keywords": [
+                "laravel",
+                "qr code decoder",
+                "qr code reader"
+            ],
+            "support": {
+                "issues": "https://github.com/libern/qr-code-reader/issues",
+                "source": "https://github.com/libern/qr-code-reader/tree/v1.0.10"
+            },
+            "time": "2020-12-10T06:12:07+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -8148,5 +8198,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }

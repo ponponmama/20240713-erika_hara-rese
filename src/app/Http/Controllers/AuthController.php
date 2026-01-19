@@ -73,7 +73,9 @@ namespace App\Http\Controllers;
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            if (!Auth::user()->hasVerifiedEmail()) {
+            /** @var User $user */
+            $user = Auth::user();
+            if (!$user->hasVerifiedEmail()) {
                 Auth::logout();
                 return back()->withErrors([
                     'email' => 'メールアドレスが認証されていません。認証メールを確認してください。',
