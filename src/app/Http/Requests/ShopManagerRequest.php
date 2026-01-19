@@ -24,7 +24,7 @@ class ShopManagerRequest extends FormRequest
     public function rules()
     {
         return [
-            'description' => 'nullable|string|max:150',
+            'description' => 'nullable|string|max:160',
             'open_time' => [
                 'nullable',
                 'date_format:H:i',
@@ -47,7 +47,7 @@ class ShopManagerRequest extends FormRequest
     public function messages()
     {
         return [
-            'description.max' => '店舗紹介は150文字以内で入力してください。',
+            'description.max' => '店舗紹介は160文字以内で入力してください。',
             'open_time.before' => 'オープン時間はクローズ時間より前の時間を設定してください。',
             'close_time.after' => 'クローズ時間はオープン時間より後の時間を設定してください。',
             'image.image' => '画像ファイルを選択してください。',

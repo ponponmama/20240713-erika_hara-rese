@@ -24,13 +24,13 @@ class StoreShopRequest extends FormRequest
     public function rules()
     {
         return [
-           'shop_name' => 'required|string|max:255',
-           'description' => 'required|string|max:255',
-           'genre_name' => 'required|string|max:255',
-           'area_name' => 'required|string|max:255',
-           'image' => 'required|image|max:2048',
-           'open_time' => 'required|string',
-           'close_time' => 'required|string',
+            'shop_name' => 'required|string|max:255',
+            'description' => 'required|string|max:160',
+            'genre_name' => 'required|string|max:255',
+            'area_name' => 'required|string|max:255',
+            'image' => 'required|image|max:2048',
+            'open_time' => 'required|string',
+            'close_time' => 'required|string',
         ];
     }
 
@@ -42,7 +42,7 @@ class StoreShopRequest extends FormRequest
             'shop_name.max' => '店舗名は255文字以内で入力してください。',
             'description.required' => '説明は必須です。',
             'description.string' => '説明は文字列である必要があります。',
-            'description.max' => '説明は255文字以内で入力してください。',
+            'description.max' => '説明は160文字以内で入力してください。',
             'genre_name.required' => 'ジャンル名は必須です。',
             'genre_name.string' => 'ジャンル名は文字列である必要があります。',
             'genre_name.max' => 'ジャンル名は255文字以内で入力してください。',

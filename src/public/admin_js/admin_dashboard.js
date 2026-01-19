@@ -1,10 +1,20 @@
 // モーダルを閉じる
 function closeRegistrationModal() {
-    document.getElementById('shop-registration-modal').style.display = 'none';
+    const modal = document.getElementById('shop-registration-modal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
 }
 
 // ×ボタンで閉じる
 document.addEventListener('DOMContentLoaded', function () {
+    // 店舗登録成功時にモーダルを表示
+    const registrationModal = document.getElementById('shop-registration-modal');
+    if (registrationModal) {
+        // モーダルが存在する場合、表示する（Bladeでstyle="display: block;"が設定されている場合）
+        registrationModal.style.display = 'block';
+    }
+
     // ファイル名表示
     const imageInput = document.getElementById('image');
     if (imageInput) {

@@ -91,12 +91,19 @@ body {
     text-align: center;
 }
 
-.user__name {
+.title-name {
     font-size: 26px;
 }
 
-.title-name {
+.user__name {
     font-size: 22px;
+}
+
+.form-title-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 

@@ -16,6 +16,12 @@
     padding: 4px;
 }
 
+.form-title-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
 .input-group {
     display: flex;
     align-items: center;
@@ -36,15 +42,15 @@
     position: relative;
 }
 
-.data-entry {
+.date-entry {
     width: 100%;
     padding: 2px 10px;
-    font-size: 20px;
-    border: 1px solid #7a7a7a;
+    font-size: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
     border-radius: 6px;
     outline: none;
     height: 45px;
-    line-height: 45px;
+    line-height: 1.5;
 }
 
 .custom-select-icon {
@@ -77,27 +83,20 @@
     color: rgb(0 0 0 / 70%);
 }
 
-.date-entry {
-    border-bottom: 1px solid #7a7a7a;
-    line-height: 40px;
-    height: 40px;
-}
-
 .time-input {
     text-align: center;
     appearance: none;
 }
 
 .description_text {
-    height: 100px;
+    height: 200px;
 }
 
 /* プレースホルダー */
 .date-entry::placeholder,
 .description_text::placeholder {
-    font-size: 19px;
     color: rgb(0 0 0 / 70%);
-    opacity: 0.7;
+    font-size: 20px;
 }
 
 .input-group-time {
@@ -196,7 +195,7 @@
         text-align: left;
     }
 
-    .data-entry {
+    .date-entry {
         font-size: 13px;
     }
 

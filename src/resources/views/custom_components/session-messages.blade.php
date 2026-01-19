@@ -48,9 +48,18 @@
 
 @if ($showAdmin)
     {{-- 管理者用のセッションメッセージ（admin/dashboard.blade.php） --}}
-    @if (session('admin_success'))
+    @php
+        $adminSuccess = session('admin_success');
+    @endphp
+    @if (
+        $adminSuccess &&
+            $adminSuccess !== true &&
+            $adminSuccess !== 1 &&
+            (string) $adminSuccess !== '1' &&
+            $adminSuccess !== null &&
+            $adminSuccess !== '')
         <span class="{{ $successClass }}">
-            {{ session('admin_success') }}
+            {{ $adminSuccess }}
         </span>
     @endif
 
@@ -63,9 +72,18 @@
 
 @if ($showShopManager)
     {{-- 店舗管理者用のセッションメッセージ（shop_manager/dashboard.blade.php, shop_manager/manage-shop.blade.php） --}}
-    @if (session('shop_manager_success'))
+    @php
+        $shopManagerSuccess = session('shop_manager_success');
+    @endphp
+    @if (
+        $shopManagerSuccess &&
+            $shopManagerSuccess !== true &&
+            $shopManagerSuccess !== 1 &&
+            (string) $shopManagerSuccess !== '1' &&
+            $shopManagerSuccess !== null &&
+            $shopManagerSuccess !== '')
         <span class="{{ $successClass }}">
-            {{ session('shop_manager_success') }}
+            {{ $shopManagerSuccess }}
         </span>
     @endif
 
@@ -78,9 +96,18 @@
 
 @if ($showShop)
     {{-- 店舗用のセッションメッセージ（shops/detail.blade.php） --}}
-    @if (session('shop_success'))
+    @php
+        $shopSuccess = session('shop_success');
+    @endphp
+    @if (
+        $shopSuccess &&
+            $shopSuccess !== true &&
+            $shopSuccess !== 1 &&
+            (string) $shopSuccess !== '1' &&
+            $shopSuccess !== null &&
+            $shopSuccess !== '')
         <span class="{{ $successClass }}">
-            {{ session('shop_success') }}
+            {{ $shopSuccess }}
         </span>
     @endif
 

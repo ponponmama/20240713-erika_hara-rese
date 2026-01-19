@@ -12,7 +12,6 @@
 @section('content')
     <div class="container shops_list_container">
         @include('custom_components.header', [
-            'title' => '登録店舗一覧',
             'userName' => Auth::user()->user_name,
             'message' => 'お疲れ様です！',
             'showMessage' => true,
@@ -21,6 +20,7 @@
             @include('custom_components.session-messages')
         </p>
         <div class="management_form shop_list_form">
+            <p class="form-title-name">登録店舗一覧</p>
             <table class="table-section shop_list_table">
                 <thead class="admin-thead">
                     <tr class="admin-tr">
@@ -106,7 +106,8 @@
                 <form id="delete-form" action="" method="POST" class="delete-form">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="admin-button delete-button" onclick="return confirm('本当にこの店舗を削除しますか？')">削除</button>
+                    <button type="submit" class="admin-button delete-button"
+                        onclick="return confirm('本当にこの店舗を削除しますか？')">削除</button>
                 </form>
             </div>
         </div>
