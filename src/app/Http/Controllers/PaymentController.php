@@ -4,15 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\Payment;
 use App\Models\Reservation;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\Charge;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
     //支払いページの表示
     public function showForm(Request $request)
     {
+        /** @var User $user */
+        $user = Auth::user();
+
+        // 一般ユーザー（role 3）のみ支払いページ表示可能
+        if ($user->role !== 3) {
+            return back()->with('error_message', '支払いは一般ユーザーのみ利用可能です。');
+        }
+
         // 予約情報の取得と検証
         $reservation = Reservation::findOrFail($request->reservation_id);
 
@@ -28,6 +38,14 @@ class PaymentController extends Controller
     //Stripeを使用した支払い処理
     public function processPayment(Request $request)
     {
+        /** @var User $user */
+        $user = Auth::user();
+
+        // 一般ユーザー（role 3）のみ支払い処理可能
+        if ($user->role !== 3) {
+            return back()->with('error_message', '支払いは一般ユーザーのみ利用可能です。');
+        }
+
         // 予約情報の取得と検証
         $reservation = Reservation::findOrFail($request->reservation_id);
 

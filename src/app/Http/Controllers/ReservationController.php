@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Reservation;
 use App\Models\Shop;
+use App\Models\User;
 use App\Http\Requests\StoreReservationRequest;
 use Carbon\Carbon;
 use App\Services\ShopService;
@@ -13,6 +14,7 @@ use App\Mail\ReservationNotification;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Support\Facades\Log;
 use App\Mail\ReservationUpdated;
+use Illuminate\Support\Facades\Auth;
 
 
 class ReservationController extends Controller
@@ -33,6 +35,14 @@ class ReservationController extends Controller
     //detailページからのデータを使用して予約保存し予約完了ページへリダイレクト
     public function store(StoreReservationRequest $request)
     {
+        /** @var User $user */
+        $user = Auth::user();
+
+        // 一般ユーザー（role 3）のみ予約可能
+        if ($user->role !== 3) {
+            return back()->with('reservation_error', '予約は一般ユーザーのみ利用可能です。');
+        }
+
         Log::info('Store method called');// メソッドの呼び出しをログに記録
         $current = Carbon::now(); // 現在の日時を取得して $current に代入
 
@@ -130,6 +140,14 @@ class ReservationController extends Controller
     //マイページで予約の日時変更と削除
     public function update(Request $request, $id)
     {
+        /** @var User $user */
+        $user = Auth::user();
+
+        // 一般ユーザー（role 3）のみ予約更新可能
+        if ($user->role !== 3) {
+            return back()->with('reservation_error', '予約更新は一般ユーザーのみ利用可能です。');
+        }
+
         $validated = $request->validate([
             'date' => 'required|date_format:Y-m-d|after_or_equal:' . Carbon::today()->toDateString(),
             'time' => 'required|date_format:H:i',
@@ -182,6 +200,14 @@ class ReservationController extends Controller
     //マイページで予約の削除処理
     public function destroy($id)
     {
+        /** @var User $user */
+        $user = Auth::user();
+
+        // 一般ユーザー（role 3）のみ予約削除可能
+        if ($user->role !== 3) {
+            return back()->with('reservation_error', '予約削除は一般ユーザーのみ利用可能です。');
+        }
+
         $reservation = Reservation::findOrFail($id);
         $reservation->delete();
         return redirect()->route('mypage')->with('reservation_success', '予約が削除されました。');

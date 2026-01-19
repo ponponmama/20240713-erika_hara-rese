@@ -16,8 +16,8 @@ class FavoriteController extends Controller
         /** @var User $user */
         $user = Auth::user();
 
-        // 一般ユーザー（role 0）のみお気に入り登録可能
-        if ($user->role !== 0) {
+        // 一般ユーザー（role 3）のみお気に入り登録可能
+        if ($user->role !== 3) {
             return back()->with('favorite_error', 'お気に入り登録は一般ユーザーのみ利用可能です。');
         }
 
@@ -46,8 +46,8 @@ class FavoriteController extends Controller
         /** @var User $user */
         $user = Auth::user();
 
-        // 一般ユーザー（role 0）のみお気に入り解除可能
-        if ($user->role !== 0) {
+        // 一般ユーザー（role 3）のみお気に入り解除可能
+        if ($user->role !== 3) {
             return back()->with('favorite_error', 'お気に入り解除は一般ユーザーのみ利用可能です。');
         }
 
