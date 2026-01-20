@@ -174,10 +174,10 @@ class ShopManagerController extends Controller
                 'current_status' => $reservation->payment_status
             ]);
 
-            // 支払い状態が「決済完了」の場合は更新を拒否（セキュリティ対策）
-            if ($reservation->payment_status === 'completed') {
+            // 支払い状態が「決済完了」または「金額設定済み（支払い待ち）」の場合は更新を拒否（セキュリティ対策）
+            if ($reservation->payment_status === 'completed' || $reservation->payment_status === 'amount_set') {
                 return redirect()->route('shop_manager.dashboard')
-                    ->with('error', 'この予約は既に決済が完了しています。');
+                    ->with('error', 'この予約は既に金額が設定済みです。');
             }
 
             $request->validate([

@@ -100,7 +100,10 @@
                                         min="0" class="detail-value price-input">円
                                 </div>
                                 <div class="price-button-container">
-                                    <button type="submit" class="button price-update-btn">金額確定</button>
+                                    <button type="submit" class="button price-update-btn"
+                                        id="price-update-button-confirm">金額確定</button>
+                                    <button type="submit" class="button price-update-btn" id="price-update-button-retry"
+                                        style="display: none;">再設定</button>
                                 </div>
                             </form>
                         </div>

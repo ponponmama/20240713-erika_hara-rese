@@ -41,8 +41,11 @@ function openReservationModal(reservationId) {
 
             // 支払い状態に応じて金額設定フォームの表示/非表示を制御
             const priceFormRow = document.querySelector('.form-row');
-            if (data.payment_status_code === 'completed') {
-                // 決済完了の場合は金額設定フォームを非表示
+            const confirmButton = document.getElementById('price-update-button-confirm');
+            const retryButton = document.getElementById('price-update-button-retry');
+
+            if (data.payment_status_code === 'completed' || data.payment_status_code === 'amount_set') {
+                // 決済完了または金額設定済み（支払い待ち）の場合は金額設定フォームを非表示
                 if (priceFormRow) {
                     priceFormRow.style.display = 'none';
                 }
@@ -54,6 +57,15 @@ function openReservationModal(reservationId) {
                 // 金額入力フィールドとフォームのアクションを設定
                 document.getElementById('modal-reservation-total-amount-input').value = data.total_amount;
                 priceForm.action = `/shop-manager/reservations/${data.id}/update-price`;
+
+                // 決済失敗の場合は「再設定」ボタンを表示、それ以外は「金額確定」ボタンを表示
+                if (data.payment_status_code === 'failed') {
+                    if (confirmButton) confirmButton.style.display = 'none';
+                    if (retryButton) retryButton.style.display = 'block';
+                } else {
+                    if (confirmButton) confirmButton.style.display = 'block';
+                    if (retryButton) retryButton.style.display = 'none';
+                }
             }
 
             modal.classList.add('modal-show');

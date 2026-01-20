@@ -141,6 +141,11 @@
                                     class="button payment-button">
                                     支払う
                                 </a>
+                            @elseif ($reservation->payment_status === 'failed')
+                                <a href="{{ route('payment.form', ['reservation_id' => $reservation->id]) }}"
+                                    class="button payment-button">
+                                    再決済
+                                </a>
                             @elseif ($reservation->payment_status === 'completed')
                                 <span class="payment-amount">お支払いありがとうございました</span>
                             @else

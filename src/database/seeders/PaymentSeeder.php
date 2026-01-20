@@ -10,8 +10,10 @@ class PaymentSeeder extends Seeder
 {
     public function run()
     {
-        // 既存の予約に対して支払いデータを作成
-        Reservation::where('payment_status', 'pending')->each(function ($reservation) {
+        // pending（未決済）の予約にはPaymentレコードを作成しない（金額が設定されていないため）
+
+        // 金額設定済み（支払い待ち）の予約に対して支払いデータを作成
+        Reservation::where('payment_status', 'amount_set')->each(function ($reservation) {
             Payment::factory()->create([
                 'reservation_id' => $reservation->id,
                 'user_id' => $reservation->user_id,

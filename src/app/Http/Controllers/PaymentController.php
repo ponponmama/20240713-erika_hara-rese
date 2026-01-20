@@ -89,6 +89,9 @@ class PaymentController extends Controller
                 'payment_status' => 'failed',
             ]);
 
+            // 予約状態を決済失敗に更新
+            $reservation->update(['payment_status' => 'failed']);
+
             return back()->with('error_message', '支払い処理中にエラーが発生しました: ' . $e->getMessage());
         }
     }

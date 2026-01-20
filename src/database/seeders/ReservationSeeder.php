@@ -53,14 +53,19 @@ class ReservationSeeder extends Seeder
                 $lunchQrCodePath = 'qr_codes/lunch_' . $user->id . '_' . $shop->id . '_' . $lunchDateTime->format('YmdHis') . '.svg';
                 QrCode::format('svg')->size(100)->generate('Reservation ID: ' . $user->id, storage_path('app/public/' . $lunchQrCodePath));
 
+                // 支払い状態を決定
+                $paymentStatus = $this->faker->randomElement(['pending', 'amount_set', 'completed', 'failed']);
+                // 未決済（pending）の場合は金額を0、それ以外は金額を設定
+                $totalAmount = ($paymentStatus === 'pending') ? 0 : rand(3000, 8000);
+
                 // ランチ予約を作成
                 $lunchReservation = Reservation::create([
                     'user_id' => $user->id,
                     'shop_id' => $shop->id,
                     'reservation_datetime' => $lunchDateTime,
                     'number' => rand(1, 10),
-                    'total_amount' => rand(3000, 8000),
-                    'payment_status' => $this->faker->randomElement(['pending', 'completed', 'failed'])
+                    'total_amount' => $totalAmount,
+                    'payment_status' => $paymentStatus
                 ]);
 
                 // 予約IDを使用してQRコードを生成
@@ -77,13 +82,19 @@ class ReservationSeeder extends Seeder
 
                 // デイナー予約を作成
                 $dinnerDateTime = now()->addDays(rand(1, 30))->hour(18)->minute(0)->second(0);
+
+                // 支払い状態を決定
+                $paymentStatus = $this->faker->randomElement(['pending', 'amount_set', 'completed', 'failed']);
+                // 未決済（pending）の場合は金額を0、それ以外は金額を設定
+                $totalAmount = ($paymentStatus === 'pending') ? 0 : rand(5000, 15000);
+
                 $dinnerReservation = Reservation::create([
                     'user_id' => $user->id,
                     'shop_id' => $shop->id,
                     'reservation_datetime' => $dinnerDateTime,
                     'number' => rand(1, 10),
-                    'total_amount' => rand(5000, 15000),
-                    'payment_status' => $this->faker->randomElement(['pending', 'completed', 'failed'])
+                    'total_amount' => $totalAmount,
+                    'payment_status' => $paymentStatus
                 ]);
                 // 予約IDを使用してQRコードを生成
                 $dinnerQrCodePath = 'qr_codes/dinner_' . $dinnerReservation->id . '.svg';
