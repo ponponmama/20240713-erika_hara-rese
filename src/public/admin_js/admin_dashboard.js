@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // 店舗登録成功時にモーダルを表示
     const registrationModal = document.getElementById('shop-registration-modal');
     if (registrationModal) {
-        // モーダルが存在する場合、表示する（Bladeでstyle="display: block;"が設定されている場合）
-        registrationModal.style.display = 'block';
+        // モーダルが存在する場合、表示する（Bladeでstyle="display: flex;"が設定されている場合）
+        registrationModal.style.display = 'flex';
     }
 
     // ファイル名表示

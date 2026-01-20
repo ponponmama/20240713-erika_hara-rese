@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     deleteForm.setAttribute('data-shop-id', shopId);
 
                     // モーダルを表示
-                    modal.style.display = 'block';
+                    modal.style.display = 'flex';
                 })
                 .catch(error => {
                     console.error('Error:', error);

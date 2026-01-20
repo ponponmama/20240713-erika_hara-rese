@@ -177,11 +177,11 @@
     </div>
 
     <!-- 店舗登録確認モーダル -->
-    {{-- 開発用：モーダルを常に表示する場合は下の行をコメントアウト --}}''
-    {{-- @if (session('shop_success') && session('new_shop_id')) --}}
-    @if (true)
-        {{-- 開発用: registration-modal modal からstyle="display: block;"を削除すること --}}
-        <div id="shop-registration-modal" class="registration-modal modal" style="display: block;">
+    {{-- 開発用：モーダルを常に表示する場合は下の行をコメントアウト --}}
+    @if (session('shop_success') && session('new_shop_id'))
+        {{-- @if (true) --}}
+        {{-- 開発用: registration-modal modal からstyle="display: flex;"を削除すること --}}
+        <div id="shop-registration-modal" class="registration-modal modal" style="display: flex;">
             <div class="modal-content">
                 <span class="close-modal-button">&times;</span>
                 <div class="registered-shop-detail">
@@ -189,14 +189,16 @@
                     @php
                         // 開発用: セッションがない場合は最新の店舗を取得（IDが最大のもの）
                         // 本番環境では、このelseブロックを削除して、session('new_shop_id')のみを使用すること
+                        // 注意: モーダルのstyleを調整したいときはこのelseブロックを->find(session('new_shop_id'));の下に入れる。
                         $newShop = null;
                         if (session('new_shop_id')) {
                             $newShop = \App\Models\Shop::with(['areas', 'genres'])->find(session('new_shop_id'));
-                        } else {
-                            // IDが最大の店舗を取得
-                            $maxId = \App\Models\Shop::max('id');
-                            $newShop = $maxId ? \App\Models\Shop::with(['areas', 'genres'])->find($maxId) : null;
                         }
+                        // else {
+                        //     // IDが最大の店舗を取得
+                        //     $maxId = \App\Models\Shop::max('id');
+                        //     $newShop = $maxId ? \App\Models\Shop::with(['areas', 'genres'])->find($maxId) : null;
+                        // }
                     @endphp
                     @if ($newShop)
                         <div class="registered-shop-card">

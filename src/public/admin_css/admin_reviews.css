@@ -11,28 +11,33 @@
     border-collapse: separate;
     border-spacing: 0;
     background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(0 0 0 / 0.4);
+    border: 2px solid rgb(0 0 0 / 0.1);
     border-radius: 10px;
     color: rgba(0, 0, 0, 0.8);
     font-size: 13px;
-    box-shadow: 6px 6px 12px rgb(0 0 0 / 0.4);
-    padding: 20px;
+    box-shadow: 10px 10px 20px rgb(0 0 0 / 0.4);
+    padding: 20px 50px;
+    margin-bottom: 50px;
 }
 
 .review-tr {
     width: 100%;
-    height: 50px;
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom: 1px solid rgb(0 0 0 / 0.4);
     color: rgba(0, 0, 0, 0.8);
-    font-size: 13px;
 }
 
 .review-th {
-    width: calc((100% - 80px) / 6);
-    height: 70px;
+    width: calc((100% - 60px) / 5);
+    height: 80px;
+    font-size: 18px;
+}
+
+.review-td {
+    height: 65px;
+    font-size: 16px;
 }
 
 .review-td,
@@ -40,9 +45,13 @@
     padding: 4px 10px;
     text-align: left;
     border-bottom: 1px solid rgb(0 0 0 / 0.4);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.review-info {
+.review-th.review-info {
+    width: 60px;
     text-align: center;
 }
 
@@ -59,9 +68,7 @@
 }
 
 .comment-column {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
+    padding: 4px 10px;
     border-bottom: 1px solid rgb(0 0 0 / 0.4);
     max-width: 100px;
     white-space: nowrap;
@@ -92,63 +99,8 @@
     color: #fd9103;
 }
 
-/* モーダルスタイル */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0 0 0 / 0.4);
-}
-
-.modal-content {
-    background-color: rgb(255, 255, 255);
-    margin: 25% auto;
-    padding: 20px;
-    border: 1px solid rgb(0 0 0 / 0.4);
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    max-height: 70vh;
-    overflow-y: auto;
-    box-shadow: 10px 10px 20px rgb(0 0 0 / 0.4);
-}
-
-.modal-show {
-    display: block;
-}
-
-.close {
-    color: rgb(0 0 0 / 0.4);
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: rgba(0, 0, 0, 0.8);
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.detail-item {
-    margin: 5px 0;
-    padding: 5px 10px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-}
-
-.delete-form {
-    width: 90%;
-    margin: auto;
-    text-align: center;
-}
+/* レビュー詳細モーダル固有のスタイル */
+/* モーダルスタイルはadmin_modal_common.cssに移動済み */
 
 .detail-row {
     margin: 5px 0;
@@ -164,24 +116,26 @@
     min-width: 120px;
 }
 
-.delete-button {
-    width: auto;
-    max-width: 40%;
-    padding: 6px;
-    color: rgb(0 0 0 / 0.4);
-    border: none;
-    font-size: 19px;
-    text-align: center;
-    background: none;
-    text-decoration: none;
-}
-
-.delete-button:hover {
-    color: red;
-}
-
 /* メディアクエリ */
 @media screen and (max-width: 540px) {
+    /* このページにはsearch要素がないため、headerをrowにする */
+    .header {
+        flex-direction: row;
+        height: 80px;
+    }
+
+    .header-brand {
+        width: 100%;
+    }
+
+    .top_logo {
+        width: 100%;
+    }
+
+    .header-search {
+        display: none;
+    }
+
     .container {
         width: 90%;
         margin: 5%;
@@ -189,6 +143,7 @@
 
     .review_form {
         width: 100%;
+        margin: 0 auto;
     }
 
     .table-section {
@@ -200,7 +155,26 @@
 }
 
 @media screen and (min-width: 541px) and (max-width: 1024px) {
+        /* このページにはsearch要素がないため、headerをrowにする */
+    .header {
+        flex-direction: row;
+        height: 80px;
+    }
+
+    .header-brand {
+        width: 100%;
+    }
+
+    .top_logo {
+        width: 100%;
+    }
+
+    .header-search {
+        display: none;
+    }
+
     .review_form {
-        width: 80%;
+        width: 95%;
+        margin: 0 auto;
     }
 }

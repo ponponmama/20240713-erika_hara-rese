@@ -129,6 +129,7 @@ class ShopManagerController extends Controller
             'user_name' => $reservation->user->user_name,
             'email' => $reservation->user->email,
             'payment_status' => $paymentStatusJa,
+            'payment_status_code' => $paymentStatus,
             'total_amount' => $reservation->total_amount,
         ];
 
@@ -172,6 +173,12 @@ class ShopManagerController extends Controller
                 'current_amount' => $reservation->total_amount,
                 'current_status' => $reservation->payment_status
             ]);
+
+            // 支払い状態が「決済完了」の場合は更新を拒否（セキュリティ対策）
+            if ($reservation->payment_status === 'completed') {
+                return redirect()->route('shop_manager.dashboard')
+                    ->with('error', 'この予約は既に決済が完了しています。');
+            }
 
             $request->validate([
                 'total_amount' => 'required|integer|min:0',
