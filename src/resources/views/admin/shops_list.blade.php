@@ -85,7 +85,7 @@
                         <p class="modal-detail-section" id="modal-shop-name"></p>
                     </div>
                     <div class="detail-item shop-description-item">
-                        <h4 class="detail-title description-title">店舗案内</h4>
+                        <h4 class="detail-title description-title">店舗紹介</h4>
                         <p class="modal-detail-section shop-description-item" id="modal-shop-description"></p>
                     </div>
                     <div class="detail-item">

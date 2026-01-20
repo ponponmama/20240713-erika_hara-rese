@@ -28,7 +28,7 @@
             </p>
             <form action="{{ route('admin.create.shop_manager') }}" method="POST" class="admin-form create-form">
                 @csrf
-                <div class="input-group">
+                <div class="form-group">
                     <img src="{{ asset('images/shop.png') }}" alt="" class="icon-img">
                     <div class="select-wrapper">
                         <select id="shop_id" name="shop_id" class="date-entry select_shop_id">
@@ -47,7 +47,7 @@
                         {{ $message }}
                     @enderror
                 </p>
-                <div class="input-group">
+                <div class="form-group">
                     <img src="{{ asset('images/human.png') }}" alt="" class="icon-img">
                     <input type="text" id="user_name" name="user_name" placeholder="Username"
                         value="{{ old('user_name') }}" class="date-entry" autocomplete="username">
@@ -57,7 +57,7 @@
                         {{ $message }}
                     @enderror
                 </p>
-                <div class="input-group">
+                <div class="form-group">
                     <img src="{{ asset('images/mail.png') }}" alt="" class="icon-img">
                     <input type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}"
                         class="date-entry" autocomplete="email">
@@ -67,7 +67,7 @@
                         {{ $message }}
                     @enderror
                 </p>
-                <div class="input-group">
+                <div class="form-group">
                     <img src="{{ asset('images/key.png') }}" alt="" class="icon-img">
                     <input type="password" id="password" name="password" placeholder="Password"
                         value="{{ old('password') }}" class="date-entry" autocomplete="new-password">
@@ -94,17 +94,16 @@
             <form action="{{ route('admin.create.shop') }}" method="POST" class="admin-form create-shop-form"
                 enctype="multipart/form-data">
                 @csrf
-                <div class="input-group">
+                <div class="form-group">
                     <img src="{{ asset('images/shop.png') }}" alt="" class="icon-img">
-                    <input type="text" name="shop_name" placeholder="Shop Name" value="{{ old('shop_name') }}"
-                        class="date-entry">
+                    <input type="text" name="shop_name" placeholder="Shop Name" value="{{ old('shop_name') }}" class="date-entry">
                 </div>
                 <p class="form__error">
                     @error('shop_name')
                         {{ $message }}
                     @enderror
                 </p>
-                <div class="input-group">
+                <div class="form-group">
                     <img src="{{ asset('images/description.png') }}" alt="" class="icon-img">
                     <textarea name="description" placeholder="Description" class="date-entry description_text">{{ old('description') }}</textarea>
                 </div>
@@ -113,7 +112,7 @@
                         {{ $message }}
                     @enderror
                 </p>
-                <div class="input-group">
+                <div class="form-group">
                     <img src="{{ asset('images/genre.png') }}" alt="" class="icon-img">
                     <input type="text" name="genre_name" placeholder="Genre" value="{{ old('genre_name') }}"
                         class="date-entry">
@@ -123,7 +122,7 @@
                         {{ $message }}
                     @enderror
                 </p>
-                <div class="input-group">
+                <div class="form-group">
                     <img src="{{ asset('images/area.png') }}" alt="" class="icon-img">
                     <input type="text" name="area_name" placeholder="Area" value="{{ old('area_name') }}"
                         class="date-entry">
@@ -133,7 +132,7 @@
                         {{ $message }}
                     @enderror
                 </p>
-                <div class="input-group">
+                <div class="form-group">
                     <img src="{{ asset('images/img.png') }}" alt="" class="icon-img">
                     <input type="file" id="image" name="image" class="admin-input input_image">
                     <label for="image" class="custom-file-upload date-entry">
@@ -202,8 +201,7 @@
                     @endphp
                     @if ($newShop)
                         <div class="registered-shop-card">
-                            <img src="{{ asset('storage/' . $newShop->image) }}" alt="{{ $newShop->shop_name }}"
-                                class="shop-image">
+                            <img src="{{ asset('storage/' . $newShop->image) }}" alt="{{ $newShop->shop_name }}" class="shop-image">
                             <div class="registered-shop-info">
                                 <p class="shop-name">{{ $newShop->shop_name }}</p>
                                 <p class="shop-tags">
@@ -222,7 +220,7 @@
                                 <p class="modal-detail-section">{{ $newShop->shop_name }}</p>
                             </div>
                             <div class="detail-item shop-description-section">
-                                <h4 class="detail-title description-title">店舗案内</h4>
+                                <h4 class="detail-title description-title">店舗紹介</h4>
                                 <p class="modal-detail-section shop-description-item">
                                     {{ $newShop->description }}</p>
                             </div>

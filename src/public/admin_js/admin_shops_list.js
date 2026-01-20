@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('shop-modal');
     const span = document.querySelector('.close-modal-button');
     const detailButtons = document.querySelectorAll('.detail-button');
-    const deleteForm = document.getElementById('delete-form');
+    const editShopLink = document.getElementById('edit-shop-link');
 
     // 詳細ボタンクリック時
     detailButtons.forEach(button => {
@@ -13,29 +13,31 @@ document.addEventListener('DOMContentLoaded', function () {
             fetch(`/admin/shops/${shopId}/details`)
                 .then(response => response.json())
                 .then(data => {
+                    // エリアとジャンルを#形式で結合
+                    const areaTags = data.areas.map(area => `＃${area.area_name}`).join('');
+                    const genreTags = data.genres.map(genre => `＃${genre.genre_name}`).join('');
+                    const shopGuide = areaTags + genreTags;
+
+                    // 営業時間をフォーマット（HH:mm:ss形式からHH:mm形式に変換）
+                    const formatTime = (timeString) => {
+                        if (!timeString) return '';
+                        const time = timeString.split(':');
+                        return `${time[0]}:${time[1]}`;
+                    };
+                    const businessHours = `営業時間:${formatTime(data.open_time)}～${formatTime(data.close_time)}`;
+
                     // モーダルにデータを表示
-                    document.getElementById('modal-shop-name').textContent = data
-                        .shop_name;
-                    document.getElementById('modal-shop-description').textContent = data
-                        .description;
-
-                    // エリアとジャンルは配列なので結合
-                    const areaNames = data.areas.map(area => area.area_name).join(', ');
-                    const genreNames = data.genres.map(genre => genre.genre_name).join(
-                        ', ');
-
-                    document.getElementById('modal-shop-area').textContent = areaNames;
-                    document.getElementById('modal-shop-genre').textContent =
-                        genreNames;
-                    document.getElementById('modal-shop-hours').textContent =
-                        `${data.open_time} - ${data.close_time}`;
+                    document.getElementById('modal-shop-name-header').textContent = data.shop_name;
+                    document.getElementById('modal-shop-guide').textContent = shopGuide;
+                    document.getElementById('modal-detail-shop-guide').textContent = shopGuide;
+                    document.getElementById('modal-description').textContent = data.description;
+                    document.getElementById('modal-business-hours').textContent = businessHours;
 
                     // 画像がある場合のみ表示
                     if (data.image) {
                         document.getElementById('modal-shop-image').src =
                             `/storage/${data.image}`;
-                        document.getElementById('modal-shop-image').alt = data
-                            .shop_name;
+                        document.getElementById('modal-shop-image').alt = data.shop_name;
                         document.getElementById('modal-shop-image-container').style
                             .display = 'block';
                     } else {
@@ -43,9 +45,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             .display = 'none';
                     }
 
-                    // 削除フォームのアクションを設定
-                    deleteForm.action = `/admin/shops/${shopId}`;
-                    deleteForm.setAttribute('data-shop-id', shopId);
+                    // 修正ボタンのリンクを設定（店舗管理者のページへ）
+                    editShopLink.href = `/shop-manager/manage-shop`;
 
                     // モーダルを表示
                     modal.style.display = 'flex';

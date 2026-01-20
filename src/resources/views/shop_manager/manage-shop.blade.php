@@ -2,24 +2,35 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('shop_css/manage-shop.css') }}">
+    <link rel="stylesheet" href="{{ asset('shop_css/shops_modal_common.css') }}">
+@endsection
+
+@section('js')
+    <script src="{{ asset('shop_css/shop_js/manage-shop.js') }}"></script>
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container manage_shop_container">
+        <p class="form-title-name">店舗情報</p>
         <p class="session-messages">
             @include('custom_components.session-messages')
         </p>
-        <h2 class="title-name section-title">店舗情報</h2>
         <form action="{{ route('shop_manager.update', $shop->id) }}" method="POST" enctype="multipart/form-data"
             class="manage_form">
             @csrf
             @method('PUT')
             <div class="form-group">
-                <label class="form-label">店舗名</label>
+                <label class="label-title">
+                    <img src="{{ asset('images/shop.png') }}" alt="" class="icon-img">
+                    店舗名
+                </label>
                 <span class="data-entry shop-name-entry">{{ $shop->shop_name }}</span>
             </div>
             <div class="form-group">
-                <label for="description" class="form-label">店舗紹介</label>
+                <label for="description" class="label-title description-title">
+                    <img src="{{ asset('images/description.png') }}" alt="" class="icon-img">
+                    店舗紹介
+                </label>
                 <textarea id="description" name="description" class="data-entry description_text">{{ $shop->description }}</textarea>
             </div>
             <p class="form__error">
@@ -27,10 +38,12 @@
                     {{ $message }}
                 @enderror
             </p>
-            <span class="business_hours">営業時間</span>
             <div class="form-group">
-                <label for="open_time" class="form-label">
-                    <img src="{{ asset('images/clock.svg') }}" alt="" class="icon-img">
+                <span class="label-title business_hours"><img src="{{ asset('images/clock.svg') }}" alt=""
+                        class="icon-img">営業時間</span>
+            </div>
+            <div class="form-group">
+                <label for="open_time" class="label-title">
                     オープン
                 </label>
                 <input type="time" id="open_time" name="open_time"
@@ -42,8 +55,7 @@
                 @enderror
             </p>
             <div class="form-group">
-                <label for="close_time" class="form-label">
-                    <img src="{{ asset('images/clock.svg') }}" alt="" class="icon-img">
+                <label for="close_time" class="label-title">
                     クローズ
                 </label>
                 <input type="time" id="close_time" name="close_time"
@@ -55,14 +67,13 @@
                 @enderror
             </p>
             <div class="form-group">
-                <label for="image" class="form-label">
+                <label for="image" class="label-title">
                     <img src="{{ asset('images/img.png') }}" alt="" class="icon-img">
                     写真
                 </label>
-                <input type="file" id="image" name="image" class="input_image" accept="image/*"
-                    onchange="updateFileName(this)">
+                <input type="file" id="image" name="image" class="input_image" accept="image/*">
                 <label for="image" class="data-entry custom-file-upload">
-                    <i class="fa-cloud-upload button">写真を選択</i>
+                    <i class="fa-cloud-upload">写真を選択</i>
                 </label>
             </div>
             <p class="form__error">
@@ -71,62 +82,68 @@
                 @enderror
             </p>
             <span id="file-name" class="file-name"></span>
-            <span class="preview_image"></span>
+            <span class="preview-image-container"></span>
             <div class="up_date_button_container">
                 <button type="submit" class="button up_date_button">更新する</button>
             </div>
         </form>
-        <h3 class="confirm_text">更新された情報はこちらで確認できます</h3>
-        <figure class="shop-image-wrapper">
-            <img src="{{ asset('storage/' . $shop->image) }}" alt="{{ $shop->shop_name }}" class="shop_image">
-            <div class="shop_info">
-                <p class="shop-guide">
-                    @foreach ($shop->areas as $area)
-                        ＃{{ $area->area_name }}
-                    @endforeach
-                    @foreach ($shop->genres as $genre)
-                        ＃{{ $genre->genre_name }}
-                    @endforeach
-                </p>
-                <h3 class="shop-name">{{ $shop->shop_name }}</h3>
-            </div>
-        </figure>
-        <p class="description_title">Description</p>
-        <div class="shop_info_container">
-            <p class="detail-shop-guide">
-                @foreach ($shop->areas as $area)
-                    ＃{{ $area->area_name }}
-                @endforeach
-                @foreach ($shop->genres as $genre)
-                    ＃{{ $genre->genre_name }}
-                @endforeach
-            </p>
-            <p class="description">
-                {{ $shop->description }}
-            </p>
+        <div class="confirm-button-container" id="confirm-button-container">
+            <button type="button" class="button confirm-button" id="confirm-button">更新を確認</button>
         </div>
-        <p class="business_hours_title">営業時間の確認はこちら</p>
-        <h3 class="business_hours_up">
-            営業時間:{{ \Carbon\Carbon::parse($shop->open_time)->format('H:i') }}～{{ \Carbon\Carbon::parse($shop->close_time)->format('H:i') }}
-        </h3>
     </div>
 
-    <script>
-        function updateFileName(input) {
-            const fileName = input.files[0]?.name || '写真を選択';
-            document.getElementById('file-name').textContent = fileName;
-
-            // 画像プレビュー機能の追加
-            const preview = document.querySelector('.preview_image');
-            if (input.files && input.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    preview.innerHTML = `<img src="${e.target.result}">`;
-                }
-                reader.readAsDataURL(input.files[0]);
-            } else {
-                preview.innerHTML = '';
-            }
-        }
-    </script>
+    <!-- 更新確認モーダル -->
+    <div id="shop-confirm-modal" class="details-modal modal">
+        <div class="details-modal-content modal-content">
+            <span class="close-modal-button">&times;</span>
+            <h3 class="card-title">登録店舗情報</h3>
+            <div id="modal-shop-image-container" class="detail-shop-cards">
+                <img id="modal-shop-image" src="{{ asset('storage/' . $shop->image) }}" alt="{{ $shop->shop_name }}"
+                    class="shop-image">
+                <div class="details-shop-info">
+                    <div class="detail-item">
+                        <h4 class="detail-title">店舗名</h4>
+                        <p class="modal-detail-section" id="modal-shop-name">{{ $shop->shop_name }}</p>
+                    </div>
+                    <div class="detail-item shop-description-item">
+                        <h4 class="detail-title description-title">店舗紹介</h4>
+                        <p class="modal-detail-section shop-description-item" id="modal-shop-description">
+                            {{ $shop->description }}</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4 class="detail-title shop-tags-title">エリア</h4>
+                        <p class="modal-detail-section" id="modal-shop-area">
+                            @foreach ($shop->areas as $area)
+                                {{ $area->area_name }}
+                                @if (!$loop->last)
+                                    ,
+                                @endif
+                            @endforeach
+                        </p>
+                    </div>
+                    <div class="detail-item">
+                        <h4 class="detail-title shop-tags-title">ジャンル</h4>
+                        <p class="modal-detail-section" id="modal-shop-genre">
+                            @foreach ($shop->genres as $genre)
+                                {{ $genre->genre_name }}
+                                @if (!$loop->last)
+                                    ,
+                                @endif
+                            @endforeach
+                        </p>
+                    </div>
+                    <div class="detail-item">
+                        <h4 class="detail-title shop-hours-title">営業時間</h4>
+                        <p class="modal-detail-section" id="modal-shop-hours">
+                            {{ \Carbon\Carbon::parse($shop->open_time)->format('H:i') }} -
+                            {{ \Carbon\Carbon::parse($shop->close_time)->format('H:i') }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-item delete-item">
+                <button type="button" class="edit-button button">修正</button>
+            </div>
+        </div>
+    </div>
 @endsection

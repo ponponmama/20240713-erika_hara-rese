@@ -1,25 +1,4 @@
 /* 共通モーダルスタイル */
-/* モーダル内で使用するボタン・リンクスタイル */
-.button,
-.link {
-    width: 50%;
-    height: 40px;
-    line-height: 40px;
-    background-color: rgba(0, 0, 255, 0.8);
-    color: rgb(255, 255, 255);
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    text-align: center;
-    display: block;
-    text-decoration: none;
-    margin: 5% auto;
-}
-
-.button:hover,
-.link:hover {
-    background-color: #003875;
-}
 
 .modal {
     display: none;
@@ -94,10 +73,10 @@
 /* 各詳細section */
 .detail-item {
     width: 100%;
-    display: flex;
-    align-items: center;
     margin: 10px 0;
     text-align: left;
+    display: flex;
+    align-items: center;
     height: 30px;
     line-height: 30px;
 }
