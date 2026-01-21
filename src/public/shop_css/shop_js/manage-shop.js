@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('shop-confirm-modal');
     const span = document.querySelector('.close-modal-button');
     const imageInput = document.getElementById('image');
-    const editButton = document.querySelector('.edit-button');
     const form = document.querySelector('.manage_form');
 
     // ファイル名の更新と画像プレビュー機能
@@ -22,18 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             preview.innerHTML = '';
             preview.style.display = 'none';
-        }
-    }
-
-    // フォーム部分へのスクロール
-    function scrollToForm() {
-        document.querySelector('.manage_form').scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-        // モーダルを閉じる
-        if (modal) {
-            modal.style.display = 'none';
         }
     }
 
@@ -80,13 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (imageInput) {
         imageInput.addEventListener('change', function () {
             updateFileName(this);
-        });
-    }
-
-    // 修正ボタンのイベントリスナー
-    if (editButton) {
-        editButton.addEventListener('click', function () {
-            scrollToForm();
         });
     }
 

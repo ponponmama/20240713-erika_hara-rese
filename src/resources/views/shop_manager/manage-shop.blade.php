@@ -87,8 +87,12 @@
                 <button type="submit" class="button up_date_button">更新する</button>
             </div>
         </form>
+        <p class="confirm-text">確認はこちらから</p>
         <div class="confirm-button-container" id="confirm-button-container">
             <button type="button" class="button confirm-button" id="confirm-button">更新を確認</button>
+            <a href="{{ route('shops.index', ['shop_id' => $shop->id]) }}" class="view-shop-link link">
+                店舗一覧ページで確認する
+            </a>
         </div>
     </div>
 
@@ -140,9 +144,6 @@
                         </p>
                     </div>
                 </div>
-            </div>
-            <div class="detail-item delete-item">
-                <button type="button" class="edit-button button">修正</button>
             </div>
         </div>
     </div>

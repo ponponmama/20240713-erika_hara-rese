@@ -198,8 +198,16 @@
     margin: auto;
     text-align: center;
 }
-/* 削除ボタン */
-.delete-button {
+
+.edit-button-container {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+
+/* 修正ボタン */
+.edit-button {
     width: auto;
     max-width: 40%;
     padding: 6px;
@@ -211,7 +219,7 @@
     text-decoration: none;
 }
 
-.delete-button:hover {
+.edit-button:hover {
     color: red;
 }
 

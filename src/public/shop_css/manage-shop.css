@@ -64,19 +64,6 @@
     text-align: left;
 }
 
-.business_hours,
-.confirm_text,
-.business_hours_title {
-    display: block;
-    width: 100%;
-    font-weight: bold;
-    padding: 2px 10px;
-    font-size: 19px;
-    line-height: 26px;
-    color: rgb(0 0 0 / 70%);
-    margin-bottom: 2%;
-}
-
 .input_time,
 .custom-file-upload {
     text-align: center;
@@ -150,23 +137,40 @@
     margin: 0 auto;
 }
 
-.confirm-button-container {
+.confirm-text {
     width: 80%;
     height: 40px;
+    line-height: 40px;
     text-align: center;
+    margin: 0 auto;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(0 0 0 / 0.5);
+    margin: 5% auto;
+}
+
+.confirm-button-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    gap: 30px;
     margin: 0 auto 3% auto;
 }
 
-.confirm-button {
-    width: auto;
+.confirm-button,
+.view-shop-link {
+    width: 40%;
     padding: 6px;
     color: rgb(0 0 0 / 0.5);
-    border: none;
-    font-size: 19px;
+    border: 1px solid rgb(0 0 0 / 0.3);
+    border-radius: 6px;
+    font-size: 16px;
     text-align: center;
     background: none;
     text-decoration: none;
-
+    display: block;
 }
 
 .shop-image-wrapper {
