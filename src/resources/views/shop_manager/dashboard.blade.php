@@ -11,10 +11,9 @@
 
 @section('content')
     <div class="container shop_container">
-        @include('custom_components.header', [
-            'title' => Auth::user()->shop->shop_name,
-            'additionalClass' => 'shop_manager_name',
-        ])
+        <p class="greeting-title">
+            お疲れ様です！{{ Auth::user()->shop->shop_name }} {{ Auth::user()->user_name }}さん
+        </p>
         <p class="session-messages">
             @include('custom_components.session-messages')
         </p>
@@ -53,7 +52,7 @@
                 {{ $reservations->links() }}
             </div>
             <!-- 予約詳細モーダル -->
-            <div id="reservationModal" class="modal">
+            <div id="reservationModal" class="hide modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <h3>予約詳細</h3>
@@ -102,8 +101,8 @@
                                 <div class="price-button-container">
                                     <button type="submit" class="button price-update-btn"
                                         id="price-update-button-confirm">金額確定</button>
-                                    <button type="submit" class="button price-update-btn" id="price-update-button-retry"
-                                        style="display: none;">再設定</button>
+                                    <button type="submit" class="button price-update-btn"
+                                        id="price-update-button-retry">再設定</button>
                                 </div>
                             </form>
                         </div>
@@ -114,7 +113,7 @@
         <h2 id="qr-data-display" class="qr-data-display">
             QRコード照会内容
         </h2>
-        <div class="reservation-details">
+        <div class="reservation-details" id="reservation-details">
             <p class="qr_data_content"><strong>予約日:</strong> <span id="reservation-date"></span></p>
             <p class="qr_data_content"><strong>時間:</strong> <span id="reservation-time"></span></p>
             <p class="qr_data_content"><strong>人数:</strong> <span id="reservation-number"></span></p>
@@ -128,8 +127,8 @@
             <button id="reset-btn" class="button scanner-btn">リセット</button>
         </div>
     </div>
-    <div class="camera-reader" id="reader" style="display: none; width: 0; height: 0; overflow: hidden;">
-        <video id="video-preview" style="display: none;"></video>
-        <canvas id="canvas-preview"></canvas>
+    <div class="camera-reader" id="reader">
+        <video id="video-preview" class="video-preview"></video>
+        <canvas id="canvas-preview" class="canvas-preview"></canvas>
     </div>
 @endsection

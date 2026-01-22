@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded', function () {
             const reader = new FileReader();
             reader.onload = function (e) {
                 preview.innerHTML = `<img src="${e.target.result}" class="preview-image">`;
-                preview.style.display = 'inline-block';
+                preview.classList.remove('hide');
             }
             reader.readAsDataURL(input.files[0]);
         } else {
             preview.innerHTML = '';
-            preview.style.display = 'none';
+            preview.classList.add('hide');
         }
     }
 
@@ -58,7 +58,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // モーダル内のデータを更新して表示
             updateModalData();
             if (modal) {
-                modal.style.display = 'flex';
+                modal.classList.remove('hide');
+                modal.classList.add('show');
             }
         });
     }
@@ -73,14 +74,16 @@ document.addEventListener('DOMContentLoaded', function () {
     // モーダルを閉じる
     if (span) {
         span.onclick = function () {
-            modal.style.display = 'none';
+            modal.classList.add('hide');
+            modal.classList.remove('show');
         }
     }
 
     // モーダル外をクリックして閉じる
     window.onclick = function (event) {
         if (event.target == modal) {
-            modal.style.display = 'none';
+            modal.classList.add('hide');
+            modal.classList.remove('show');
         }
     }
 

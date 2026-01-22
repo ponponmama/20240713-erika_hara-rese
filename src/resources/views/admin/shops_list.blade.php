@@ -11,16 +11,14 @@
 
 @section('content')
     <div class="container shops_list_container">
-        @include('custom_components.header', [
-            'userName' => Auth::user()->user_name,
-            'message' => 'お疲れ様です！',
-            'showMessage' => true,
-        ])
+        <p class="greeting-title">
+            お疲れ様です！{{ Auth::user()->user_name }}さん
+        </p>
         <p class="session-messages">
             @include('custom_components.session-messages')
         </p>
         <div class="management_form shop_list_form">
-            <p class="form-title-name">登録店舗一覧</p>
+            <p class="content-section-title">登録店舗一覧</p>
             <table class="table-section shop_list_table">
                 <thead class="admin-thead">
                     <tr class="admin-tr">
@@ -77,7 +75,7 @@
         <div class="details-modal-content modal-content">
             <span class="close-modal-button">&times;</span>
             <h3 class="card-title">登録店舗情報</h3>
-            <div id="modal-shop-image-container" class="detail-shop-cards">
+            <div id="modal-shop-image-container" class="detail-shop-cards modal-shop-image-container">
                 <img id="modal-shop-image" src="" alt="店舗画像" class="shop-image">
                 <div class="details-shop-info">
                     <div class="detail-item">

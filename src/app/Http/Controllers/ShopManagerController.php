@@ -20,7 +20,7 @@ class ShopManagerController extends Controller
         $shopId = Auth::user()->shop->id;
         $reservations = Reservation::where('shop_id', $shopId)
             ->orderBy('reservation_datetime', 'desc')
-            ->paginate(5)
+            ->paginate(10)
             ->onEachSide(0);
 
         return view('shop_manager.dashboard', ['reservations' => $reservations]);

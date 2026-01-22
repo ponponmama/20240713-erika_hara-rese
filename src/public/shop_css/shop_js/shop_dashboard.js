@@ -47,12 +47,12 @@ function openReservationModal(reservationId) {
             if (data.payment_status_code === 'completed' || data.payment_status_code === 'amount_set') {
                 // 決済完了または金額設定済み（支払い待ち）の場合は金額設定フォームを非表示
                 if (priceFormRow) {
-                    priceFormRow.style.display = 'none';
+                    priceFormRow.classList.add('hide');
                 }
             } else {
                 // その他の場合は金額設定フォームを表示
                 if (priceFormRow) {
-                    priceFormRow.style.display = 'block';
+                    priceFormRow.classList.remove('hide');
                 }
                 // 金額入力フィールドとフォームのアクションを設定
                 document.getElementById('modal-reservation-total-amount-input').value = data.total_amount;
@@ -60,15 +60,24 @@ function openReservationModal(reservationId) {
 
                 // 決済失敗の場合は「再設定」ボタンを表示、それ以外は「金額確定」ボタンを表示
                 if (data.payment_status_code === 'failed') {
-                    if (confirmButton) confirmButton.style.display = 'none';
-                    if (retryButton) retryButton.style.display = 'block';
+                    if (confirmButton) {
+                        confirmButton.classList.add('hide');
+                    }
+                    if (retryButton) {
+                        retryButton.classList.remove('hide');
+                    }
                 } else {
-                    if (confirmButton) confirmButton.style.display = 'block';
-                    if (retryButton) retryButton.style.display = 'none';
+                    if (confirmButton) {
+                        confirmButton.classList.remove('hide');
+                    }
+                    if (retryButton) {
+                        retryButton.classList.add('hide');
+                    }
                 }
             }
 
-            modal.classList.add('modal-show');
+            modal.classList.remove('hide');
+            modal.classList.add('show');
         });
 }
 
@@ -77,7 +86,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeButton = document.querySelector('.close');
     if (closeButton) {
         closeButton.onclick = function () {
-            document.getElementById('reservationModal').classList.remove('modal-show');
+            const modal = document.getElementById('reservationModal');
+            modal.classList.add('hide');
+            modal.classList.remove('show');
         }
     }
 
@@ -85,7 +96,8 @@ document.addEventListener('DOMContentLoaded', function () {
     window.onclick = function (event) {
         const modal = document.getElementById('reservationModal');
         if (event.target == modal) {
-            modal.classList.remove('modal-show');
+            modal.classList.add('hide');
+            modal.classList.remove('show');
         }
     }
 });
@@ -114,11 +126,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (startButton) {
         startButton.addEventListener('click', function () {
             if (!stream) {
-                const reader = document.getElementById('reader');
-                reader.style.display = 'block';
-                reader.style.width = 'auto';
-                reader.style.height = 'auto';
-                reader.style.overflow = 'visible';
+                const reader = document.querySelector('.camera-reader');
+                reader.classList.remove('hide');
+                reader.classList.add('show');
 
                 navigator.mediaDevices.getUserMedia({
                     video: {
@@ -136,8 +146,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         videoElement.srcObject = stream;
                         videoElement.play();
                         scanQRCode();
-                        stopButton.style.display = 'block';
-                        startButton.style.display = 'none';
+                        stopButton.classList.remove('hide');
+                        startButton.classList.add('hide');
                     }).catch(function (error) {
                         console.error('Error accessing the camera: ', error);
                         alert('カメラへのアクセスに失敗しました。カメラの権限を確認してください。');
@@ -152,14 +162,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 stream.getTracks().forEach(track => track.stop());
                 stream = null;
                 videoElement.srcObject = null;
-                stopButton.style.display = 'none';
-                startButton.style.display = 'block';
+                stopButton.classList.add('hide');
+                startButton.classList.remove('hide');
 
-                const reader = document.getElementById('reader');
-                reader.style.display = 'none';
-                reader.style.width = '0';
-                reader.style.height = '0';
-                reader.style.overflow = 'hidden';
+                const reader = document.querySelector('.camera-reader');
+                reader.classList.add('hide');
+                reader.classList.remove('show');
             }
         });
     }
@@ -173,6 +181,12 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('reservation-user-name').textContent = '';
         document.getElementById('reservation-email').textContent = '';
         qrDataDisplay.textContent = 'QRコード照会内容'; // QRコード表示部分もクリア
+
+        // 予約詳細セクションを非表示
+        const reservationDetails = document.querySelector('.reservation-details');
+        if (reservationDetails) {
+            reservationDetails.classList.add('hide');
+        }
     }
 
     if (resetButton) {
@@ -210,8 +224,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     stream.getTracks().forEach(track => track.stop());
                     stream = null;
                     videoElement.srcObject = null;
-                    stopButton.style.display = 'none';
-                    startButton.style.display = 'block';
+                    stopButton.classList.add('hide');
+                    startButton.classList.remove('hide');
                 }
             }
         }
@@ -261,6 +275,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         document.getElementById('reservation-id').textContent = data.id;
                         document.getElementById('reservation-user-name').textContent = data.user_name;
                         document.getElementById('reservation-email').textContent = data.email;
+
+                        // 予約詳細セクションを表示
+                        const reservationDetails = document.querySelector('.reservation-details');
+                        if (reservationDetails) {
+                            reservationDetails.classList.remove('hide');
+                        }
                     } else {
                         console.error('No data received');
                     }

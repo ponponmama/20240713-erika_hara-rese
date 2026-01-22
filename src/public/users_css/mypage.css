@@ -115,6 +115,28 @@
     width: 100%;
 }
 
+.edit-form.show {
+    display: flex;
+}
+
+.reservation-button.hide {
+    display: none;
+}
+
+.update-button,
+.cancel-button {
+    display: none;
+}
+
+.update-button.show,
+.cancel-button.show {
+    display: inline-block;
+}
+
+.view-reservation.hide {
+    display: none;
+}
+
 /* 予約内容&予約変更fieldのコンテナ */
 .form-group,
 .reservation-field {
@@ -317,7 +339,7 @@
 }
 
 /* 予約一覧 タイトル */
-.title-name {
+.page-title-name {
     font-size: 19px;
     margin: 1%;
     text-align: center;

@@ -11,7 +11,7 @@
 
 @section('content')
     <div class="container manage_shop_container">
-        <p class="form-title-name">店舗情報</p>
+        <p class="content-section-title">店舗情報</p>
         <p class="session-messages">
             @include('custom_components.session-messages')
         </p>

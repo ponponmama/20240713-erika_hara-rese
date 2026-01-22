@@ -10,12 +10,10 @@
 @endsection
 
 @section('content')
-    @include('custom_components.header', [
-        'title' => 'レビュー　一覧',
-        'userName' => Auth::user()->user_name,
-        'message' => 'お疲れ様です！',
-        'showMessage' => true,
-    ])
+    <h2 class="page-title-name">レビュー　一覧</h2>
+    <p class="greeting-title">
+        お疲れ様です！{{ Auth::user()->user_name }}さん
+    </p>
     <p class="session-messages">
         @include('custom_components.session-messages')
     </p>

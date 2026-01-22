@@ -40,7 +40,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     deleteForm.setAttribute('data-review-id', reviewId);
 
                     // モーダルを表示
-                    modal.style.display = 'flex';
+                    modal.classList.remove('hide');
+                    modal.classList.add('show');
                 })
                 .catch(error => {
                     console.error('Error fetching review details:', error);
@@ -51,14 +52,16 @@ document.addEventListener('DOMContentLoaded', function () {
     // モーダルを閉じる
     if (closeButton) {
         closeButton.onclick = function () {
-            modal.style.display = 'none';
+            modal.classList.add('hide');
+            modal.classList.remove('show');
         }
     }
 
     // モーダル外をクリックして閉じる
     window.onclick = function (event) {
         if (event.target == modal) {
-            modal.style.display = 'none';
+            modal.classList.add('hide');
+            modal.classList.remove('show');
         }
     }
 

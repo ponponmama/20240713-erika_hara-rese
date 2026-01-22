@@ -11,13 +11,11 @@
 
 @section('content')
     <div class="container admin_container">
-        @include('custom_components.header', [
-            'userName' => Auth::user()->user_name,
-            'message' => 'お疲れ様です！',
-            'showMessage' => true,
-        ])
+        <p class="greeting-title">
+            お疲れ様です！{{ Auth::user()->user_name }}さん
+        </p>
         <div class="management_form shop_manager_form">
-            <p class="form-title-name">店舗代表者登録</p>
+            <p class="content-section-title">店舗代表者登録</p>
             <p class="session-messages">
                 @include('custom_components.session-messages', [
                     'showGeneral' => false,
@@ -83,7 +81,7 @@
             </form>
         </div>
         <div class="management_form shop_registration_form">
-            <p class="form-title-name">新規店舗登録</p>
+            <p class="content-section-title">新規店舗登録</p>
             <p class="session-messages">
                 @include('custom_components.session-messages', [
                     'showGeneral' => false,
@@ -96,7 +94,8 @@
                 @csrf
                 <div class="form-group">
                     <img src="{{ asset('images/shop.png') }}" alt="" class="icon-img">
-                    <input type="text" name="shop_name" placeholder="Shop Name" value="{{ old('shop_name') }}" class="date-entry">
+                    <input type="text" name="shop_name" placeholder="Shop Name" value="{{ old('shop_name') }}"
+                        class="date-entry">
                 </div>
                 <p class="form__error">
                     @error('shop_name')
@@ -177,10 +176,10 @@
 
     <!-- 店舗登録確認モーダル -->
     {{-- 開発用：モーダルを常に表示する場合は下の行をコメントアウト --}}
-    @if (session('shop_success') && session('new_shop_id'))
-        {{-- @if (true) --}}
+    {{-- @if (session('shop_success') && session('new_shop_id')) & @if (true)  --}}
+        @if (true)
         {{-- 開発用: registration-modal modal からstyle="display: flex;"を削除すること --}}
-        <div id="shop-registration-modal" class="registration-modal modal" style="display: flex;">
+        <div id="shop-registration-modal" class="registration-modal modal show">
             <div class="modal-content">
                 <span class="close-modal-button">&times;</span>
                 <div class="registered-shop-detail">
@@ -192,16 +191,17 @@
                         $newShop = null;
                         if (session('new_shop_id')) {
                             $newShop = \App\Models\Shop::with(['areas', 'genres'])->find(session('new_shop_id'));
+                        } else {
+                            // 自分で指定したIDの店舗を取得
+                            $shopId = 1; // ここに取得したい店舗のIDを指定
+                            $newShop = \App\Models\Shop::with(['areas', 'genres'])->find($shopId);
                         }
-                        // else {
-                        //     // IDが最大の店舗を取得
-                        //     $maxId = \App\Models\Shop::max('id');
-                        //     $newShop = $maxId ? \App\Models\Shop::with(['areas', 'genres'])->find($maxId) : null;
-                        // }
+
                     @endphp
                     @if ($newShop)
                         <div class="registered-shop-card">
-                            <img src="{{ asset('storage/' . $newShop->image) }}" alt="{{ $newShop->shop_name }}" class="shop-image">
+                            <img src="{{ asset('storage/' . $newShop->image) }}" alt="{{ $newShop->shop_name }}"
+                                class="shop-image">
                             <div class="registered-shop-info">
                                 <p class="shop-name">{{ $newShop->shop_name }}</p>
                                 <p class="shop-tags">

@@ -5,19 +5,18 @@
 @endsection
 
 @section('content')
-    @include('custom_components.header', [
-        'showMessage' => true,
-        'useFormTitle' => false,
-        'message' =>
-            \Carbon\Carbon::now()->hour < 12
-                ? 'おはようございます！'
-                : (\Carbon\Carbon::now()->hour < 18
-                    ? 'こんにちは！'
-                    : 'こんばんは！'),
-    ])
+    <p class="greeting-title">
+        @if(\Carbon\Carbon::now()->hour < 12)
+            おはようございます！
+        @elseif(\Carbon\Carbon::now()->hour < 18)
+            こんにちは！
+        @else
+            こんばんは！
+        @endif{{ Auth::user()->user_name }}さん
+    </p>
     <div class="container">
         <div class="reservation-section">
-            <h2 class="title-name section-title">予約状況</h2>
+            <h2 class="page-title-name section-title">予約状況</h2>
             <p class="session-messages">
                 @include('custom_components.session-messages', [
                     'showReservation' => true,
@@ -40,7 +39,7 @@
                                 <img src="{{ asset('images/clock.svg') }}" alt="Clock Icon" class="clock-icon">
                                 <p class="reservation-summary-date">予約{{ $loop->iteration }}</p>
                             </div>
-                            <div class="reservation-summary-view" id="view-{{ $reservation->id }}">
+                            <div class="reservation-summary-view view-reservation" id="view-{{ $reservation->id }}">
                                 <fieldset class="reservation-field">
                                     <label class="view-label">shop</label>
                                     <p class="view-data">
@@ -66,7 +65,7 @@
                                     </p>
                                 </fieldset>
                             </div>
-                            <div class="form-group edit-form" id="edit-{{ $reservation->id }}" style="display: none;">
+                            <div class="form-group edit-form" id="edit-{{ $reservation->id }}">
                                 <span class="form-label">shop</span>
                                 <div class="select-wrapper">
                                     <span class="data-entry name-entry">
@@ -74,14 +73,14 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="form-group edit-form" id="edit-{{ $reservation->id }}" style="display: none;">
+                            <div class="form-group edit-form" id="edit-{{ $reservation->id }}">
                                 <label for="date" class="form-label label_date">Date</label>
                                 <div class="select-wrapper">
                                     <input type="date" id="date" name="date" class="data-entry input_date"
                                         value="{{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('Y-m-d') }}">
                                 </div>
                             </div>
-                            <div class="form-group edit-form" id="edit-{{ $reservation->id }}" style="display: none;">
+                            <div class="form-group edit-form" id="edit-{{ $reservation->id }}">
                                 <label for="time" class="form-label">Time:</label>
                                 <div class="select-wrapper">
                                     <select id="time" name="time" class="data-entry select_time">
@@ -95,7 +94,7 @@
                                     <span class="custom-select-icon"></span>
                                 </div>
                             </div>
-                            <div class="form-group edit-form" id="edit-{{ $reservation->id }}" style="display: none;">
+                            <div class="form-group edit-form" id="edit-{{ $reservation->id }}">
                                 <label for="number" class="form-label">人数</label>
                                 <div class="select-wrapper">
                                     <select id="number" name="number" class="data-entry select_number">
@@ -115,13 +114,12 @@
                                 onclick="toggleEditForm({{ $reservation->id }})">
                                 変更
                             </button>
-                            <button type="submit" class="button reservation-button"
-                                form="update-form-{{ $reservation->id }}" style="display: none;"
-                                id="update-button-{{ $reservation->id }}">
+                            <button type="submit" class="button reservation-button update-button"
+                                form="update-form-{{ $reservation->id }}" id="update-button-{{ $reservation->id }}">
                                 更新
                             </button>
-                            <button type="button" class="button reservation-button"
-                                onclick="toggleEditForm({{ $reservation->id }})" style="display: none;"
+                            <button type="button" class="button reservation-button cancel-button"
+                                onclick="toggleEditForm({{ $reservation->id }})"
                                 id="cancel-button-{{ $reservation->id }}">
                                 キャンセル
                             </button>
@@ -185,7 +183,7 @@
             @endforeach
         </div>
         <div class="favorite-shops-section">
-            <h2 class="title-name favorite-title">お気に入り店舗</h2>
+            <h2 class="page-title-name favorite-title">お気に入り店舗</h2>
             <p class="session-messages">
                 @include('custom_components.session-messages', [
                     'showGeneral' => false,
@@ -233,28 +231,28 @@
         // 削除ボタンを取得
         const deleteButton = document.querySelector(`button[form="delete-form-${reservationId}"]`);
 
-        if (viewElement.style.display !== 'none') {
+        if (!viewElement.classList.contains('hide')) {
             // 表示モードから編集モードへ
-            viewElement.style.display = 'none';
+            viewElement.classList.add('hide');
             editElements.forEach(element => {
-                element.style.display = 'flex';
+                element.classList.add('show');
             });
-            updateButton.style.display = 'inline-block';
-            cancelButton.style.display = 'inline-block';
-            editButton.style.display = 'none';
+            updateButton.classList.add('show');
+            cancelButton.classList.add('show');
+            editButton.classList.add('hide');
             // 削除ボタンを非表示にする
-            deleteButton.style.display = 'none';
+            deleteButton.classList.add('hide');
         } else {
             // 編集モードから表示モードへ
-            viewElement.style.display = 'flex';
+            viewElement.classList.remove('hide');
             editElements.forEach(element => {
-                element.style.display = 'none';
+                element.classList.remove('show');
             });
-            updateButton.style.display = 'none';
-            cancelButton.style.display = 'none';
-            editButton.style.display = 'inline-block';
+            updateButton.classList.remove('show');
+            cancelButton.classList.remove('show');
+            editButton.classList.remove('hide');
             // 削除ボタンを再表示する
-            deleteButton.style.display = 'inline-block';
+            deleteButton.classList.remove('hide');
         }
     }
 </script>

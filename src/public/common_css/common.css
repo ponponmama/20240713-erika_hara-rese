@@ -80,8 +80,8 @@ body {
     margin: 0 10px;
 }
 
-.title-name,
-.user__name {
+.page-title-name,
+.greeting-title {
     height: 30px;
     line-height: 30px;
     margin: 1% auto;
@@ -91,15 +91,15 @@ body {
     text-align: center;
 }
 
-.title-name {
+.page-title-name {
     font-size: 26px;
 }
 
-.user__name {
+.greeting-title {
     font-size: 22px;
 }
 
-.form-title-name {
+.content-section-title {
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -190,19 +190,24 @@ body {
         width: 100%;
     }
 
-    .user__name, .title-name {
+    .greeting-title, .page-title-name {
         margin: 2% auto;
     }
 
-    .title-name {
-        font-size: 16px;
+    .page-title-name {
+        font-size: 20px;
     }
 
-    .user__name {
+    .greeting-title {
         font-size: 18px;
     }
 
     .session-messages {
         margin: 2% auto;
     }
+}
+
+/* JS用の表示/非表示のユーティリティクラス */
+.hide {
+    display: none;
 }

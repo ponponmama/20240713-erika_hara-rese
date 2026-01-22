@@ -273,3 +273,20 @@
         padding: 10px 0;
     }
 }
+
+/* 表示/非表示のユーティリティクラス */
+.modal.hide {
+    display: none;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.preview-image-container.hide {
+    display: none;
+}
+
+.preview-image-container.show {
+    display: inline-block;
+}
