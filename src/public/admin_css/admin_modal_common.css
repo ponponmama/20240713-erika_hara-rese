@@ -57,8 +57,9 @@
 .modal-content {
     background-color: rgb(255, 255, 255);
     margin: auto;
-    padding: 20px;
+    padding: 20px 20px 50px 20px;
     width: 70%;
+    height: auto;
     max-width: 600px;
     border-radius: 10px;
     max-height: 85vh;
@@ -98,7 +99,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    margin: 10px 0;
+    margin: 10px auto;
     text-align: left;
     height: 30px;
     line-height: 30px;
@@ -217,8 +218,8 @@
 }
 /* 削除section */
 .delete-form {
-    width: 90%;
-    margin: auto;
+    width: 100%;
+    height: auto;
     text-align: center;
 }
 /* 削除ボタン */
