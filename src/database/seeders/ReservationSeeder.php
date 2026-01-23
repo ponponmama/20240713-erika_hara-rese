@@ -41,8 +41,8 @@ class ReservationSeeder extends Seeder
         }
 
         foreach ($shops as $shop) {
-            // 各ショップに対して5件の予約を作成
-            for ($i = 0; $i < 3; $i++) {
+            // 各ショップに対して10件の予約を作成（ランチ5件 + デイナー5件）
+            for ($i = 0; $i < 5; $i++) {
 
                 $user = User::where('role', 3)->inRandomOrder()->first();
                 if (!$user) {

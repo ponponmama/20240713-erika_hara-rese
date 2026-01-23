@@ -42,7 +42,6 @@
 
 .review-td,
 .review-th {
-    padding: 4px 10px;
     text-align: left;
     border-bottom: 1px solid rgb(0 0 0 / 0.4);
     white-space: nowrap;
@@ -76,7 +75,7 @@
     text-overflow: ellipsis;
 }
 
-.review-button {
+.detail-button {
     padding: 6px 0 6px 6px;
     color: rgb(0 0 0 / 0.4);
     border: none;
@@ -86,7 +85,7 @@
     text-decoration: none;
 }
 
-.review-button:hover {
+.detail-button:hover {
     color: rgb(0 0 0 / 0.8);
 }
 

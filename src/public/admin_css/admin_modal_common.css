@@ -2,11 +2,8 @@
 /* モーダル内で使用するボタン・リンクスタイル */
 .button,
 .link {
-    width: 50%;
     height: 40px;
     line-height: 40px;
-    background-color: rgba(0, 0, 255, 0.8);
-    color: rgb(255, 255, 255);
     border: none;
     border-radius: 6px;
     font-size: 16px;
@@ -14,12 +11,7 @@
     display: block;
     text-decoration: none;
     margin: 5% auto;
-}
-
-.button:hover,
-.link:hover {
-    background-color: #003875;
-}
+}*
 
 .modal {
     display: none;

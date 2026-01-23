@@ -44,9 +44,10 @@
                                 @endif
                             @endfor
                         </td>
-                        <td class="comment-column" title="{{ $review->comment }}">{{ Str::limit($review->comment, 50) }}</td>
+                        <td class="comment-column" title="{{ $review->comment }}">{{ Str::limit($review->comment, 50) }}
+                        </td>
                         <td class="review-button-section">
-                            <button class="review-button detail-button" data-review-id="{{ $review->id }}">詳細</button>
+                            <button class="button detail-button" data-review-id="{{ $review->id }}">詳細</button>
                         </td>
                     </tr>
                 @endforeach
