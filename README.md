@@ -1,11 +1,21 @@
 <p align="center"><img src="https://img.shields.io/badge/-Laravel-black.svg?logo=laravel&style=plastic"> <img src="https://img.shields.io/badge/-Html5-pink.svg?logo=html5&style=plastic"> <img src="https://img.shields.io/badge/-CSS3-blue.svg?logo=css3&style=plastic"> <img src="https://img.shields.io/badge/-Php-orange.svg?logo=php&style=plastic"> <img src="https://img.shields.io/badge/-Mysql-green.svg?logo=mysql&style=plastic"> <img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic"> <img src="https://img.shields.io/badge/-Windows-0078D6.svg?logo=windows&style=plastic"> <img src="https://img.shields.io/badge/-Docker-1488C6.svg?logo=docker&style=plastic"> <img src="https://img.shields.io/badge/-Nginx-red.svg?logo=nginx&style=plastic"> <img src="https://img.shields.io/badge/-Github-181717.svg?logo=github&style=plastic"></p>
 
-<h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ </h3>
+<h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(user用) </h3>
 
 <p align="center">
-   <img src="rese_index.png" alt="Reseアプリの画面" style="width: 300px; height: auto; margin: 10px;">
-   <img src="rese_detail.png" alt="Reseアプリの画面" style="width: 300px; height: auto; margin: 10px;">
-   <img src="rese_mypage.png" alt="Reseアプリの画面" style="width: 300px; height: auto; margin: 10px;">
+   <img src="rese_index.png" alt="店舗一覧の画面" style="width: 300px; height: auto; margin: 10px;">
+   <img src="rese_detail.png" alt="店舗詳細＆予約画面" style="width: 300px; height: auto; margin: 10px;">
+   <img src="rese_mypage.png" alt="マイページ画面" style="width: 300px; height: auto; margin: 10px;">
+</p>
+
+<h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(総合管理者用) </h3>
+
+<p align="center">
+   <img src="admin_dashboard.png" alt="新規店舗の登録・店舗代表者作成画面" style="width: 300px; height: auto; margin: 10px;">
+   <img src="admin_dashboard_modal.png" alt="登録店舗確認表示画面(登録時のみ)" style="width: 300px; height: auto; margin: 10px;">
+   <img src="admin_reviews.png" alt="各店舗レビュー一覧画面" style="width: 300px; height: auto; margin: 10px;">
+   <img src="admin_shops_list.png" alt="店舗一覧画面" style="width: 300px; height: auto; margin: 10px;">
+   <img src="admin_shops_list_modal.png" alt="店舗詳細画面" style="width: 300px; height: auto; margin: 10px;">
 </p>
 
 #### サービス概要
@@ -45,8 +55,8 @@
 - **管理(管理者)**
 
 - **新規店舗登録機能**：管理者は新規店舗の登録、店舗代表者の登録ができる。
-- **店舗一覧表示**: 登録されている店舗の一覧を表示し、詳細を確認・削除できる。
-- **評価機能**: ユーザーが店舗を 5 段階で評価したものを閲覧・削除できる。
+- **店舗一覧表示**: 登録されている店舗の一覧を表示し、詳細をモーダルで確認・削除できる。
+- **評価機能**: ユーザーが店舗を 5 段階で評価したものを閲覧、詳細をモーダルで確認・削除できる。
 - **レスポンシブデザイン**: スマートフォン、タブレット、PC など様々な画面サイズに対応。
 
 #### 店舗代表者の画面
@@ -56,10 +66,10 @@
 - **ストレージ**: 店舗の画像をストレージに保存。
 - **メール送信**: 管理画面から利用者にお知らせメールを送信。
 - **QR コード**: 利用者が来店時に提示する QR コードを店舗側で照合できる。
-- **金額設定機能**: 店舗代表者が予約ユーザーに金額を設定すると決済ボタンが表示されユーザーが決済できる。
+- **金額設定機能**: 店舗代表者が未決済の予約ユーザーに金額を設定すると決済ボタンが表示されユーザーが決済できる。
 - **決済管理機能**: Stripe を利用した決済機能。予約に対する支払い状況の確認管理できる 。
 - **評価機能**: ユーザーが店舗を 5 段階で評価したものを管理者ページで閲覧できる。
-- **店舗情報編集機能**：店舗の情報を照会・編集することができる。
+- **店舗情報編集機能**：店舗の情報を照会・編集、モーダルで編集内容を確認することができる。
 - **レスポンシブデザイン**: スマートフォン、タブレット、PC など様々な画面サイズに対応。
 
 ### 作業範囲
