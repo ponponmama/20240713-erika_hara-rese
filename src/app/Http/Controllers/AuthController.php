@@ -77,7 +77,7 @@ namespace App\Http\Controllers;
             $user = Auth::user();
             if (!$user->hasVerifiedEmail()) {
                 Auth::logout();
-                return back()->withErrors([
+                return back()->withInput()->withErrors([
                     'email' => 'メールアドレスが認証されていません。認証メールを確認してください。',
                 ]);
             }
@@ -93,7 +93,7 @@ namespace App\Http\Controllers;
             }
         }
 
-        return back()->withErrors([
+        return back()->withInput()->withErrors([
             'email' => '指定された認証情報が登録情報と一致しません。',
         ]);
     }

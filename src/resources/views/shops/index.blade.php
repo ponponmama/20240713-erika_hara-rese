@@ -51,6 +51,18 @@
                 </a>
             </div>
         @endif
+        @if (Auth::user()->role === 2)
+            {{-- デバッグ用: セッションの値を確認 --}}
+            {{-- session('shop_success'): {{ session('shop_success') }} --}}
+            {{-- session('new_shop_id'): {{ session('new_shop_id') }} --}}
+            @if (session('shop_success') && session('new_shop_id'))
+                <div class="back-to-admin-container">
+                    <a href="{{ route('manage.shop') }}" class="button back-to-admin-button">
+                        ← 管理画面に戻る
+                    </a>
+                </div>
+            @endif
+        @endif
     @endauth
     <div class="shop_table">
         @foreach ($shops as $shop)

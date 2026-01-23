@@ -25,8 +25,14 @@ class ShopController extends Controller
     public function index(Request $request)
     {
         // 管理画面から遷移した場合、セッションを設定
-        if ($request->has('from_admin') && $request->has('shop_id') && auth()->check() && auth()->user()->role === 1) {
-            session(['shop_success' => true, 'new_shop_id' => $request->input('shop_id')]);
+        // role 1の場合はfrom_adminとshop_idの両方が必要
+        // role 2の場合はshop_idがあればセッションを設定
+        if (auth()->check() && (auth()->user()->role === 1 || auth()->user()->role === 2)) {
+            if (auth()->user()->role === 1 && $request->has('from_admin') && $request->has('shop_id')) {
+                session(['shop_success' => true, 'new_shop_id' => $request->input('shop_id')]);
+            } elseif (auth()->user()->role === 2 && $request->has('shop_id')) {
+                session(['shop_success' => true, 'new_shop_id' => $request->input('shop_id')]);
+            }
         }
 
         $query = Shop::with(['areas', 'genres']); // 関連データを事前にロード

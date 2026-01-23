@@ -9,12 +9,11 @@
         <div class="title-box">
             <h2 class="form-title">Login</h2>
         </div>
-        <form action="{{ route('login') }}" method="POST" class="login_form">
+        <form action="{{ route('login') }}" method="POST" class="login_form" name="login-form" autocomplete="on">
             @csrf
             <div class="input-group">
                 <img src="{{ asset('images/mail.png') }}" alt="email_icon" class="icon-img">
-                <input type="email" id="email" name="email" placeholder="Email" class="form-input input_email"
-                    value="{{ old('email') }}">
+                <input type="email" id="email" name="email" placeholder="Email" class="form-input input_email" value="{{ old('email') }}" autocomplete="username">
             </div>
             <p class="form__error">
                 @error('email')
@@ -23,8 +22,7 @@
             </p>
             <div class="input-group">
                 <img src="{{ asset('images/key.png') }}" alt="" class="icon-img">
-                <input type="password" id="password" name="password" placeholder="Password" value="{{ old('password') }}"
-                    class="form-input input_password">
+                <input type="password" id="password" name="password" placeholder="Password" class="form-input input_password" autocomplete="current-password">
             </div>
             <p class="form__error">
                 @error('password')
