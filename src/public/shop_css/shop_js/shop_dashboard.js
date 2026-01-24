@@ -1,6 +1,6 @@
 // 予約詳細モーダル関連
 document.addEventListener('DOMContentLoaded', function () {
-    const detailButtons = document.querySelectorAll('.reservation-detail-button');
+    const detailButtons = document.querySelectorAll('.reservation_detail_button');
 
     detailButtons.forEach(button => {
         button.addEventListener('click', function () {

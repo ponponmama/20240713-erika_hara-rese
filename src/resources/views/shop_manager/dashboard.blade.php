@@ -18,17 +18,17 @@
             @include('custom_components.session-messages')
         </p>
         <div class="reservations">
-            <h2 class="reservations-list">予約情報</h2>
-            <table class="shop_reservation">
-                <thead>
-                    <tr>
+            <h2 class="content-section-title">予約情報</h2>
+            <table class="table-section">
+                <thead class="reservation_thead">
+                    <tr class="reservation_tr">
                         <th class="reservation_th">予約日</th>
                         <th class="reservation_th">時間</th>
                         <th class="reservation_th">人数</th>
                         <th class="reservation_th">予約ID</th>
                         <th class="reservation_th">顧客名</th>
                         <th class="reservation_th">メールアドレス</th>
-                        <th class="reservation_th">詳細</th>
+                        <th class="reservation_th reservation_detail_th">詳細</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,8 +40,8 @@
                             <td class="reservation_td">{{ $reservation->id }}</td>
                             <td class="reservation_td">{{ $reservation->user->user_name }}</td>
                             <td class="reservation_td email-column">{{ $reservation->user->email }}</td>
-                            <td class="reservation_td">
-                                <button class="button detail-button reservation-detail-button"
+                            <td class="reservation_td reservation-button-section">
+                                <button class="button reservation_detail_button"
                                     data-reservation-id="{{ $reservation->id }}">詳細</button>
                             </td>
                         </tr>
