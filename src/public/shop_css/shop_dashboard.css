@@ -1,15 +1,12 @@
-.shop_container {
+.container {
     flex-direction: column;
 }
 
 .reservations {
-    width: 70%;
-    padding: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 80%;
     margin: 0 auto;
+    align-self: flex-start;
+    padding: 10px;
 }
 
 .content-section-title {
@@ -22,35 +19,45 @@
 
 .table-section {
     width: 100%;
-    display: table;
+    table-layout: fixed;
     border-collapse: separate;
     border-spacing: 0;
     background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(0 0 0 / 0.4);
+    border: 2px solid rgb(0 0 0 / 0.1);
     border-radius: 10px;
     font-size: 16px;
     box-shadow: 10px 10px 20px rgb(0 0 0 / 0.6);
-    overflow: hidden;
+    margin-bottom: 50px;
 }
 
+/* thとtdの共通style */
 .reservation_th,
 .reservation_td {
-    border: 1px solid rgb(0 0 0 / 0.4);
-    padding: 4px 10px;
+    border-bottom: 1px solid rgb(0 0 0 / 0.4);
     text-align: left;
-    white-space: nowrap;
+    padding: 4px 20px;
 }
 
+/* thのstyle */
 .reservation_th {
-    height: 70px;
+    height: 60px;
     color: rgba(0, 0, 0, 0.8);
     font-weight: 700;
 }
 
-.reservation_detail_th {
+.narrow_column {
+    width: 100px;
     text-align: center;
 }
 
+.email-column {
+    width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* tdのstyle */
 .reservation_td {
     height: 50px;
     color: rgba(0, 0, 0, 0.6);
@@ -58,6 +65,8 @@
 }
 
 .reservation-button-section {
+    width: 100px;
+    text-align: center;
     padding: 0;
 }
 
@@ -326,22 +335,38 @@
     background-color: #003875;
 }
 
-@media screen and (max-width: 540px) {
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
     .reservations {
         width: 100%;
-    }
-
-    .table-section {
+        padding: 0;
         overflow-x: auto;
-        display: block;
     }
 
-    .reservation_td
-    {
+    .email-column {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
+
+    .reservation-details {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 540px) and (max-width: 767px) {
+    .reservations {
+        width: 100%;
+        padding: 0;
+        overflow-x: auto;
+    }
+
+    .email-column {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
 
     .qr-data-display {
         margin: 4px 0;
@@ -374,25 +399,4 @@
         width: 100%;
     }
 }
-
-@media screen and (min-width: 540px) and (max-width: 768px) {
-    .reservations {
-        width: 100%;
-    }
-
-    .shop_reservation {
-        overflow-x: auto;
-        display: block;
-    }
-
-    .reservation_td {
-        white-space: nowrap;
-        padding: 4px 10px;
-    }
-
-    .reservation-details {
-        width: 60%;
-    }
-}
-
 

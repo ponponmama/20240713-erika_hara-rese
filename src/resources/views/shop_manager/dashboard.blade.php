@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <div class="container shop_container">
+    <div class="container">
         <p class="greeting-title">
             お疲れ様です！{{ Auth::user()->shop->shop_name }} {{ Auth::user()->user_name }}さん
         </p>
@@ -22,13 +22,13 @@
             <table class="table-section">
                 <thead class="reservation_thead">
                     <tr class="reservation_tr">
-                        <th class="reservation_th">予約日</th>
+                        <th class="reservation_th medium_column">予約日</th>
                         <th class="reservation_th">時間</th>
-                        <th class="reservation_th">人数</th>
-                        <th class="reservation_th">予約ID</th>
+                        <th class="reservation_th narrow_column">人数</th>
+                        <th class="reservation_th narrow_column">予約ID</th>
                         <th class="reservation_th">顧客名</th>
-                        <th class="reservation_th">メールアドレス</th>
-                        <th class="reservation_th reservation_detail_th">詳細</th>
+                        <th class="reservation_th email-column">メールアドレス</th>
+                        <th class="reservation_th reservation-button-section">詳細</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,8 +41,7 @@
                             <td class="reservation_td">{{ $reservation->user->user_name }}</td>
                             <td class="reservation_td email-column">{{ $reservation->user->email }}</td>
                             <td class="reservation_td reservation-button-section">
-                                <button class="button reservation_detail_button"
-                                    data-reservation-id="{{ $reservation->id }}">詳細</button>
+                                <button class="button reservation_detail_button" data-reservation-id="{{ $reservation->id }}">詳細</button>
                             </td>
                         </tr>
                     @endforeach
