@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const detailButtons = document.querySelectorAll('.reservation_detail_button');
 
+    // 詳細ボタンクリック時
     detailButtons.forEach(button => {
         button.addEventListener('click', function () {
             const reservationId = this.getAttribute('data-reservation-id');
