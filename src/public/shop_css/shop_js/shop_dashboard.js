@@ -43,7 +43,7 @@ function openReservationModal(reservationId) {
             // 支払い状態に応じて金額設定フォームの表示/非表示を制御
             const priceFormRow = document.querySelector('.form-row');
             const confirmButton = document.getElementById('price-update-button-confirm');
-            const retryButton = document.getElementById('price-update-button-retry');
+            const retryButton = document.querySelector('.price-update-button-retry');
 
             if (data.payment_status_code === 'completed' || data.payment_status_code === 'amount_set') {
                 // 決済完了または金額設定済み（支払い待ち）の場合は金額設定フォームを非表示
@@ -84,7 +84,7 @@ function openReservationModal(reservationId) {
 
 // モーダルを閉じる
 document.addEventListener('DOMContentLoaded', function () {
-    const closeButton = document.querySelector('.close');
+    const closeButton = document.querySelector('.close-modal-button');
     if (closeButton) {
         closeButton.onclick = function () {
             const modal = document.getElementById('reservation-modal');
@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const canvas = canvasElement.getContext('2d');
     const qrDataDisplay = document.getElementById('qr-data-display');
     let stream = null;
+    let animationFrameId = null;
 
     // キャンバスのサイズを動的に調整する関数
     function resizeCanvas() {
@@ -121,12 +122,12 @@ document.addEventListener('DOMContentLoaded', function () {
     resizeCanvas();
 
     const startButton = document.getElementById('start-scanner-btn');
-    const stopButton = document.getElementById('stop-scanner-btn');
+    const stopButton = document.querySelector('.stop-scanner-btn');
     const resetButton = document.getElementById('reset-btn');
 
     if (startButton) {
         startButton.addEventListener('click', function () {
-            if (!stream) {
+            if (!stream && !animationFrameId) {
                 const reader = document.querySelector('.camera-reader');
                 reader.classList.remove('hide');
                 reader.classList.add('show');
@@ -152,6 +153,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     }).catch(function (error) {
                         console.error('Error accessing the camera: ', error);
                         alert('カメラへのアクセスに失敗しました。カメラの権限を確認してください。');
+                        // エラー時はreaderを非表示に戻す
+                        const reader = document.querySelector('.camera-reader');
+                        reader.classList.add('hide');
+                        reader.classList.remove('show');
                     });
             }
         });
@@ -160,6 +165,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (stopButton) {
         stopButton.addEventListener('click', function () {
             if (stream) {
+                // requestAnimationFrameをキャンセル
+                if (animationFrameId) {
+                    cancelAnimationFrame(animationFrameId);
+                    animationFrameId = null;
+                }
+
                 stream.getTracks().forEach(track => track.stop());
                 stream = null;
                 videoElement.srcObject = null;
@@ -199,6 +210,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function scanQRCode() {
+        if (!stream) {
+            // streamがnullの場合はループを停止
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+            return;
+        }
+
         if (videoElement.readyState === videoElement.HAVE_ENOUGH_DATA) {
             canvasElement.height = videoElement.videoHeight;
             canvasElement.width = videoElement.videoWidth;
@@ -222,15 +242,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // スキャンを停止
                 if (stream) {
+                    // requestAnimationFrameをキャンセル
+                    if (animationFrameId) {
+                        cancelAnimationFrame(animationFrameId);
+                        animationFrameId = null;
+                    }
+
                     stream.getTracks().forEach(track => track.stop());
                     stream = null;
                     videoElement.srcObject = null;
                     stopButton.classList.add('hide');
                     startButton.classList.remove('hide');
+
+                    const reader = document.querySelector('.camera-reader');
+                    reader.classList.add('hide');
+                    reader.classList.remove('show');
                 }
+                return; // QRコードが見つかったらループを停止
             }
         }
-        requestAnimationFrame(scanQRCode);
+        animationFrameId = requestAnimationFrame(scanQRCode);
     }
 
     function drawBox(location) {
@@ -254,6 +285,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const match = qrData.match(/(\d+)$/);
         if (match) {
             const reservationId = match[1];
+
+            // モーダルが開いていたら閉じる
+            const modal = document.getElementById('reservation-modal');
+            if (modal) {
+                modal.classList.add('hide');
+                modal.classList.remove('show');
+            }
+
             fetch(`/api/reservation/${reservationId}`)
                 .then(response => {
                     if (!response.ok) {

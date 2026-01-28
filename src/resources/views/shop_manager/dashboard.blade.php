@@ -2,6 +2,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('shop_css/shop_dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('shop_css/shops_modal_common.css') }}">
 @endsection
 
 @section('js')
@@ -53,8 +54,8 @@
             <!-- 予約詳細モーダル -->
             <div id="reservation-modal" class="reservation-modal modal hide">
                 <div class="reservation-modal-content modal-content">
-                    <span class="close">&times;</span>
-                    <h3>予約詳細</h3>
+                    <span class="close-modal-button">&times;</span>
+                    <h3 class="card-title">予約詳細</h3>
                     <div class="reservation-details-container">
                         <div class="detail-row">
                             <span class="detail-label">予約日:</span>
@@ -100,7 +101,7 @@
                                 <div class="price-button-container">
                                     <button type="submit" class="button price-update-btn"
                                         id="price-update-button-confirm">金額確定</button>
-                                    <button type="submit" class="button price-update-btn"
+                                    <button type="submit" class="button price-update-btn price-update-button-retry"
                                         id="price-update-button-retry">再設定</button>
                                 </div>
                             </form>
@@ -122,7 +123,7 @@
         </div>
         <div class="qr-section-button">
             <button id="start-scanner-btn" class="button scanner-btn">スキャン</button>
-            <button id="stop-scanner-btn" class="button scanner-btn">停止</button>
+            <button id="stop-scanner-btn" class="button scanner-btn stop-scanner-btn">停止</button>
             <button id="reset-btn" class="button scanner-btn">リセット</button>
         </div>
     </div>

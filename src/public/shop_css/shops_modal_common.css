@@ -113,55 +113,117 @@
 
 /* dashboard固有のモーダルスタイル */
 
-/* 店舗一覧表示と同じように見えるようにするためのスタイル */
-.registered-shop-card {
-    width: 90%;
-    margin: 0 auto;
-    box-shadow: 6px 6px 12px rgb(0 0 0 / 0.4);
-    border: 2px solid rgb(0 0 0 / 0.4);
-    border-radius: 10px;
-    background-color: rgb(255, 255, 255);
-}
-/* card内の情報のスタイル */
-.registered-shop-info {
+.reservation-details-container {
     width: 100%;
-    text-align: left;
-    padding: 10px;
+    padding: 5px 30px;
 }
-/* card内の店舗名 */
-.shop-name {
-    margin: 0;
-    margin-bottom: 10px;
-    font-size: 20px;
-    line-height: 20px;
-}
-/* card内のエリアとジャンル */
-.shop-tags {
+
+.detail-row {
+    width: 100%;
     margin: 5px 0;
+    text-align: left;
+    display: flex;
+    align-items: center;
     font-size: 13px;
 }
-/* 登録内容がわかるように情報表示用 */
-.registered-shop-detail-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    width: 90%;
-    margin: 5% auto;
+
+.detail-label {
+    width: 45%;
+    font-weight: bold;
+    margin-right: 3%;
 }
-/* 営業時間 */
-.shop-hours {
-    margin: 5px 0;
-    font-size: 14px;
+
+.detail-value {
+    width: 55%;
 }
-/* 店舗紹介 */
-.shop-description-section {
-    height: auto;
-}
-/* 店舗一覧で確認用のlink */
-.view-shop-link-container {
-    margin-top: 30px;
+
+.detail-button {
+    color: rgb(0 0 0 / 0.6);
+    border: none;
+    font-size: 13px;
     text-align: center;
 }
+
+.detail-button:hover {
+    color: #5c5b5b;
+}
+
+/* 支払い状態のスタイル */
+.status-completed {
+    color: blue;
+    font-weight: bold;
+}
+
+.status-amount-set {
+    color: #fd7e14;
+    font-weight: bold;
+}
+
+.status-pending {
+    color: red;
+    font-weight: bold;
+}
+
+.form-row {
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.price-form {
+    width: 100%;
+}
+
+.price-container {
+    width: 100%;
+    display: flex;
+    margin: 5px 0;
+    padding: 5px 10px;
+    text-align: left;
+    align-items: center;
+    font-size: 13px;
+}
+
+.price-input {
+    display: block;
+    border: 1px solid #7a7a7a;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: right;
+}
+
+
+.price-button-container {
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    margin: 5% 0;
+}
+
+.price-update-btn {
+    padding: 6px 20px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.price-update-btn:hover {
+    background-color: #003875;
+}
+
+.modal.hide {
+    display: none;
+}
+
+.modal.show {
+    display: flex;
+}
+
 
 /* reviews固有のモーダルスタイル */
 .review-info-section {

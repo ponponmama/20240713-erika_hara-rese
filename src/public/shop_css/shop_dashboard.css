@@ -70,13 +70,13 @@
 }
 
 .reservation_detail_button {
-    width: 100%;
-    height: 100%;
     border: none;
     background-color: rgb(255, 255, 255);
     text-align: center;
     color: rgb(0 0 0 / 0.7);
     font-size: inherit;
+    padding: 0;
+    margin: 0;
 }
 
 .qr-data-display {
@@ -106,11 +106,11 @@
 }
 
 .qr-section-button {
-    width: 50%;
+    width: 80%;
     display: flex;
     text-align: center;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 5% auto;
 }
 
@@ -129,10 +129,6 @@
     border: none;
 }
 
-#stop-scanner-btn {
-    display: none;
-}
-
 /* 表示/非表示のユーティリティクラス */
 .scanner-btn.hide {
     display: none;
@@ -146,7 +142,7 @@
     display: none;
 }
 
-#price-update-button-retry {
+.price-update-button-retry {
     display: none;
 }
 
@@ -177,161 +173,19 @@
     position: relative;
 }
 
-.video-preview,
-.canvas-preview {
+.video-preview {
     width: 70%;
     height: auto;
     display: block;
     margin: 5% auto;
 }
 
-
-/* モーダル関連のスタイル */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1001;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0 0 0 / 0.6);
-}
-
-.modal.hide {
+.canvas-preview {
     display: none;
 }
 
-.modal.show {
-    display: flex;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 2px solid rgb(0 0 0 / 0.1);
-    width: 100%;
-    height: auto;
-    max-width: 600px;
-    border-radius: 10px;
-    max-height: 80vh;
-    overflow: auto;
-    box-shadow: 10px 10px 20px rgb(0 0 0 / 0.7);
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.detail-row {
-    width: 100%;
-    margin: 5px 0;
-    padding: 5px 10px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    font-size: 13px;
-}
-
-.detail-label {
-    width: 45%;
-    font-weight: bold;
-    margin-right: 3%;
-}
-
-.detail-value {
-    width: 55%;
-}
-
-.detail-button {
-    color: rgb(0 0 0 / 0.6);
-    border: none;
-    font-size: 13px;
-    text-align: center;
-}
-
-.detail-button:hover {
-    color: #5c5b5b;
-}
-
-/* 支払い状態のスタイル */
-.status-completed {
-    color: blue;
-    font-weight: bold;
-}
-
-.status-amount-set {
-    color: #fd7e14;
-    font-weight: bold;
-}
-
-.status-pending {
-    color: red;
-    font-weight: bold;
-}
-
-.form-row {
-    justify-content: center;
-    width: 100%;
-    border-top: 1px solid #ddd;
-    padding-top: 15px;
-    margin-top: 15px;
-}
-
-.price-form {
-    width: 100%;
-}
-
-.price-container {
-    width: 100%;
-    display: flex;
-    margin: 5px 0;
-    padding: 5px 10px;
-    text-align: left;
-    align-items: center;
-    font-size: 13px;
-}
-
-.price-input {
-    display: block;
-    border: 1px solid #7a7a7a;
-    border-radius: 4px;
-    font-size: 16px;
-    text-align: right;
-}
-
-
-.price-button-container {
-    width: 100%;
-    text-align: center;
-    padding: 2px;
-    margin: 5% 0;
-}
-
-.price-update-btn {
-    padding: 6px 20px;
-    background-color: #0056b3;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.price-update-btn:hover {
-    background-color: #003875;
+.stop-scanner-btn {
+    display: none;
 }
 
 
@@ -339,63 +193,39 @@
     .reservations {
         width: 100%;
         padding: 0;
-        overflow-x: auto;
     }
 
-    .email-column {
+    .table-section {
+        display: block;
         white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        overflow-x: auto;
     }
 
     .reservation-details {
         width: 60%;
     }
+
+    .qr-section-button {
+        gap: 20px;
+    }
 }
 
-@media screen and (min-width: 540px) and (max-width: 767px) {
+
+@media screen and (max-width: 767px) {
     .reservations {
         width: 100%;
         padding: 0;
+    }
+
+    .table-section {
+        display: block;
+        white-space: nowrap;
         overflow-x: auto;
     }
 
-    .email-column {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-
-    .qr-data-display {
-        margin: 4px 0;
-        font-size: 19px;
-    }
-
-    .reservation-details {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .qr_data_content {
-        margin: 4px 0;
-        font-size: 13px;
-    }
-
     .qr-section-button {
-        width: 100%;
-        margin: 4px 0;
+        gap: 20px;
     }
 
-    .scanner-btn {
-        padding: 6px;
-    }
-
-    .video-preview,
-    .canvas-preview {
-        display: block;
-        margin: 0 auto;
-        width: 100%;
-    }
 }
 
