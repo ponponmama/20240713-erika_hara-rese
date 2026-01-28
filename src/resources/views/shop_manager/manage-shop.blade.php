@@ -20,11 +20,11 @@
             @csrf
             @method('PUT')
             <div class="form-group">
-                <label class="label-title">
+                <span class="label-title">
                     <img src="{{ asset('images/shop.png') }}" alt="" class="icon-img">
                     店舗名
-                </label>
-                <span class="data-entry shop-name-entry">{{ $shop->shop_name }}</span>
+                </span>
+                <span id="shop_name" class="data-entry shop-name-entry" name="shop_name">{{ $shop->shop_name }}</span>
             </div>
             <div class="form-group">
                 <label for="description" class="label-title description-title">
@@ -90,7 +90,8 @@
         <p class="confirm-text">確認はこちらから</p>
         <div class="confirm-button-container" id="confirm-button-container">
             <button type="button" class="button confirm-button" id="confirm-button">更新を確認</button>
-            <a href="{{ route('shops.index', ['from_admin' => 'true', 'shop_id' => $shop->id]) }}" class="view-shop-link link">
+            <a href="{{ route('shops.index', ['from_admin' => 'true', 'shop_id' => $shop->id]) }}"
+                class="view-shop-link link">
                 店舗一覧ページで確認する
             </a>
         </div>
