@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     const videoElement = document.getElementById('video-preview');
     const canvasElement = document.getElementById('canvas-preview');
-    const canvas = canvasElement.getContext('2d');
+    const canvas = canvasElement.getContext('2d', { willReadFrequently: true });
     const qrDataDisplay = document.getElementById('qr-data-display');
     let stream = null;
     let animationFrameId = null;
@@ -220,22 +220,32 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         if (videoElement.readyState === videoElement.HAVE_ENOUGH_DATA) {
-            canvasElement.height = videoElement.videoHeight;
-            canvasElement.width = videoElement.videoWidth;
+            // キャンバスのサイズを動的に設定
+            if (canvasElement.height !== videoElement.videoHeight || canvasElement.width !== videoElement.videoWidth) {
+                canvasElement.height = videoElement.videoHeight;
+                canvasElement.width = videoElement.videoWidth;
+            }
+
             canvas.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
             var imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
 
             // QRコードの読み取り精度を向上させるための処理
             var code = jsQR(imageData.data, imageData.width, imageData.height, {
-                inversionAttempts: "attemptBoth"
+                inversionAttempts: "attemptBoth",
+                greyScaleWeights: {
+                    red: 0.2126,
+                    green: 0.7152,
+                    blue: 0.0722
+                }
             });
 
             if (code) {
+                if (!code.data || code.data.trim() === '') {
+                    return; // データが空の場合は処理をスキップ
+                }
+
                 // 赤枠を描画
                 drawBox(code.location);
-
-                // QRコードの内容を表示
-                qrDataDisplay.textContent = 'QRコードの内容: ' + code.data;
 
                 // 予約詳細を取得
                 fetchReservationDetails(code.data);
@@ -282,7 +292,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 予約詳細を取得する関数
     function fetchReservationDetails(qrData) {
-        const match = qrData.match(/(\d+)$/);
+        if (!qrData || qrData.trim() === '') {
+            alert('QRコードの内容が空です。QRコードを確認してください。');
+            return;
+        }
+
+        // "Reservation ID: "の後の数字を抽出（複数のパターンを試す）
+        let match = qrData.match(/Reservation ID:\s*(\d+)/i);
+        if (!match) {
+            match = qrData.match(/ID:\s*(\d+)/i);
+        }
+        if (!match) {
+            match = qrData.match(/(\d+)$/);
+        }
+        if (!match) {
+            match = qrData.match(/(\d+)/);
+        }
+
         if (match) {
             const reservationId = match[1];
 
@@ -319,6 +345,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         // 予約詳細セクションを表示
                         const reservationDetails = document.querySelector('.reservation-details');
                         if (reservationDetails) {
+                            reservationDetails.classList.add('show');
                             reservationDetails.classList.remove('hide');
                         }
                     } else {

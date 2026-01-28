@@ -110,6 +110,10 @@
                 </div>
             </div>
         </div>
+        <div class="camera-reader" id="reader">
+            <video id="video-preview" class="video-preview"></video>
+            <canvas id="canvas-preview" class="canvas-preview"></canvas>
+        </div>
         <h2 id="qr-data-display" class="qr-data-display">
             QRコード照会内容
         </h2>
@@ -119,16 +123,12 @@
             <p class="qr_data_content"><strong>人数:</strong> <span id="reservation-number"></span></p>
             <p class="qr_data_content"><strong>予約ID:</strong> <span id="reservation-id"></span></p>
             <p class="qr_data_content"><strong>顧客名:</strong> <span id="reservation-user-name"></span></p>
-            <p class="qr_data_content"><strong>メールアドレス:</strong> <span id="reservation-email"></span></p>
+            <p class="qr_data_content qr-email-column-section"><strong>メールアドレス:</strong> <span id="reservation-email"></span></p>
         </div>
         <div class="qr-section-button">
             <button id="start-scanner-btn" class="button scanner-btn">スキャン</button>
-            <button id="stop-scanner-btn" class="button scanner-btn stop-scanner-btn">停止</button>
+            <button id="stop-scanner-btn" class="button scanner-btn stop-scanner-btn hide">停止</button>
             <button id="reset-btn" class="button scanner-btn">リセット</button>
         </div>
-    </div>
-    <div class="camera-reader" id="reader">
-        <video id="video-preview" class="video-preview"></video>
-        <canvas id="canvas-preview" class="canvas-preview"></canvas>
     </div>
 @endsection

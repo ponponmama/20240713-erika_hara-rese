@@ -79,6 +79,8 @@
     margin: 0;
 }
 
+
+/* QRコードスキャン関連 */
 .qr-data-display {
     padding: 2px;
     margin: 8px 4px;
@@ -99,11 +101,17 @@
     margin: 0 auto;
 }
 
+.reservation-details.show {
+    display: block;
+}
+
 .qr_data_content {
+    width: 100%;
     margin: 6px 0;
     color: rgb(0 0 0 / 0.7);
     font-size: 16px;
 }
+
 
 .qr-section-button {
     width: 80%;
@@ -129,7 +137,7 @@
     border: none;
 }
 
-/* 表示/非表示のユーティリティクラス */
+/* QRコードスキャン関連の表示/非表示のユーティリティクラス */
 .scanner-btn.hide {
     display: none;
 }
@@ -184,7 +192,7 @@
     display: none;
 }
 
-.stop-scanner-btn {
+.stop-scanner-btn.hide {
     display: none;
 }
 
@@ -202,7 +210,7 @@
     }
 
     .reservation-details {
-        width: 60%;
+        width: 70%;
     }
 
     .qr-section-button {
@@ -222,6 +230,20 @@
         white-space: nowrap;
         overflow-x: auto;
     }
+
+    .reservation-details {
+        width: 100%;
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+
+    .qr-email-column-section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
 
     .qr-section-button {
         gap: 20px;
