@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function openReservationModal(reservationId) {
-    const modal = document.getElementById('reservationModal');
+    const modal = document.getElementById('reservation-modal');
     const priceForm = document.getElementById('price-update-form');
 
     // 予約詳細を取得して表示
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeButton = document.querySelector('.close');
     if (closeButton) {
         closeButton.onclick = function () {
-            const modal = document.getElementById('reservationModal');
+            const modal = document.getElementById('reservation-modal');
             modal.classList.add('hide');
             modal.classList.remove('show');
         }
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // モーダルの外をクリックしても閉じる
     window.onclick = function (event) {
-        const modal = document.getElementById('reservationModal');
+        const modal = document.getElementById('reservation-modal');
         if (event.target == modal) {
             modal.classList.add('hide');
             modal.classList.remove('show');

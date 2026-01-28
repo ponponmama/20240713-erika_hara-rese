@@ -51,8 +51,8 @@
                 {{ $reservations->links() }}
             </div>
             <!-- 予約詳細モーダル -->
-            <div id="reservationModal" class="hide modal">
-                <div class="modal-content">
+            <div id="reservation-modal" class="reservation-modal modal hide">
+                <div class="reservation-modal-content modal-content">
                     <span class="close">&times;</span>
                     <h3>予約詳細</h3>
                     <div class="reservation-details-container">
