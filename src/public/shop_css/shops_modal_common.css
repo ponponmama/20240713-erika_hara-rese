@@ -137,16 +137,6 @@
     width: 55%;
 }
 
-.detail-button {
-    color: rgb(0 0 0 / 0.6);
-    border: none;
-    font-size: 13px;
-    text-align: center;
-}
-
-.detail-button:hover {
-    color: #5c5b5b;
-}
 
 /* 支払い状態のスタイル */
 .status-completed {

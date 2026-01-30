@@ -71,11 +71,10 @@
 }
 
 .detail-button {
-    padding: 6px 0 6px 6px;
+    width: 100%;
     color: rgb(0 0 0 / 0.4);
     border: none;
     font-size: 16px;
-    text-align: right;
     background: none;
     text-decoration: none;
 }
