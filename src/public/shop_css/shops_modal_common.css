@@ -256,20 +256,12 @@
 }
 /* 削除section */
 .delete-form {
-    width: 90%;
-    margin: auto;
+    width: 100%;
+    height: auto;
     text-align: center;
 }
-
-.edit-button-container {
-    width: 90%;
-    margin: auto;
-    text-align: center;
-}
-
-
-/* 修正ボタン */
-.edit-button {
+/* 削除ボタン */
+.delete-button {
     width: auto;
     max-width: 40%;
     padding: 6px;
@@ -281,7 +273,7 @@
     text-decoration: none;
 }
 
-.edit-button:hover {
+.delete-button:hover {
     color: red;
 }
 
@@ -340,10 +332,10 @@
     display: flex;
 }
 
-.preview-image-container.hide {
+.modal-shop-image-container.hide {
     display: none;
 }
 
-.preview-image-container.show {
-    display: inline-block;
+.modal-shop-image-container.show {
+    display: block;
 }

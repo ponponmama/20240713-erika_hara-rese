@@ -136,6 +136,8 @@ Route::middleware(['auth', 'role:2'])->group(function () {
     Route::post('/reservation/details', [ReservationController::class, 'getReservationDetails'])->name('reservation.details');
     //店舗の予約一覧表示
     Route::resource('reviews', ShopReviewController::class)->only(['index']);
+    //選択したレビューをモーダル表示
+    Route::get('/shop-manager/reviews/{id}/details', [ShopReviewController::class, 'getReviewDetails'])->name('shop_manager.reviews.details');
     // 価格設定用のルート
     Route::patch('/shop-manager/update-price', [ShopManagerController::class, 'updatePrice'])->name('shop.update.price');
     // 予約詳細を取得するためのルート

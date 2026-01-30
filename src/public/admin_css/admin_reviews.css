@@ -26,13 +26,13 @@
     border-left: none;
     border-right: none;
     border-bottom: 1px solid rgb(0 0 0 / 0.4);
-    color: rgba(0, 0, 0, 0.8);
 }
 
 .review-th {
     width: calc((100% - 60px) / 5);
     height: 80px;
     font-size: 18px;
+    color: rgb(0 0 0 / 0.8);
 }
 
 .review-td {

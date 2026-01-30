@@ -1,15 +1,17 @@
-.review-title {
-    font-size: 22px;
-    font-weight: bold;
-    color: rgb(0 0 0 / 70%);
-    margin: 20px auto;
-    padding: 4px;
+/* 画面全体のstyle */
+.review_form {
+    width: 80%;
+    margin: 0 auto;
+    align-self: flex-start;
+    padding: 10px;
 }
 
-.review_form {
-    width: 70%;
-    margin: 20px auto;
-    align-self: flex-start;
+.content-section-title {
+    width: 100%;
+    color: rgb(0 0 0 / 0.7);
+    font-size: 20px;
+    padding: 4px;
+    margin: 8px 4px;
 }
 
 /* テーブルスタイル */
@@ -17,36 +19,27 @@
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid #242323;
+    background-color: rgba(255, 255, 255);
+    border: 1px solid rgb(0 0 0 / 0.1);
     border-radius: 10px;
-    color: black;
-    font-size: 13px;
-    box-shadow: 3px 3px 6px rgb(0 0 0 / 61%);
+    box-shadow: 10px 10px 20px rgb(0 0 0 / 0.6);
     padding: 15px;
 }
 
+
 .review-th {
-    width: calc(100% / 5);
-    padding: 4px 10px;
-    text-align: left;
+    width: calc((100% - 250px) / 4);
+    height: 80px;
+    color: rgb(0 0 0 / 0.8);
+    font-size: 18px;
+    border-bottom: 2px solid rgb(0 0 0 / 0.4);
 }
 
-.review-tr {
-    width: 100%;
-    height: 60px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid #242323;
-    color: black;
-    font-size: 13px;
-}
 
 .review-td {
-    padding: 4px 10px;
-    text-align: left;
-    border-bottom: 1px solid #242323;
+    height: 65px;
+    font-size: 16px;
+    border-bottom: 2px solid rgb(0 0 0 / 0.4);
 }
 
 .review-tr:last-child .review-td,
@@ -55,17 +48,12 @@
 }
 
 .comment-column {
+    min-width: 250px;
     word-wrap: break-word;
+    word-break: break-word;
     overflow-wrap: break-word;
-    white-space: normal;
-    border-bottom: 1px solid #242323;
-    max-width: 100px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
-/*shop_manager/index用 */
 .review-star {
     color: #fd9103;
 }
@@ -74,4 +62,25 @@
     color: #fd9103;
 }
 
+/* 詳細ボタン */
+.review-button-section {
+    width: 10%;
+    padding: 4px 10px;
+    text-align: center;
+    border-bottom: 2px solid rgb(0 0 0 / 0.4);
+}
+
+.detail-button {
+    padding: 6px 0 6px 6px;
+    color: rgb(0 0 0 / 0.4);
+    border: none;
+    font-size: 16px;
+    text-align: right;
+    background: none;
+    text-decoration: none;
+}
+
+.detail-button:hover {
+    color: rgb(0 0 0 / 0.8);
+}
 

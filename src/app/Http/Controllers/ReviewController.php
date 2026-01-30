@@ -24,7 +24,9 @@ class ReviewController extends Controller
         $request->validate([
             'shop_id' => 'required|integer',
             'rating' => 'required|integer|min:1|max:5',
-            'comment' => 'required|string'
+            'comment' => 'required|string|max:200'
+        ], [
+            'comment.max' => 'コメントは200文字以内で入力してください。'
         ]);
 
         // レビューデータの作成と保存
