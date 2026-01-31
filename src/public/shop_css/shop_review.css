@@ -1,3 +1,22 @@
+/* このページにはsearch要素がないため、headerをrowにする */
+.header {
+    flex-direction: row;
+    height: 80px;
+}
+
+.header-brand {
+    width: 100%;
+}
+
+.top_logo {
+    width: 100%;
+}
+
+.header-search {
+    display: none;
+}
+
+
 /* 画面全体のstyle */
 .review_form {
     width: 80%;
@@ -8,10 +27,7 @@
 
 .content-section-title {
     width: 100%;
-    color: rgb(0 0 0 / 0.7);
-    font-size: 20px;
-    padding: 4px;
-    margin: 8px 4px;
+    padding: 0 15px;
 }
 
 /* テーブルスタイル */
@@ -89,12 +105,6 @@
 }
 
 @media screen and (max-width: 1024px) {
-    /* このページにはsearch要素がないため、headerをrowにする */
-    .container {
-        width: 90%;
-        margin: 5%;
-    }
-
     .review_form {
         width: 100%;
     }

@@ -15,7 +15,7 @@ class ReviewController extends Controller
         $reviews = Review::where('shop_id', $shop->id)
             ->with('user')
             ->orderBy('created_at', 'desc')
-            ->paginate(7)
+            ->paginate(10)
             ->onEachSide(0);
 
         return view('shop_manager.reviews', compact('reviews'));
