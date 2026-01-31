@@ -51,10 +51,12 @@
 }
 
 .comment-column {
-    min-width: 250px;
-    word-wrap: break-word;
-    word-break: break-word;
-    overflow-wrap: break-word;
+    width: auto;
+    max-width: 360px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
 }
 
 .review-star {
@@ -86,22 +88,23 @@
     color: rgb(0 0 0 / 0.8);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
+    /* このページにはsearch要素がないため、headerをrowにする */
+    .container {
+        width: 90%;
+        margin: 5%;
+    }
+
     .review_form {
         width: 100%;
     }
 
     .table-section {
         display: block;
+        width: 100%;
         overflow-x: auto;
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
     }
 
-    .comment-column {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        max-width: 100px;
-    }
 }
