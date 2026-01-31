@@ -26,7 +26,6 @@
     padding: 15px;
 }
 
-
 .review-th {
     width: calc((100% - 250px) / 4);
     height: 80px;
@@ -35,11 +34,15 @@
     border-bottom: 2px solid rgb(0 0 0 / 0.4);
 }
 
-
 .review-td {
     height: 65px;
     font-size: 16px;
     border-bottom: 2px solid rgb(0 0 0 / 0.4);
+}
+
+.review-th,
+.review-td {
+    padding: 4px 10px;
 }
 
 .review-tr:last-child .review-td,
@@ -83,3 +86,22 @@
     color: rgb(0 0 0 / 0.8);
 }
 
+@media screen and (max-width: 768px) {
+    .review_form {
+        width: 100%;
+    }
+
+    .table-section {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .comment-column {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100px;
+    }
+}

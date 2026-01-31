@@ -77,7 +77,7 @@
     text-align: left;
     display: flex;
     align-items: center;
-    height: 30px;
+    height: 40px;
     line-height: 30px;
 }
 
@@ -219,11 +219,12 @@
 .review-info-section {
     width: 100%;
     text-align: left;
-    padding: 10px;
+    padding: 20px;
 }
 
 .comment-item {
     height: auto;
+    min-height: 80px;
     line-height: 1.5;
     align-self: flex-start;
 }
