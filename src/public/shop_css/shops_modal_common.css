@@ -118,7 +118,7 @@
     padding: 5px 30px;
 }
 
-.detail-row {
+.detail-item {
     width: 100%;
     margin: 5px 0;
     text-align: left;
@@ -214,8 +214,20 @@
     display: flex;
 }
 
+/* (dashboard用)モーダル内の表示/非表示のユーティリティクラス */
+.form-row.hide {
+    display: none;
+}
 
-/* reviews固有のモーダルスタイル */
+.price-update-button-retry.hide {
+    display: none;
+}
+
+.price-update-btn.hide {
+    display: none;
+}
+
+/* reviews用のモーダルスタイル */
 .review-info-section {
     width: 100%;
     text-align: left;
@@ -268,21 +280,6 @@
     color: red;
 }
 
-/* モーダル内の表示/非表示のユーティリティクラス */
-.form-row.hide {
-    display: none;
-}
-
-.price-update-button-retry.hide {
-    display: none;
-}
-
-.price-update-btn.hide {
-    display: none;
-}
-
-
-
 /* レスポンシブ対応 */
 @media screen and (max-width: 539px) {
     .modal-content {
@@ -295,10 +292,19 @@
     }
 
     .detail-item {
+        width: 100%;
         height: auto;
         flex-direction: column;
         justify-content: left;
         margin: 10px 0;
+    }
+
+    .detail-label, .detail-value {
+        width: 100%;
+    }
+
+    .detail-value {
+        text-align: center;
     }
 
     .detail-title {
@@ -321,7 +327,7 @@
         height: auto;
     }
 
-    /* dashboard固有のモーダルスタイル */
+
     .registered-shop-detail {
         max-width: 100%;
         padding: 10px 0;

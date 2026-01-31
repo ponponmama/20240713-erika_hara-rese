@@ -59,39 +59,39 @@
                 <span class="close-modal-button">&times;</span>
                 <h3 class="card-title">予約詳細</h3>
                 <div class="reservation-details-container">
-                    <div class="detail-row">
+                    <div class="detail-item">
                         <span class="detail-label">予約日:</span>
                         <span class="detail-value" id="modal-reservation-datetime"></span>
                     </div>
-                    <div class="detail-row">
+                    <div class="detail-item">
                         <span class="detail-label">時間:</span>
                         <span class="detail-value" id="modal-reservation-time"></span>
                     </div>
-                    <div class="detail-row">
+                    <div class="detail-item">
                         <span class="detail-label">人数:</span>
                         <span class="detail-value" id="modal-reservation-number"></span>
                     </div>
-                    <div class="detail-row">
+                    <div class="detail-item">
                         <span class="detail-label">予約ID:</span>
                         <span class="detail-value" id="modal-reservation-id"></span>
                     </div>
-                    <div class="detail-row">
+                    <div class="detail-item">
                         <span class="detail-label">顧客名:</span>
                         <span class="detail-value" id="modal-reservation-user-name"></span>
                     </div>
-                    <div class="detail-row">
+                    <div class="detail-item">
                         <span class="detail-label">メールアドレス:</span>
                         <span class="detail-value" id="modal-reservation-email"></span>
                     </div>
-                    <div class="detail-row">
+                    <div class="detail-item">
                         <span class="detail-label">支払い状態:</span>
                         <span class="detail-value" id="modal-reservation-payment-status"></span>
                     </div>
-                    <div class="detail-row">
+                    <div class="detail-item">
                         <span class="detail-label">合計金額:</span>
                         <span class="detail-value" id="modal-reservation-total-amount"></span>
                     </div>
-                    <div class="detail-row form-row">
+                    <div class="detail-item form-row">
                         <form id="price-update-form" action="" method="POST" class="price-form">
                             @csrf
                             @method('PUT')
