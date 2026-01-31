@@ -1,22 +1,37 @@
-.container {
-    flex-direction: column;
+/* このページにはsearch要素がないため、headerをrowにする */
+.header {
+    flex-direction: row;
+    height: 80px;
 }
 
-.reservations {
+.header-brand {
+    width: 100%;
+}
+
+.top_logo {
+    width: 100%;
+}
+
+.header-search {
+    display: none;
+}
+
+/* ページmain部分のstyle */
+.reservations-container {
     width: 80%;
     margin: 0 auto;
     align-self: flex-start;
     padding: 10px;
 }
 
+/* 各コンテンツのtitleのstyle */
 .content-section-title {
     width: 100%;
-    color: rgb(0 0 0 / 0.7);
-    font-size: 20px;
-    padding: 4px;
-    margin: 8px 4px;
+    text-align: center;
+    padding: 0 15px;
 }
 
+/* テーブルスタイル */
 .table-section {
     width: 100%;
     table-layout: fixed;
@@ -28,28 +43,38 @@
     font-size: 16px;
     box-shadow: 10px 10px 20px rgb(0 0 0 / 0.6);
     margin-bottom: 50px;
+    padding: 15px;
 }
 
 /* thとtdの共通style */
 .reservation_th,
 .reservation_td {
-    border-bottom: 1px solid rgb(0 0 0 / 0.4);
+    border-bottom: 2px solid rgb(0 0 0 / 0.4);
     text-align: left;
     padding: 4px 20px;
 }
 
 /* thのstyle */
 .reservation_th {
-    height: 60px;
+    height: 70px;
     color: rgba(0, 0, 0, 0.8);
     font-weight: 700;
 }
 
+/* tdのstyle */
+.reservation_td {
+    height: 60px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 400;
+}
+
+/* 列幅(狭い列)のstyle */
 .narrow_column {
     width: 100px;
     text-align: center;
 }
 
+/* 列幅(メールアドレス)のstyle */
 .email-column {
     width: 300px;
     overflow: hidden;
@@ -57,18 +82,13 @@
     white-space: nowrap;
 }
 
-/* tdのstyle */
-.reservation_td {
-    height: 50px;
-    color: rgba(0, 0, 0, 0.6);
-    font-weight: 400;
-}
-
+/* 詳細ボタン親要素style */
 .reservation-button-section {
     width: 100px;
     text-align: center;
 }
 
+/* 詳細ボタンのstyle */
 .reservation_detail_button {
     border: none;
     background-color: rgb(255, 255, 255);
@@ -79,19 +99,10 @@
     margin: 0;
 }
 
-
 /* QRコードスキャン関連 */
-.qr-data-display {
-    padding: 2px;
-    margin: 8px 4px;
-    font-size: 21px;
-    font-weight: bold;
-    text-align: center;
-    color: rgb(0 0 0 / 0.7);
-}
 
+/* qrコードスキャン結果表示部分のstyle */
 .reservation-details {
-    display: none;
     width: 50%;
     text-align: left;
     padding: 50px;
@@ -101,10 +112,7 @@
     margin: 0 auto;
 }
 
-.reservation-details.show {
-    display: block;
-}
-
+/* スキャン結果表示の行のstyle */
 .qr_data_content {
     width: 100%;
     margin: 6px 0;
@@ -112,52 +120,50 @@
     font-size: 16px;
 }
 
-
+/* スキャンボタンセクションのstyle */
 .qr-section-button {
-    width: 80%;
+    width: 100%;
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: space-around;
-    margin: 5% auto;
+    margin: 5% 0;
 }
 
+/* スキャン・リセット・停止ボタンのstyle */
 .scanner-btn {
-    width: 150px;
+    display: inline-block;
+    width: 200px;
     height: 40px;
     padding: 6px 15px;
-    background-color: #0056b3;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
+    background-color: rgba(0, 0, 255, 0.8);
+    color: rgb(255, 255, 255);
+    border-radius: 6px;
     font-size: 16px;
+    font-weight: 500;
     text-align: center;
     margin: 2% 0;
+    text-decoration: none;
     border: none;
 }
 
 /* QRコードスキャン関連の表示/非表示のユーティリティクラス */
-.scanner-btn.hide {
-    display: none;
-}
 
+/* QRコード読み取り成功後に表示される予約詳細セクションの表示/非表示制御 */
 .reservation-details.hide {
     display: none;
 }
 
-.form-row.hide {
+.reservation-details.show {
+    display: block;
+}
+
+/* スキャンボタン（開始/停止ボタン）の表示/非表示制御 */
+.scanner-btn.hide {
     display: none;
 }
 
-.price-update-button-retry {
-    display: none;
-}
-
-.price-update-btn.hide {
-    display: none;
-}
-
+/* カメラリーダーコンテナの表示/非表示制御 */
 .camera-reader.hide {
     display: none;
     width: 0;
@@ -172,6 +178,7 @@
     overflow: visible;
 }
 
+/* カメラリーダーの基本スタイル（初期状態は非表示） */
 .camera-reader {
     display: none;
     width: 0;
@@ -181,6 +188,7 @@
     position: relative;
 }
 
+/* カメラ映像のプレビュー表示 */
 .video-preview {
     width: 70%;
     height: auto;
@@ -188,10 +196,12 @@
     margin: 5% auto;
 }
 
+/* QRコード読み取り処理用のキャンバス（常に非表示、処理のみに使用） */
 .canvas-preview {
     display: none;
 }
 
+/* スキャン停止ボタンの非表示制御 */
 .stop-scanner-btn.hide {
     display: none;
 }
