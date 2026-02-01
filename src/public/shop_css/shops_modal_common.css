@@ -38,15 +38,18 @@
     margin: auto;
     padding: 20px;
     width: 70%;
+    max-height: 85vh;
     max-width: 600px;
     border-radius: 10px;
-    max-height: 85vh;
-    overflow-y: auto;
+    overflow-y: scroll;
     border: 2px solid rgb(0 0 0 / 0.4);
     box-shadow: 10px 10px 20px rgb(0 0 0 / 0.4);
     position: relative;
     text-align: center;
 }
+/*モーダルの高さ調整未設定1/31*/
+
+
 
 /* モーダルタイトル */
 .card-title {
@@ -157,9 +160,7 @@
 .form-row {
     justify-content: center;
     width: 100%;
-    border-top: 1px solid #ddd;
-    padding-top: 15px;
-    margin-top: 15px;
+    height: auto;
 }
 
 .price-form {
@@ -168,9 +169,9 @@
 
 .price-container {
     width: 100%;
+    height: 60px;
     display: flex;
-    margin: 5px 0;
-    padding: 5px 10px;
+    margin: 10px 0;
     text-align: left;
     align-items: center;
     font-size: 13px;
@@ -178,26 +179,41 @@
 
 .price-input {
     display: block;
-    border: 1px solid #7a7a7a;
-    border-radius: 4px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid rgb(0 0 0 / 0.4);
+    border-radius: 6px;
     font-size: 16px;
     text-align: right;
+    padding: 0 10px;
+    /* 数値入力のスピナー（上下矢印）を非表示 */
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.price-input::-webkit-inner-spin-button,
+.price-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 
 .price-button-container {
     width: 100%;
+    height: 100px;
+    line-height: 100px;
     text-align: center;
-    padding: 2px;
-    margin: 5% 0;
+    margin: 10px 0;
 }
 
 .price-update-btn {
-    padding: 6px 20px;
-    background-color: #0056b3;
+    width: 40%;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgba(0, 0, 255, 0.8);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
 }
@@ -206,6 +222,7 @@
     background-color: #003875;
 }
 
+/* (modal共通)表示/非表示のユーティリティクラス */
 .modal.hide {
     display: none;
 }
@@ -226,6 +243,7 @@
 .price-update-btn.hide {
     display: none;
 }
+
 
 /* reviews用のモーダルスタイル */
 .review-info-section {
