@@ -1,4 +1,7 @@
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 50%;
     margin: 0 auto;
     background-color: rgb(255, 255, 255);
@@ -6,7 +9,6 @@
     box-shadow: 10px 10px 20px rgb(0 0 0 / 50%);
     padding: 20px 10px 50px 10px;
     flex-direction: column;
-    align-items: center;
 }
 
 .manage_form {
