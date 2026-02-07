@@ -11,7 +11,7 @@
 
 @section('content')
     <div class="container manage_shop_container">
-        <p class="content-section-title">店舗情報</p>
+        <h2 class="content-section-title">店舗情報</h2>
         <p class="session-messages">
             @include('custom_components.session-messages')
         </p>
@@ -99,7 +99,7 @@
 
     <!-- 更新確認モーダル -->
     <div id="shop-confirm-modal" class="details-modal modal">
-        <div class="details-modal-content modal-content">
+        <div class="modal-content">
             <span class="close-modal-button">&times;</span>
             <h3 class="card-title">登録店舗情報</h3>
             <div id="modal-shop-image-container" class="detail-shop-cards">

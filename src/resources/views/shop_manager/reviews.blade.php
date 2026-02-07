@@ -11,7 +11,7 @@
 
 @section('content')
     <div class="review_form">
-        <p class="content-section-title">レビュー 一覧</p>
+        <h2 class="content-section-title">レビュー 一覧</h2>
         <table class="table-section">
             <thead>
                 <tr class="review-th">

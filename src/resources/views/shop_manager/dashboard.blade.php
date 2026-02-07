@@ -55,7 +55,7 @@
         </div>
         <!-- 予約詳細モーダル -->
         <div id="reservation-modal" class="reservation-modal modal hide">
-            <div class="reservation-modal-content modal-content">
+            <div class="modal-content">
                 <span class="close-modal-button">&times;</span>
                 <h3 class="card-title">予約詳細</h3>
                 <div class="reservation-details-container">

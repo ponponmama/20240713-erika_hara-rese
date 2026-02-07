@@ -1,5 +1,8 @@
 .container {
+    width: 100%;
+    display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 /* 店舗代表者用 */
