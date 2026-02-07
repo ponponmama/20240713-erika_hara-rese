@@ -243,6 +243,7 @@
         width: 100%;
         white-space: nowrap;
         overflow-x: auto;
+        padding: 15px;
     }
 
     .qr-email-column-section {

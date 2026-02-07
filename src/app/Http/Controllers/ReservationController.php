@@ -43,11 +43,6 @@ class ReservationController extends Controller
             return back()->with('reservation_error', '予約は一般ユーザーのみ利用可能です。');
         }
 
-        Log::info('Store method called');// メソッドの呼び出しをログに記録
-        $current = Carbon::now(); // 現在の日時を取得して $current に代入
-
-        // リクエストから店舗IDを取得し、店舗情報を検索
-        $shop = Shop::find($request->shop_id);
         // リクエストから取得した日付と時間を組み合わせてCarbonオブジェクトを生成
         $reservationDateTime = Carbon::createFromFormat('Y-m-d H:i', $request->date . ' ' . $request->time);
 
@@ -59,8 +54,7 @@ class ReservationController extends Controller
         $reservation->user_id = auth()->id();
         $reservation->total_amount = 0; // 初期値を0円に設定
         $reservation->payment_status = 'pending'; // 支払い状態は「金額未設定」
-
-        $reservation->save();
+        $reservation->save(); // 一度保存してIDを取得（QRコード生成にIDが必要なため）
 
         // QRコードを生成し、指定のパスにファイルとして保存
         $qrCodePath = 'qr_codes/' . $reservation->id . '.svg'; // 保存パスを指定
@@ -68,11 +62,13 @@ class ReservationController extends Controller
         // マージンを追加して読み取り精度を向上
         QrCode::format('svg')->size(200)->margin(2)->generate('Reservation ID: ' . $reservation->id, storage_path('app/public/qr_codes/' . $reservation->id . '.svg'));
 
+        // QRコードパスを予約データに保存
         $reservation->qr_code = $qrCodePath;
         $reservation->save(); // QRコードパスを更新して再保存
 
+        // 予約確認メールを送信
         // この処理では、現在認証されているユーザーのメールアドレスに対して、予約の詳細を含むメールを送信します。
-        $user = auth()->user(); // ログインしているユーザー情報を取得
+        $user = auth()->user();
         if ($user) {
             try {
                 Mail::to($user->email)->send(new ReservationNotification($user, $reservation));
@@ -85,7 +81,7 @@ class ReservationController extends Controller
             Log::error('User not found for email sending.');
         }
 
-        // 予約情報をセッションに保存
+        // 予約情報をセッションに保存（doneページで表示するため）
         session()->put('reservation_details', $reservation);
         session()->put('last_visited_shop_id', $reservation->shop_id);
 

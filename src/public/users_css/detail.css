@@ -1,155 +1,189 @@
+/* 共通styleがcolumnなのでrowで戻す。 */
+.content {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+/* このページにはsearch要素がないため、headerをrowにする */
+.header {
+    flex-direction: row;
+    height: 80px;
+}
+
+.header-brand {
+    width: 100%;
+}
+
+.top_logo {
+    width: 100%;
+}
+
+.header-search {
+    display: none;
+}
+
+
+/* ここからdetailページのstyle */
+/*左要素より少し上へ上げるためにrelativeを使う。*/
 .header {
     position: relative;
 }
 
+/* content内の左右の要素共通style */
 .detail-section,
 .reservation-section {
-    padding: 1%;
+    margin: 20px;
 }
 
+/* 左要素style */
 .detail-section {
-    width: 46%;
-    margin: 1%;
+    width: 50%;
     text-align: left;
 }
 
-.reservation-section {
-    width: 42%;
-    position: absolute;
-    top: 3%;
-    height: 90%;
-    right: 1%;
-    margin: 1%;
-}
-
+/* 戻るボタンと店舗名のstyleボタンの親要素 */
 .navigation {
     width: 100%;
+    height: 40px;
     display: flex;
     align-items: center;
     text-align: left;
-    padding: 2px 0;
-    margin-bottom: 1%;
+    margin: 10px 0;
 }
 
+/* 戻るボタン < のstyle */
 .back-link {
-    position: relative;
-    top: 3px;
     width: 28px;
     height: 28px;
+    line-height: 28px;
+    text-align: center;
     display: inline-block;
-    padding: 3px 4px;
-    margin-right: 14px;
-    font-size: 13px;
-    background-color: white;
-    color: black;
+    margin-right: 15px;
+    font-size: 14px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0 0 0 / 0.8);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
     border-radius: 5px;
-    box-shadow: 2px 2px 2px rgb(0 0 0 / 61%);
-    cursor: pointer;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 0.6);
 }
 
 .back-link:hover {
-    background-color: rgb(226 226 226);
-    color: #666565;
+    color: rgb(0 0 0 / 0.4);
 }
 
+/* 店舗名のstyle */
+.navigation_shop_name {
+    width: 80%;
+    font-size: 26px;
+    line-height: 28px;
+    font-weight: 700;
+    color: rgb(0 0 0 / 0.8);
+    margin: 0;
+}
+
+/* 店舗画像と店舗紹介文のstyle */
 .image_section {
     width: 100%;
-    padding: 4px 0;
-    margin-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
+/* 店舗画像のstyle */
 .shop_image {
     width: 100%;
 }
 
+/* 店舗エリアとジャンルのstyle */
 .shop-guide {
     width: 100%;
-    padding: 10px 0;
     text-align: start;
-    margin: 10px 0;
     font-size: 13px;
+    margin: 0;
 }
 
-
+/* 店舗紹介文のstyle */
 .description {
     width: 100%;
-    padding: 2px;
-    margin: 2% 0;
-    font-size: 13px;
-}
-
-
-.navigation_shop_name {
-    width: 80%;
-    margin: 4px 0;
-}
-
-.shop_name {
+    height: auto;
     font-size: 16px;
+    line-height: 22px;
+    color: rgb(0 0 0 / 0.8);
+    margin: 10px 0;
 }
 
+/* 右要素style */
+.reservation-section {
+    width: 45%;
+    background-color: rgba(0 0 255 / 0.8);
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgb(0 0 0 / 0.6);
+
+
+}
+
+/* 予約フォームのstyle */
 .form-section {
-    width: 98%;
-    height: 100%;
+    width: 100%;
+    height: auto;
+    min-height: 650px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #044c99;
-    color: white;
-    border-radius: 6px;
-    box-shadow: 3px 3px 6px rgb(0 0 0 / 73.3%);
+    border-radius: 10px;
+    color: rgb(255 255 255 / 1);
 }
 
+/* 予約フォームのタイトルのstyle */
 .reserve {
     width: 100%;
+    height: 60px;
+    line-height: 60px;
     text-align: left;
-    padding: 20px 20px 2px;
     margin: 0;
-    font-size: 19px;
+    font-size: 20px;
+    padding: 5px 30px;
 }
 
 .reserve_form {
-    width: calc(100% - 24px);
+    width: 80%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: start;
-    padding: 4px 12px;
+    padding: 10px 30px;
 }
 
 .label_date {
-    width: calc(40% - 24px);
-    padding: 4px 12px;
-    margin: 2px 14px;
+    width: 40%;
+    height: 30px;
+    line-height: 30px;
 }
 
-.label {
-    width: calc(100% - 24px);
-    margin: 2px 10px;
-    padding: 4px 12px;
-    color: white;
-}
 
 .select_time,
 .select_number {
-    margin: 2px 14px;
-    padding: 4px 12px;
-    width: calc(100% - 24px);
-    border-radius: 4px;
+    height: 30px;
+    line-height: 30px;
+    padding: 2px 12px;
+    width: 100%;
+    border-radius: 6px;
     border: none;
     appearance: none;
     position: relative;
-    background-color: white;
+    background-color: rgb(255 255 255 / 1);
     z-index: 1;
 }
 
 .input_date {
-    margin: 2px 14px;
+    height: 30px;
+    line-height: 30px;
     padding: 4px 12px;
-    width: calc(50% - 24px);
-    border-radius: 4px;
+    width: 50%;
+    border-radius: 6px;
     border: none;
 }
 
@@ -161,64 +195,77 @@
 /* カスタムアイコンのスタイル */
 .custom-select-icon {
     position: absolute;
-    right: 20px;
+    right: 15px;
     top: 50%;
     transform: translateY(-45%);
     width: 16px;
     height: 8px;
-    background-color: #b4b4b4;
+    background-color: rgb(0 0 0 / 0.4);
     clip-path: polygon(0 0, 50% 24%, 100% 0, 50% 100%, 0 0);
     pointer-events: none;
     z-index: 2;
 }
 
 .reservation-summary {
-    width: 98%;
+    width: 100%;
     height: 100%;
-    padding: 4px 10px;
+    padding: 4px 30px;
     border-radius: 6px;
-    background-color: #044c99;
-    color: white;
+    color: rgb(255 255 255 / 1);
     display: flex;
     flex-direction: column;
-    margin-top: 10%;
 }
 
 .summary-item {
-    width: calc(100% - 20px);
-    padding: 4px;
+    display: flex;
+    width: 80%;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 15px;
     text-align: left;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.label {
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    color: rgb(255 255 255 / 1);
 }
 
 .button-container {
     width: 100%;
     margin-top: auto;
+    border-radius: 0 0 10px 10px;
 }
 
 .reserve-button {
     width: 100%;
-    background-color: #013a77;
-    color: white;
+    height: 50px;
+    line-height: 50px;
+    background-color: rgba(5 5 94 / 0.7);
+    color: rgb(255 255 255 / 1);
     border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 0 0 6px 6px;
+    border-radius: 0 0 10px 10px;
     margin-top: auto;
 }
 
 .reserve-button:hover {
-    background-color: #044c99;
+    background-color: rgba(5 5 94 / 0.4);
 }
 
+/* QRコードのstyle */
 .qr-code {
     width: 100%;
-    padding: 2px;
+    padding: 30px;
     text-align: center;
     margin-top: auto;
 }
 
+/* QRコード画像のstyle */
 .qr_code_img {
-    margin: 5%;
+    margin: 30px;
 }
 
 .qr-text {
@@ -229,50 +276,30 @@
     margin: 10% 0;
 }
 
-.form__error {
-    margin: 2px 14px;
-    padding: 4px 12px;
-    width: calc(100% - 24px);
-    height: 16px;
-    color: #f00;
-    text-align: left;
-    font-size: 13px;
-    font-weight: bold;
-    margin-top: 2px;
-}
-
-@media screen and (max-width: 719px) {
+@media screen and (min-width: 541px) and (max-width: 1024px) {
     .content {
-        height: auto;
-    }
-
-    .detail_shop {
-        width: 100%;
-        margin: 0;
-    }
-
-    .image-section {
-        width: 100%;
-    }
-
-    .reservation {
-        width: 100%;
+        align-items: center;
     }
 
     .form-section {
         width: 100%;
+    }
+
+    .input_date {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .content {
+        flex-direction: column;
         height: auto;
-        margin: 10% 0;
+        gap: 0;
     }
 
-    .reserve {
-        width: calc(100% - 24px);
-        margin-top: 5%;
-        padding: 4px 12px;
-    }
-
-    .reserve_form {
-        padding: 4px 0;
+    .form-section {
+        width: 100%;
+        min-height: 300px;
     }
 
     .input_date {
@@ -281,6 +308,8 @@
 
     .reservation-summary {
         width: 90%;
+        margin: 0;
+        padding: 0;
     }
 
     .detail-container {
@@ -291,55 +320,23 @@
     .reservation-section {
         width: 90%;
         height: auto;
-        max-height: 80vh;
         margin: 2% 5%;
         position: static;
     }
-}
 
-@media screen and (min-width: 720px) and (max-width: 1024px) {
-    .form-section {
+    .reserve_form {
         width: 100%;
     }
 
-    .input_date {
-        width: calc(65% - 24px);
+    .qr-code {
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .qr_code_img {
+        margin: 0 auto;
     }
 }
 
-@media screen and (min-height: 1024px) and (min-width: 1024px) {
-    .detail-section,
-    .reservation-section {
-        margin: 2% 3%;
-    }
 
-    .label_date {
-        width: calc(40% - 24px);
-        padding: 4px 12px;
-        margin: 2px 14px;
-    }
 
-    .label_time,
-    .label_number,
-    .label_shop,
-    .label_date_session,
-    .label_time_session,
-    .label_number_session {
-        width: calc(100% - 24px);
-        margin: 2px 10px;
-        padding: 4px 12px;
-    }
-
-    .select_time,
-    .select_number {
-        margin: 2px 14px;
-        padding: 4px 12px;
-        width: calc(100% - 24px);
-    }
-
-    .input_date {
-        margin: 2px 14px;
-        padding: 4px 12px;
-        width: calc(50% - 24px);
-    }
-}

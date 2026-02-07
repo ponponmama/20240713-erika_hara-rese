@@ -14,7 +14,7 @@
 
 /* モーダル */
 .modal-content {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255 255 255 / 1);
     margin: auto;
     padding: 20px;
     width: 70%;
@@ -106,17 +106,17 @@
 
 /* 支払い状態のスタイル */
 .status-completed {
-    color: blue;
+    color: rgba(0 0 255 / 0.8);
     font-weight: bold;
 }
 
 .status-amount-set {
-    color: #fd7e14;
+    color: rgb(253 126 20 / 0.9);
     font-weight: bold;
 }
 
 .status-pending {
-    color: red;
+    color: rgba(255, 0, 0, 0.9);
     font-weight: bold;
 }
 
@@ -172,8 +172,8 @@
     width: 40%;
     height: 40px;
     line-height: 40px;
-    background-color: rgba(0, 0, 255, 0.8);
-    color: white;
+    background-color: rgba(0 0 255 / 0.8);
+    color: rgb(255 255 255 / 1);
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -181,7 +181,7 @@
 }
 
 .price-update-btn:hover {
-    background-color: #003875;
+    background-color: rgba(0 0 255 / 0.4);
 }
 
 /* (dashboard用)モーダル内の表示/非表示のユーティリティクラス */
@@ -297,7 +297,7 @@
 }
 
 .delete-button:hover {
-    color: red;
+    color: rgba(255, 0, 0, 0.9);
 }
 
 /* レスポンシブ対応 */

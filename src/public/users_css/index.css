@@ -1,9 +1,9 @@
 .search-content {
     width: 100%;
     height: 50px;
-    box-shadow: 2px 2px 4px rgb(0 0 0 / 61%);
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 0.6);
     border-radius: 6px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgb(255 255 255 / 1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,7 +56,7 @@
     cursor: pointer;
     width: 30px;
     height: 100%;
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(0 0 0 / 0.8);
     padding: 2px 6px;
     margin: 2px;
 }
@@ -71,10 +71,10 @@
     flex-grow: 1;
     padding: 4px 14px;
     border: none;
-    border-right: 1px solid #cccaca;
+    border-right: 1px solid rgb(0 0 0 / 0.4);
     appearance: none;
     position: relative;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgb(255 255 255 / 1);
     z-index: 1;
 }
 
@@ -85,7 +85,7 @@
     transform: translateY(-50%);
     width: 12px;
     height: 10px;
-    background-color: #b4b4b4;
+    background-color: rgb(0 0 0 / 0.4);
     clip-path: polygon(0 0, 50% 24%, 100% 0, 50% 100%, 0 0);
     pointer-events: none;
     z-index: 2;
@@ -100,22 +100,22 @@
 .back-to-admin-button {
     display: inline-block;
     padding: 12px 24px;
-    background-color: rgba(0, 0, 255, 0.8);
-    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0 0 255 / 0.8);
+    color: rgb(255 255 255 / 1);
     text-decoration: none;
     border-radius: 6px;
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.3s;
-    box-shadow: 2px 2px 4px rgb(0 0 0 / 30%);
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 0.4);
 }
 
 .back-to-admin-button:hover {
-    background-color: rgba(0, 0, 255, 1);
+    background-color: rgba(0 0 255 / 0.4);
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgb(255 255 255 / 1);
     transform: translateY(-2px);
-    box-shadow: 3px 3px 6px rgb(0 0 0 / 40%);
+    box-shadow: 3px 3px 6px rgb(0 0 0 / 0.4);
 }
 
 .shop_table {
@@ -128,9 +128,9 @@
 .shop_card {
     flex: 0 1 22%;
     margin: 1.5%;
-    box-shadow: 2px 2px 4px rgb(0 0 0 / 61%);
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 0.6);
     padding: 0;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgb(255 255 255 / 1);
     border-radius: 6px;
     overflow: hidden;
 }
@@ -176,8 +176,8 @@
     height: 35px;
     line-height: 35px;
     padding: 0 10px;
-    background-color: rgba(0, 0, 255, 0.8);
-    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0 0 255 / 0.8);
+    color: rgb(255 255 255 / 1);
     text-decoration: none;
     border-radius: 6px;
     display: inline-block;
@@ -191,7 +191,7 @@
     outline: none;
     background: none;
     font-size: 32px;
-    color: rgb(228 225 225);
+    color: rgb(0 0 0 / 0.2);
     padding: 1px 15px;
     text-decoration: none;
 }

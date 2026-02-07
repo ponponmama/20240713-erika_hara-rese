@@ -63,18 +63,11 @@ body {
     position: relative;
 }
 
-/*.container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}*/
-
 .top_logo {
     width: 100px;
     height: 100%;
     line-height: 80px;
-    color: rgba(0, 0, 255, 0.8);
+    color: rgba(0 0 255 / 0.8);
     text-align: left;
     font-size: 34px;
     margin: 0 10px;
@@ -85,7 +78,7 @@ body {
     height: 50px;
     line-height: 50px;
     margin: 0 auto;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(0 0 0 / 0.6);
     font-weight: 700;
     text-align: center;
 }
@@ -106,7 +99,7 @@ body {
     font-weight: 700;
     margin: 0;
     margin-bottom: 20px;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(0 0 0 / 0.6);
 }
 
 
@@ -127,19 +120,19 @@ body {
 }
 
 .custom-count-pagination .page-link {
-    color: rgba(0, 0, 255, 0.8);
+    color: rgba(0 0 255 / 0.8);
     font-weight: bold;
     text-decoration: none;
-    border: 1px solid rgb(119 118 118);
-    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgb(0 0 0 / 0.4);
+    background-color: rgb(255 255 255 / 1);
     padding: 5px 6px;
     font-size: 13px;
 }
 
 .custom-count-pagination .page-item.active .page-link {
-    background-color: rgba(0, 0, 255, 0.8);
-    color: rgba(255, 255, 255, 0.9);
-    border-color: rgba(0, 0, 255, 0.8);
+    background-color: rgba(0 0 255 / 0.8);
+    color: rgb(255 255 255 / 1);
+    border-color: rgba(0 0 255 / 0.8);
 }
 
 .custom-count-pagination .page-link:hover {
@@ -154,7 +147,7 @@ body {
     text-align: center;
     font-size: 14px;
     margin: 2px auto;
-    color: rgba(0, 0, 255, 1);
+    color: rgba(0 0 255 / 1);
 }
 
 .form__error {

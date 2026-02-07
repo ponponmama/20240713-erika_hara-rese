@@ -29,10 +29,10 @@
     table-layout: fixed;
     border-collapse: separate;
     border-spacing: 0;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255 255 255 / 1);
     border: 2px solid rgb(0 0 0 / 0.1);
     border-radius: 10px;
-    color: rgba(0, 0, 0, 0.8);
+    color: rgb(0 0 0 / 0.8);
     font-size: 13px;
     box-shadow: 10px 10px 20px rgb(0 0 0 / 0.4);
     padding: 20px 50px;
@@ -110,11 +110,11 @@
 
 /* レビュー用 */
 .review-star {
-    color: #fd9103;
+    color: rgb(253 145 3 / 0.9);
 }
 
 .review-star-empty {
-    color: #fd9103;
+    color: rgb(253 145 3 / 0.9);
 }
 
 /* レビュー詳細モーダル固有のスタイル */

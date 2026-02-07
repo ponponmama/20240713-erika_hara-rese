@@ -33,7 +33,7 @@
 
 /* モーダル */
 .modal-content {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255 255 255 / 1);
     margin: auto;
     padding: 20px 20px 50px 20px;
     width: 70%;
@@ -123,7 +123,7 @@
     box-shadow: 6px 6px 12px rgb(0 0 0 / 0.4);
     border: 2px solid rgb(0 0 0 / 0.4);
     border-radius: 10px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255 255 255 / 1);
 }
 /* card内の情報のスタイル */
 .registered-shop-info {
@@ -215,7 +215,7 @@
 }
 
 .delete-button:hover {
-    color: red;
+    color: rgba(255, 0, 0, 0.9);
 }
 
 /* レスポンシブ対応 */
