@@ -109,30 +109,32 @@
                                 </div>
                             </div>
                         </form>
-                        <div class="reservation-button-container">
-                            <button type="button" class="button reservation-button"
-                                onclick="toggleEditForm({{ $reservation->id }})">
-                                変更
-                            </button>
-                            <button type="submit" class="button reservation-button update-button"
-                                form="update-form-{{ $reservation->id }}" id="update-button-{{ $reservation->id }}">
-                                更新
-                            </button>
-                            <button type="button" class="button reservation-button cancel-button"
-                                onclick="toggleEditForm({{ $reservation->id }})"
-                                id="cancel-button-{{ $reservation->id }}">
-                                キャンセル
-                            </button>
-                            <button type="submit" class="button reservation-button"
-                                form="delete-form-{{ $reservation->id }}">
-                                削除
-                            </button>
-                            <form action="{{ route('reservations.destroy', $reservation->id) }}" method="POST"
-                                id="delete-form-{{ $reservation->id }}" method="POST" class="delete-form">
-                                @csrf
-                                @method('DELETE')
-                            </form>
-                        </div>
+                        @if ($reservation->payment_status !== 'completed')
+                            <div class="reservation-button-container">
+                                <button type="button" class="button reservation-button"
+                                    onclick="toggleEditForm({{ $reservation->id }})">
+                                    変更
+                                </button>
+                                <button type="submit" class="button reservation-button update-button"
+                                    form="update-form-{{ $reservation->id }}" id="update-button-{{ $reservation->id }}">
+                                    更新
+                                </button>
+                                <button type="button" class="button reservation-button cancel-button"
+                                    onclick="toggleEditForm({{ $reservation->id }})"
+                                    id="cancel-button-{{ $reservation->id }}">
+                                    キャンセル
+                                </button>
+                                <button type="submit" class="button reservation-button delete-button"
+                                    form="delete-form-{{ $reservation->id }}">
+                                    削除
+                                </button>
+                                <form action="{{ route('reservations.destroy', $reservation->id) }}" method="POST"
+                                    id="delete-form-{{ $reservation->id }}" method="POST" class="delete-form">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+                            </div>
+                        @endif
                         <div class="payment-button-container">
                             @if ($reservation->payment_status === 'amount_set')
                                 <a href="{{ route('payment.form', ['reservation_id' => $reservation->id]) }}"
