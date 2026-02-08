@@ -4,6 +4,11 @@
     <link rel="stylesheet" href="{{ asset('users_css/mypage.css') }}">
 @endsection
 
+@section('js')
+<script src="{{ asset('users_css/users_js/mypage.js') }}"></script>
+@endsection
+
+
 @section('content')
     <p class="greeting-title">
         @if(\Carbon\Carbon::now()->hour < 12)
@@ -40,37 +45,29 @@
                                 <p class="reservation-summary-date">予約{{ $loop->iteration }}</p>
                             </div>
                             <div class="reservation-summary-view view-reservation" id="view-{{ $reservation->id }}">
-                                <fieldset class="reservation-field">
+                                <div class="reservation-field">
                                     <span class="view-label">shop</span>
                                     <p class="view-data">
                                         {{ $reservation->shop->shop_name }}
                                     </p>
-                                </fieldset>
-                                <fieldset class="reservation-field">
+                                </div>
+                                <div class="reservation-field">
                                     <span class="view-label">Date</span>
                                     <p class="view-data">
                                         {{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('Y-m-d') }}
                                     </p>
-                                </fieldset>
-                                <fieldset class="reservation-field">
+                                </div>
+                                <div class="reservation-field">
                                     <span class="view-label">Time</span>
                                     <p class="view-data">
                                         {{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('H:i') }}
                                     </p>
-                                </fieldset>
-                                <fieldset class="reservation-field">
+                                </div>
+                                <div class="reservation-field">
                                     <span class="view-label">人数</span>
                                     <p class="view-data">
                                         {{ $reservation->number . '人' }}
                                     </p>
-                                </fieldset>
-                            </div>
-                            <div class="form-group edit-form" id="edit-{{ $reservation->id }}">
-                                <span class="form-label">shop</span>
-                                <div class="select-wrapper">
-                                    <span class="data-entry name-entry">
-                                        {{ $reservation->shop->shop_name }}
-                                    </span>
                                 </div>
                             </div>
                             <div class="form-group edit-form" id="edit-{{ $reservation->id }}">
@@ -129,7 +126,7 @@
                                     削除
                                 </button>
                                 <form action="{{ route('reservations.destroy', $reservation->id) }}" method="POST"
-                                    id="delete-form-{{ $reservation->id }}" method="POST" class="delete-form">
+                                    id="delete-form-{{ $reservation->id }}" class="delete-form">
                                     @csrf
                                     @method('DELETE')
                                 </form>
@@ -223,38 +220,3 @@
     </div>
 @endsection
 
-<script>
-    function toggleEditForm(reservationId) {
-        const viewElement = document.getElementById(`view-${reservationId}`);
-        const editElements = document.querySelectorAll(`#edit-${reservationId}`);
-        const updateButton = document.getElementById(`update-button-${reservationId}`);
-        const editButton = document.querySelector(`button[onclick="toggleEditForm(${reservationId})"]`);
-        const cancelButton = document.getElementById(`cancel-button-${reservationId}`);
-        // 削除ボタンを取得
-        const deleteButton = document.querySelector(`button[form="delete-form-${reservationId}"]`);
-
-        if (!viewElement.classList.contains('hide')) {
-            // 表示モードから編集モードへ
-            viewElement.classList.add('hide');
-            editElements.forEach(element => {
-                element.classList.add('show');
-            });
-            updateButton.classList.add('show');
-            cancelButton.classList.add('show');
-            editButton.classList.add('hide');
-            // 削除ボタンを非表示にする
-            deleteButton.classList.add('hide');
-        } else {
-            // 編集モードから表示モードへ
-            viewElement.classList.remove('hide');
-            editElements.forEach(element => {
-                element.classList.remove('show');
-            });
-            updateButton.classList.remove('show');
-            cancelButton.classList.remove('show');
-            editButton.classList.remove('hide');
-            // 削除ボタンを再表示する
-            deleteButton.classList.remove('hide');
-        }
-    }
-</script>
