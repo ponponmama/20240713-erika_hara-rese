@@ -1,3 +1,21 @@
+/* このページにはsearch要素がないため、headerをrowにする */
+.header {
+    flex-direction: row;
+    height: 80px;
+}
+
+.header-brand {
+    width: 100%;
+}
+
+.top_logo {
+    width: 100%;
+}
+
+.header-search {
+    display: none;
+}
+
 /* ページ全体 */
 .container {
     width: 100%;
@@ -151,15 +169,15 @@
     display: flex;
     align-items: center;
     text-align: left;
+    padding: 0 10px;
     margin-bottom: 3%;
 }
 
 /* 予約変更form 表示フィールド ラベル */
 .view-label,
 .form-label {
-    width: 30%;
+    width: 35%;
     line-height: 24px;
-    padding-left: 3%;
     margin: 0;
 }
 
@@ -519,19 +537,17 @@
         margin: 0;
     }
 
-    .reservation-button,
-    .review-button,
-    .shop-detail {
-        width: 60%;
-        font-size: 16px;
+    .reservation-button-container {
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
-    .store_form {
-        margin: 10px;
-        font-size: 16px;
+    .reservation-button {
+        width: calc(50% - 5px);
+        margin-right: 0;
     }
 
-    .rating-group {
+    /*.rating-group {
         flex-direction: column;
     }
 
@@ -539,7 +555,7 @@
     .label_comment {
         width: 100%;
         margin-bottom: 3%;
-    }
+    }*/
 
     /* お気に入り店舗 */
     .shop_card {
