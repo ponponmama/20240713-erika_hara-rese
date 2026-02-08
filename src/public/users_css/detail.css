@@ -276,7 +276,7 @@
     margin: 10% 0;
 }
 
-@media screen and (min-width: 541px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
     .content {
         align-items: center;
     }
@@ -290,7 +290,7 @@
     }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 767px) {
     .content {
         flex-direction: column;
         height: auto;
@@ -320,7 +320,7 @@
     .reservation-section {
         width: 90%;
         height: auto;
-        margin: 2% 5%;
+        margin: 2% auto;
         position: static;
     }
 

@@ -85,6 +85,10 @@ class ReservationController extends Controller
         session()->put('reservation_details', $reservation);
         session()->put('last_visited_shop_id', $reservation->shop_id);
 
+        // 予約情報をセッションに保存（doneページで表示するため）
+        session()->put('reservation_details', $reservation);
+        session()->put('last_visited_shop_id', $reservation->shop_id);
+
         // 予約完了ページにリダイレクト
         return redirect()->route('reservation.done');
     }
