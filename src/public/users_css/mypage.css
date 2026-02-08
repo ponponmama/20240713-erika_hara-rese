@@ -31,7 +31,7 @@
 
 /* 予約一覧 左側 */
 .reservation-section {
-    width: 45%;
+    width: 35%;
     display: flex;
     box-sizing: border-box;
     flex-direction: column;
@@ -134,7 +134,7 @@
     padding: 0;
 }
 
-/* 予約変更form 編集form */
+/* 予約変更form 編集form　表示・非表示のstyle */
 .edit-form {
     display: none;
     width: 100%;
@@ -250,6 +250,8 @@
 
 .reservation-button-container {
     height: auto;
+    justify-content: space-between;
+    gap: 10px;
 }
 
 .payment-button-container {
@@ -272,7 +274,6 @@
     background-color: rgb(255 255 255 / 1);
     color: rgba(1, 1, 37, 0.8);
     border: 1px solid rgba(1, 1, 37, 0.8);
-    margin-right: 10px;
 }
 
 .payment-button {
@@ -377,7 +378,7 @@
 
 /* お気に入り店舗 右側 */
 .favorite-shops-section {
-    width: 50%;
+    width: 65%;
     flex: 1;
     margin-left: 2.5%;
     padding: 0;
@@ -500,6 +501,14 @@
     /* ページ全体 */
     .container {
         flex-direction: row;
+    }
+
+    .reservation-section {
+        width: 45%;
+    }
+
+    .favorite-shops-section {
+        width: 50%;
     }
 
     .shop_card {
