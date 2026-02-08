@@ -41,25 +41,25 @@
                             </div>
                             <div class="reservation-summary-view view-reservation" id="view-{{ $reservation->id }}">
                                 <fieldset class="reservation-field">
-                                    <label class="view-label">shop</label>
+                                    <span class="view-label">shop</span>
                                     <p class="view-data">
                                         {{ $reservation->shop->shop_name }}
                                     </p>
                                 </fieldset>
                                 <fieldset class="reservation-field">
-                                    <label class="view-label">Date</label>
+                                    <span class="view-label">Date</span>
                                     <p class="view-data">
                                         {{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('Y-m-d') }}
                                     </p>
                                 </fieldset>
                                 <fieldset class="reservation-field">
-                                    <label class="view-label">Time</label>
+                                    <span class="view-label">Time</span>
                                     <p class="view-data">
                                         {{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('H:i') }}
                                     </p>
                                 </fieldset>
                                 <fieldset class="reservation-field">
-                                    <label class="view-label">人数</label>
+                                    <span class="view-label">人数</span>
                                     <p class="view-data">
                                         {{ $reservation->number . '人' }}
                                     </p>
