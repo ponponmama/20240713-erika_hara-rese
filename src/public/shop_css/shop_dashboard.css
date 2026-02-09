@@ -1,27 +1,8 @@
-/* このページにはsearch要素がないため、headerをrowにする */
-.header {
-    flex-direction: row;
-    height: 80px;
-}
-
-.header-brand {
-    width: 100%;
-}
-
-.top_logo {
-    width: 100%;
-}
-
-.header-search {
-    display: none;
-}
-
 /* ページmain部分のstyle */
 .reservations-container {
     width: 80%;
     margin: 0 auto;
     align-self: flex-start;
-    padding: 10px;
 }
 
 /* 各コンテンツのtitleのstyle */

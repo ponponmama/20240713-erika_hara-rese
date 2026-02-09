@@ -1,3 +1,5 @@
+/* headerの共通style をcommonとindex.blade.phpのを入れ替えること2/8 */
+
 body {
     margin: 0;
     padding: 0;
@@ -36,7 +38,7 @@ body {
 .header-brand {
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: left;
@@ -45,11 +47,7 @@ body {
 }
 
 .header-search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 100%;
+    display: none;
 }
 
 .content {
@@ -73,10 +71,16 @@ body {
     margin: 0 10px;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .page-title-name,
 .greeting-title {
-    height: 50px;
-    line-height: 50px;
+    height: 36px;
+    line-height: 36px;
     margin: 0 auto;
     color: rgba(0 0 0 / 0.6);
     font-weight: 700;
@@ -93,15 +97,14 @@ body {
 
 /* 各コンテンツのtitleの共通style */
 .content-section-title {
-    height: 50px;
-    line-height: 50px;
+    height: 40px;
+    line-height: 40px;
     font-size: 24px;
     font-weight: 700;
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: rgba(0 0 0 / 0.6);
 }
-
 
 /* ページネーションの共通スタイル */
 .custom-count-pagination {
@@ -167,27 +170,22 @@ body {
     }
 
     .header {
-        height: 160px;
-        flex-direction: column;
+        height: 80px;
         padding: 0;
-        justify-content: space-between;
     }
 
     .header-brand {
         width: 100%;
+        gap: 0;
     }
 
     .top_logo {
-        width: 50%;
-        padding-left: 50px;
+        width: 100%;
+        padding: 0 50px;
     }
 
     .header-search {
-        width: 100%;
-    }
-
-    .greeting-title, .page-title-name {
-        margin: 2% auto;
+        display: none;
     }
 
     .page-title-name {
@@ -196,10 +194,6 @@ body {
 
     .greeting-title {
         font-size: 18px;
-    }
-
-    .session-messages {
-        margin: 2% auto;
     }
 }
 

@@ -1,8 +1,5 @@
 .container {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 /* 店舗代表者用 */
@@ -158,7 +155,8 @@
     display: none;
 }
 
-.button {
+.register-button,
+.new-register-button {
     width: 35%;
     height: 40px;
     line-height: 40px;
@@ -178,30 +176,13 @@
 
 /* メディアクエリ */
 @media screen and (max-width: 767px) {
-    /* このページにはsearch要素がないため、headerをrowにする */
-    .header {
-        flex-direction: row;
-        height: 80px;
-    }
-
-    .header-brand {
-        width: 100%;
-    }
-
-    .top_logo {
-        width: 100%;
-    }
-
-    .header-search {
-        display: none;
-    }
-
     .shop_manager_form,
     .shop_registration_form {
         width: 100%;
     }
 
-    .button {
+    .register-button,
+    .new-register-button {
         width: 70%;
         margin: 10% auto 15% auto;
     }
@@ -230,7 +211,8 @@
         width: 60%;
     }
 
-    .button {
+    .register-button,
+    .new-register-button {
         width: 50%;
     }
 }

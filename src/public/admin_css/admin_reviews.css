@@ -136,24 +136,6 @@
 
 /* メディアクエリ */
 @media screen and (max-width: 540px) {
-    /* このページにはsearch要素がないため、headerをrowにする */
-    .header {
-        flex-direction: row;
-        height: 80px;
-    }
-
-    .header-brand {
-        width: 100%;
-    }
-
-    .top_logo {
-        width: 100%;
-    }
-
-    .header-search {
-        display: none;
-    }
-
     .container {
         width: 90%;
         margin: 5%;
@@ -173,24 +155,6 @@
 }
 
 @media screen and (min-width: 541px) and (max-width: 1024px) {
-    /* このページにはsearch要素がないため、headerをrowにする */
-    .header {
-        flex-direction: row;
-        height: 80px;
-    }
-
-    .header-brand {
-        width: 100%;
-    }
-
-    .top_logo {
-        width: 100%;
-    }
-
-    .header-search {
-        display: none;
-    }
-
     .review_form {
         width: 95%;
         margin: 0 auto;
