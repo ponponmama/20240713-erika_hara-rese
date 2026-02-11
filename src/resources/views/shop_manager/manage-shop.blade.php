@@ -73,7 +73,7 @@
                 </label>
                 <input type="file" id="image" name="image" class="input_image" accept="image/*">
                 <label for="image" class="data-entry custom-file-upload">
-                    <i class="fa-cloud-upload">写真を選択</i>
+                    写真を選択
                 </label>
             </div>
             <p class="form__error">
