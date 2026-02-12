@@ -1,5 +1,3 @@
-/* headerの共通style をcommonとindex.blade.phpのを入れ替えること2/8 */
-
 body {
     margin: 0;
     padding: 0;
@@ -47,10 +45,12 @@ body {
     gap: 20px;
 }
 
+/* 検索欄のスタイル (indexページでのみ使用)*/
 .header-search {
     display: none;
 }
 
+/* コンテンツの共通スタイル */
 .content {
     width: 100%;
     min-height: calc(100vh - 120px);
@@ -62,6 +62,7 @@ body {
     position: relative;
 }
 
+/* トップロゴのスタイル */
 .top_logo {
     width: 100px;
     height: 100%;
@@ -72,11 +73,13 @@ body {
     margin: 0 10px;
 }
 
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 
 .page-title-name,
 .greeting-title {
@@ -92,6 +95,7 @@ body {
     font-size: 26px;
 }
 
+/* 挨拶メッセージのスタイル */
 .greeting-title {
     font-size: 22px;
 }
@@ -155,6 +159,7 @@ body {
     color: rgba(0 0 255 / 1);
 }
 
+/* エラーメッセージのスタイル */
 .form__error {
     height: 22px;
     line-height: 22px;

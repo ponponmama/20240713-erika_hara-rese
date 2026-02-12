@@ -1,8 +1,7 @@
 /* ページmain部分のstyle */
-.reservations-container {
+.content {
     width: 80%;
     margin: 0 auto;
-    align-self: flex-start;
 }
 
 /* 各コンテンツのtitleのstyle */
@@ -23,7 +22,7 @@
     border-radius: 10px;
     font-size: 16px;
     box-shadow: 10px 10px 20px rgb(0 0 0 / 0.6);
-    margin-bottom: 50px;
+    margin: 20px auto 50px auto;
     padding: 15px;
 }
 
@@ -188,6 +187,10 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .content {
+        width: 100%;
+    }
+
     .reservations {
         width: 100%;
         padding: 0;
@@ -209,6 +212,10 @@
 }
 
 @media screen and (max-width: 767px) {
+    .content {
+        width: 100%;
+    }
+
     .reservations {
         width: 100%;
         padding: 0;
