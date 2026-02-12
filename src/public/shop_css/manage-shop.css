@@ -319,12 +319,17 @@
     }
 
     .file-name {
-        height: auto;
-        min-height: 0;
+        width: 100%;
+        margin: 0;
     }
 
     .shop-image-wrapper {
         width: 100%;
+    }
+
+    .preview-image-container {
+        width: 100%;
+        margin: 0;
     }
 
     .shop_info_container {
