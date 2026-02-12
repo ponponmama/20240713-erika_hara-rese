@@ -1,14 +1,9 @@
-/* admin/shops_list用 */
-.container {
-    flex-direction: column;
-}
-
+/* 登録店舗一覧 */
 .management_form {
     width: 80%;
     margin: 0 auto;
     align-self: flex-start;
 }
-
 
 /* テーブルスタイル */
 .table-section {
@@ -22,9 +17,10 @@
     color: rgb(0 0 0 / 0.8);
     box-shadow: 10px 10px 20px rgb(0 0 0 / 0.4);
     padding: 20px 50px;
-    margin-bottom: 50px;
+    margin: 20px auto 50px auto;
 }
 
+/* テーブルのデータセルと列の共通スタイル */
 .admin-td,
 .admin-th,
 .admin-info {
@@ -32,36 +28,37 @@
     border-bottom: 1px solid rgb(0 0 0 / 0.4);
 }
 
+/* テーブルの列スタイル */
 .admin-th {
     width: calc((100% - 80px) / 5);
     height: 80px;
     font-size: 18px;
 }
 
+/* テーブルのデータセルスタイル */
 .admin-td {
     height: 65px;
     font-size: 16px;
 }
 
+/* テーブルのデータセルと列の共通スタイル */
 .admin-td,
 .admin-th {
     text-align: left;
 }
 
+/* 詳細ボタン欄のスタイル */
 .admin-info {
     text-align: center;
 }
 
+/* テーブルの最後の行のデータセルと列の共通スタイル */
 .admin-tr:last-child .admin-td,
 .admin-tr:last-child .admin-button-section {
     border-bottom: none;
 }
 
-.admin-button-section {
-    border-bottom: 1px solid rgb(0 0 0 / 0.4);
-    text-align: center;
-}
-
+/* 詳細ボタンのスタイル */
 .admin-button {
     width: 100%;
     padding: 6px 0 6px 6px;
@@ -77,14 +74,14 @@
     color: rgb(0 0 0 / 0.8);
 }
 
+/* ここからレスポンシブ対応 */
+/* メディアクエリ */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .management_form {
         width: 100%;
     }
 }
 
-
-/* メディアクエリ */
 @media screen and (max-width: 767px) {
     .container {
         width: 90%;

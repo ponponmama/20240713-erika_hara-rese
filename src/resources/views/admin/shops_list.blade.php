@@ -10,63 +10,60 @@
 @endsection
 
 @section('content')
-    <div class="container shops_list_container">
-        <p class="greeting-title">
-            お疲れ様です！{{ Auth::user()->user_name }}さん
-        </p>
-        <p class="session-messages">
-            @include('custom_components.session-messages')
-        </p>
-        <div class="management_form shop_list_form">
-            <p class="content-section-title">登録店舗一覧</p>
-            <table class="table-section shop_list_table">
-                <thead class="admin-thead">
+    <p class="greeting-title">
+        お疲れ様です！{{ Auth::user()->user_name }}さん
+    </p>
+    <p class="session-messages">
+        @include('custom_components.session-messages')
+    </p>
+    <div class="management_form">
+        <p class="content-section-title">登録店舗一覧</p>
+        <table class="table-section">
+            <thead class="admin-thead">
+                <tr class="admin-tr">
+                    <th class="admin-th">店舗名</th>
+                    <th class="admin-th">エリア</th>
+                    <th class="admin-th">ジャンル</th>
+                    <th class="admin-th">営業時間</th>
+                    <th class="admin-th admin-info">詳細</th>
+                </tr>
+            </thead>
+            <tbody>
+            @if (count($shops) > 0)
+                @foreach ($shops as $shop)
                     <tr class="admin-tr">
-                        <th class="admin-th">店舗名</th>
-                        <th class="admin-th">エリア</th>
-                        <th class="admin-th">ジャンル</th>
-                        <th class="admin-th">営業時間</th>
-                        <th class="admin-th admin-info">詳細</th>
+                        <td class="admin-td">{{ $shop->shop_name }}</td>
+                        <td class="admin-td">
+                            @foreach ($shop->areas as $area)
+                                {{ $area->area_name }}
+                                @if (!$loop->last)
+                                    ,
+                                @endif
+                            @endforeach
+                        </td>
+                        <td class="admin-td">
+                            @foreach ($shop->genres as $genre)
+                                {{ $genre->genre_name }}
+                                @if (!$loop->last)
+                                    ,
+                                @endif
+                            @endforeach
+                        </td>
+                        <td class="admin-td">{{ $shop->open_time }} - {{ $shop->close_time }}</td>
+                        <td class="admin-td admin-info">
+                            <button class="admin-button detail-button" data-shop-id="{{ $shop->id }}">詳細</button>
+                        </td>
                     </tr>
-                </thead>
-                <tbody>
-                    @if (count($shops) > 0)
-                        @foreach ($shops as $shop)
-                            <tr class="admin-tr">
-                                <td class="admin-td">{{ $shop->shop_name }}</td>
-                                <td class="admin-td">
-                                    @foreach ($shop->areas as $area)
-                                        {{ $area->area_name }}
-                                        @if (!$loop->last)
-                                            ,
-                                        @endif
-                                    @endforeach
-                                </td>
-                                <td class="admin-td">
-                                    @foreach ($shop->genres as $genre)
-                                        {{ $genre->genre_name }}
-                                        @if (!$loop->last)
-                                            ,
-                                        @endif
-                                    @endforeach
-                                </td>
-                                <td class="admin-td">{{ $shop->open_time }} - {{ $shop->close_time }}</td>
-                                <td class="admin-td admin-button-section">
-                                    <button class="admin-button detail-button"
-                                        data-shop-id="{{ $shop->id }}">詳細</button>
-                                </td>
-                            </tr>
-                        @endforeach
-                    @else
-                        <tr>
-                            <td colspan="5" class="text-center">店舗が登録されていません</td>
-                        </tr>
-                    @endif
-                </tbody>
-            </table>
-            <div class="custom-count-pagination">
-                {{ $shops->links() }}
-            </div>
+                @endforeach
+                @else
+                    <tr>
+                        <td colspan="5" class="text-center">店舗が登録されていません</td>
+                    </tr>
+                @endif
+            </tbody>
+        </table>
+        <div class="custom-count-pagination">
+            {{ $shops->links() }}
         </div>
     </div>
 
