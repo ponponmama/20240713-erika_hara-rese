@@ -31,9 +31,9 @@
 .icon-img {
     width: 30px;
     height: 30px;
-    margin: 0 10px;
     display: inline-block;
     vertical-align: middle;
+    margin: 5px;
 }
 
 /* 項目ラベルのスタイル */
@@ -304,8 +304,13 @@
         width: 100%;
     }
 
+    .manage_form {
+        padding: 10px 20px;
+    }
+
     .label-title {
         width: 100%;
+        padding: 0;
     }
 
     .form-group {
@@ -327,18 +332,21 @@
         overflow-y: scroll;
     }
 
+    .up_date_button_container {
+        margin: 20px auto 50px auto;
+    }
+
     .confirm-button-container{
         height: auto;
         flex-direction: column;
         align-items: center;
-        gap: 0;
+        gap: 20px;
     }
 
     .up_date_button,
     .confirm-button,
     .view-shop-link {
         width: 100%;
-        margin: 5% 0;
     }
 }
 
