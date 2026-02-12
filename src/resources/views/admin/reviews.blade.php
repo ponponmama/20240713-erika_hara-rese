@@ -10,10 +10,10 @@
 @endsection
 
 @section('content')
-    <h2 class="page-title-name">レビュー　一覧</h2>
     <p class="greeting-title">
         お疲れ様です！{{ Auth::user()->user_name }}さん
     </p>
+    <h2 class="page-title-name">レビュー　一覧</h2>
     <p class="session-messages">
         @include('custom_components.session-messages')
     </p>

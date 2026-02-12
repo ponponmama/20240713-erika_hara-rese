@@ -1,22 +1,4 @@
-/* このページにはsearch要素がないため、headerをrowにする */
-.header {
-    flex-direction: row;
-    height: 80px;
-}
-
-.header-brand {
-    width: 100%;
-}
-
-.top_logo {
-    width: 100%;
-}
-
-.header-search {
-    display: none;
-}
-
-
+/* admin/ レビュー一覧 */
 .review_form {
     width: 70%;
     margin: 20px auto;
@@ -39,6 +21,7 @@
     margin-bottom: 50px;
 }
 
+/* テーブルの行スタイル */
 .review-tr {
     width: 100%;
     border-top: none;
@@ -47,6 +30,7 @@
     border-bottom: 1px solid rgb(0 0 0 / 0.4);
 }
 
+/* テーブルの列スタイル */
 .review-th {
     width: calc((100% - 60px) / 5);
     height: 80px;
@@ -54,11 +38,13 @@
     color: rgb(0 0 0 / 0.8);
 }
 
+/* テーブルのデータセルスタイル */
 .review-td {
     height: 65px;
     font-size: 16px;
 }
 
+/* テーブルのデータセルと列の共通スタイル */
 .review-td,
 .review-th {
     text-align: left;
@@ -68,23 +54,28 @@
     text-overflow: ellipsis;
 }
 
+/* 詳細ボタンの列スタイル */
 .review-th.review-info {
     width: 60px;
     text-align: center;
 }
 
+/* 詳細ボタン欄のスタイル */
 .review-button-section {
     padding: 4px 10px;
     text-align: center;
     border-bottom: 1px solid rgb(0 0 0 / 0.4);
 }
 
+
+/* テーブルの最後の行のデータセルと列の共通スタイル */
 .review-tr:last-child .review-td,
 .review-tr:last-child .comment-column,
 .review-tr:last-child .review-button-section {
     border-bottom: none;
 }
 
+/* コメント欄スタイル */
 .comment-column {
     padding: 4px 10px;
     border-bottom: 1px solid rgb(0 0 0 / 0.4);
@@ -94,6 +85,7 @@
     text-overflow: ellipsis;
 }
 
+/* 詳細ボタン */
 .detail-button {
     padding: 6px 0 6px 6px;
     color: rgb(0 0 0 / 0.4);
@@ -117,24 +109,16 @@
     color: rgb(253 145 3 / 0.9);
 }
 
-/* レビュー詳細モーダル固有のスタイル */
-/* モーダルスタイルはadmin_modal_common.cssに移動済み */
-
-.detail-row {
-    margin: 5px 0;
-    padding: 5px 10px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-}
-
-.detail-label {
-    font-weight: bold;
-    margin-right: 10px;
-    min-width: 120px;
-}
-
+/* ここからレスポンシブ対応 */
 /* メディアクエリ */
+@media screen and (min-width: 541px) and (max-width: 1024px) {
+    .review_form {
+        width: 95%;
+        margin: 0 auto;
+    }
+}
+
+
 @media screen and (max-width: 540px) {
     .container {
         width: 90%;
@@ -154,9 +138,3 @@
     }
 }
 
-@media screen and (min-width: 541px) and (max-width: 1024px) {
-    .review_form {
-        width: 95%;
-        margin: 0 auto;
-    }
-}

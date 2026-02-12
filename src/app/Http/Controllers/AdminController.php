@@ -96,6 +96,17 @@ class AdminController extends Controller
             $shop->genres()->attach($genre->id);
 
             DB::commit();
+
+            // Ajaxリクエストの場合はJSONを返す
+            if ($request->ajax()) {
+                return response()->json([
+                    'success' => true,
+                    'message' => '新規店舗が正常に登録されました。',
+                    'redirect' => route('admin.dashboard'),
+                    'shop_id' => $shop->id
+                ]);
+            }
+
             return redirect()->route('admin.dashboard')
                 ->with('shop_success', '新規店舗が正常に登録されました。')
                 ->with('new_shop_id', $shop->id);
@@ -106,6 +117,15 @@ class AdminController extends Controller
                 'file' => $e->getFile(),
                 'line' => $e->getLine()
             ]);
+
+            // Ajaxリクエスト(js内のfetch)の場合はJSONを返す
+            if ($request->ajax()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => '店舗の登録に失敗しました'
+                ], 500);
+            }
+
             return redirect()->route('admin.dashboard')->with('shop_error', '店舗の登録に失敗しました');
         }
     }
