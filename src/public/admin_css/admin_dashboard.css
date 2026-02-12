@@ -17,10 +17,11 @@
 
 /* アイコン＆入力フォームのグループ */
 .form-group {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    margin-bottom: 5px;
 }
 
 /* 左側アイコンのスタイル */
@@ -57,22 +58,13 @@
     width: 100%;
     padding: 2px 10px;
     font-size: 16px;
-    border: 1px solid rgba(0, 0, 0, 0.6);
-    border-radius: 6px;
     outline: none;
+    font-weight: 400;
     height: 45px;
-    line-height: 1.5;
+    line-height: 45px;
+    border-radius: 6px;
+    border: 1px solid rgba(0 0 0 / 0.6);
 }
-
-/* 表示/非表示のユーティリティクラス */
-.modal.hide {
-    display: none;
-}
-
-.modal.show {
-    display: flex;
-}
-
 
 /* 新規店舗登録用 */
 .admin-form {
@@ -171,6 +163,16 @@
 .button:hover {
     background-color: rgba(0 0 255 / 0.4);
 }
+
+/* 表示/非表示のユーティリティクラス */
+.modal.hide {
+    display: none;
+}
+
+.modal.show {
+    display: flex;
+}
+
 
 /* メディアクエリ */
 @media screen and (max-width: 767px) {
