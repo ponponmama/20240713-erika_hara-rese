@@ -197,14 +197,21 @@
     }
 
     .table-section {
-        display: block;
         white-space: nowrap;
         overflow-x: auto;
+    }
+
+    .email-column {
+        max-width: 130px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     .reservation-details {
         width: 70%;
     }
+
 
     .qr-section-button {
         gap: 20px;
@@ -233,6 +240,14 @@
         overflow-x: auto;
         padding: 15px;
     }
+
+    .email-column {
+        width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
 
     .qr-email-column-section {
         display: flex;
