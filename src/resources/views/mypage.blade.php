@@ -21,7 +21,7 @@
     </p>
     <div class="container">
         <div class="reservation-section">
-            <h2 class="page-title-name section-title">予約状況</h2>
+            <h2 class="content-section-title">予約状況</h2>
             <p class="session-messages">
                 @include('custom_components.session-messages', [
                     'showReservation' => true,
@@ -182,7 +182,7 @@
             @endforeach
         </div>
         <div class="favorite-shops-section">
-            <h2 class="page-title-name favorite-title">お気に入り店舗</h2>
+            <h2 class="content-section-title">お気に入り店舗</h2>
             <p class="session-messages">
                 @include('custom_components.session-messages', [
                     'showGeneral' => false,

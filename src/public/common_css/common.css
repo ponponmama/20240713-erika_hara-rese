@@ -72,30 +72,13 @@ body {
     align-items: center;
 }
 
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-.page-title-name,
 .greeting-title {
     height: 36px;
     line-height: 36px;
     margin: 0 auto;
-    color: rgba(0 0 0 / 0.6);
+    color: rgba(0 0 0 / 0.8);
     font-weight: 700;
     text-align: center;
-}
-
-.page-title-name {
-    font-size: 26px;
-}
-
-/* 挨拶メッセージのスタイル */
-.greeting-title {
     font-size: 22px;
 }
 
@@ -103,7 +86,7 @@ body {
 .content-section-title {
     height: 40px;
     line-height: 40px;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
     margin: 0;
     margin: 10px auto;
@@ -169,6 +152,12 @@ body {
     margin: 2px;
 }
 
+/* JS用の表示/非表示のユーティリティクラス */
+.hide {
+    display: none;
+}
+
+
 /* レスポンシブ対応 */
 @media screen and (max-width: 768px) {
     .content {
@@ -193,17 +182,5 @@ body {
     .header-search {
         display: none;
     }
-
-    .page-title-name {
-        font-size: 20px;
-    }
-
-    .greeting-title {
-        font-size: 18px;
-    }
 }
 
-/* JS用の表示/非表示のユーティリティクラス */
-.hide {
-    display: none;
-}
