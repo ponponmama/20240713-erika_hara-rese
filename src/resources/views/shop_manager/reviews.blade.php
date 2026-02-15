@@ -14,7 +14,7 @@
         <h2 class="content-section-title">レビュー 一覧</h2>
         <table class="table-section">
             <thead>
-                <tr class="review-th">
+                <tr class="review-tr">
                     <th class="review-th">投稿日時</th>
                     <th class="review-th">ユーザー名</th>
                     <th class="review-th">評価</th>
