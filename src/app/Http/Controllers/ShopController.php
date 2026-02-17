@@ -69,6 +69,17 @@ class ShopController extends Controller
 
         // 選択された日付をセッションに保存
         session(['selected_date' => $date]);
+        // 日付が変更されたことをセッションに保存
+        session(['date_changed' => true]);
+
+        // 時間と人数の値をセッションに保存（バリデーションエラー後の日付変更時に保持するため）
+        // 空の値は保存しない（バリデーションを通過させないため）
+        if ($request->has('time') && $request->input('time') !== '') {
+            session(['selected_time' => $request->input('time')]);
+        }
+        if ($request->has('number') && $request->input('number') !== '') {
+            session(['selected_number' => $request->input('number')]);
+        }
 
         // 日付に基づいて営業時間を計算
         $selectedDate = new Carbon($date);

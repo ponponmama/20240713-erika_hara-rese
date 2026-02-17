@@ -21,7 +21,6 @@ class CreateShopsTable extends Migration
             $table->string('image')->nullable();
             $table->time('open_time')->nullable();
             $table->time('close_time')->nullable();
-            $table->integer('price')->default(100);
             $table->timestamps();
         });
     }

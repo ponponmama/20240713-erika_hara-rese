@@ -1,28 +1,9 @@
 /* 共通styleがcolumnなのでrowで戻す。 */
 .content {
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
 }
-
-/* このページにはsearch要素がないため、headerをrowにする */
-.header {
-    flex-direction: row;
-    height: 80px;
-}
-
-.header-brand {
-    width: 100%;
-}
-
-.top_logo {
-    width: 100%;
-}
-
-.header-search {
-    display: none;
-}
-
 
 /* ここからdetailページのstyle */
 /*左要素より少し上へ上げるためにrelativeを使う。*/
@@ -38,7 +19,9 @@
 
 /* 左要素style */
 .detail-section {
-    width: 50%;
+    width: 45%;
+    min-height: 700px;
+    height: auto;
     text-align: left;
 }
 
@@ -108,7 +91,7 @@
 .description {
     width: 100%;
     height: auto;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 22px;
     color: rgb(0 0 0 / 0.8);
     margin: 10px 0;
@@ -117,24 +100,17 @@
 /* 右要素style */
 .reservation-section {
     width: 45%;
+    height: auto;
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /*align-items: center;*/
+    color: rgb(255 255 255 / 1);
     background-color: rgba(0 0 255 / 0.8);
     border-radius: 10px;
     box-shadow: 10px 10px 20px rgb(0 0 0 / 0.6);
-
-
-}
-
-/* 予約フォームのstyle */
-.form-section {
-    width: 100%;
-    height: auto;
-    min-height: 650px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    color: rgb(255 255 255 / 1);
+    padding-top: 20px;
 }
 
 /* 予約フォームのタイトルのstyle */
@@ -145,9 +121,10 @@
     text-align: left;
     margin: 0;
     font-size: 20px;
-    padding: 5px 30px;
+    padding: 5px 50px;
 }
 
+/* 予約フォームのformのstyle */
 .reserve_form {
     width: 80%;
     margin: 0 auto;
@@ -157,13 +134,14 @@
     padding: 10px 30px;
 }
 
+/* 予約フォームの日付titleのstyle */
 .label_date {
     width: 40%;
     height: 30px;
     line-height: 30px;
 }
 
-
+/* 予約フォームの時刻&人数セレクトボックスのstyle */
 .select_time,
 .select_number {
     height: 30px;
@@ -178,6 +156,7 @@
     z-index: 1;
 }
 
+/* 予約フォームの日付inputのstyle */
 .input_date {
     height: 30px;
     line-height: 30px;
@@ -187,12 +166,13 @@
     border: none;
 }
 
+/* 予約フォームの時刻&人数セレクトボックスのコンテナのstyle */
 .select-wrapper {
     width: 100%;
     position: relative;
 }
 
-/* カスタムアイコンのスタイル */
+/* カスタムアイコン▽のstyle */
 .custom-select-icon {
     position: absolute;
     right: 15px;
@@ -206,16 +186,18 @@
     z-index: 2;
 }
 
+/* 予約フォームの予約情報のstyle */
 .reservation-summary {
     width: 100%;
     height: 100%;
-    padding: 4px 30px;
+    padding: 30px;
     border-radius: 6px;
     color: rgb(255 255 255 / 1);
     display: flex;
     flex-direction: column;
 }
 
+/* 予約フォームの予約情報の項目のstyle */
 .summary-item {
     display: flex;
     width: 80%;
@@ -227,6 +209,7 @@
     gap: 15px;
 }
 
+/* 予約フォームの予約情報の項目のラベルのstyle */
 .label {
     width: 70px;
     height: 30px;
@@ -234,12 +217,14 @@
     color: rgb(255 255 255 / 1);
 }
 
+/* 予約フォームの予約ボタンのコンテナのstyle */
 .button-container {
     width: 100%;
     margin-top: auto;
     border-radius: 0 0 10px 10px;
 }
 
+/* 予約フォームの予約ボタンのstyle */
 .reserve-button {
     width: 100%;
     height: 50px;
@@ -258,16 +243,18 @@
 /* QRコードのstyle */
 .qr-code {
     width: 100%;
-    padding: 30px;
     text-align: center;
-    margin-top: auto;
+    padding: 50px 0;
 }
 
 /* QRコード画像のstyle */
 .qr_code_img {
-    margin: 30px;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
 }
 
+/* QRコードテキストのstyle */
 .qr-text {
     width: 100%;
     text-align: center;
@@ -277,14 +264,6 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .content {
-        align-items: center;
-    }
-
-    .form-section {
-        width: 100%;
-    }
-
     .input_date {
         width: 65%;
     }
@@ -297,8 +276,11 @@
         gap: 0;
     }
 
-    .form-section {
-        width: 100%;
+    .detail-section {
+        min-height: 500px;
+    }
+
+    .reservation-section {
         min-height: 300px;
     }
 
@@ -326,15 +308,6 @@
 
     .reserve_form {
         width: 100%;
-    }
-
-    .qr-code {
-        padding: 0;
-        margin-top: 20px;
-    }
-
-    .qr_code_img {
-        margin: 0 auto;
     }
 }
 

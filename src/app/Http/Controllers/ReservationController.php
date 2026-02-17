@@ -15,6 +15,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Support\Facades\Log;
 use App\Mail\ReservationUpdated;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 
 class ReservationController extends Controller
@@ -84,10 +85,10 @@ class ReservationController extends Controller
         // 予約情報をセッションに保存（doneページで表示するため）
         session()->put('reservation_details', $reservation);
         session()->put('last_visited_shop_id', $reservation->shop_id);
-
-        // 予約情報をセッションに保存（doneページで表示するため）
-        session()->put('reservation_details', $reservation);
-        session()->put('last_visited_shop_id', $reservation->shop_id);
+        // 日付変更フラグと選択値をクリア
+        session()->forget('date_changed');
+        session()->forget('selected_time');
+        session()->forget('selected_number');
 
         // 予約完了ページにリダイレクト
         return redirect()->route('reservation.done');
@@ -122,6 +123,11 @@ class ReservationController extends Controller
         // 営業時間の取得
         $times = $this->shopService->getBusinessHours($shop->open_time, $shop->close_time, $date, $current);
         $reservation = Reservation::where('shop_id', $id)->latest()->first();
+
+        // 初回アクセス時はdate_changedをfalseに設定
+        if (!session()->has('date_changed')) {
+            session(['date_changed' => false]);
+        }
 
         return view('shops.detail', [
             'shop' => $shop,
@@ -213,6 +219,15 @@ class ReservationController extends Controller
         }
 
         $reservation = Reservation::findOrFail($id);
+
+        // QRコードファイルを削除
+        if ($reservation->qr_code) {
+            $qrCodePath = 'public/' . $reservation->qr_code;
+            if (Storage::exists($qrCodePath)) {
+                Storage::delete($qrCodePath);
+            }
+        }
+
         $reservation->delete();
         return redirect()->route('mypage')->with('reservation_success', '予約が削除されました。');
     }
@@ -270,6 +285,11 @@ class ReservationController extends Controller
         $times = $this->shopService->getBusinessHours($shop->open_time, $shop->close_time, $date, $current);
 
         $reservation = Reservation::where('shop_id', $id)->latest()->first();
+
+        // 初回アクセス時はdate_changedをfalseに設定
+        if (!session()->has('date_changed')) {
+            session(['date_changed' => false]);
+        }
 
         // ユーザーが他のページに遷移する際にセッションデータをクリアするためのフラグを設定
         session()->put('clear_session_on_leave', true);

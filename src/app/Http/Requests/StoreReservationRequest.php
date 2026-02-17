@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Validator;
 use Carbon\Carbon;
 
 class StoreReservationRequest extends FormRequest
@@ -17,6 +18,14 @@ class StoreReservationRequest extends FormRequest
         return true;
     }
 
+    protected function prepareForValidation()
+    {
+        // セッションのdate_changedをチェックして、リクエストに追加
+        $this->merge([
+            'date_changed_session' => session('date_changed', false),
+        ]);
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -25,30 +34,32 @@ class StoreReservationRequest extends FormRequest
     public function rules()
     {
         return [
-            'date' => 'required|date|after_or_equal:today',
-            'time' => [
-                'required',
-                'date_format:H:i',
-                function ($attribute, $value, $fail) {
-                    $dateInput = $this->input('date') . ' ' . $value;
-                    if ($this->input('date') == Carbon::today()->toDateString() && Carbon::createFromFormat('Y-m-d H:i', $dateInput) < Carbon::now()) {
-                        $fail('指定された時間は過去の時間です。');
-                    }
-                },
-            ],
+            'date' => ['required', 'date', 'after_or_equal:' . Carbon::today()->toDateString()],
+            'time' => 'required|date_format:H:i',
             'number' => 'required|integer|min:1',
         ];
     }
 
+    public function withValidator($validator)
+    {
+        $validator->after(function ($validator) {
+            // セッションのdate_changedをチェック
+            $dateChanged = $this->input('date_changed_session', false);
+
+            // 日付が変更されていない場合（date_changedがfalseまたはセッションにない）はエラー
+            if (!$dateChanged) {
+                $validator->errors()->add('date', $this->messages()['date.date_not_selected']);
+            }
+        });
+    }
+
     public function messages()
     {
-    return [
-            'date.required' => '予約日付を入力してください。',
-            'time.required' => '予約時刻を入力してください。',
-            'number.required' => '予約人数を入力してください。',
-            'total_amount.required' => '金額を入力してください。',
-            'total_amount.integer' => '金額は整数で入力してください。',
-            'total_amount.min' => '金額は0以上で入力してください。'
+        return [
+            'date.required' => '予約日を選択してください。',
+            'date.date_not_selected' => '予約日を選択してください。',
+            'time.required' => '予約時刻を選択してください。',
+            'number.required' => '予約人数を選択してください。',
         ];
     }
 }
