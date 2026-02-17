@@ -153,7 +153,7 @@
 .shop-guide {
     margin: 0;
     padding: 2px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 16px;
     margin-bottom: 5px;
 }
@@ -168,18 +168,17 @@
 
 /* 店舗一覧のカード内の詳しく見るボタンのスタイル */
 .shop-detail-button {
-    width: 110px;
+    width: 45%;
     height: 35px;
     line-height: 35px;
-    padding: 0 10px;
+    padding: 0 5px;
     background-color: rgba(0 0 255 / 0.8);
     color: rgb(255 255 255 / 1);
     text-decoration: none;
     border-radius: 6px;
     display: inline-block;
-    font-size: 14px;
+    font-size: 16px;
     text-align: center;
-    margin: 5px;
 }
 
 /* お気に入りボタンのformのstyle */
@@ -237,7 +236,6 @@
     text-decoration: none;
     color: rgb(255 255 255 / 1);
     transform: translateY(-2px);
-    box-shadow: 3px 3px 6px rgba(131, 25, 25, 0.4);
 }
 
 /* ここからレスポンシブデザインの設定 */
@@ -261,26 +259,12 @@
         padding: 0;
     }
 
-    .shop_table {
-        justify-content: space-between;
-    }
-
     .shop_card {
         flex: 0 1 30%;
     }
 
-    .shop-name {
-        font-size: 21px;
-    }
-
-    .shop-detail {
-        width: 44%;
-        padding: 6px 10px;
-        font-size: 13px;
-    }
-
-    .shop-guide {
-        font-size: 13px;
+    .shop-detail-button {
+        width: 52%;
     }
 }
 
@@ -311,11 +295,6 @@
         width: 33%;
     }
 
-    .content {
-        width: 100%;
-        padding: 0;
-    }
-
     .shop_table {
         justify-content: space-between;
     }
@@ -324,23 +303,13 @@
         flex: 0 1 45%;
     }
 
-    .shop-name {
-        font-size: 21px;
-    }
-
-    .shop-detail {
-        width: 44%;
-        padding: 6px 10px;
-        font-size: 13px;
-    }
-
-    .shop-guide {
-        font-size: 13px;
+    .shop-detail-button {
+        width: 55%;
     }
 
 }
 
-@media screen  and (max-width: 540px) {
+@media screen  and (max-width: 539px) {
     .header {
         height: 160px;
         flex-direction: column;
@@ -372,18 +341,8 @@
         margin: 3%;
     }
 
-        .shop-name {
-        font-size: 21px;
-    }
-
-    .shop-detail {
-        width: 44%;
-        padding: 6px 10px;
-        font-size: 13px;
-    }
-
-    .shop-guide {
-        font-size: 13px;
+    .shop-detail-button {
+        width: 50%;
     }
 
 }
