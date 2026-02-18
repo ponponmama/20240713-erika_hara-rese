@@ -12,6 +12,7 @@ body {
 .common_body {
     width: 100%;
     min-height: 100vh;
+    max-height: 100vh;
     font-family: sans-serif;
     font-weight: 700;
     background-color: #f4f4f4;

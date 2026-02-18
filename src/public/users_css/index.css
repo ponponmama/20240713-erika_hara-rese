@@ -216,7 +216,7 @@
 
 /* 管理者ページに戻るボタンのスタイル(admin&shop用) */
 .back-to-admin-button {
-    width: 150px;
+    width: 200px;
     height: 40px;
     line-height: 40px;
     display: inline-block;
