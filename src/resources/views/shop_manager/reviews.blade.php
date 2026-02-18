@@ -52,7 +52,7 @@
     <!-- レビュー詳細モーダル -->
     <div id="review-modal" class="review-modal modal hide">
         <div class="review-modal-content modal-content">
-            <span class="close-modal-button">&times;</span>
+            <span class="close-modal-button button">&times;</span>
             <h3 class="card-title">レビュー詳細</h3>
             <div class="review-info-section">
                 <div class="detail-item">

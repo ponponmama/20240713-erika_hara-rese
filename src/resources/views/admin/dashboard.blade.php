@@ -168,8 +168,8 @@
         1. 下の@if (session('shop_success') && session('new_shop_id'))をコメントアウト
         2. @if(true)のコメントアウトを外す
         本番用：セッションがある時のみ表示（現在の状態） --}}
-    @if (session('shop_success') && session('new_shop_id'))
-        {{-- @if (true) style調整用if--}}
+    {{-- @if (session('shop_success') && session('new_shop_id')) style調整用if --}}
+        @if (true)
         <div id="shop-registration-modal" class="registration-modal modal show">
             <div class="modal-content">
                 <span class="close-modal-button">&times;</span>
@@ -182,6 +182,10 @@
                         $newShop = null;
                         if (session('new_shop_id')) {
                             $newShop = \App\Models\Shop::with(['areas', 'genres'])->find(session('new_shop_id'));
+                        } else {
+                        // 自分で指定したIDの店舗を取得
+                            $shopId = 1; // ここに取得したい店舗のIDを指定
+                            $newShop = \App\Models\Shop::with(['areas', 'genres'])->find($shopId);
                         }
 
                         //} else {

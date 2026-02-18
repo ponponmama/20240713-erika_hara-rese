@@ -55,7 +55,9 @@
     <!-- 予約詳細モーダル -->
     <div id="reservation-modal" class="reservation-modal modal hide">
         <div class="modal-content">
-            <span class="close-modal-button">&times;</span>
+            <span class="close-modal-button button">
+                &times;
+            </span>
             <h3 class="card-title">予約詳細</h3>
             <div class="reservation-details-container">
                 <div class="detail-item">
@@ -90,24 +92,22 @@
                     <span class="detail-label">合計金額:</span>
                     <span class="detail-value" id="modal-reservation-total-amount"></span>
                 </div>
-                <div class="detail-item form-row">
-                    <form id="price-update-form" action="" method="POST" class="price-form">
-                        @csrf
-                        @method('PUT')
-                        <div class="price-container">
-                            <span class="detail-label">金額設定:</span>
-                            <input type="number" name="total_amount" id="modal-reservation-total-amount-input" min="0" class="detail-value price-input">円
-                        </div>
-                        <div class="price-button-container">
-                            <button type="submit" class="button price-update-btn" id="price-update-button-confirm">
-                                金額確定
-                            </button>
-                            <button type="submit" class="button price-update-btn price-update-button-retry hide" id="price-update-button-retry">
-                                再設定
-                            </button>
-                        </div>
-                    </form>
-                </div>
+                <form id="price-update-form" action="" method="POST" class="price-form">
+                    @csrf
+                    @method('PUT')
+                    <div class="price-container">
+                        <span class="detail-label">金額設定:</span>
+                        <input type="number" name="total_amount" id="modal-reservation-total-amount-input" min="0" class="detail-value price-input">円
+                    </div>
+                    <div class="price-button-container">
+                        <button type="submit" class="button price-update-btn" id="price-update-button-confirm">
+                            金額確定
+                        </button>
+                        <button type="submit" class="button price-update-btn price-update-button-retry hide" id="price-update-button-retry">
+                            再設定
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

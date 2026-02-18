@@ -33,7 +33,6 @@
     color: rgb(0 0 0 / 0.8);
     font-size: 28px;
     font-weight: bold;
-    cursor: pointer;
     position: absolute;
     right: 20px;
     top: 15px;
@@ -106,33 +105,32 @@
     width: 55%;
 }
 
-
 /* 支払い状態のスタイル */
+/* 支払い完了 */
 .status-completed {
     color: rgba(0 0 255 / 0.8);
     font-weight: bold;
 }
 
+/* 金額設定済み（支払い待ち） */
 .status-amount-set {
     color: rgb(253 126 20 / 0.9);
     font-weight: bold;
 }
 
+/* 金額未設定&決済失敗 */
 .status-pending {
     color: rgba(255, 0, 0, 0.9);
     font-weight: bold;
 }
 
-.form-row {
-    justify-content: center;
+/* 金額設定フォーム */
+.price-form {
     width: 100%;
     height: auto;
 }
 
-.price-form {
-    width: 100%;
-}
-
+/* 金額設定フォームのコンテナ */
 .price-container {
     width: 100%;
     height: 60px;
@@ -143,6 +141,7 @@
     font-size: 13px;
 }
 
+/* 金額入力フィールド */
 .price-input {
     display: block;
     height: 40px;
@@ -154,6 +153,7 @@
     padding: 0 10px;
     -moz-appearance: textfield;
     appearance: textfield;
+    margin-right: 10px;
 }
 
 .price-input::-webkit-inner-spin-button,
@@ -162,7 +162,7 @@
     margin: 0;
 }
 
-
+/* 金額設定ボタンコンテナ */
 .price-button-container {
     width: 100%;
     height: 100px;
@@ -171,6 +171,7 @@
     margin: 10px 0;
 }
 
+/* 金額設定ボタン */
 .price-update-btn {
     width: 40%;
     height: 40px;
@@ -188,14 +189,17 @@
 }
 
 /* (dashboard用)モーダル内の表示/非表示のユーティリティクラス */
+/* 金額設定フォーム */
 .form-row.hide {
     display: none;
 }
 
+/* 金額設定ボタン（再設定） */
 .price-update-button-retry.hide {
     display: none;
 }
 
+/* 金額設定ボタン（金額確定） */
 .price-update-btn.hide {
     display: none;
 }
@@ -219,8 +223,6 @@
     width: 100%;
     text-align: left;
 }
-
-
 
 /* 各詳細行の項目名 */
 .detail-title {
@@ -261,6 +263,7 @@
     padding: 20px;
 }
 
+/* コメント内容 */
 .comment-item {
     height: auto;
     min-height: 80px;
@@ -268,12 +271,14 @@
     align-self: flex-start;
 }
 
+/* コメント項目名 */
 .comment-title {
     height: auto;
     line-height: 1.5;
     align-self: flex-start;
 }
 
+/* コメント内容コンテナ */
 .shop-comment-item {
     height: auto;
     align-items: flex-start;
@@ -304,18 +309,22 @@
 }
 
 /* 表示/非表示のユーティリティクラス */
+/* モーダル */
 .modal.hide {
     display: none;
 }
 
+/* モーダル表示 */
 .modal.show {
     display: flex;
 }
 
+/* 店舗画像コンテナ */
 .modal-shop-image-container.hide {
     display: none;
 }
 
+/* 店舗画像コンテナ表示 */
 .modal-shop-image-container.show {
     display: block;
 }

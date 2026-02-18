@@ -118,30 +118,34 @@
 
 /* 店舗一覧表示と同じように見えるようにするためのスタイル */
 .registered-shop-card {
-    width: 60%;
+    width: 65%;
     margin: 0 auto;
     box-shadow: 6px 6px 12px rgb(0 0 0 / 0.4);
     border: 2px solid rgb(0 0 0 / 0.4);
     border-radius: 10px;
     background-color: rgb(255 255 255 / 1);
 }
+
 /* card内の情報のスタイル */
 .registered-shop-info {
     width: 100%;
+    height: auto;
     text-align: left;
     padding: 15px;
 }
 /* card内の店舗名 */
 .shop-name {
+    height: 30px;
+    line-height: 30px;
     margin: 0;
-    margin-bottom: 10px;
     font-size: 20px;
-    line-height: 20px;
 }
 /* card内のエリアとジャンル */
 .shop-tags {
-    margin: 5px 0;
-    font-size: 13px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    margin: 0;
 }
 /* 登録内容がわかるように情報表示用 */
 .registered-shop-detail-info {
@@ -164,6 +168,25 @@
 .view-shop-link-container {
     margin-top: 30px;
     text-align: center;
+}
+
+.view-shop-link {
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgba(0 0 255 / 0.8);
+    color: rgb(255 255 255 / 1);
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    text-align: center;
+    display: block;
+    margin: 30px auto;
+    text-decoration: none;
+}
+
+.view-shop-link:hover {
+    background-color: rgba(0 0 255 / 0.4);
 }
 
 /* reviews固有のモーダルスタイル */
@@ -266,6 +289,11 @@
     .registered-shop-detail {
         max-width: 100%;
         padding: 10px 0;
+    }
+
+    .registered-shop-card {
+        width: 100%;
+        margin: 0;
     }
 }
 
