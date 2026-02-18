@@ -42,7 +42,7 @@
                     <td class="reservation_td">{{ $reservation->user->user_name }}</td>
                     <td class="reservation_td email-column">{{ $reservation->user->email }}</td>
                     <td class="reservation_td reservation-button-section">
-                        <button class="button reservation_detail_button" data-reservation-id="{{ $reservation->id }}">詳細</button>
+                        <button class="reservation_detail_button button" data-reservation-id="{{ $reservation->id }}">詳細</button>
                     </td>
                 </tr>
             @endforeach
@@ -100,10 +100,10 @@
                         <input type="number" name="total_amount" id="modal-reservation-total-amount-input" min="0" class="detail-value price-input">円
                     </div>
                     <div class="price-button-container">
-                        <button type="submit" class="button price-update-btn" id="price-update-button-confirm">
+                        <button type="submit" class="price-update-btn button" id="price-update-button-confirm">
                             金額確定
                         </button>
-                        <button type="submit" class="button price-update-btn price-update-button-retry hide" id="price-update-button-retry">
+                        <button type="submit" class="price-update-btn price-update-button-retry button hide" id="price-update-button-retry">
                             再設定
                         </button>
                     </div>
@@ -138,13 +138,13 @@
         </p>
     </div>
     <div class="qr-section-button">
-        <button id="start-scanner-btn" class="button scanner-btn">
+        <button id="start-scanner-btn" class="scanner-btn button">
             スキャン
         </button>
-        <button id="stop-scanner-btn" class="button scanner-btn stop-scanner-btn hide">
+        <button id="stop-scanner-btn" class="scanner-btn stop-scanner-btn button hide">
             停止
         </button>
-        <button id="reset-btn" class="button scanner-btn">
+        <button id="reset-btn" class="scanner-btn button">
             リセット
         </button>
     </div>

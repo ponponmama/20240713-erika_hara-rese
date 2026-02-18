@@ -30,7 +30,7 @@
 
 /* テーブルの列スタイル */
 .admin-th {
-    width: calc((100% - 80px) / 5);
+    width: calc((100% - 100px) / 4);
     height: 80px;
     font-size: 18px;
 }
@@ -47,8 +47,18 @@
     text-align: left;
 }
 
+/* 営業時間列スタイル */
+.admin-hours-column {
+    width: auto;
+    max-width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 /* 詳細ボタン欄のスタイル */
 .admin-info {
+    width: 110px;
     text-align: center;
 }
 
@@ -59,18 +69,18 @@
 }
 
 /* 詳細ボタンのスタイル */
-.admin-button {
+.detail-button {
     width: 100%;
     padding: 6px 0 6px 6px;
     color: rgb(0 0 0 / 0.4);
     border: none;
-    font-size: 13px;
+    font-size: 18px;
     text-align: center;
     background: none;
     text-decoration: none;
 }
 
-.admin-button:hover {
+.detail-button:hover {
     color: rgb(0 0 0 / 0.8);
 }
 
@@ -79,6 +89,13 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .management_form {
         width: 100%;
+    }
+
+    .table-section {
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
@@ -93,7 +110,7 @@
     }
 
     .table-section {
-        display: block;
+        width: 100%;
         overflow-x: auto;
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;

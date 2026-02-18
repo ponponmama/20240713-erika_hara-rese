@@ -42,7 +42,7 @@
                 写真
             </label>
             <input type="file" id="image" name="image" class="input_image" accept="image/*">
-            <label for="image" class="data-entry custom-file-upload">
+            <label for="image" class="data-entry custom-file-upload cursor_pointer">
                 写真を選択
             </label>
         </div>
@@ -55,7 +55,7 @@
         <span id="file-name" class="file-name"></span>
         <div class="form-group">
             <label for="open_time" class="label-title business_hours">
-                <img src="{{ asset('images/clock.svg') }}" alt="" class="icon-img">
+                <img src="{{ asset('images/clock.svg') }}" alt="時計アイコン" class="icon-img">
                 オープン
             </label>
             <input type="time" id="open_time" name="open_time" value="{{ \Carbon\Carbon::parse($shop->open_time)->format('H:i') }}" class="data-entry input_time">
@@ -67,7 +67,7 @@
         </p>
         <div class="form-group">
             <label for="close_time" class="label-title business_hours">
-                <img src="{{ asset('images/clock.svg') }}" alt="" class="icon-img">
+                <img src="{{ asset('images/clock.svg') }}" alt="時計アイコン" class="icon-img">
                 クローズ
             </label>
             <input type="time" id="close_time" name="close_time" value="{{ \Carbon\Carbon::parse($shop->close_time)->format('H:i') }}" class="data-entry input_time">
@@ -78,12 +78,12 @@
             @enderror
         </p>
         <div class="up_date_button_container">
-            <button type="submit" class="button up_date_button">更新する</button>
+            <button type="submit" class="up_date_button button">更新する</button>
         </div>
     </form>
     <p class="confirm-text">確認はこちらから</p>
     <div class="confirm-button-container" id="confirm-button-container">
-        <button type="button" class="button confirm-button" id="confirm-button">更新を確認</button>
+        <button type="button" class="confirm-button button" id="confirm-button">更新を確認</button>
         <a href="{{ route('shops.index', ['from_admin' => 'true', 'shop_id' => $shop->id]) }}" class="view-shop-link link">
             店舗一覧ページで確認する
         </a>
@@ -92,7 +92,7 @@
     <!-- 更新確認モーダル -->
     <div id="shop-confirm-modal" class="details-modal modal">
         <div class="modal-content">
-            <span class="close-modal-button">&times;</span>
+            <span class="close-modal-button button">&times;</span>
             <h3 class="card-title">登録店舗情報</h3>
             <div id="modal-shop-image-container" class="detail-shop-cards">
                 <img id="modal-shop-image" src="{{ asset('storage/' . $shop->image) }}" alt="{{ $shop->shop_name }}"

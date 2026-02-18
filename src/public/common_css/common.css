@@ -5,7 +5,9 @@ body {
 }
 
 .link,
-.button {
+.button,
+.select,
+.cursor_pointer {
     cursor: pointer;
 }
 

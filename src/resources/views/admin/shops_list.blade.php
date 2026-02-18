@@ -24,7 +24,7 @@
                     <th class="admin-th">店舗名</th>
                     <th class="admin-th">エリア</th>
                     <th class="admin-th">ジャンル</th>
-                    <th class="admin-th">営業時間</th>
+                    <th class="admin-th admin-hours-column">営業時間</th>
                     <th class="admin-th admin-info">詳細</th>
                 </tr>
             </thead>
@@ -49,9 +49,9 @@
                                 @endif
                             @endforeach
                         </td>
-                        <td class="admin-td">{{ $shop->open_time }} - {{ $shop->close_time }}</td>
+                        <td class="admin-td admin-hours-column">{{ $shop->open_time }} - {{ $shop->close_time }}</td>
                         <td class="admin-td admin-info">
-                            <button class="admin-button detail-button" data-shop-id="{{ $shop->id }}">詳細</button>
+                            <button class="detail-button button" data-shop-id="{{ $shop->id }}">詳細</button>
                         </td>
                     </tr>
                 @endforeach
@@ -70,7 +70,7 @@
     <!-- 店舗詳細モーダル -->
     <div id="shop-modal" class="details-modal modal">
         <div class="details-modal-content modal-content">
-            <span class="close-modal-button">&times;</span>
+            <span class="close-modal-button button">&times;</span>
             <h3 class="card-title">登録店舗情報</h3>
             <div id="modal-shop-image-container" class="detail-shop-cards modal-shop-image-container">
                 <img id="modal-shop-image" src="" alt="店舗画像" class="shop-image">
@@ -101,7 +101,7 @@
                 <form id="delete-form" action="" method="POST" class="delete-form">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="admin-button delete-button"
+                    <button type="submit" class="delete-button button"
                         onclick="return confirm('本当にこの店舗を削除しますか？')">削除</button>
                 </form>
             </div>

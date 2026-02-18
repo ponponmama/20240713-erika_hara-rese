@@ -7,7 +7,7 @@
 @section('search')
     <form class="search-form" action="{{ route('shops.index') }}" method="get">
         <div class="select-wrapper">
-            <select class="search-form__item-select" name="search-area" title="エリアで絞り込み">
+            <select class="search-form__item-select select" name="search-area" title="エリアで絞り込み">
                 <option value="">All area</option>
                 @foreach ($areas as $area)
                     <option value="{{ $area->id }}">{{ $area->area_name }}</option>
@@ -16,7 +16,7 @@
             <span class="custom-select-icon"></span>
         </div>
         <div class="select-wrapper">
-            <select class="search-form__item-select" name="search-genre" title="ジャンルで絞り込み">
+            <select class="search-form__item-select select" name="search-genre" title="ジャンルで絞り込み">
                 <option value="">All genre</option>
                 @foreach ($genres as $genre)
                     <option value="{{ $genre->id }}">{{ $genre->genre_name }}</option>
@@ -41,7 +41,7 @@
     @auth
         @if (Auth::user()->role === 1 && session('shop_success') && session('new_shop_id'))
             <div class="back-to-admin-container">
-                <a href="{{ route('admin.dashboard') }}" class="button back-to-admin-button">
+                <a href="{{ route('admin.dashboard') }}" class="back-to-admin-button link">
                     ← 管理画面に戻る
                 </a>
             </div>
@@ -52,7 +52,7 @@
             {{-- session('new_shop_id'): {{ session('new_shop_id') }} --}}
             @if (session('shop_success') && session('new_shop_id'))
                 <div class="back-to-admin-container">
-                    <a href="{{ route('manage.shop') }}" class="button back-to-admin-button">
+                    <a href="{{ route('manage.shop') }}" class="back-to-admin-button link">
                         ← 管理画面に戻る
                     </a>
                 </div>

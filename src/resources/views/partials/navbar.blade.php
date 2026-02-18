@@ -8,9 +8,9 @@
         <nav class="nav-menu">
             <ul class="n-menu">
                 @guest
-                    <li><a href="{{ route('shops.index') }}" class="nav-link">Home</a></li>
-                    <li><a href="{{ route('register') }}" class="nav-link">Registration</a></li>
-                    <li><a href="{{ route('login') }}" class="nav-link">Login</a></li>
+                    <li><a href="{{ route('shops.index') }}" class="nav-link link">Home</a></li>
+                    <li><a href="{{ route('register') }}" class="nav-link link">Registration</a></li>
+                    <li><a href="{{ route('login') }}" class="nav-link link">Login</a></li>
                 @endguest
                 @auth
                     @if (auth()->user()->role == 3)
@@ -19,23 +19,23 @@
                     <li>
                         <form action="{{ route('logout') }}" method="POST" class="logout-button-form">
                             @csrf
-                            <button type="submit" class="logout-button">
+                            <button type="submit" class="logout-button button">
                                 Logout
                             </button>
                         </form>
                     </li>
                     @if (auth()->user()->role === 3)
-                        <li><a href="{{ url('/mypage') }}" class="nav-link">Mypage</a></li>
+                        <li><a href="{{ url('/mypage') }}" class="nav-link link">Mypage</a></li>
                     @endif
                     @if (auth()->user()->role === 2)
-                        <li><a href="{{ url('/shop-manager/dashboard') }}" class="nav-link">Shop Dashboard</a></li>
-                        <li><a href="{{ route('manage.shop') }}" class="nav-link">ShopPage</a></li>
-                        <li><a href="{{ route('reviews.index') }}" class="nav-link">レビュー</a></li>
+                        <li><a href="{{ url('/shop-manager/dashboard') }}" class="nav-link link">Shop Dashboard</a></li>
+                        <li><a href="{{ route('manage.shop') }}" class="nav-link link">ShopPage</a></li>
+                        <li><a href="{{ route('reviews.index') }}" class="nav-link link">レビュー</a></li>
                     @endif
                     @if (auth()->user()->role === 1)
-                        <li><a href="{{ url('/admin/dashboard') }}" class="nav-link">Admin Dashboard</a></li>
-                        <li><a href="{{ route('admin.reviews') }}" class="nav-link">レビュー管理</a></li>
-                        <li><a href="{{ route('admin.shops.list') }}" class="nav-link">店舗一覧</a></li>
+                        <li><a href="{{ url('/admin/dashboard') }}" class="nav-link link">Admin Dashboard</a></li>
+                        <li><a href="{{ route('admin.reviews') }}" class="nav-link link">レビュー管理</a></li>
+                        <li><a href="{{ route('admin.shops.list') }}" class="nav-link link">店舗一覧</a></li>
                     @endif
                 @endauth
             </ul>

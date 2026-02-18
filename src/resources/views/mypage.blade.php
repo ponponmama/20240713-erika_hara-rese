@@ -35,7 +35,7 @@
                         <form action="{{ route('reservations.update', $reservation->id) }}" method="POST" id="update-form-{{ $reservation->id }}" class="update_form">
                             @csrf
                             @method('PUT')
-                            <a href="{{ route('mypage', ['hide_reservation' => $reservation->id]) }}" class="button close-button">
+                            <a href="{{ route('mypage', ['hide_reservation' => $reservation->id]) }}" class="close-button link">
                                 <img src="{{ asset('images/cross.png') }}" alt="Close" class="cross_image">
                             </a>
                             <div class="reservation-summary-item">
@@ -71,13 +71,13 @@
                             <div class="form-group edit-form" id="edit-{{ $reservation->id }}">
                                 <label for="date" class="form-label label_date">Date</label>
                                 <div class="select-wrapper">
-                                    <input type="date" id="date" name="date" class="data-entry input_date" value="{{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('Y-m-d') }}">
+                                    <input type="date" id="date" name="date" class="data-entry input_date cursor_pointer" value="{{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('Y-m-d') }}">
                                 </div>
                             </div>
                             <div class="form-group edit-form" id="edit-{{ $reservation->id }}">
                                 <label for="time" class="form-label">Time:</label>
                                 <div class="select-wrapper">
-                                    <select id="time" name="time" class="data-entry select_time">
+                                    <select id="time" name="time" class="data-entry select_time select">
                                         @foreach ($reservation->times as $time)
                                             <option value="{{ $time }}" {{ \Carbon\Carbon::parse($reservation->reservation_datetime)->format('H:i') == $time ? 'selected' : '' }}>
                                                 {{ $time }}
@@ -90,7 +90,7 @@
                             <div class="form-group edit-form" id="edit-{{ $reservation->id }}">
                                 <label for="number" class="form-label">人数</label>
                                 <div class="select-wrapper">
-                                    <select id="number" name="number" class="data-entry select_number">
+                                    <select id="number" name="number" class="data-entry select_number select">
                                         @for ($i = 1; $i <= 20; $i++)
                                             <option value="{{ $i }}" {{ $reservation->number == $i ? 'selected' : '' }}>
                                                 {{ $i }}人
@@ -103,16 +103,16 @@
                         </form>
                         @if ($reservation->payment_status !== 'completed' && $reservation->payment_status !== 'failed')
                             <div class="reservation-button-container">
-                                <button type="button" class="button reservation-button" onclick="toggleEditForm({{ $reservation->id }})">
+                                <button type="button" class="reservation-button button" onclick="toggleEditForm({{ $reservation->id }})">
                                     変更
                                 </button>
-                                <button type="submit" class="button reservation-button update-button" form="update-form-{{ $reservation->id }}" id="update-button-{{ $reservation->id }}">
+                                <button type="submit" class="reservation-button update-button button" form="update-form-{{ $reservation->id }}" id="update-button-{{ $reservation->id }}">
                                     更新
                                 </button>
-                                <button type="button" class="button reservation-button cancel-button" onclick="toggleEditForm({{ $reservation->id }})" id="cancel-button-{{ $reservation->id }}">
+                                <button type="button" class="reservation-button cancel-button button" onclick="toggleEditForm({{ $reservation->id }})" id="cancel-button-{{ $reservation->id }}">
                                     キャンセル
                                 </button>
-                                <button type="submit" class="button reservation-button delete-button" form="delete-form-{{ $reservation->id }}">
+                                <button type="submit" class="reservation-button delete-button button" form="delete-form-{{ $reservation->id }}">
                                     削除
                                 </button>
                                 <form action="{{ route('reservations.destroy', $reservation->id) }}" method="POST" id="delete-form-{{ $reservation->id }}" class="delete-form">
@@ -123,11 +123,11 @@
                         @endif
                         <div class="payment-button-container">
                             @if ($reservation->payment_status === 'amount_set')
-                                <a href="{{ route('payment.form', ['reservation_id' => $reservation->id]) }}" class="button payment-button">
+                                <a href="{{ route('payment.form', ['reservation_id' => $reservation->id]) }}" class="payment-button link">
                                     支払う
                                 </a>
                             @elseif ($reservation->payment_status === 'failed')
-                                <a href="{{ route('payment.form', ['reservation_id' => $reservation->id]) }}" class="button payment-button">
+                                <a href="{{ route('payment.form', ['reservation_id' => $reservation->id]) }}" class="payment-button link">
                                     再決済
                                 </a>
                             @elseif ($reservation->payment_status === 'completed')
@@ -148,7 +148,7 @@
                                     評価
                                 </label>
                                 <div class="select-wrapper">
-                                    <select name="rating" id="rating" class="data-entry select_rating">
+                                    <select name="rating" id="rating" class="data-entry select_rating select">
                                         @for ($i = 1; $i <= 5; $i++)
                                             <option value="{{ $i }}">
                                                 {{ $i }}
@@ -162,7 +162,7 @@
                                 <label for="comment" class="form-label label_comment">コメント</label>
                                 <textarea name="comment" id="comment" class="data-entry text_comment"></textarea>
                             </div>
-                            <button type="submit" class="button review-button">
+                            <button type="submit" class="review-button button">
                                 レビューを投稿
                             </button>
                         </form>

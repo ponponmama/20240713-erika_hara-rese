@@ -38,7 +38,7 @@
                         </td>
                         <td class="review-td comment-column">{{ $review->comment }}</td>
                         <td class="review-td review-button-section">
-                            <button class="button detail-button" data-review-id="{{ $review->id }}">詳細</button>
+                            <button class="detail-button button" data-review-id="{{ $review->id }}">詳細</button>
                         </td>
                     </tr>
                 @endforeach

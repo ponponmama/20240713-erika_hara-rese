@@ -17,10 +17,10 @@
         }
 
         .container {
-            box-shadow: 2px 2px 4px #00000099;
+            box-shadow: 2px 2px 4px rgb(0 0 0 / 0.6);
             width: 40%;
-            padding: 50px 20px !important;
-            background-color: #f0f0f0;
+            padding: 50px 20px;
+            background-color: rgb(255 255 255 / 1);
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -28,9 +28,9 @@
         }
 
         p {
-            color: #333;
+            color: rgb(0 0 0 / 0.6);
             margin-bottom: 20px;
-            font-weight: bold;
+            font-weight: 700;
             font-size: 19px;
         }
 
@@ -41,8 +41,8 @@
         }
 
         button {
-            background-color: rgba(0, 0, 255, 0.7);
-            color: white;
+            background-color: rgb(0 0 255 / 1);
+            color: rgb(255 255 255 / 1);
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
@@ -52,7 +52,7 @@
         }
 
         button:hover {
-            background-color: #003875;
+            background-color: rgb(0 0 255 / 0.4);
         }
 
         @media (max-width: 768px) {

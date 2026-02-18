@@ -9,7 +9,7 @@
         <h2 class="form-thanks-title">ご予約ありがとうございます</h2>
         <div class="thanks-button-container">
             <a href="{{ route('shop.returnFromDone', ['id' => session('last_visited_shop_id')]) }}"
-                class="link back-link">戻る</a>
+                class="back-link link">戻る</a>
         </div>
     </div>
 @endsection

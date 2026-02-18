@@ -10,8 +10,8 @@
     <p class="text-2">ご予約には登録またはログインが必要です</p>
     <p class="text">ログインまたは登録お願いします</p>
         <div class="link-buttons-container">
-            <a href="{{ route('login') }}" class="link login-link">ログイン</a>
-            <a href="{{ route('register') }}" class="link register-link">新規登録</a>
+            <a href="{{ route('login') }}" class="login-link link">ログイン</a>
+            <a href="{{ route('register') }}" class="register-link link">新規登録</a>
         </div>
     </div>
 </div>

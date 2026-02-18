@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div id="card-errors" role="alert"></div>
-            <button type="submit" class="button payment-button">支払う</button>
+            <button type="submit" class="payment-button button">支払う</button>
         </form>
     </div>
 

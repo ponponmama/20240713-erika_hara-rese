@@ -30,7 +30,7 @@
                 @enderror
             </p>
             <div class="button-container">
-                <button class="button login-button" type="submit">
+                <button class="login-button button" type="submit">
                     ログイン
                 </button>
             </div>

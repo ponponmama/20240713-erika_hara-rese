@@ -41,7 +41,7 @@
                 @enderror
             </p>
             <div class="button-container">
-                <button class="button register-button" type="submit">登録</button>
+                <button class="register-button button" type="submit">登録</button>
             </div>
         </form>
     </div>

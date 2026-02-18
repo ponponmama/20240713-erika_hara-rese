@@ -11,7 +11,7 @@
 @section('detail_shop')
     <div class="detail-section">
         <div class="navigation">
-            <a href="{{ route('shops.index') }}" class="button back-link">＜</a>
+            <a href="{{ route('shops.index') }}" class="back-link link">＜</a>
             <h2 class="navigation_shop_name">
                 {{ $shop->shop_name }}
             </h2>
@@ -43,7 +43,7 @@
                     @csrf
                     <input type="hidden" name="shop_id" value="{{ $shop->id }}">
                     <label for="date" class="label label_date"></label>
-                    <input type="date" id="date" name="date" class="input_date" value="{{ $date }}" min="{{ date('Y-m-d') }}">
+                    <input type="date" id="date" name="date" class="input_date cursor_pointer" value="{{ $date }}" min="{{ date('Y-m-d') }}">
                     <p class="form__error">
                         @error('date')
                             {{ $message }}
@@ -51,7 +51,7 @@
                     </p>
                     <label for="time" class="label label_time"></label>
                     <div class="select-wrapper">
-                        <select id="time" name="time" class="select_time">
+                        <select id="time" name="time" class="select_time select">
                             <option value="">時刻を選択してください</option>
                             @foreach ($times ?? [] as $time)
                                 <option value="{{ $time }}"
@@ -69,7 +69,7 @@
                     </p>
                     <label for="number" class="label label_number"></label>
                     <div class="select-wrapper">
-                        <select id="number" name="number" class="select_number">
+                        <select id="number" name="number" class="select_number select">
                             <option value="">人数を選択してください</option>
                             @for ($i = 1; $i <= 20; $i++)
                                 <option value="{{ $i }}"
@@ -123,7 +123,7 @@
             </div>
             @if (!session('reservation_details'))
                 <div class="button-container">
-                    <button type="submit" form="reserve-form" class="button reserve-button">
+                    <button type="submit" form="reserve-form" class="reserve-button button">
                         予約する
                     </button>
                 </div>
