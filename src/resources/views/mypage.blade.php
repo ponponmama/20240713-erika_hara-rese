@@ -101,7 +101,7 @@
                                 </div>
                             </div>
                         </form>
-                        @if ($reservation->payment_status !== 'completed')
+                        @if ($reservation->payment_status !== 'completed' && $reservation->payment_status !== 'failed')
                             <div class="reservation-button-container">
                                 <button type="button" class="button reservation-button" onclick="toggleEditForm({{ $reservation->id }})">
                                     変更

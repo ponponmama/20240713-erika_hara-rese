@@ -4,6 +4,10 @@
     <link rel="stylesheet" href="{{ asset('users_css/detail.css') }}">
 @endsection
 
+@section('js')
+    <script src="{{ asset('users_css/users_js/detail.js') }}"></script>
+@endsection
+
 @section('detail_shop')
     <div class="detail-section">
         <div class="navigation">
@@ -35,19 +39,11 @@
                 予約
             </h2>
             @if (!session('reservation_details'))
-                <form action="{{ route('reservations.store') }}" method="post" id="reserve-form" class="reserve_form">
+                <form action="{{ route('reservations.store') }}" method="post" id="reserve-form" class="reserve_form" data-update-url="{{ route('shops.updateDate', ['id' => $shop->id]) }}">
                     @csrf
                     <input type="hidden" name="shop_id" value="{{ $shop->id }}">
                     <label for="date" class="label label_date"></label>
-                    <input type="date" id="date" name="date" class="input_date" value="{{ $date }}" min="{{ date('Y-m-d') }}"
-                        onchange="
-                        const timeValue = document.getElementById('time').value;
-                        const numberValue = document.getElementById('number').value;
-                        let url = '{{ route('shops.updateDate', ['id' => $shop->id]) }}?date=' + this.value;
-                        if (timeValue) url += '&time=' + encodeURIComponent(timeValue);
-                        if (numberValue) url += '&number=' + encodeURIComponent(numberValue);
-                        window.location.href = url;
-                    ">
+                    <input type="date" id="date" name="date" class="input_date" value="{{ $date }}" min="{{ date('Y-m-d') }}">
                     <p class="form__error">
                         @error('date')
                             {{ $message }}
