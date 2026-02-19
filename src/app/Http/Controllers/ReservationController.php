@@ -111,29 +111,31 @@ class ReservationController extends Controller
     {
         $shop = Shop::findOrFail($id);
         $current = Carbon::now();
-        $date = $current->format('Y-m-d');
-        $end = new Carbon($date . ' ' . $shop->close_time);
+        $dateForTimes = $current->format('Y-m-d');
+        $end = new Carbon($dateForTimes . ' ' . $shop->close_time);
+
+        // 詳細ページを「詳しく見る」から開いたときは日付選択状態をリセット（表示は今日のまま）
+        session()->forget(['selected_date', 'date_changed']);
 
         // 現在の時間が営業終了時間を過ぎているかチェック
         if ($current->greaterThanOrEqualTo($end)) {
             // 営業時間を過ぎている場合、日付を次の日に設定
-            $date = $current->copy()->addDay()->format('Y-m-d');
+            $dateForTimes = $current->copy()->addDay()->format('Y-m-d');
         }
 
-        // 営業時間の取得
-        $times = $this->shopService->getBusinessHours($shop->open_time, $shop->close_time, $date, $current);
+        // 営業時間の取得（初回は時刻リスト用に今日の日付で計算）
+        $times = $this->shopService->getBusinessHours($shop->open_time, $shop->close_time, $dateForTimes, $current);
         $reservation = Reservation::where('shop_id', $id)->latest()->first();
 
-        // 初回アクセス時はdate_changedをfalseに設定
-        if (!session()->has('date_changed')) {
-            session(['date_changed' => false]);
-        }
+        $date = $dateForTimes;
 
         return view('shops.detail', [
             'shop' => $shop,
             'date' => $date,
             'times' => $times,
             'reservation' => $reservation,
+            'reservationDetails' => session('reservation_details'),
+            'date_acknowledged' => false,
         ]);
     }
 
@@ -286,7 +288,7 @@ class ReservationController extends Controller
 
         $reservation = Reservation::where('shop_id', $id)->latest()->first();
 
-        // 初回アクセス時はdate_changedをfalseに設定
+        // 初回アクセス時は date_changed を false に設定
         if (!session()->has('date_changed')) {
             session(['date_changed' => false]);
         }

@@ -1,9 +1,9 @@
-<p align="center"><img src="https://img.shields.io/badge/-Laravel-black.svg?logo=laravel&style=plastic"> <img src="https://img.shields.io/badge/-Html5-pink.svg?logo=html5&style=plastic"> <img src="https://img.shields.io/badge/-CSS3-blue.svg?logo=css3&style=plastic"> <img src="https://img.shields.io/badge/-Php-orange.svg?logo=php&style=plastic"> <img src="https://img.shields.io/badge/-Mysql-green.svg?logo=mysql&style=plastic"> <img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic"> <img src="https://img.shields.io/badge/-Windows-0078D6.svg?logo=windows&style=plastic"> <img src="https://img.shields.io/badge/-Docker-1488C6.svg?logo=docker&style=plastic"> <img src="https://img.shields.io/badge/-Nginx-red.svg?logo=nginx&style=plastic"> <img src="https://img.shields.io/badge/-Github-181717.svg?logo=github&style=plastic"></p>
+<p align="center"><img src="https://img.shields.io/badge/-Laravel-black.svg?logo=laravel&style=plastic"><img src="https://img.shields.io/badge/-Html5-pink.svg?logo=html5&style=plastic"><img src="https://img.shields.io/badge/-CSS3-blue.svg?logo=css3&style=plastic"><img src="https://img.shields.io/badge/-Php-orange.svg?logo=php&style=plastic"><img src="https://img.shields.io/badge/-Mysql-green.svg?logo=mysql&style=plastic"><img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic"><img src="https://img.shields.io/badge/-Windows-0078D6.svg?logo=windows&style=plastic"><img src="https://img.shields.io/badge/-Docker-1488C6.svg?logo=docker&style=plastic"><img src="https://img.shields.io/badge/-Nginx-red.svg?logo=nginx&style=plastic"><img src="https://img.shields.io/badge/-Github-181717.svg?logo=github&style=plastic"><img src="https://img.shields.io/badge/-Stripe-008.svg?logo=stripe&style=plastic"></p>
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(user用) </h3>
 
 <p align="center">
-   <img src="rese_index.png" alt="店舗一覧の画面" style="width: 300px; height: auto; margin: 10px;">
+   <img src="readme_md_img/user_index.png" alt="店舗一覧の画面" style="width: 300px; height: auto; margin: 10px;">
    <img src="rese_detail.png" alt="店舗詳細＆予約画面" style="width: 300px; height: auto; margin: 10px;">
    <img src="rese_mypage.png" alt="マイページ画面" style="width: 300px; height: auto; margin: 10px;">
 </p>
@@ -336,7 +336,6 @@ volumes:
 **証明書の配置場所による設定方法**:
 
 - **README.md の通りに`docker/nginx/ssl`に証明書を生成した場合**:
-
   - `docker-compose.yml`のポート 443 と SSL 証明書のマウント設定のコメントアウトを外すだけで使用できます
   - `default.conf`の SSL 設定のコメントアウトも外してください
 
@@ -544,7 +543,6 @@ Stripe は、オンライン決済プラットフォームとして広く利用�
 
 4. **API キーの取得**: ダッシュボード内の「Developers」セクションから「API keys」を選択し、必要な API キー（公開キーと秘密キー）をメモします。これらのキーは、アプリケーションから Stripe API を安全に呼び出すために使用します。
    テストするのみなら、テスト環境ボタンをスライドしテスト環境にする
-
    - `STRIPE_KEY`: Stripe の公開可能キー（Public key）
    - `STRIPE_SECRET`: Stripe の秘密キー（Secret key）
 
@@ -556,7 +554,6 @@ Stripe は、オンライン決済プラットフォームとして広く利用�
 ```
 
 6. **決済処理の実装**: Laravel アプリケーションで決済処理を行うためには、以下のステップを実行します。
-
    - **コントローラーの作成**: Stripe の API を呼び出して決済を処理するためのコントローラーを作成します。このコントローラーでは、カード情報を受け取り、Stripe に対して支払いをリクエストする処理を実装します。
 
    - **ビューページの作成**: ユーザーがカード情報を入力するためのフォームを含むビューページを作成します。このページは、入力された情報をコントローラーに送信するためのものです。

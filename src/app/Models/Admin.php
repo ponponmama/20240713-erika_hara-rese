@@ -13,7 +13,7 @@ class Admin extends Model
         'user_id', 'shop_id'
     ];
 
-     public function user()
+    public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }

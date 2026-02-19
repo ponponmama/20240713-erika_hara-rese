@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
@@ -21,7 +22,12 @@ class UserController extends Controller
 
     public function mypage(Request $request)
     {
-        $user = Auth::user();
+        /** @var User|null $authUser */
+        $authUser = Auth::user();
+        if (!$authUser instanceof User) {
+            abort(401);
+        }
+        $user = $authUser;
         $reservations = $user->reservations()->with('shop')->get();
         $favorites = $user->favorites;
         $hideReservationId = $request->query('hide_reservation', 0);

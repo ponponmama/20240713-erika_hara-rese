@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Contracts\Validation\Validator;
 use Carbon\Carbon;
 
 class StoreReservationRequest extends FormRequest
@@ -16,14 +15,6 @@ class StoreReservationRequest extends FormRequest
     public function authorize()
     {
         return true;
-    }
-
-    protected function prepareForValidation()
-    {
-        // セッションのdate_changedをチェックして、リクエストに追加
-        $this->merge([
-            'date_changed_session' => session('date_changed', false),
-        ]);
     }
 
     /**
@@ -40,15 +31,15 @@ class StoreReservationRequest extends FormRequest
         ];
     }
 
+    /**
+     * 日付はデフォルトで今日が表示されるため、
+     * カレンダーで日付を選択したかどうかは date_acknowledged で判定する。
+     */
     public function withValidator($validator)
     {
         $validator->after(function ($validator) {
-            // セッションのdate_changedをチェック
-            $dateChanged = $this->input('date_changed_session', false);
-
-            // 日付が変更されていない場合（date_changedがfalseまたはセッションにない）はエラー
-            if (!$dateChanged) {
-                $validator->errors()->add('date', $this->messages()['date.date_not_selected']);
+            if ($this->filled('date') && $this->input('date_acknowledged') !== '1') {
+                $validator->errors()->add('date', '予約日を選択してください。');
             }
         });
     }
@@ -57,9 +48,11 @@ class StoreReservationRequest extends FormRequest
     {
         return [
             'date.required' => '予約日を選択してください。',
-            'date.date_not_selected' => '予約日を選択してください。',
+            'date.after_or_equal' => '予約日は今日以降の日付を選択してください。',
             'time.required' => '予約時刻を選択してください。',
+            'time.date_format' => '予約時刻を選択してください。',
             'number.required' => '予約人数を選択してください。',
+            'number.min' => '予約人数を選択してください。',
         ];
     }
 }

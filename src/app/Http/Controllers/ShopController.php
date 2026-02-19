@@ -9,7 +9,6 @@ use App\Models\Genre;
 use App\Models\Reservation;
 use Carbon\Carbon;
 use App\Services\ShopService;
-use Illuminate\Support\Facades\Log;
 
 
 class ShopController extends Controller
@@ -100,6 +99,7 @@ class ShopController extends Controller
             'times' => $times,
             'reservation' => $reservation,
             'reservationDetails' => $reservationDetails,
+            'date_acknowledged' => true,
         ]);
     }
 }
