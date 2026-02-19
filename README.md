@@ -5,6 +5,8 @@
 <p align="center">
    <img src="readme_md_img/register.png" alt="register" style="width: 300px; height: auto; margin: 10px;">
    <img src="readme_md_img/login.png" alt="login" style="width: 300px; height: auto; margin: 10px;">
+   <img src="readme_md_img/email_verify.png" alt="verify" style="width: 300px; height: auto; margin: 10px;">
+   <img src="readme_md_img/thanks.png" alt="thanks" style="width: 300px; height: auto; margin: 10px;">
 </p>
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(user用) </h3>
@@ -12,19 +14,20 @@
 <p align="center">
    <img src="readme_md_img/user_index.png" alt="店舗一覧の画面" style="width: 300px; height: auto; margin: 10px;">
    <img src="readme_md_img/user_details.png" alt="店舗詳細＆予約画面" style="width: 300px; height: auto; margin: 10px;">
-   <img src="readme_md_img/user_reservation_done.png" alt="マイページ画面" style="width: 300px; height: auto; margin: 10px;">
-   <img src="readme_md_img/user_reservation_return_details.png" alt="マイページ画面" style="width: 300px; height: auto; margin: 10px;">
+   <img src="readme_md_img/user_reservation_done.png" alt="予約完了" style="width: 300px; height: auto; margin: 10px;">
+   <img src="readme_md_img/user_reservation_return_details.png" alt="予約内容" style="width: 300px; height: auto; margin: 10px;">
    <img src="readme_md_img/user_mypage.png" alt="マイページ画面" style="width: 300px; height: auto; margin: 10px;">
 </p>
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(総合管理者admin用) </h3>
 
 <p align="center">
-   <img src="admin_dashboard.png" alt="新規店舗の登録・店舗代表者作成画面" style="width: 300px; height: auto; margin: 10px;">
-   <img src="admin_dashboard_modal.png" alt="登録店舗確認表示画面(登録時のみ)" style="width: 300px; height: auto; margin: 10px;">
-   <img src="admin_reviews.png" alt="各店舗レビュー一覧画面" style="width: 300px; height: auto; margin: 10px;">
-   <img src="admin_shops_list.png" alt="店舗一覧画面" style="width: 300px; height: auto; margin: 10px;">
-   <img src="admin_shops_list_modal.png" alt="店舗詳細画面" style="width: 300px; height: auto; margin: 10px;">
+   <img src="readme_md_img/admin_dashboard.png" alt="新規店舗の登録・店舗代表者作成画面" style="width: 300px; height: auto; margin: 10px;">
+   <img src="readme_md_img/admin_dashboard_modal.png" alt="登録店舗確認表示画面(登録時のみ)" style="width: 300px; height: auto; margin: 10px;">
+   <img src="readme_md_img/admin_reviews.png" alt="各店舗レビュー一覧画面" style="width: 300px; height: auto; margin: 10px;">
+   <img src="readme_md_img/admin_reviews.png" alt="各店舗レビュー詳細" style="width: 300px; height: auto; margin: 10px;">
+   <img src="readme_md_img/admin_shops_list.png" alt="店舗一覧画面" style="width: 300px; height: auto; margin: 10px;">
+   <img src="readme_md_img/admin_shops_list_modal.png" alt="店舗詳細画面" style="width: 300px; height: auto; margin: 10px;">
 </p>
 
 #### サービス概要
