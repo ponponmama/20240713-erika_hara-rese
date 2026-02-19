@@ -133,6 +133,7 @@
     text-align: left;
     padding: 15px;
 }
+
 /* card内の店舗名 */
 .shop-name {
     height: 30px;
@@ -140,6 +141,7 @@
     margin: 0;
     font-size: 20px;
 }
+
 /* card内のエリアとジャンル */
 .shop-tags {
     height: 26px;
@@ -147,6 +149,7 @@
     font-size: 14px;
     margin: 0;
 }
+
 /* 登録内容がわかるように情報表示用 */
 .registered-shop-detail-info {
     display: flex;
@@ -155,15 +158,18 @@
     width: 90%;
     margin: 5% auto;
 }
+
 /* 営業時間 */
 .shop-hours {
     margin: 5px 0;
     font-size: 14px;
 }
+
 /* 店舗紹介 */
 .shop-description-section {
     height: auto;
 }
+
 /* 店舗一覧で確認用のlink */
 .view-shop-link-container {
     margin-top: 30px;

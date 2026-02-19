@@ -38,7 +38,7 @@
 
 /* 項目ラベルのスタイル */
 .label-title {
-    width: 30%;
+    width: 35%;
     min-width: 100px;
     text-align: left;
     font-size: 16px;
@@ -50,8 +50,8 @@
 
 /* 入力フォームのスタイル */
 .form-group .data-entry {
-    width: 70%;
-    padding: 2px 10px;
+    width: 65%;
+    padding: 0 10px;
     font-size: 16px;
     outline: none;
     height: 45px;
@@ -103,8 +103,13 @@
 
 /* ファイル選択ボタンのスタイル */
 .custom-file-upload {
-    display: inline-block;
-    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-file-upload:has(.file-name-display:not(:empty)) {
+    justify-content: space-evenly;
 }
 
 /* fileのdefaultのスタイルを非表示にする */
@@ -112,19 +117,8 @@
     display: none;
 }
 
-/* ファイル名を表示するスタイル */
-.file-name-display {
-    display: block;
-    margin-top: 5px;
-}
-
 /* ファイル名のスタイル */
-.file-name {
-    width: 70%;
-    height: auto;
-    min-height: 0;
-    line-height: 45px;
-    margin-left: 30%;
+.file-name-display {
     color: rgb(0 0 0 / 0.8);
 }
 
@@ -134,15 +128,27 @@
     display: none;
 }
 
-/* 画像プレビューのコンテナのスタイル */
+/* 現在の画像のコンテナのスタイル */
+.current_shop_image_container {
+    margin-bottom: 26px;
+}
+
+.current_shop_image {
+    width: 65%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* 画像プレビュー（新規選択時）のコンテナのスタイル */
 .preview-image-container {
     display: block;
-    width: 70%;
-    margin-left: 30%;
+    width: 65%;
+    margin-left: 35%;
     height: 250px;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 2px 2px 4px rgb(0 0 0 / 61%);
+    margin: 26px 35% 26px 0;
 }
 
 /* 画像プレビューのスタイル */
@@ -163,7 +169,7 @@
     width: 100%;
     height: auto;
     text-align: center;
-    margin: 50px auto;
+    margin: 30px auto 50px auto;
 }
 
 /* 更新ボタンのスタイル */
@@ -274,11 +280,11 @@
         width: 100%;
     }
 
+    .current_shop_image,
     .preview-image-container {
         width: 100%;
-        margin: 0;
+        margin: 26px 0;
     }
-
 
     .up_date_button_container {
         margin: 20px auto 50px auto;

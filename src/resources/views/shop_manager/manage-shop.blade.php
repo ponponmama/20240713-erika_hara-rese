@@ -13,7 +13,8 @@
     <p class="session-messages">
         @include('custom_components.session-messages')
     </p>
-    <form action="{{ route('shop_manager.update', $shop->id) }}" method="POST" enctype="multipart/form-data" class="manage_form">
+    <form action="{{ route('shop_manager.update', $shop->id) }}" method="POST" enctype="multipart/form-data"
+        class="manage_form">
         @csrf
         @method('PUT')
         <h2 class="content-section-title">店舗情報</h2>
@@ -36,14 +37,23 @@
                 {{ $message }}
             @enderror
         </p>
+        <div class="form-group current_shop_image_container">
+            <span class="label-title current_shop_image_title">
+                <img src="{{ asset('images/img.png') }}" alt="" class="icon-img">
+                現在の画像
+            </span>
+            <img src="{{ asset('storage/' . $shop->image) }}" alt="{{ $shop->shop_name }}" class="current_shop_image">
+        </div>
         <div class="form-group">
             <label for="image" class="label-title">
-                <img src="{{ asset('images/img.png') }}" alt="" class="icon-img">
-                写真
+                <img src="{{ asset('images/img.png') }}" alt="写真アイコン" class="icon-img">
+                新しい画像
             </label>
+            <span class="preview-image-container hide"></span>
             <input type="file" id="image" name="image" class="input_image" accept="image/*">
             <label for="image" class="data-entry custom-file-upload cursor_pointer">
                 写真を選択
+                <span id="file-name" class="file-name-display"></span>
             </label>
         </div>
         <p class="form__error">
@@ -51,14 +61,13 @@
                 {{ $message }}
             @enderror
         </p>
-        <span class="preview-image-container hide"></span>
-        <span id="file-name" class="file-name"></span>
         <div class="form-group">
             <label for="open_time" class="label-title business_hours">
                 <img src="{{ asset('images/clock.svg') }}" alt="時計アイコン" class="icon-img">
                 オープン
             </label>
-            <input type="time" id="open_time" name="open_time" value="{{ \Carbon\Carbon::parse($shop->open_time)->format('H:i') }}" class="data-entry input_time">
+            <input type="time" id="open_time" name="open_time"
+                value="{{ \Carbon\Carbon::parse($shop->open_time)->format('H:i') }}" class="data-entry input_time">
         </div>
         <p class="form__error">
             @error('open_time')

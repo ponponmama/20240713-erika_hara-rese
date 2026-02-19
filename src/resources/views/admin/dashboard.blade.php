@@ -127,7 +127,8 @@
                 <img src="{{ asset('images/img.png') }}" alt="" class="icon-img">
                 <input type="file" id="image" name="image" class="input_image">
                 <label for="image" class="custom-file-upload date-entry cursor_pointer">
-                    写真を選択 <span id="file-name" class="file-name-display"></span>
+                    写真を選択
+                    <span id="file-name" class="file-name-display"></span>
                 </label>
             </div>
             <p class="form__error">
@@ -169,7 +170,7 @@
         2. @if(true)のコメントアウトを外す
         本番用：セッションがある時のみ表示（現在の状態） --}}
     @if (session('shop_success') && session('new_shop_id')){{-- style調整用if --}}
-        {{-- @if (true) --}}
+        {{-- @if (true)style調整用if --}}
         <div id="shop-registration-modal" class="registration-modal modal show">
             <div class="modal-content">
                 <span class="close-modal-button">&times;</span>
