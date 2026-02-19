@@ -1,14 +1,23 @@
 <p align="center"><img src="https://img.shields.io/badge/-Laravel-black.svg?logo=laravel&style=plastic"><img src="https://img.shields.io/badge/-Html5-pink.svg?logo=html5&style=plastic"><img src="https://img.shields.io/badge/-CSS3-blue.svg?logo=css3&style=plastic"><img src="https://img.shields.io/badge/-Php-orange.svg?logo=php&style=plastic"><img src="https://img.shields.io/badge/-Mysql-green.svg?logo=mysql&style=plastic"><img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic"><img src="https://img.shields.io/badge/-Windows-0078D6.svg?logo=windows&style=plastic"><img src="https://img.shields.io/badge/-Docker-1488C6.svg?logo=docker&style=plastic"><img src="https://img.shields.io/badge/-Nginx-red.svg?logo=nginx&style=plastic"><img src="https://img.shields.io/badge/-Github-181717.svg?logo=github&style=plastic"><img src="https://img.shields.io/badge/-Stripe-008.svg?logo=stripe&style=plastic"></p>
 
+<h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(共通) </h3>
+
+<p align="center">
+   <img src="readme_md_img/register.png" alt="register" style="width: 300px; height: auto; margin: 10px;">
+   <img src="readme_md_img/login.png" alt="login" style="width: 300px; height: auto; margin: 10px;">
+</p>
+
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(user用) </h3>
 
 <p align="center">
    <img src="readme_md_img/user_index.png" alt="店舗一覧の画面" style="width: 300px; height: auto; margin: 10px;">
-   <img src="rese_detail.png" alt="店舗詳細＆予約画面" style="width: 300px; height: auto; margin: 10px;">
-   <img src="rese_mypage.png" alt="マイページ画面" style="width: 300px; height: auto; margin: 10px;">
+   <img src="readme_md_img/user_details.png" alt="店舗詳細＆予約画面" style="width: 300px; height: auto; margin: 10px;">
+   <img src="readme_md_img/user_reservation_done.png" alt="マイページ画面" style="width: 300px; height: auto; margin: 10px;">
+   <img src="readme_md_img/user_reservation_return_details.png" alt="マイページ画面" style="width: 300px; height: auto; margin: 10px;">
+   <img src="readme_md_img/user_mypage.png" alt="マイページ画面" style="width: 300px; height: auto; margin: 10px;">
 </p>
 
-<h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(総合管理者用) </h3>
+<h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(総合管理者admin用) </h3>
 
 <p align="center">
    <img src="admin_dashboard.png" alt="新規店舗の登録・店舗代表者作成画面" style="width: 300px; height: auto; margin: 10px;">
