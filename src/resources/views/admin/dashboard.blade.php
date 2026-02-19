@@ -28,7 +28,7 @@
             <div class="form-group">
                 <img src="{{ asset('images/shop.png') }}" alt="" class="icon-img">
                 <div class="select-wrapper">
-                    <select id="shop_id" name="shop_id" class="date-entry select_shop_id">
+                    <select id="shop_id" name="shop_id" class="date-entry select_shop_id select">
                         <option value="">店舗を選択してください</option>
                         @foreach ($shops ?? [] as $shop)
                             <option value="{{ $shop->id }}" {{ old('shop_id') == $shop->id ? 'selected' : '' }}>
@@ -125,8 +125,8 @@
             </p>
             <div class="form-group">
                 <img src="{{ asset('images/img.png') }}" alt="" class="icon-img">
-                <input type="file" id="image" name="image" class="admin-input input_image">
-                <label for="image" class="custom-file-upload date-entry">
+                <input type="file" id="image" name="image" class="input_image">
+                <label for="image" class="custom-file-upload date-entry cursor_pointer">
                     写真を選択 <span id="file-name" class="file-name-display"></span>
                 </label>
             </div>
@@ -152,7 +152,7 @@
             </label>
             <div class="form-group-time">
                 <img src="{{ asset('images/clock.svg') }}" alt="" class="icon-img">
-                <input type="time" id="close_time" name="close_time" class="date-entry time-input admin-input">
+                <input type="time" id="close_time" name="close_time" class="date-entry time-input">
             </div>
             <p class="form__error">
                 @error('close_time')
@@ -168,8 +168,8 @@
         1. 下の@if (session('shop_success') && session('new_shop_id'))をコメントアウト
         2. @if(true)のコメントアウトを外す
         本番用：セッションがある時のみ表示（現在の状態） --}}
-    {{-- @if (session('shop_success') && session('new_shop_id')) style調整用if --}}
-        @if (true)
+    @if (session('shop_success') && session('new_shop_id')){{-- style調整用if --}}
+        {{-- @if (true) --}}
         <div id="shop-registration-modal" class="registration-modal modal show">
             <div class="modal-content">
                 <span class="close-modal-button">&times;</span>
@@ -182,10 +182,6 @@
                         $newShop = null;
                         if (session('new_shop_id')) {
                             $newShop = \App\Models\Shop::with(['areas', 'genres'])->find(session('new_shop_id'));
-                        } else {
-                        // 自分で指定したIDの店舗を取得
-                            $shopId = 1; // ここに取得したい店舗のIDを指定
-                            $newShop = \App\Models\Shop::with(['areas', 'genres'])->find($shopId);
                         }
 
                         //} else {

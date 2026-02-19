@@ -122,17 +122,20 @@
     display: none;
 }
 
-/* ファイル選択のスタイル */
+/* ファイル選択のスタイル（ファイル名なし＝中央、ファイル名あり＝均等） */
 .custom-file-upload {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 0 12px;
-    cursor: pointer;
     width: 100%;
     text-align: center;
     color: rgb(0 0 0 / 0.6);
     font-size: 16px;
+}
+
+.custom-file-upload:has(.file-name-display:not(:empty)) {
+    justify-content: space-evenly;
 }
 
 /* ファイル名を表示するスタイル */

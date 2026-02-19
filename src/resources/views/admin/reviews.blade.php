@@ -13,7 +13,7 @@
     <p class="greeting-title">
         お疲れ様です！{{ Auth::user()->user_name }}さん
     </p>
-    <h2 class="page-title-name">レビュー　一覧</h2>
+    <h2 class="page-title-name">レビュー&#12288;一覧</h2>
     <p class="session-messages">
         @include('custom_components.session-messages')
     </p>
@@ -89,7 +89,7 @@
                 <form id="delete-form" action="" method="POST" class="delete-form">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="admin-button delete-button"
+                    <button type="submit" class="admin-button delete-button button"
                         onclick="return confirm('このレビューを削除してもよろしいですか？')">削除</button>
                 </form>
             </div>
