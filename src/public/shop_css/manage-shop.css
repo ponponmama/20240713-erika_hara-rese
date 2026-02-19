@@ -250,8 +250,8 @@
 
 @media screen and (max-width: 540px) {
     .content {
-        width: 90%;
-        margin: 2% 5%;
+        width: 100%;
+        margin: 2% 0;
     }
 
     .manage_form {
