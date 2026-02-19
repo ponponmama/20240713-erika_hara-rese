@@ -9,6 +9,9 @@ body {
 .select,
 .cursor_pointer {
     cursor: pointer;
+    text-decoration: none;
+    border: none;
+
 }
 
 .common_body {
