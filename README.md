@@ -11,7 +11,7 @@
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(user用) </h3>
 
-<div align="center" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 1000px; margin: 0 auto;">
+<div align="center" style="display: grid; grid-template-columns: repeat(3, 2fr); gap: 10px; max-width: 1000px; margin: 0 auto;">
    <img src="readme_md_img/users/user_index.png" alt="店舗一覧の画面" style="width: 100%; max-width: 300px; height: auto;">
    <img src="readme_md_img/users/user_details.png" alt="店舗詳細＆予約画面" style="width: 100%; max-width: 300px; height: auto;">
    <img src="readme_md_img/users/user_reservation_done.png" alt="予約完了" style="width: 100%; max-width: 300px; height: auto;">
