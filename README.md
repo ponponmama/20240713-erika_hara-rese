@@ -28,16 +28,13 @@
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(店舗代表用) </h3>
 
-<div align="center" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 1000px; margin: 0 auto;">
-   <img src="readme_md_img/shops/shop_manager_dashboard.png" alt="ダッシュボード画面" style="width: 100%; max-width: 400px; height: auto;">
-   <img src="readme_md_img/shops/shop_manager_dashboard_modal.png" alt="予約詳細画面" style="width: 100%; max-width: 400px; height: auto;">
-   <img src="readme_md_img/shops/shop_manager_dashboard _reservation.png" alt="QRコード読取内容表示画面" style="width: 100%; max-width: 400px; height: auto;">
-   <img src="readme_md_img/shops/shop_manager_manage-shop.png" alt="店舗情報変更画面" style="width: 100%; max-width: 400px; height: auto;">
-   <img src="readme_md_img/shops/shop_manager_manage-shop_modal.png" alt="店舗内容確認画面" style="width: 100%; max-width: 400px; height: auto;">
-   <img src="readme_md_img/shops/shop_manager_manage_shop_list_view.png" alt="店舗内容確認一覧画面" style="width: 100%; max-width: 400px; height: auto;">
-   <img src="readme_md_img/shops/shop_manager_reviews.png" alt="レビュー&#12288;一覧画面" style="width: 100%; max-width: 400px; height: auto;">
-   <img src="readme_md_img/shops/shop_manager_reviews_modal.png" alt="レビュー&#12288;一覧画面" style="width: 100%; max-width: 400px; height: auto;">
-</div>
+<p align="center">
+| <img src="readme_md_img/shops/shop_manager_dashboard.png" alt="ダッシュボード画面" width="300"> | <img src="readme_md_img/shops/shop_manager_dashboard_modal.png" alt="予約詳細画面" width="300"> |
+|:---:|:---:|
+| <img src="readme_md_img/shops/shop_manager_dashboard _reservation.png" alt="QRコード読取内容表示画面" width="300"> | <img src="readme_md_img/shops/shop_manager_manage-shop.png" alt="店舗情報変更画面" width="300"> |
+| <img src="readme_md_img/shops/shop_manager_manage-shop_modal.png" alt="店舗内容確認画面" width="300"> | <img src="readme_md_img/shops/shop_manager_manage_shop_list_view.png" alt="店舗内容確認一覧画面" width="300"> |
+| <img src="readme_md_img/shops/shop_manager_reviews.png" alt="レビュー一覧画面" width="300"> | <img src="readme_md_img/shops/shop_manager_reviews_modal.png" alt="レビュー一覧画面" width="300"> |
+</p>
 
 #### サービス概要
 
