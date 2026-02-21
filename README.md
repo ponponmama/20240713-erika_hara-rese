@@ -3,10 +3,10 @@
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(共通) </h3>
 
 <p align="center">
-   <img src="readme_md_img/common/register.png" alt="register" style="width: 300px; height: auto; margin: 10px;">
-   <img src="readme_md_img/common/login.png" alt="login" style="width: 300px; height: auto; margin: 10px;">
-   <img src="readme_md_img/common/email_verify.png" alt="verify" style="width: 300px; height: auto; margin: 10px;">
-   <img src="readme_md_img/common/thanks.png" alt="thanks" style="width: 300px; height: auto; margin: 10px;">
+   <img src="readme_md_img/common/register.png" alt="register" style="width: 300px; height: 200px; margin: 10px;">
+   <img src="readme_md_img/common/login.png" alt="login" style="width: 300px; height: 200px; margin: 10px;">
+   <img src="readme_md_img/common/email_verify.png" alt="verify" style="width: 300px; height: 200px; margin: 10px;">
+   <img src="readme_md_img/common/thanks.png" alt="thanks" style="width: 300px; height: 200px; margin: 10px;">
 </p>
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(user用) </h3>
@@ -183,6 +183,8 @@ sudo apt-get update
 3. SSL 証明書の生成
 
 QR コードを照合するためにカメラにアクセスするため、HTTPS 環境が必要です。SSL 証明書を生成します。
+
+**証明書は .gitignore によりリポジトリに含まれていません。** クローン後は、以下の手順で必ず証明書を生成してください。
 
 **プロジェクトルートディレクトリ（ホスト側）で実行してください。** コンテナ内ではなく、ホスト側で実行します。
 
