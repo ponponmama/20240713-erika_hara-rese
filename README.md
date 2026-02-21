@@ -60,7 +60,7 @@
 <table align="center" border="0">
 <tr>
 <td align="center" valign="top"><p>ダッシュボード画面</p><img src="readme_md_img/shops/shop_manager_dashboard.png" alt="ダッシュボード画面" width="280"></td>
-<td align="center" valign="top"><p>予約詳細画面<br>(モーダル)</p><img src="readme_md_img/shops/shop_manager_dashboard_modal.png" alt="予約詳細画面(モーダル)" width="280"></td>
+<td align="center" valign="top"><p>予約詳細画面(モーダル)</p><img src="readme_md_img/shops/shop_manager_dashboard_modal.png" alt="予約詳細画面(モーダル)" width="280"></td>
 </tr>
 <tr>
 <td align="center" valign="top"><p>QRコード読取表示画面</p><img src="readme_md_img/shops/shop_manager_dashboard _reservation.png" alt="QRコード読取表示画面" width="280"></td>
