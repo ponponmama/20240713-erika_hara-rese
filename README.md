@@ -49,7 +49,7 @@
 </tr>
 <tr>
 <td align="center" valign="top"><p>店舗一覧画面</p><img src="readme_md_img/admin/admin_shops_list.png" alt="店舗一覧画面" width="280"></td>
-<td align="center" valign="top"><p>店舗内容詳細画面<br>(モーダル)</p><img src="readme_md_img/admin/admin_shops_list_modal.png" alt="店舗内容詳細画面" width="280"></td>
+<td align="center" valign="top"><p>店舗内容詳細画面(モーダル)</p><img src="readme_md_img/admin/admin_shops_list_modal.png" alt="店舗内容詳細画面" width="280"></td>
 </tr>
 </table>
 
