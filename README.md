@@ -2,7 +2,7 @@
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(共通) </h3>
 
-<div align="center" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 1000px; margin: 0 auto;">
+<div align="center" style="display: grid; grid-template-columns: repeat(2, 2fr); gap: 10px; max-width: 1000px; margin: 0 auto;">
    <img src="readme_md_img/common/register.png" alt="register" style="width: 100%; max-width: 300px; height: 200px; object-fit: cover;">
    <img src="readme_md_img/common/login.png" alt="login" style="width: 100%; max-width: 300px; height: 200px; object-fit: contain;">
    <img src="readme_md_img/common/email_verify.png" alt="verify" style="width: 100%; max-width: 300px; height: 200px; object-fit: contain;">
