@@ -49,7 +49,7 @@
 </tr>
 <tr>
 <td align="center" valign="top"><p>店舗一覧画面</p><img src="readme_md_img/admin/admin_shops_list.png" alt="店舗一覧画面" width="280"></td>
-<td align="center" valign="top"><p>店舗内容詳細画面</p><img src="readme_md_img/admin/admin_shops_list_modal.png" alt="店舗内容詳細画面" width="280"></td>
+<td align="center" valign="top"><p>店舗内容詳細画面<br>(モーダル)</p><img src="readme_md_img/admin/admin_shops_list_modal.png" alt="店舗内容詳細画面" width="280"></td>
 </tr>
 </table>
 
@@ -60,10 +60,10 @@
 <table align="center" border="0">
 <tr>
 <td align="center" valign="top"><p>ダッシュボード画面</p><img src="readme_md_img/shops/shop_manager_dashboard.png" alt="ダッシュボード画面" width="280"></td>
-<td align="center" valign="top"><p>予約詳細画面</p><img src="readme_md_img/shops/shop_manager_dashboard_modal.png" alt="予約詳細画面" width="280"></td>
+<td align="center" valign="top"><p>予約詳細画面<br>(モーダル)</p><img src="readme_md_img/shops/shop_manager_dashboard_modal.png" alt="予約詳細画面(モーダル)" width="280"></td>
 </tr>
 <tr>
-<td align="center" valign="top"><p>QRコード読取内容表示画面</p><img src="readme_md_img/shops/shop_manager_dashboard _reservation.png" alt="QRコード読取内容表示画面" width="280"></td>
+<td align="center" valign="top"><p>QRコード読取表示画面</p><img src="readme_md_img/shops/shop_manager_dashboard _reservation.png" alt="QRコード読取表示画面" width="280"></td>
 <td align="center" valign="top"><p>店舗情報変更画面</p><img src="readme_md_img/shops/shop_manager_manage-shop.png" alt="店舗情報変更画面" width="280"></td>
 </tr>
 <tr>
@@ -72,7 +72,7 @@
 </tr>
 <tr>
 <td align="center" valign="top"><p>レビュー 一覧画面</p><img src="readme_md_img/shops/shop_manager_reviews.png" alt="レビュー一覧画面" width="280"></td>
-<td align="center" valign="top"><p>レビュー一覧画面(詳細)</p><img src="readme_md_img/shops/shop_manager_reviews_modal.png" alt="レビュー一覧画面" width="280"></td>
+<td align="center" valign="top"><p>レビュー詳細画面(モーダル)</p><img src="readme_md_img/shops/shop_manager_reviews_modal.png" alt="レビュー詳細画面" width="280"></td>
 </tr>
 </table>
 
