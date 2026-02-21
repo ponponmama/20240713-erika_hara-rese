@@ -34,8 +34,8 @@
 
 <table align="center" border="0" style="border: none; border-collapse: collapse;">
 <tr>
-<td align="center" valign="top" style="border: none;"><p>新規店舗の登録・店舗代表者作成画面</p><img src="readme_md_img/admin/admin_dashboard.png" alt="新規店舗の登録・店舗代表者作成画面" width="280"></td>
-<td align="center" valign="top" style="border: none;"><p>登録店舗確認表示画面(登録時のみ)</p><img src="readme_md_img/admin/admin_dashboard_modal.png" alt="登録店舗確認表示画面(登録時のみ)" width="280"></td>
+<td align="center" valign="top" style="border: none;"><p>・新規店舗の登録<br>・店舗代表者作成画面</p><img src="readme_md_img/admin/admin_dashboard.png" alt="新規店舗の登録・店舗代表者作成画面" width="280"></td>
+<td align="center" valign="top" style="border: none;"><p>登録店舗確認表示画面<br>(登録時のみ)</p><img src="readme_md_img/admin/admin_dashboard_modal.png" alt="登録店舗確認表示画面(登録時のみ)" width="280"></td>
 </tr>
 <tr>
 <td align="center" valign="top" style="border: none;"><p>各店舗レビュー一覧画面</p><img src="readme_md_img/admin/admin_reviews.png" alt="各店舗レビュー一覧画面" width="280"></td>
