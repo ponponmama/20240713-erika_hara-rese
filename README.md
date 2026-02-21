@@ -2,20 +2,16 @@
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(共通) </h3>
 
-<div align="center">
-   <span align="center">
-      <h4>登録画面</h4><br>
-      <img src="readme_md_img/common/register.png" alt="register" style="width: auto; height: 200px; margin: 10px;">
-      <h4>ログイン画面</h4><br>
-      <img src="readme_md_img/common/login.png" alt="login" style="width: auto; height: 200px; margin: 10px;">
-   </span>
-   <span align="center">
-      <h4>メール確認誘導画面</h4><br>
-      <img src="readme_md_img/common/email_verify.png" alt="verify" style="width: auto; height: 200px; margin: 10px;">
-      <h4>登録完了画面</h4><br>
-      <img src="readme_md_img/common/thanks.png" alt="thanks" style="width: auto; height: 200px; margin: 10px;">
-   </span>
-</div>
+<table align="center">
+<tr>
+<td align="center"><h4>登録画面</h4><br><img src="readme_md_img/common/register.png" alt="register" width="280"></td>
+<td align="center"><h4>ログイン画面</h4><br><img src="readme_md_img/common/login.png" alt="login" width="280"></td>
+</tr>
+<tr>
+<td align="center"><h4>メール確認誘導画面</h4><br><img src="readme_md_img/common/email_verify.png" alt="verify" width="280"></td>
+<td align="center"><h4>登録完了画面</h4><br><img src="readme_md_img/common/thanks.png" alt="thanks" width="280"></td>
+</tr>
+</table>
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(user用) </h3>
 
