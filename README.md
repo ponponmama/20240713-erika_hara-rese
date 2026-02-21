@@ -5,17 +5,17 @@
 <div align="center">
    <span>
       <h4>登録画面</h4><br>
-      <img src="readme_md_img/common/register.png" alt="register" style="width: 350px; height: 200px; margin: 10px;">
+      <img src="readme_md_img/common/register.png" alt="register" style="width: auto; height: 200px; margin: 10px;">
    </span>
    <span>
       <h4>ログイン画面</h4><br>
-      <img src="readme_md_img/common/login.png" alt="login" style="width: 350px; height: 200px; margin: 10px;">
+      <img src="readme_md_img/common/login.png" alt="login" style="width: auto; height: 200px; margin: 10px;">
    </span>
    <span>
       <h4>メール確認誘導画面</h4><br>
-      <img src="readme_md_img/common/email_verify.png" alt="verify" style="width: 350px; height: 200px; margin: 10px;">
+      <img src="readme_md_img/common/email_verify.png" alt="verify" style="width: auto; height: 200px; margin: 10px;">
       <h4>登録完了画面</h4><br>
-      <img src="readme_md_img/common/thanks.png" alt="thanks" style="width: 350px; height: 200px; margin: 10px;">
+      <img src="readme_md_img/common/thanks.png" alt="thanks" style="width: auto; height: 200px; margin: 10px;">
    </span>
 </div>
 
