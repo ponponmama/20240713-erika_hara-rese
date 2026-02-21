@@ -13,6 +13,8 @@
 
 <p align="center">
    <img src="readme_md_img/users/user_index.png" alt="店舗一覧の画面" style="width: 300px; height: auto; margin: 10px;">
+   <img src="readme_md_img/users/user_mypage.png" alt="マイページ画面" style="width: 300px; height: auto; margin: 10px;">
+
 </p><br>
 <p align="center">
    <img src="readme_md_img/users/user_details.png" alt="店舗詳細＆予約画面" style="width: 300px; height: auto; margin: 10px;">
@@ -20,9 +22,6 @@
 </p>
 <p align="left">
    <img src="readme_md_img/users/user_reservation_return_details.png" alt="予約内容" style="width: 300px; height: auto; margin: 10px;">
-</p>
-<p align="center">
-   <img src="readme_md_img/users/user_mypage.png" alt="マイページ画面" style="width: 300px; height: auto; margin: 10px;">
 </p>
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(総合管理者admin用) </h3>
