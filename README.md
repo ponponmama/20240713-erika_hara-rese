@@ -2,6 +2,8 @@
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(共通) </h3>
 
+<br>
+
 <table align="center" border="0">
 <tr>
 <td align="center" valign="top"><p>登録画面</p><img src="readme_md_img/common/register.png" alt="register" width="280"></td>
@@ -14,6 +16,8 @@
 </table>
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(user用) </h3>
+
+<br>
 
 <table align="center" border="0">
 <tr>
@@ -32,6 +36,8 @@
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(総合管理者admin用) </h3>
 
+<br>
+
 <table align="center" border="0">
 <tr>
 <td align="center" valign="top"><p>・新規店舗の登録<br>・店舗代表者作成画面</p><img src="readme_md_img/admin/admin_dashboard.png" alt="新規店舗の登録・店舗代表者作成画面" width="280"></td>
@@ -48,6 +54,8 @@
 </table>
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(店舗代表用) </h3>
+
+<br>
 
 <table align="center" border="0">
 <tr>
