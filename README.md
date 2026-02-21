@@ -4,7 +4,7 @@
 
 <br>
 
-<table align="center" border="0">
+<table align="center">
 <tr>
 <td align="center" valign="top"><p>登録画面</p><img src="readme_md_img/common/register.png" alt="register" width="280"></td>
 <td align="center" valign="top"><p>ログイン画面</p><img src="readme_md_img/common/login.png" alt="login" width="280"></td>
@@ -19,9 +19,9 @@
 
 <br>
 
-<table align="center" border="0">
+<table align="center">
 <tr>
-<td align="center" valign="top"><p>店舗一覧の画面</p><img src="readme_md_img/users/user_index.png" alt="店舗一覧の画面" width="280"></td>
+<td align="center" valign="top"><p>店舗一覧画面</p><img src="readme_md_img/users/user_index.png" alt="店舗一覧画面" width="280"></td>
 <td align="center" valign="top"><p>マイページ画面</p><img src="readme_md_img/users/user_mypage.png" alt="マイページ画面" width="280"></td>
 </tr>
 <tr>
@@ -34,18 +34,18 @@
 </tr>
 </table>
 
-<h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(総合管理者admin用) </h3>
+<h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ<br>(総合管理者admin用)</h3>
 
 <br>
 
-<table align="center" border="0">
+<table align="center">
 <tr>
-<td align="center" valign="top"><p>・新規店舗の登録<br>・店舗代表者作成画面</p><img src="readme_md_img/admin/admin_dashboard.png" alt="新規店舗の登録・店舗代表者作成画面" width="280"></td>
-<td align="center" valign="top"><p>登録店舗確認表示画面<br>(登録時のみ)</p><img src="readme_md_img/admin/admin_dashboard_modal.png" alt="登録店舗確認表示画面(登録時のみ)" width="280"></td>
+<td align="center" valign="top"><p>新規店舗の登録<br>店舗代表者作成画面</p><img src="readme_md_img/admin/admin_dashboard.png" alt="新規店舗の登録・店舗代表者作成画面" width="280"></td>
+<td align="center" valign="top"><p>登録店舗確認表示画面<br>(モーダル/登録時のみ)</p><img src="readme_md_img/admin/admin_dashboard_modal.png" alt="登録店舗確認表示画面(登録時のみ)" width="280"></td>
 </tr>
 <tr>
-<td align="center" valign="top"><p>各店舗レビュー一覧画面</p><img src="readme_md_img/admin/admin_reviews.png" alt="各店舗レビュー一覧画面" width="280"></td>
-<td align="center" valign="top"><p>各店舗レビュー詳細</p><img src="readme_md_img/admin/admin_reviews.png" alt="各店舗レビュー詳細" width="280"></td>
+<td align="center" valign="top"><p>各店舗レビュー 一覧画面</p><img src="readme_md_img/admin/admin_reviews.png" alt="各店舗レビュー一覧画面" width="280"></td>
+<td align="center" valign="top"><p>各店舗レビュー詳細(モーダル)</p><img src="readme_md_img/admin/admin_reviews_modal.png" alt="各店舗レビュー詳細(モーダル)" width="280"></td>
 </tr>
 <tr>
 <td align="center" valign="top"><p>店舗一覧画面</p><img src="readme_md_img/admin/admin_shops_list.png" alt="店舗一覧画面" width="280"></td>
@@ -67,11 +67,11 @@
 <td align="center" valign="top"><p>店舗情報変更画面</p><img src="readme_md_img/shops/shop_manager_manage-shop.png" alt="店舗情報変更画面" width="280"></td>
 </tr>
 <tr>
-<td align="center" valign="top"><p>店舗内容確認画面</p><img src="readme_md_img/shops/shop_manager_manage-shop_modal.png" alt="店舗内容確認画面" width="280"></td>
-<td align="center" valign="top"><p>店舗内容確認一覧画面</p><img src="readme_md_img/shops/shop_manager_manage_shop_list_view.png" alt="店舗内容確認一覧画面" width="280"></td>
+<td align="center" valign="top"><p>変更内容確認画面(モーダル)</p><img src="readme_md_img/shops/shop_manager_manage-shop_modal.png" alt="変更内容確認画面(モーダル)" width="280"></td>
+<td align="center" valign="top"><p>変更内容確認画面(一覧表示)</p><img src="readme_md_img/shops/shop_manager_manage_shop_list_view.png" alt="変更内容確認画面(一覧表示)" width="280"></td>
 </tr>
 <tr>
-<td align="center" valign="top"><p>レビュー一覧画面</p><img src="readme_md_img/shops/shop_manager_reviews.png" alt="レビュー一覧画面" width="280"></td>
+<td align="center" valign="top"><p>レビュー 一覧画面</p><img src="readme_md_img/shops/shop_manager_reviews.png" alt="レビュー一覧画面" width="280"></td>
 <td align="center" valign="top"><p>レビュー一覧画面(詳細)</p><img src="readme_md_img/shops/shop_manager_reviews_modal.png" alt="レビュー一覧画面" width="280"></td>
 </tr>
 </table>
