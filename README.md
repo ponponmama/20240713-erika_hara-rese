@@ -102,7 +102,7 @@
 - **予約変更機能**: ユーザーはマイページから予約日時や人数を変更・削除できる。
 - **決済機能**: ユーザーはマイページの予約情報よりキャッシュレス決済することができる。
 - **評価機能**: 来店＆決済終了にて、ユーザーが店舗を 5 段階で評価し、コメントを残せる。
-- **バリデーション**: 認証と予約の際に FormRequest を使用してバリデーションを行う。
+- **バリデーション**: 認証・予約（新規）では FormRequest を使用。予約変更ではコントローラー内の `$request->validate()` を使用。
 - **認証**: メールによる本人確認機能。
 - **リマインダー**: タスクスケジューラーを利用して、予約当日の朝にリマインダーを送信。
 - **QR コード**: 予約時に QR コードを発行し、来店時に提示できる。
@@ -113,6 +113,7 @@
 - **管理(管理者)**
 
 - **新規店舗登録機能**：管理者は新規店舗の登録、店舗代表者の登録ができる。
+- **バリデーション**: 認証・予約（新規）では FormRequest を使用。
 - **店舗一覧表示**: 登録されている店舗の一覧を表示し、詳細をモーダルで確認・削除できる。
 - **評価機能**: ユーザーが店舗を 5 段階で評価したものを閲覧、詳細をモーダルで確認・削除できる。
 - **レスポンシブデザイン**: スマートフォン、タブレット、PC など様々な画面サイズに対応。
@@ -128,6 +129,7 @@
 - **決済管理機能**: Stripe を利用した決済機能。予約に対する支払い状況の確認管理できる 。
 - **評価機能**: ユーザーが店舗を 5 段階で評価したものを管理者ページで閲覧できる。
 - **店舗情報編集機能**：店舗の情報を照会・編集、モーダルで編集内容を確認することができる。
+- **バリデーション**: 店舗情報編集では FormRequest を使用。金額設定時はコントローラー内の `$request->validate()` を使用。
 - **レスポンシブデザイン**: スマートフォン、タブレット、PC など様々な画面サイズに対応。
 
 ### 作業範囲
@@ -494,9 +496,12 @@ php artisan migrate --seed
 
 ##### Laravel スケジューラを利用するためには、Cron ジョブの設定だけでなく、Laravel のスケジューラを適切に設定する必要があります。以下に、Laravel のスケジューラ設定の完全な手順を示します。
 
+**重要：このアプリでは、スケジューラーはすでに設定されており、リポジトリに含まれています。新しい環境でプロジェクトをセットアップする際は、スケジューラー＆Cronジョブが正しく機能しているかを確認してください。機能していない場合もしくは手動で設定したい場合は下記の通り設定しなおしてください。(cloneの中ではコメントアウトにしております。ずーっと送り続けてしまうので・・・)**
+
 - Laravel スケジューラの設定
 
 Laravel のスケジューラを使用するには、app/Console/Kernel.php ファイル内でスケジュールされたタスクを定義する必要があります。以下は、Kernel.php ファイルにスケジュールを設定する方法の例です。
+
 
 protected function schedule(Schedule $schedule)
 {
@@ -515,64 +520,52 @@ $schedule->command('inspire')
 
 ### メール設定
 
-プロジェクトでは開発環境でのメール送信のテストに Mailtrap を使用しています。
+プロジェクトでは開発環境でのメール送信のテストに Mailhog を使用しています。
 
-![Mailtrapのホームページ](mailtrap_home.png)
-
-**1.アカウント作成\***
-`https://mailtrap.io/` のサイトからサインアップタブをクリックし、アカウント作成します。
-
-![サインアップ画面](image-1.png)
-![サインアップ画面](image.png)
-
-**2. Start testing のクリック**
-赤枠の部分の Start testing をクリックします。もしくは、左サイドバーで「Email Testing」＞「Inboxes」をクリックします。
-
-![Start testingボタン](image-2.png)
-
-**3. Inbox 画面への移動**
-Inbox 画面に移動したら、Integrations のセレクトボックスをクリックしてください。
-
-![Inbox画面](image-3.png)
-
-**4. フレームワークの選択**
-使用しているフレームワーク等を選びます。Laravel8 を使っていたので Laravel 8.x を選びました。
-
-![フレームワーク選択画面](image-4.png)
-
-**5. Laravel の設定**
-laravel 8.x を選択したら、Laravel8 の設定をクリックします。
-
-![Laravel設定画面](image-5.png)
-
-**6. .env 設定のコピー**
-Laravel を選択した場合は以下のように.env に貼り付ける用のコードが出ますので、コピーします。
-
-![.env設定コード](image-6.png)
-
-**7. .env ファイルへの設定追加**
-下の設定を `.env` ファイルに追加してください。これにより、開発中のメール送信を安全にテストすることができます。
-
-- `MAIL_MAILER`: メールドライバー（例: smtp, sendmail）
-- `MAIL_HOST`: メールサーバーのホスト名
-- `MAIL_PORT`: メールサーバーのポート番号
-- `MAIL_USERNAME`: メールサーバーのユーザー名
-- `MAIL_PASSWORD`: メールサーバーのパスワード
-- `MAIL_ENCRYPTION`: メール送信の暗号化方式（例: tls, ssl）
-- `MAIL_FROM_NAME`: メール送信時の差出人名（環境変数 `APP_NAME` を使用する場合もあり）
-
-```plaintext
-MAIL_MAILER=smtp
-MAIL_HOST=sandbox.smtp.mailtrap.io
-MAIL_PORT=2525
-MAIL_USERNAME=your_mailtrap_username # Mailtrapのユーザー名をここに入力
-MAIL_PASSWORD=your_mailtrap_password # Mailtrapのパスワードをここに入力
-MAIL_ENCRYPTION=tls
-MAIL_FROM_NAME="${APP_NAME}" # アプリケーション名を使用する場合
-MAIL_LOG_CHANNEL=stack
+```
+🎯 MailHogの役割
+メール送信のテスト: アプリケーションから送信されたメールを実際には送信せずにキャッチ
+Web UI: ブラウザでメール内容を確認できる（通常は http://localhost:8025）
+開発環境専用: 本番環境では使用しない
 ```
 
-この設定を適用後、アプリケーションからのメールは Mailtrap の仮想 SMTP サーバーを通じて送信され、実際には配信されずに Mailtrap のダッシュボードで確認することができます。
+※　このファイルは開発環境でメール機能をテストするために必要なツールです。本番環境にはデプロイしないでください！
+
+- Laravel のメール設定で MailHog を SMTP サーバーとして設定
+- 会員登録時の認証メールが MailHog でキャッチされる
+- http://localhost:8025 でメール内容を確認できる
+- テストでは Mail::fake()を使用してメール送信をモック
+
+\*\*※　プラットフォーム: Linux 用バイナリなので、Windows/Mac ユーザーは別途ダウンロードが必要な場合があります
+
+**1. docker-compose.yml の設定確認**
+
+`docker-compose.yml`に既に MailHog の設定が含まれています：
+
+```yaml
+mailhog:
+  image: mailhog/mailhog:latest
+  ports:
+    - "1025:1025"
+    - "8025:8025"
+```
+
+**2. .env ファイルへの設定追加**
+
+下の設定を `.env` ファイルに追加してください。これにより、開発中のメール送信を安全にテストすることができます。
+
+```env
+MAIL_MAILER=smtp
+MAIL_HOST=mailhog
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=noreply@coachtech-flea-market.com
+MAIL_FROM_NAME="${APP_NAME}"
+```
+
+**注意**: `MAIL_FROM_ADDRESS`の設定がないとメール送信が正常に動作しない場合があります。
 
 ### Stripe 設定
 
