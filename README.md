@@ -2,7 +2,7 @@
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(共通) </h3>
 
-<div align="center" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 1000px; margin: 0 auto;">
+<div align="center" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 1000px; margin: 0 auto;">
    <img src="readme_md_img/common/register.png" alt="register" style="width: 100%; max-width: 300px; height: 200px; object-fit: contain;">
    <img src="readme_md_img/common/login.png" alt="login" style="width: 100%; max-width: 300px; height: 200px; object-fit: contain;">
    <img src="readme_md_img/common/email_verify.png" alt="verify" style="width: 100%; max-width: 300px; height: 200px; object-fit: contain;">
@@ -12,35 +12,35 @@
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(user用) </h3>
 
 <div align="center" style="display: grid; grid-template-columns: repeat(3, 2fr); gap: 10px; max-width: 1000px; margin: 0 auto;">
-   <img src="readme_md_img/users/user_index.png" alt="店舗一覧の画面" style="width: 100%; max-width: 300px; height: auto;">
-   <img src="readme_md_img/users/user_details.png" alt="店舗詳細＆予約画面" style="width: 100%; max-width: 300px; height: auto;">
-   <img src="readme_md_img/users/user_reservation_done.png" alt="予約完了" style="width: 100%; max-width: 300px; height: auto;">
-   <img src="readme_md_img/users/user_reservation_return_details.png" alt="予約内容" style="width: 100%; max-width: 300px; height: auto;">
-   <img src="readme_md_img/users/user_mypage.png" alt="マイページ画面" style="width: 100%; max-width: 300px; height: auto;">
+   <img src="readme_md_img/users/user_index.png" alt="店舗一覧の画面" style="width: 100%; max-width: 400px; height: auto;">
+   <img src="readme_md_img/users/user_details.png" alt="店舗詳細＆予約画面" style="width: 100%; max-width: 400px; height: auto;">
+   <img src="readme_md_img/users/user_reservation_done.png" alt="予約完了" style="width: 100%; max-width: 400px; height: auto;">
+   <img src="readme_md_img/users/user_reservation_return_details.png" alt="予約内容" style="width: 100%; max-width: 400px; height: auto;">
+   <img src="readme_md_img/users/user_mypage.png" alt="マイページ画面" style="width: 100%; max-width: 400px; height: auto;">
 </div>
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(総合管理者admin用) </h3>
 
-<div align="center" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 1000px; margin: 0 auto;">
-   <img src="readme_md_img/admin/admin_dashboard.png" alt="新規店舗の登録・店舗代表者作成画面" style="width: 100%; max-width: 300px; height: auto;">
+<div align="center" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 1000px; margin: 0 auto;">
+   <img src="readme_md_img/admin/admin_dashboard.png" alt="新規店舗の登録・店舗代表者作成画面" style="width: 100%; max-width: 400px; height: auto;">
    <img src="readme_md_img/admin/admin_dashboard_modal.png" alt="登録店舗確認表示画面(登録時のみ)" style="width: 100%; max-width: 300px; height: auto;">
-   <img src="readme_md_img/admin/admin_reviews.png" alt="各店舗レビュー一覧画面" style="width: 100%; max-width: 300px; height: auto;">
-   <img src="readme_md_img/admin/admin_reviews.png" alt="各店舗レビュー詳細" style="width: 100%; max-width: 300px; height: auto;">
-   <img src="readme_md_img/admin/admin_shops_list.png" alt="店舗一覧画面" style="width: 100%; max-width: 300px; height: auto;">
-   <img src="readme_md_img/admin/admin_shops_list_modal.png" alt="店舗詳細画面" style="width: 100%; max-width: 300px; height: auto;">
+   <img src="readme_md_img/admin/admin_reviews.png" alt="各店舗レビュー一覧画面" style="width: 100%; max-width: 400px; height: auto;">
+   <img src="readme_md_img/admin/admin_reviews.png" alt="各店舗レビュー詳細" style="width: 100%; max-width: 400px; height: auto;">
+   <img src="readme_md_img/admin/admin_shops_list.png" alt="店舗一覧画面" style="width: 100%; max-width: 400px; height: auto;">
+   <img src="readme_md_img/admin/admin_shops_list_modal.png" alt="店舗詳細画面" style="width: 100%; max-width: 400px; height: auto;">
 </div>
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(店舗代表用) </h3>
 
-<div align="center" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 1000px; margin: 0 auto;">
-   <img src="readme_md_img/shops/shop_manager_dashboard.png" alt="ダッシュボード画面" style="width: 100%; max-width: 300px; height: auto;">
-   <img src="readme_md_img/shops/shop_manager_dashboard_modal.png" alt="予約詳細画面" style="width: 100%; max-width: 300px; height: auto;">
-   <img src="readme_md_img/shops/shop_manager_dashboard _reservation.png" alt="QRコード読取内容表示画面" style="width: 100%; max-width: 300px; height: auto;">
-   <img src="readme_md_img/shops/shop_manager_manage-shop.png" alt="店舗情報変更画面" style="width: 100%; max-width: 300px; height: auto;">
-   <img src="readme_md_img/shops/shop_manager_manage-shop_modal.png" alt="店舗内容確認画面" style="width: 100%; max-width: 300px; height: auto;">
-   <img src="readme_md_img/shops/shop_manager_manage_shop_list_view.png" alt="店舗内容確認一覧画面" style="width: 100%; max-width: 300px; height: auto;">
-   <img src="readme_md_img/shops/shop_manager_reviews.png" alt="レビュー&#12288;一覧画面" style="width: 100%; max-width: 300px; height: auto;">
-   <img src="readme_md_img/shops/shop_manager_reviews_modal.png" alt="レビュー&#12288;一覧画面" style="width: 100%; max-width: 300px; height: auto;">
+<div align="center" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 1000px; margin: 0 auto;">
+   <img src="readme_md_img/shops/shop_manager_dashboard.png" alt="ダッシュボード画面" style="width: 100%; max-width: 400px; height: auto;">
+   <img src="readme_md_img/shops/shop_manager_dashboard_modal.png" alt="予約詳細画面" style="width: 100%; max-width: 400px; height: auto;">
+   <img src="readme_md_img/shops/shop_manager_dashboard _reservation.png" alt="QRコード読取内容表示画面" style="width: 100%; max-width: 400px; height: auto;">
+   <img src="readme_md_img/shops/shop_manager_manage-shop.png" alt="店舗情報変更画面" style="width: 100%; max-width: 400px; height: auto;">
+   <img src="readme_md_img/shops/shop_manager_manage-shop_modal.png" alt="店舗内容確認画面" style="width: 100%; max-width: 400px; height: auto;">
+   <img src="readme_md_img/shops/shop_manager_manage_shop_list_view.png" alt="店舗内容確認一覧画面" style="width: 100%; max-width: 400px; height: auto;">
+   <img src="readme_md_img/shops/shop_manager_reviews.png" alt="レビュー&#12288;一覧画面" style="width: 100%; max-width: 400px; height: auto;">
+   <img src="readme_md_img/shops/shop_manager_reviews_modal.png" alt="レビュー&#12288;一覧画面" style="width: 100%; max-width: 400px; height: auto;">
 </div>
 
 #### サービス概要
