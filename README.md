@@ -573,16 +573,19 @@ Stripe は、オンライン決済プラットフォームとして広く利用�
 プロジェクトで決済処理を行うために Stripe を使用します。Stripe の API キーを設定することで、安全に決済を処理できます。以下の手順に従って設定を行ってください。
 
 1. **アカウント作成**: Stripe の公式ウェブサイト（[https://stripe.com](https://stripe.com)）にアクセスし、アカウントを作成します。アカウント作成は無料で、メールアドレスと基本的な情報を入力するだけで完了します。
+
+   ![alt text](readme_md_img/stripe_img/stripe.com_jp.png)
+
    今すぐ始めるをクリック
-   ![alt text](stripe1.png)
+   ![alt text](readme_md_img/stripe_img/stripe1.png)
    基本情報を入力後アカウントを作成をクリック
-   ![alt text](stripe2.png)
+   ![alt text](readme_md_img/stripe_img/stripe2.png)
    登録したメールアドレスにメールが届くので認証する
-   ![alt text](stripe3.png)
+   ![alt text](readme_md_img/stripe_img/stripe3.png)
 
 2. **ダッシュボード**: アカウント作成後、Stripe のダッシュボードにログインします。ダッシュボードからは、API キーの管理、トランザクションの確認、支払い設定の変更などが行えます。
 
-![alt text](stripe4.png)
+![alt text](readme_md_img/stripe_img/stripe4.png)
 
 3. **Stripe ライブラリのインストール**: Stripe 提供の公式ライブラリを使用すると、API の呼び出しが容易になります。Laravel プロジェクトであれば、Composer を使用して Stripe PHP ライブラリをインストールできます。Docker を使用している場合は、以下のコマンドを実行します。
 
