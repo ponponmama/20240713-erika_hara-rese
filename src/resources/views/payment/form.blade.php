@@ -60,13 +60,19 @@
             }
         };
 
-        var cardNumber = elements.create('cardNumber', {style: style});
+        var cardNumber = elements.create('cardNumber', {
+            style: style
+        });
         cardNumber.mount('#card-number-element');
 
-        var cardExpiry = elements.create('cardExpiry', {style: style});
+        var cardExpiry = elements.create('cardExpiry', {
+            style: style
+        });
         cardExpiry.mount('#card-expiry-element');
 
-        var cardCvc = elements.create('cardCvc', {style: style});
+        var cardCvc = elements.create('cardCvc', {
+            style: style
+        });
         cardCvc.mount('#card-cvc-element');
 
         function setErrorMessage(event) {
