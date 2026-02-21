@@ -2,31 +2,71 @@
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(共通) </h3>
 
-<div align="center">
-<div style="display: inline-block; vertical-align: top; text-align: center; margin: 0 8px;"><p>登録画面</p><img src="readme_md_img/common/register.png" alt="register" width="280"><p>メール確認誘導画面</p><img src="readme_md_img/common/email_verify.png" alt="verify" width="280"></div>
-<div style="display: inline-block; vertical-align: top; text-align: center; margin: 0 8px;"><p>ログイン画面</p><img src="readme_md_img/common/login.png" alt="login" width="280"><p>登録完了画面</p><img src="readme_md_img/common/thanks.png" alt="thanks" width="280"></div>
-</div>
+<table align="center" border="0">
+<tr>
+<td align="center" valign="top"><p>登録画面</p><img src="readme_md_img/common/register.png" alt="register" width="280"></td>
+<td align="center" valign="top"><p>ログイン画面</p><img src="readme_md_img/common/login.png" alt="login" width="280"></td>
+</tr>
+<tr>
+<td align="center" valign="top"><p>メール確認誘導画面</p><img src="readme_md_img/common/email_verify.png" alt="verify" width="280"></td>
+<td align="center" valign="top"><p>登録完了画面</p><img src="readme_md_img/common/thanks.png" alt="thanks" width="280"></td>
+</tr>
+</table>
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(user用) </h3>
 
-<div align="center">
-<div style="display: inline-block; vertical-align: top; text-align: center; margin: 0 8px;"><p>店舗一覧の画面</p><img src="readme_md_img/users/user_index.png" alt="店舗一覧の画面" width="280"><p>店舗詳細＆予約画面</p><img src="readme_md_img/users/user_details.png" alt="店舗詳細＆予約画面" width="280"><p>予約内容</p><img src="readme_md_img/users/user_reservation_return_details.png" alt="予約内容" width="280"></div>
-<div style="display: inline-block; vertical-align: top; text-align: center; margin: 0 8px;"><p>マイページ画面</p><img src="readme_md_img/users/user_mypage.png" alt="マイページ画面" width="280"><p>予約完了</p><img src="readme_md_img/users/user_reservation_done.png" alt="予約完了" width="280"></div>
-</div>
+<table align="center" border="0">
+<tr>
+<td align="center" valign="top"><p>店舗一覧の画面</p><img src="readme_md_img/users/user_index.png" alt="店舗一覧の画面" width="280"></td>
+<td align="center" valign="top"><p>マイページ画面</p><img src="readme_md_img/users/user_mypage.png" alt="マイページ画面" width="280"></td>
+</tr>
+<tr>
+<td align="center" valign="top"><p>店舗詳細＆予約画面</p><img src="readme_md_img/users/user_details.png" alt="店舗詳細＆予約画面" width="280"></td>
+<td align="center" valign="top"><p>予約完了</p><img src="readme_md_img/users/user_reservation_done.png" alt="予約完了" width="280"></td>
+</tr>
+<tr>
+<td align="center" valign="top"><p>予約内容</p><img src="readme_md_img/users/user_reservation_return_details.png" alt="予約内容" width="280"></td>
+<td></td>
+</tr>
+</table>
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(総合管理者admin用) </h3>
 
-<div align="center">
-<div style="display: inline-block; vertical-align: top; text-align: center; margin: 0 8px;"><p>・新規店舗の登録<br>・店舗代表者作成画面</p><img src="readme_md_img/admin/admin_dashboard.png" alt="新規店舗の登録・店舗代表者作成画面" width="280"><p>各店舗レビュー一覧画面</p><img src="readme_md_img/admin/admin_reviews.png" alt="各店舗レビュー一覧画面" width="280"><p>店舗一覧画面</p><img src="readme_md_img/admin/admin_shops_list.png" alt="店舗一覧画面" width="280"></div>
-<div style="display: inline-block; vertical-align: top; text-align: center; margin: 0 8px;"><p>登録店舗確認表示画面<br>(登録時のみ)</p><img src="readme_md_img/admin/admin_dashboard_modal.png" alt="登録店舗確認表示画面(登録時のみ)" width="280"><p>各店舗レビュー詳細</p><img src="readme_md_img/admin/admin_reviews.png" alt="各店舗レビュー詳細" width="280"><p>店舗詳細画面</p><img src="readme_md_img/admin/admin_shops_list_modal.png" alt="店舗詳細画面" width="280"></div>
-</div>
+<table align="center" border="0">
+<tr>
+<td align="center" valign="top"><p>・新規店舗の登録<br>・店舗代表者作成画面</p><img src="readme_md_img/admin/admin_dashboard.png" alt="新規店舗の登録・店舗代表者作成画面" width="280"></td>
+<td align="center" valign="top"><p>登録店舗確認表示画面<br>(登録時のみ)</p><img src="readme_md_img/admin/admin_dashboard_modal.png" alt="登録店舗確認表示画面(登録時のみ)" width="280"></td>
+</tr>
+<tr>
+<td align="center" valign="top"><p>各店舗レビュー一覧画面</p><img src="readme_md_img/admin/admin_reviews.png" alt="各店舗レビュー一覧画面" width="280"></td>
+<td align="center" valign="top"><p>各店舗レビュー詳細</p><img src="readme_md_img/admin/admin_reviews.png" alt="各店舗レビュー詳細" width="280"></td>
+</tr>
+<tr>
+<td align="center" valign="top"><p>店舗一覧画面</p><img src="readme_md_img/admin/admin_shops_list.png" alt="店舗一覧画面" width="280"></td>
+<td align="center" valign="top"><p>店舗詳細画面</p><img src="readme_md_img/admin/admin_shops_list_modal.png" alt="店舗詳細画面" width="280"></td>
+</tr>
+</table>
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(店舗代表用) </h3>
 
-<div align="center">
-<div style="display: inline-block; vertical-align: top; text-align: center; margin: 0 8px;"><p>ダッシュボード画面</p><img src="readme_md_img/shops/shop_manager_dashboard.png" alt="ダッシュボード画面" width="280"><p>QRコード読取内容表示画面</p><img src="readme_md_img/shops/shop_manager_dashboard _reservation.png" alt="QRコード読取内容表示画面" width="280"><p>店舗内容確認画面</p><img src="readme_md_img/shops/shop_manager_manage-shop_modal.png" alt="店舗内容確認画面" width="280"><p>レビュー一覧画面</p><img src="readme_md_img/shops/shop_manager_reviews.png" alt="レビュー一覧画面" width="280"></div>
-<div style="display: inline-block; vertical-align: top; text-align: center; margin: 0 8px;"><p>予約詳細画面</p><img src="readme_md_img/shops/shop_manager_dashboard_modal.png" alt="予約詳細画面" width="280"><p>店舗情報変更画面</p><img src="readme_md_img/shops/shop_manager_manage-shop.png" alt="店舗情報変更画面" width="280"><p>店舗内容確認一覧画面</p><img src="readme_md_img/shops/shop_manager_manage_shop_list_view.png" alt="店舗内容確認一覧画面" width="280"><p>レビュー一覧画面(詳細)</p><img src="readme_md_img/shops/shop_manager_reviews_modal.png" alt="レビュー一覧画面" width="280"></div>
-</div>
+<table align="center" border="0">
+<tr>
+<td align="center" valign="top"><p>ダッシュボード画面</p><img src="readme_md_img/shops/shop_manager_dashboard.png" alt="ダッシュボード画面" width="280"></td>
+<td align="center" valign="top"><p>予約詳細画面</p><img src="readme_md_img/shops/shop_manager_dashboard_modal.png" alt="予約詳細画面" width="280"></td>
+</tr>
+<tr>
+<td align="center" valign="top"><p>QRコード読取内容表示画面</p><img src="readme_md_img/shops/shop_manager_dashboard _reservation.png" alt="QRコード読取内容表示画面" width="280"></td>
+<td align="center" valign="top"><p>店舗情報変更画面</p><img src="readme_md_img/shops/shop_manager_manage-shop.png" alt="店舗情報変更画面" width="280"></td>
+</tr>
+<tr>
+<td align="center" valign="top"><p>店舗内容確認画面</p><img src="readme_md_img/shops/shop_manager_manage-shop_modal.png" alt="店舗内容確認画面" width="280"></td>
+<td align="center" valign="top"><p>店舗内容確認一覧画面</p><img src="readme_md_img/shops/shop_manager_manage_shop_list_view.png" alt="店舗内容確認一覧画面" width="280"></td>
+</tr>
+<tr>
+<td align="center" valign="top"><p>レビュー一覧画面</p><img src="readme_md_img/shops/shop_manager_reviews.png" alt="レビュー一覧画面" width="280"></td>
+<td align="center" valign="top"><p>レビュー一覧画面(詳細)</p><img src="readme_md_img/shops/shop_manager_reviews_modal.png" alt="レビュー一覧画面" width="280"></td>
+</tr>
+</table>
 
 #### サービス概要
 
