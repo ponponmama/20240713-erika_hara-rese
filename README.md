@@ -6,8 +6,6 @@
    <span>
       <h4>登録画面</h4><br>
       <img src="readme_md_img/common/register.png" alt="register" style="width: auto; height: 200px; margin: 10px;">
-   </span>
-   <span>
       <h4>ログイン画面</h4><br>
       <img src="readme_md_img/common/login.png" alt="login" style="width: auto; height: 200px; margin: 10px;">
    </span>
