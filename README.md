@@ -2,7 +2,7 @@
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(共通) </h3>
 
-<table align="center">
+<table align="center" border="0">
 <tr>
 <td align="center" valign="top"><p>登録画面</p><img src="readme_md_img/common/register.png" alt="register" width="280"></td>
 <td align="center" valign="top"><p>ログイン画面</p><img src="readme_md_img/common/login.png" alt="login" width="280"></td>
@@ -15,7 +15,7 @@
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(user用) </h3>
 
-<table align="center">
+<table align="center" border="0">
 <tr>
 <td align="center" valign="top"><p>店舗一覧の画面</p><img src="readme_md_img/users/user_index.png" alt="店舗一覧の画面" width="280"></td>
 <td align="center" valign="top"><p>マイページ画面</p><img src="readme_md_img/users/user_mypage.png" alt="マイページ画面" width="280"></td>
@@ -32,7 +32,7 @@
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(総合管理者admin用) </h3>
 
-<table align="center">
+<table align="center" border="0">
 <tr>
 <td align="center" valign="top"><p>新規店舗の登録・店舗代表者作成画面</p><img src="readme_md_img/admin/admin_dashboard.png" alt="新規店舗の登録・店舗代表者作成画面" width="280"></td>
 <td align="center" valign="top"><p>登録店舗確認表示画面(登録時のみ)</p><img src="readme_md_img/admin/admin_dashboard_modal.png" alt="登録店舗確認表示画面(登録時のみ)" width="280"></td>
@@ -49,7 +49,7 @@
 
 <h3 align="center"> Rese（リーズ）飲食店予約サービスアプリ(店舗代表用) </h3>
 
-<table align="center">
+<table align="center" border="0">
 <tr>
 <td align="center" valign="top"><p>ダッシュボード画面</p><img src="readme_md_img/shops/shop_manager_dashboard.png" alt="ダッシュボード画面" width="280"></td>
 <td align="center" valign="top"><p>予約詳細画面</p><img src="readme_md_img/shops/shop_manager_dashboard_modal.png" alt="予約詳細画面" width="280"></td>
