@@ -8,7 +8,7 @@
 <td align="center"><h4>ログイン画面</h4><br><img src="readme_md_img/common/login.png" alt="login" width="280" height="200"></td>
 </tr>
 <tr>
-<td align="center"><h4>メール確認誘導画面</h4><br><img src="readme_md_img/common/email_verify.png" alt="verify" width="280" height="200"></td>
+<td align="center"><h4>メール確認誘導画面</h4><br><img src="readme_md_img/common/email_verify.png" alt="verify" width="280" height="180"></td>
 <td align="center"><h4>登録完了画面</h4><br><img src="readme_md_img/common/thanks.png" alt="thanks" width="280" height="200"></td>
 </tr>
 </table>
