@@ -4,16 +4,8 @@
 
 <p align="center">
    <img src="readme_md_img/common/register.png" alt="register" style="width: auto; height: 200px; margin: 10px;">
-</p>
-<br>
-<br>
-<p align="center">
    <img src="readme_md_img/common/login.png" alt="login" style="width: auto; height: 200px; margin: 10px;">
    <img src="readme_md_img/common/email_verify.png" alt="verify" style="width: auto; height: 200px; margin: 10px;">
-</p>
-<br>
-<br>
-<p>
    <img src="readme_md_img/common/thanks.png" alt="thanks" style="width: auto; height: 200px; margin: 10px;">
 </p>
 
