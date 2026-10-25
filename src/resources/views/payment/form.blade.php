@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+    <link rel="stylesheet" href="{{ asset('users_css/form.css') }}">
     <script src="https://js.stripe.com/v3/"></script>
 @endsection
 
