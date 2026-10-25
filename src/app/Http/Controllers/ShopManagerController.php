@@ -77,17 +77,6 @@ class ShopManagerController extends Controller
 
     }
 
-    public function showReservations()
-    {
-        // ログインしているユーザーが管理する店舗のIDを取得
-        $shopId = Auth::user()->shop_id;
-
-        // その店舗の予約情報を取得
-        $reservations = Reservation::where('shop_id', $shopId)->get();
-
-        return view('shop_manager.reservations', ['reservations' => $reservations]);
-    }
-
     // 予約詳細を取得するためのメソッド（モーダル表示用）
     public function getReservationDetails($id)
     {
