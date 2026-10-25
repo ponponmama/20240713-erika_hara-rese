@@ -7,7 +7,7 @@ use App\Models\Reservation;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Stripe\Stripe;
-use Stripe\Charge;
+use Stripe\PaymentIntent;
 use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
@@ -28,11 +28,30 @@ class PaymentController extends Controller
 
         // 予約が未払いか確認
         if ($reservation->payment_status === 'completed') {
+            // 支払い完了直後は決済画面に完了メッセージを表示する
+            if (session('success_message')) {
+                $clientSecret = null;
+                return view('payment.form', compact('reservation', 'clientSecret'));
+            }
+
             return redirect()->route('reservations.show', $reservation->id)
                 ->with('error_message', 'この予約は既に支払い済みです。');
         }
 
-        return view('payment.form', compact('reservation'));
+        // Stripe APIキーの設定
+        Stripe::setApiKey(env('STRIPE_SECRET'));
+
+        // 3Dセキュア対応のため PaymentIntent を作成し、client_secret を画面に渡す
+        $paymentIntent = PaymentIntent::create([
+            'amount' => $reservation->total_amount, // 日本円の場合はセント単位への変換は不要
+            'currency' => 'jpy',
+            'payment_method_types' => ['card'],
+            'description' => '予約番号: ' . $reservation->id,
+            'metadata' => ['reservation_id' => $reservation->id],
+        ]);
+        $clientSecret = $paymentIntent->client_secret;
+
+        return view('payment.form', compact('reservation', 'clientSecret'));
     }
 
     //Stripeを使用した支払い処理
@@ -59,13 +78,16 @@ class PaymentController extends Controller
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
         try {
-            // 支払いの実行
-            $charge = Charge::create([
-                'amount' => $reservation->total_amount, // 日本円の場合はセント単位への変換は不要
-                'currency' => 'jpy',
-                'description' => '予約番号: ' . $reservation->id,
-                'source' => $request->stripeToken,
-            ]);
+            // 画面側（Stripe.js）で確定した PaymentIntent を取得し、支払い済みか検証
+            $paymentIntent = PaymentIntent::retrieve($request->payment_intent_id);
+
+            if (
+                $paymentIntent->status !== 'succeeded' ||
+                $paymentIntent->amount !== (int) $reservation->total_amount ||
+                ($paymentIntent->metadata['reservation_id'] ?? null) !== (string) $reservation->id
+            ) {
+                throw new \Exception('決済が完了していません。');
+            }
 
             // 支払い情報の保存
             Payment::create([
@@ -78,7 +100,7 @@ class PaymentController extends Controller
             // 予約状態の更新
             $reservation->update(['payment_status' => 'completed']);
 
-            return redirect()->route('mypage')
+            return redirect()->route('payment.form', ['reservation_id' => $reservation->id])
                 ->with('success_message', '支払いが完了しました。');
         } catch (\Exception $e) {
             // 支払い失敗時の処理

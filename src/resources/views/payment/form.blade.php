@@ -12,7 +12,11 @@
             <p>予約番号: {{ $reservation->id }}</p>
             <p>支払い金額: ¥{{ number_format($reservation->total_amount) }}</p>
         </div>
+        <p class="session-messages">
+            @include('custom_components.session-messages')
+        </p>
 
+        @if ($clientSecret)
         <form action="{{ route('payment.process') }}" method="post" id="payment-form" class="payment_form">
             @csrf
             <input type="hidden" name="reservation_id" value="{{ $reservation->id }}">
@@ -44,10 +48,15 @@
             <div id="card-errors" role="alert"></div>
             <button type="submit" class="payment-button button">支払う</button>
         </form>
+        @else
+            <a href="{{ route('mypage') }}" class="back-link link">戻る</a>
+        @endif
     </div>
 
+    @if ($clientSecret)
     <script>
         var stripe = Stripe('{{ env('STRIPE_KEY') }}');
+        var clientSecret = '{{ $clientSecret }}';
         var elements = stripe.elements();
         var style = {
             base: {
@@ -92,15 +101,20 @@
         form.addEventListener('submit', function(event) {
             event.preventDefault();
 
-            stripe.createToken(cardNumber).then(function(result) {
+            // 3Dセキュア認証が必要な場合は Stripe.js が認証画面を表示する
+            stripe.confirmCardPayment(clientSecret, {
+                payment_method: {
+                    card: cardNumber
+                }
+            }).then(function(result) {
                 if (result.error) {
                     var errorElement = document.getElementById('card-errors');
                     errorElement.textContent = result.error.message;
                 } else {
                     var hiddenInput = document.createElement('input');
                     hiddenInput.setAttribute('type', 'hidden');
-                    hiddenInput.setAttribute('name', 'stripeToken');
-                    hiddenInput.setAttribute('value', result.token.id);
+                    hiddenInput.setAttribute('name', 'payment_intent_id');
+                    hiddenInput.setAttribute('value', result.paymentIntent.id);
                     form.appendChild(hiddenInput);
 
                     form.submit();
@@ -108,4 +122,5 @@
             });
         });
     </script>
+    @endif
 @endsection

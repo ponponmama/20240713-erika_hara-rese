@@ -39,6 +39,12 @@
         </span>
     @endif
 
+    @if (session('error_message'))
+        <span class="{{ $errorClass }}">
+            {{ session('error_message') }}
+        </span>
+    @endif
+
     @if (session('review_success'))
         <span class="{{ $successClass }}">
             {{ session('review_success') }}
