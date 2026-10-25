@@ -19,7 +19,7 @@ class Reservation extends Model
         'total_amount',
     ];
 
-    protected $dates = ['reservation_datetime'];
+    protected $casts = ['reservation_datetime' => 'datetime'];
 
     public function user()
     {
