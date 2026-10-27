@@ -1,5 +1,6 @@
 /docker/mysql/data/
 /vendor
+/node_modules
 .env
 ../ssl/nginx.crt
 ../ssl/nginx.key
